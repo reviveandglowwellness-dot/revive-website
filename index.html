@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revive &amp; Glow Wellness — Recovery &amp; Longevity Studio · Pinellas Park, FL</title>
+  <meta name="description" content="A boutique recovery & longevity studio opening soon in Pinellas Park, FL. Infrared sauna, cold plunge, red light therapy, compression, hydrogen water, human + pet wellness, and AI-personalized plans — designed to help you recover, restore, and feel your best." />
+  <link rel="canonical" href="https://reviveandglowwellness.com/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:title" content="Revive & Glow Wellness — Recovery & Longevity Studio" />
+  <meta property="og:description" content="Opening soon in Pinellas Park, FL. Recover. Restore. Glow. Join the waitlist." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reviveandglowwellness.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #1b241e;
+      --forest: #2f4a3c;
+      --forest-deep: #223a2e;
+      --sage: #7d9a86;
+      --sage-soft: #a9bfae;
+      --cream: #f1eadb;
+      --sand: #ddd0b6;
+      --gold: #c8a15a;
+      --gold-light: #e4c88c;
+      --terracotta: #c17a5a;
+      --white: #fbf7ef;
+      --shadow: 0 20px 60px -20px rgba(34, 58, 46, 0.35);
+      --radius: 20px;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90vw); margin: 0 auto; }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+      font-weight: 600; color: var(--gold); margin-bottom: 1.1rem;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem min(5vw, 3rem);
+      background: rgba(247, 243, 234, 0.72);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(47, 74, 60, 0.08);
+      transition: padding 0.3s ease;
+    }
+    .logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--forest-deep); letter-spacing: 0.01em; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--forest); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .btn {
+      display: inline-block; font-family: var(--sans); font-weight: 600;
+      font-size: 0.85rem; letter-spacing: 0.02em; cursor: pointer;
+      padding: 0.85rem 1.8rem; border-radius: 100px; border: none;
+      background: var(--forest-deep); color: var(--cream);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -10px rgba(34,58,46,0.5); background: var(--forest); }
+    .btn-gold { background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--forest-deep); cursor: pointer; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      padding: 8rem 0 5rem; overflow: hidden;
+      background:
+        radial-gradient(120% 90% at 85% 10%, rgba(228, 200, 140, 0.35) 0%, transparent 55%),
+        radial-gradient(100% 100% at 10% 90%, rgba(125, 154, 134, 0.30) 0%, transparent 55%),
+        linear-gradient(160deg, #f9f5ec 0%, #eee5d3 100%);
+    }
+    .hero-glow {
+      position: absolute; top: -10%; right: -5%; width: 55vw; height: 55vw;
+      max-width: 720px; max-height: 720px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(228,200,140,0.55) 0%, rgba(228,200,140,0) 70%);
+      filter: blur(20px); pointer-events: none; animation: float 14s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100% { transform: translateY(0) scale(1);} 50% { transform: translateY(30px) scale(1.05);} }
+    .hero-inner { position: relative; z-index: 2; max-width: 720px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: rgba(255,253,248,0.7); border: 1px solid rgba(200,161,90,0.4);
+      color: var(--forest-deep); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.5rem 1.1rem; border-radius: 100px; margin-bottom: 1.8rem;
+      backdrop-filter: blur(6px);
+    }
+    .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta); box-shadow: 0 0 0 4px rgba(193,122,90,0.2); }
+    .hero h1 { font-size: clamp(2.9rem, 6.5vw, 5.2rem); color: var(--forest-deep); margin-bottom: 1.5rem; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p.lede { font-size: clamp(1.05rem, 1.8vw, 1.3rem); color: #48584d; max-width: 560px; margin-bottom: 2.5rem; font-weight: 300; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .hero-note { font-size: 0.85rem; color: var(--sage); margin-top: 1.6rem; }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
+    .section-head { max-width: 640px; margin-bottom: 3.5rem; }
+    .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .section-head h2 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); color: var(--forest-deep); margin-bottom: 1.1rem; }
+    .section-head p { font-size: 1.08rem; color: #56655a; font-weight: 300; }
+
+    /* Promise */
+    .promise { background: var(--forest-deep); color: var(--cream); position: relative; overflow: hidden; }
+    .promise::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(80% 60% at 100% 0%, rgba(200,161,90,0.22) 0%, transparent 60%);
+    }
+    .promise .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+    .promise h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 1.4rem; }
+    .promise .eyebrow { color: var(--gold-light); }
+    .promise p { color: rgba(247,243,234,0.82); font-weight: 300; font-size: 1.05rem; margin-bottom: 1.1rem; }
+    .promise-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(228,200,140,0.18); border-radius: var(--radius); padding: 1.8rem; }
+    .stat .num { font-family: var(--serif); font-size: 2.6rem; color: var(--gold-light); line-height: 1; margin-bottom: 0.5rem; }
+    .stat .lbl { font-size: 0.82rem; color: rgba(247,243,234,0.7); letter-spacing: 0.03em; }
+
+    /* Method */
+    .method { background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%); }
+    .method-track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; margin-top: 1rem; }
+    .method-step {
+      background: var(--white); border-radius: var(--radius); padding: 2rem 1.4rem;
+      border: 1px solid rgba(47,74,60,0.07); box-shadow: 0 8px 30px -18px rgba(34,58,46,0.3);
+      position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .method-step:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .method-step .n { font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; }
+    .method-step h3 { font-size: 1.5rem; color: var(--forest-deep); margin-bottom: 0.5rem; }
+    .method-step p { font-size: 0.9rem; color: #5c6b60; font-weight: 300; }
+    .method-tm { display: inline-block; font-size: 0.7rem; vertical-align: super; color: var(--sage); }
+
+    /* Therapies */
+    .therapy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+    .therapy {
+      background: var(--white); border-radius: var(--radius); padding: 2.2rem;
+      border: 1px solid rgba(47,74,60,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .therapy:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(200,161,90,0.4); }
+    .therapy .icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 1.3rem; background: linear-gradient(135deg, var(--sand), var(--sage-soft)); }
+    .therapy .icon svg { width: 26px; height: 26px; stroke: var(--forest-deep); fill: none; stroke-width: 1.6; }
+    .therapy h3 { font-size: 1.65rem; color: var(--forest-deep); margin-bottom: 0.5rem; }
+    .therapy .kit { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.9rem; }
+    .therapy p { font-size: 0.92rem; color: #5c6b60; font-weight: 300; }
+
+    /* Who */
+    .who { background: var(--forest); color: var(--cream); }
+    .who .eyebrow { color: var(--gold-light); }
+    .who h2 { color: var(--white); }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.4rem; margin-top: 1rem; }
+    .who-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(228,200,140,0.16); border-radius: var(--radius); padding: 2rem; }
+    .who-card h3 { color: var(--gold-light); font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .who-card p { color: rgba(247,243,234,0.8); font-size: 0.92rem; font-weight: 300; }
+
+    /* Membership */
+    .members { text-align: center; background: linear-gradient(180deg, var(--sand) 0%, var(--cream) 100%); }
+    .members .pill-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .pill { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: 100px; padding: 0.9rem 1.8rem; font-weight: 500; color: var(--forest-deep); box-shadow: 0 6px 20px -12px rgba(34,58,46,0.3); }
+    .pill.elite { background: var(--forest-deep); color: var(--gold-light); border-color: var(--forest-deep); }
+
+    /* Waitlist */
+    .waitlist { background: var(--ink); color: var(--cream); position: relative; overflow: hidden; }
+    .waitlist::before { content:''; position:absolute; inset:0; background: radial-gradient(70% 80% at 50% 0%, rgba(200,161,90,0.22) 0%, transparent 60%); }
+    .waitlist .container { position: relative; z-index: 2; max-width: 620px; text-align: center; }
+    .waitlist .eyebrow { color: var(--gold-light); }
+    .waitlist h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--white); margin-bottom: 1.1rem; }
+    .waitlist p { color: rgba(247,243,234,0.8); font-weight: 300; margin-bottom: 2.4rem; }
+    .form-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+    .form-row input {
+      flex: 1; min-width: 240px; padding: 1rem 1.4rem; border-radius: 100px;
+      border: 1px solid rgba(228,200,140,0.35); background: rgba(255,255,255,0.06);
+      color: var(--cream); font-family: var(--sans); font-size: 0.95rem; outline: none;
+    }
+    .form-row input::placeholder { color: rgba(247,243,234,0.5); }
+    .form-row input:focus { border-color: var(--gold); background: rgba(255,255,255,0.1); }
+    .form-msg { margin-top: 1.3rem; font-size: 0.9rem; min-height: 1.2rem; color: var(--gold-light); }
+
+    /* Footer */
+    footer { background: var(--forest-deep); color: rgba(247,243,234,0.7); padding: 3.5rem 0 2.5rem; }
+    .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2.5rem; }
+    .footer-top .logo { color: var(--cream); }
+    .footer-col h4 { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; font-weight: 600; }
+    .footer-col p, .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,243,234,0.65); margin-bottom: 0.4rem; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .disclaimer { font-size: 0.74rem; color: rgba(247,243,234,0.45); border-top: 1px solid rgba(228,200,140,0.15); padding-top: 1.8rem; line-height: 1.6; }
+
+    /* Assessment */
+    .assessment { background: linear-gradient(160deg, #f9f5ec 0%, #efe6d4 100%); }
+    .assessment .container { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 4rem; align-items: center; }
+    .assess-steps { display: flex; flex-direction: column; gap: 1rem; }
+    .assess-step {
+      display: flex; gap: 1.2rem; align-items: flex-start; background: var(--white);
+      border: 1px solid rgba(47,74,60,0.08); border-radius: var(--radius); padding: 1.5rem 1.6rem;
+      box-shadow: 0 8px 30px -20px rgba(34,58,46,0.35); transition: transform 0.3s ease;
+    }
+    .assess-step:hover { transform: translateX(6px); }
+    .assess-step .an { flex: 0 0 auto; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); background: linear-gradient(135deg, var(--gold-light), var(--gold)); }
+    .assess-step h3 { font-size: 1.4rem; color: var(--forest-deep); margin-bottom: 0.2rem; }
+    .assess-step p { font-size: 0.9rem; color: #5c6b60; font-weight: 300; }
+    .assess-badge { display:inline-block; margin-top:0.4rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--terracotta); }
+
+    /* Pets */
+    .pets { background: var(--forest-deep); color: var(--cream); position: relative; overflow: hidden; }
+    .pets::before { content:''; position:absolute; inset:0; background: radial-gradient(70% 80% at 15% 20%, rgba(200,161,90,0.20) 0%, transparent 55%); }
+    .pets .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .pets .eyebrow { color: var(--gold-light); }
+    .pets h2 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.2rem; }
+    .pets p { color: rgba(247,243,234,0.82); font-weight: 300; font-size: 1.05rem; margin-bottom: 1rem; }
+    .pets .paw { font-size: 3.5rem; display:block; margin-bottom: 1rem; }
+    .pets-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(228,200,140,0.18); border-radius: var(--radius); padding: 2.5rem; }
+    .pets-card ul { list-style: none; }
+    .pets-card li { display:flex; gap:0.8rem; align-items:center; padding: 0.7rem 0; border-bottom: 1px solid rgba(228,200,140,0.12); color: rgba(247,243,234,0.85); font-size: 0.95rem; }
+    .pets-card li:last-child { border-bottom: none; }
+    .pets-card li::before { content:'✦'; color: var(--gold-light); }
+
+    /* Membership tiers */
+    .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.8rem; text-align: left; }
+    .tier { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: var(--radius); padding: 2.4rem 2rem; display: flex; flex-direction: column; box-shadow: 0 10px 40px -24px rgba(34,58,46,0.35); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .tier:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .tier.featured { border-color: var(--gold); box-shadow: 0 18px 50px -22px rgba(200,161,90,0.45); }
+    .tier.dark { background: var(--forest-deep); color: var(--cream); border-color: transparent; }
+    .tier .tier-tag { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--gold); margin-bottom: 0.8rem; min-height: 1rem; }
+    .tier.dark .tier-tag { color: var(--gold-light); }
+    .tier h3 { font-size: 1.9rem; color: var(--forest-deep); margin-bottom: 0.3rem; }
+    .tier.dark h3 { color: var(--white); }
+    .tier .tier-sub { font-size: 0.9rem; color: #5c6b60; font-weight: 300; margin-bottom: 1.5rem; }
+    .tier.dark .tier-sub { color: rgba(247,243,234,0.75); }
+    .tier ul { list-style: none; margin-bottom: 1.8rem; flex: 1; }
+    .tier li { font-size: 0.9rem; padding: 0.55rem 0; display: flex; gap: 0.6rem; color: #3f4d43; border-bottom: 1px solid rgba(47,74,60,0.07); }
+    .tier.dark li { color: rgba(247,243,234,0.85); border-color: rgba(228,200,140,0.14); }
+    .tier li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+    .tier.dark li::before { color: var(--gold-light); }
+    .tier .btn { text-align: center; }
+    .tier-note { text-align: center; margin-top: 1.8rem; font-size: 0.9rem; color: #5c6b60; }
+
+    .tier .price { font-family: var(--serif); font-size: 2.5rem; color: var(--forest-deep); line-height: 1; margin-bottom: 1.2rem; }
+    .tier .price span { font-size: 0.85rem; font-family: var(--sans); color: #5c6b60; font-weight: 400; }
+    .tier.dark .price { color: var(--gold-light); }
+    .tier.dark .price span { color: rgba(247,243,234,0.7); }
+
+    /* Included-in-every-membership band */
+    .includes { max-width: 940px; margin: 0 auto 3rem; background: var(--forest-deep); color: var(--cream); border-radius: var(--radius); padding: clamp(2rem, 4vw, 2.8rem); }
+    .includes-title { font-family: var(--serif); font-size: 1.6rem; color: var(--gold-light); text-align: center; margin-bottom: 1.6rem; }
+    .includes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem 2.2rem; }
+    .includes-grid span { font-size: 0.92rem; color: rgba(247,243,234,0.9); display: flex; gap: 0.65rem; align-items: baseline; }
+    .includes-grid span::before { content: '✓'; color: var(--gold-light); font-weight: 700; }
+    @media (max-width: 560px) { .includes-grid { grid-template-columns: 1fr; } }
+
+    /* À la carte */
+    .ala-head { text-align: center; margin-top: 3rem; font-family: var(--serif); font-size: 1.5rem; color: var(--forest-deep); }
+    .alacarte { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; }
+    .ala { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: 14px; padding: 1.1rem 1.7rem; display: flex; flex-direction: column; align-items: center; min-width: 155px; box-shadow: 0 6px 20px -14px rgba(34,58,46,0.3); transition: transform 0.25s ease; }
+    .ala:hover { transform: translateY(-4px); }
+    .ala-name { font-size: 0.8rem; color: #5c6b60; letter-spacing: 0.03em; margin-bottom: 0.2rem; }
+    .ala-price { font-family: var(--serif); font-size: 1.6rem; color: var(--forest-deep); }
+
+    /* Founding members */
+    .founding { background: var(--sand); }
+    .founding .wrap { max-width: 820px; margin: 0 auto; background: var(--white); border: 1.5px dashed var(--gold); border-radius: var(--radius); padding: clamp(2.5rem, 5vw, 3.5rem); text-align: center; box-shadow: var(--shadow); }
+    .founding .big { font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 4rem); color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+    .founding h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); color: var(--forest-deep); margin-bottom: 1rem; }
+    .founding p { color: #56655a; font-weight: 300; max-width: 560px; margin: 0 auto 1.6rem; }
+    .founding .perks { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .founding .perk { font-size: 0.82rem; font-weight: 500; color: var(--forest-deep); background: var(--sand); border-radius: 100px; padding: 0.5rem 1.1rem; }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .promise .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .assessment .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pets .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .tiers { grid-template-columns: 1fr; }
+      .method-track { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .method-track { grid-template-columns: 1fr; }
+      .promise-stats { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; align-items: stretch; }
+      .hero-cta .btn { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#top" class="logo">Revive <span>&amp;</span> Glow</a>
+    <div class="nav-links">
+      <a href="#method">The Method</a>
+      <a href="#therapies">Therapies</a>
+      <a href="#assessment">Your Plan</a>
+      <a href="#pets">For Pets</a>
+      <a href="#membership">Membership</a>
+      <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display='flex'">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="badge"><span class="dot"></span> Opening soon · Pinellas Park, FL</span>
+        <h1>Recover. Restore.<br><em>Glow.</em></h1>
+        <p class="lede">A boutique recovery &amp; longevity studio in the heart of Tampa Bay — where science-backed therapies help you move better, feel stronger, and age well, in a space designed to feel like a breath.</p>
+        <div class="hero-cta">
+          <a href="#waitlist" class="btn">Join the Waitlist</a>
+          <a href="#method" class="btn btn-gold">Discover The Revive Method™</a>
+        </div>
+        <p class="hero-note">✦ Every journey begins with a complimentary wellness assessment.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROMISE -->
+  <section class="promise">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Recovery &amp; Longevity</p>
+        <h2>Wellness that you can feel — and measure.</h2>
+        <p>Modern life is hard on the body. Long days, harder workouts, and the everyday wear of getting older leave us tired, sore, and running on empty. Revive &amp; Glow is a calm, boutique space built around one idea: giving your body real time to recover, so you can show up as your best self.</p>
+        <p>No cold clinic feel. No guesswork. Just intentional, personalized sessions and progress you can actually track over time.</p>
+      </div>
+      <div class="promise-stats reveal">
+        <div class="stat"><div class="num">8</div><div class="lbl">Recovery &amp; longevity modalities under one roof</div></div>
+        <div class="stat"><div class="num">1:1</div><div class="lbl">Personalized wellness guidance every visit</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl">Steps in The Revive Method™</div></div>
+        <div class="stat"><div class="num">∞</div><div class="lbl">A space designed for how you want to feel</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="method" id="method">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Our Signature Ritual</p>
+        <h2>The Revive Method™</h2>
+        <p>A guided five-step journey through light, heat, cold, and restoration — sequenced to help your body reset from the inside out.</p>
+      </div>
+      <div class="method-track">
+        <div class="method-step reveal"><div class="n">01</div><h3>Illuminate</h3><p>Red light therapy to energize cells and prime the body.</p></div>
+        <div class="method-step reveal"><div class="n">02</div><h3>Restore</h3><p>Infrared sauna to warm deep, sweat clean, and release tension.</p></div>
+        <div class="method-step reveal"><div class="n">03</div><h3>Refresh</h3><p>Cold plunge to invigorate circulation and sharpen the mind.</p></div>
+        <div class="method-step reveal"><div class="n">04</div><h3>Recover</h3><p>Compression &amp; vibration to flush fatigue from tired muscles.</p></div>
+        <div class="method-step reveal"><div class="n">05</div><h3>Rehydrate</h3><p>Ground, rest, and replenish — leaving lighter than you arrived.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THERAPIES -->
+  <section id="therapies">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Studio</p>
+        <h2>Premium therapies, thoughtfully curated.</h2>
+        <p>Every modality is chosen for one reason: it helps you recover, restore, and feel your best — powered by best-in-class equipment.</p>
+      </div>
+      <div class="therapy-grid">
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
+          <h3>Red Light Therapy</h3>
+          <p class="kit">PlatinumLED BioMax</p>
+          <p>Full-spectrum light to support skin, energy, and cellular recovery.</p>
+        </div>
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 3s1.5 2-.5 4 .5 4 .5 4M12 3s1.5 2-.5 4 .5 4 .5 4M16 3s1.5 2-.5 4 .5 4 .5 4M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/></svg></div>
+          <h3>Infrared Sauna</h3>
+          <p class="kit">Clearlight Sanctuary 2</p>
+          <p>Deep, gentle heat to relax muscles, unwind, and sweat it out.</p>
+        </div>
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 8l6-6 6 6M4 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div>
+          <h3>Cold Plunge</h3>
+          <p class="kit">Nordic Wave</p>
+          <p>An invigorating cold reset for circulation, focus, and resilience.</p>
+        </div>
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2h8v6a4 4 0 0 1-8 0zM8 22h8v-6a4 4 0 0 0-8 0zM6 11h12"/></svg></div>
+          <h3>Compression Therapy</h3>
+          <p class="kit">Normatec</p>
+          <p>Dynamic compression boots to flush fatigue and speed recovery.</p>
+        </div>
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-7 4 14 2-7h4M18 9l3 3-3 3"/></svg></div>
+          <h3>Whole Body Vibration</h3>
+          <p class="kit">Recovery &amp; Mobility</p>
+          <p>Vibration training to stimulate muscles, balance, and circulation.</p>
+        </div>
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9zM12 21v-4"/></svg></div>
+          <h3>Grounding</h3>
+          <p class="kit">Restore &amp; Reconnect</p>
+          <p>A calming practice to settle the nervous system and reconnect.</p>
+        </div>
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/><path d="M11 12h2M12 11v2"/></svg></div>
+          <h3>Hydrogen Water</h3>
+          <p class="kit">Hydrate &amp; Replenish</p>
+          <p>Antioxidant-rich hydrogen water to refresh and support recovery.</p>
+        </div>
+        <div class="therapy reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <h3>Body Composition</h3>
+          <p class="kit">Tanita RD-545</p>
+          <p>Track real progress — muscle, hydration, and healthy aging metrics.</p>
+        </div>
+        <div class="therapy reveal" style="background:linear-gradient(135deg,var(--forest-deep),var(--forest));color:var(--cream);border-color:transparent;justify-content:center;">
+          <h3 style="color:var(--gold-light);">More to explore</h3>
+          <p style="color:rgba(247,243,234,0.8);">Memberships, packages, and seasonal experiences designed around your goals — revealed at opening.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT -->
+  <section class="assessment" id="assessment">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Personalized &amp; Measured</p>
+        <h2 style="font-size:clamp(2.1rem,4.5vw,3.4rem);color:var(--forest-deep);margin-bottom:1.1rem;">A wellness plan built around you.</h2>
+        <p style="font-size:1.08rem;color:#56655a;font-weight:300;">We don't guess. Your journey starts with a real assessment, so every session moves you toward how you want to feel — and you can see the progress along the way.</p>
+        <a href="#waitlist" class="btn" style="margin-top:1.8rem;">Claim your complimentary assessment</a>
+      </div>
+      <div class="assess-steps reveal">
+        <div class="assess-step">
+          <div class="an">1</div>
+          <div>
+            <h3>Body Composition Assessment</h3>
+            <p>Start with a complimentary Tanita scan — muscle, hydration, and healthy-aging metrics, captured as your baseline.</p>
+            <span class="assess-badge">Complimentary</span>
+          </div>
+        </div>
+        <div class="assess-step">
+          <div class="an">2</div>
+          <div>
+            <h3>AI Personalized Recommendations</h3>
+            <p>Our smart wellness guide turns your goals into a tailored plan — which therapies to prioritize, and how often.</p>
+          </div>
+        </div>
+        <div class="assess-step">
+          <div class="an">3</div>
+          <div>
+            <h3>Monthly Progress Tracking</h3>
+            <p>Come back, re-measure, and watch your results build over time. Wellness you can actually see.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section class="who" id="who">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Made For You</p>
+        <h2>Whoever you are, recovery is for you.</h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-card reveal"><h3>Athletes &amp; Runners</h3><p>Bounce back faster, train harder, and keep soreness and inflammation from slowing you down.</p></div>
+        <div class="who-card reveal"><h3>Active 60+</h3><p>Move with more ease and energy, and invest in longevity with results you can measure.</p></div>
+        <div class="who-card reveal"><h3>Busy &amp; Burned Out</h3><p>Trade stress for calm — better sleep, more energy, and a moment that's just for you.</p></div>
+        <div class="who-card reveal"><h3>Longevity Seekers</h3><p>Age well on purpose with a proactive, natural approach to feeling your best for years to come.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PETS -->
+  <section class="pets" id="pets">
+    <div class="container">
+      <div class="reveal">
+        <span class="paw">🐾</span>
+        <p class="eyebrow">Human + Pet Wellness</p>
+        <h2>Because they deserve to glow, too.</h2>
+        <p>Wellness isn't just for us — it's for the ones who greet us at the door. Revive &amp; Glow brings the same calm, restorative care to your pet, so the whole family can feel their best together.</p>
+        <p style="font-size:0.85rem;color:rgba(247,243,234,0.6);">Relaxation &amp; wellness services — not a substitute for veterinary care.</p>
+      </div>
+      <div class="pets-card reveal">
+        <ul>
+          <li>Soothing, pet-friendly recovery sessions</li>
+          <li>A calm, welcoming space for you and your companion</li>
+          <li>Gentle relaxation and comfort-focused care</li>
+          <li>Wellness moments you can share side by side</li>
+        </ul>
+        <a href="#waitlist" class="btn btn-gold" style="margin-top:1.8rem;">Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="members" id="membership">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Belong Here</p>
+        <h2>Memberships Designed for Real Results</h2>
+        <p>Every membership is built around measurable progress — not guesswork. Track what matters, get AI-guided recommendations, and watch your results build month over month.</p>
+      </div>
+
+      <div class="includes reveal">
+        <h3 class="includes-title">Every membership includes</h3>
+        <div class="includes-grid">
+          <span>AI Wellness Concierge</span>
+          <span>Monthly Revive Body Composition Analysis</span>
+          <span>Monthly Progress Report</span>
+          <span>Wellness Score</span>
+          <span>Muscle Mass Tracking</span>
+          <span>Body Fat Tracking</span>
+          <span>Visceral Fat Tracking</span>
+          <span>Metabolic Age Tracking</span>
+          <span>Personalized AI Wellness Recommendations</span>
+          <span>Online Booking</span>
+        </div>
+      </div>
+
+      <div class="tiers">
+        <div class="tier reveal">
+          <div class="tier-tag">🌿 No contract</div>
+          <h3>Revive Flex</h3>
+          <div class="price">$179<span>/month</span></div>
+          <p class="tier-sub">8 Revive Sessions per month · about 2 visits a week</p>
+          <ul>
+            <li>Perfect for getting started</li>
+            <li>Maximum flexibility, cancel anytime</li>
+            <li>All standard membership benefits</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+        </div>
+        <div class="tier featured reveal">
+          <div class="tier-tag">🌟 Most popular · Best value</div>
+          <h3>Revive Commit</h3>
+          <div class="price">$159<span>/month</span></div>
+          <p class="tier-sub">8 Revive Sessions per month · 6-month commitment</p>
+          <ul>
+            <li>Best value — save $20/mo vs. Flex</li>
+            <li>Ideal for consistent, lasting results</li>
+            <li>About 2 visits a week</li>
+            <li>All standard membership benefits</li>
+          </ul>
+          <a href="#waitlist" class="btn">Join the Waitlist</a>
+        </div>
+        <div class="tier dark reveal">
+          <div class="tier-tag">🏆 Premium</div>
+          <h3>Revive Elite</h3>
+          <div class="price">$249<span>/month</span></div>
+          <p class="tier-sub">20 Revive Sessions per month · priority booking</p>
+          <ul>
+            <li>Priority scheduling &amp; booking</li>
+            <li>Monthly guest pass to share</li>
+            <li>Exclusive member experiences</li>
+            <li>Pet wellness perk included</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+        </div>
+      </div>
+      <h3 class="ala-head reveal">Not ready to commit? Start à la carte.</h3>
+      <div class="alacarte reveal">
+        <div class="ala"><span class="ala-name">Single Session</span><span class="ala-price">$39</span></div>
+        <div class="ala"><span class="ala-name">5-Session Pack</span><span class="ala-price">$175</span></div>
+        <div class="ala"><span class="ala-name">10-Session Pack</span><span class="ala-price">$320</span></div>
+        <div class="ala"><span class="ala-name">Gift Cards</span><span class="ala-price">Any amount</span></div>
+      </div>
+      <p class="tier-note reveal">Founding members lock in these rates for life.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDING -->
+  <section class="founding">
+    <div class="container">
+      <div class="wrap reveal">
+        <div class="big">50</div>
+        <h2>Become a Founding Member</h2>
+        <p>We're welcoming our first 50 members before we open. Founders help shape the studio — and keep their perks for life.</p>
+        <div class="perks">
+          <span class="perk">✦ Founding rates locked in</span>
+          <span class="perk">✦ Priority booking at launch</span>
+          <span class="perk">✦ Exclusive opening invitation</span>
+        </div>
+        <a href="#waitlist" class="btn">Claim Your Founding Spot</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="waitlist" id="waitlist">
+    <div class="container">
+      <p class="eyebrow reveal">Opening Soon</p>
+      <h2 class="reveal">Be the first to glow.</h2>
+      <p class="reveal">Join the waitlist for early access, founding-member perks, and an invitation to book before we open our doors in Pinellas Park.</p>
+      <form class="reveal" id="waitlistForm" onsubmit="return handleWaitlist(event)">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="First name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <button type="submit" class="btn btn-gold">Notify Me</button>
+        </div>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#top" class="logo">Revive <span>&amp;</span> Glow</a>
+          <p style="margin-top:0.8rem;max-width:280px;">A recovery &amp; longevity studio — opening soon in Pinellas Park, Florida.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#method">The Revive Method™</a>
+          <a href="#therapies">Therapies</a>
+          <a href="#assessment">Your Plan</a>
+          <a href="#pets">For Pets</a>
+          <a href="#membership">Membership</a>
+          <a href="#waitlist">Join the Waitlist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <p>Pinellas Park, FL</p>
+          <p>Tampa Bay Area</p>
+          <p>Opening 2026</p>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
+      </div>
+      <p class="disclaimer">
+        &copy; 2026 Revive &amp; Glow Wellness. All rights reserved.
+        The services and information provided are for general wellness and relaxation purposes only. They are not medical care and are not intended to diagnose, treat, cure, or prevent any disease or condition. Revive &amp; Glow Wellness does not provide medical advice. Please consult a qualified healthcare provider before beginning any new wellness practice, especially if you are pregnant or have a medical condition.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Nav shrink
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.padding = window.scrollY > 40 ? '0.75rem min(5vw,3rem)' : '1.2rem min(5vw,3rem)';
+    });
+
+    // Waitlist (front-end only — real capture wired to Mindbody/email tool as next step)
+    function handleWaitlist(e) {
+      e.preventDefault();
+      const msg = document.getElementById('formMsg');
+      const name = e.target.name.value.trim();
+      msg.textContent = `Thank you${name ? ', ' + name : ''}! You're on the list — we'll be in touch before we open. ✨`;
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
