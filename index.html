@@ -286,14 +286,9 @@
     .founding .perks { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
     .founding .perk { font-size: 0.82rem; font-weight: 500; color: var(--forest-deep); background: var(--sand); border-radius: 100px; padding: 0.5rem 1.1rem; }
 
-    /* Therapy Guides */
-    .guides { background: var(--white); }
-    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; }
-    .guide-card { display: block; border-radius: var(--radius); overflow: hidden; background: var(--cream); border: 1px solid rgba(47,74,60,0.1); box-shadow: 0 8px 30px -18px rgba(34,58,46,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .guide-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-    .guide-thumb { height: 210px; background-size: cover; background-position: top center; }
-    .guide-label { padding: 1rem 1.2rem; font-weight: 600; color: var(--forest-deep); font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; }
-    .guide-label span { font-size: 0.72rem; color: var(--gold); font-weight: 600; white-space: nowrap; letter-spacing: 0.03em; }
+    /* Therapy guide links (inside each therapy card) */
+    .therapy-guide-link { margin-top: auto; padding-top: 1.2rem; align-self: flex-start; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .therapy-guide-link:hover { border-color: var(--gold); }
 
     /* Meet the Founders */
     .founders { background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%); }
@@ -410,30 +405,35 @@
           <h3>Red Light Therapy</h3>
           <p class="kit">PlatinumLED BioMax</p>
           <p>Full-spectrum light to support skin, energy, and cellular recovery.</p>
+          <a class="therapy-guide-link" href="guide-red-light.jpg" target="_blank" rel="noopener">View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 3s1.5 2-.5 4 .5 4 .5 4M12 3s1.5 2-.5 4 .5 4 .5 4M16 3s1.5 2-.5 4 .5 4 .5 4M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/></svg></div>
           <h3>Infrared Sauna</h3>
           <p class="kit">Clearlight Sanctuary 2</p>
           <p>Deep, gentle heat to relax muscles, unwind, and sweat it out.</p>
+          <a class="therapy-guide-link" href="guide-infrared-sauna.jpg" target="_blank" rel="noopener">View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 8l6-6 6 6M4 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div>
           <h3>Cold Plunge</h3>
           <p class="kit">Nordic Wave</p>
           <p>An invigorating cold reset for circulation, focus, and resilience.</p>
+          <a class="therapy-guide-link" href="guide-cold-plunge.jpg" target="_blank" rel="noopener">View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2h8v6a4 4 0 0 1-8 0zM8 22h8v-6a4 4 0 0 0-8 0zM6 11h12"/></svg></div>
           <h3>Compression Therapy</h3>
           <p class="kit">Normatec</p>
           <p>Dynamic compression boots to flush fatigue and speed recovery.</p>
+          <a class="therapy-guide-link" href="guide-compression.jpg" target="_blank" rel="noopener">View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-7 4 14 2-7h4M18 9l3 3-3 3"/></svg></div>
           <h3>Whole Body Vibration</h3>
           <p class="kit">Recovery &amp; Mobility</p>
           <p>Vibration training to stimulate muscles, balance, and circulation.</p>
+          <a class="therapy-guide-link" href="guide-vibration.jpg" target="_blank" rel="noopener">View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9zM12 21v-4"/></svg></div>
@@ -457,39 +457,6 @@
           <h3 style="color:var(--gold-light);">More to explore</h3>
           <p style="color:rgba(247,243,234,0.8);">Memberships, packages, and seasonal experiences designed around your goals — revealed at opening.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THERAPY GUIDES -->
-  <section class="guides" id="guides">
-    <div class="container">
-      <div class="section-head center reveal">
-        <p class="eyebrow">Learn More</p>
-        <h2>Your Therapy Guides</h2>
-        <p>Curious how each therapy works? Explore our science-backed guides — from the benefits to what to expect in every session.</p>
-      </div>
-      <div class="guide-grid">
-        <a class="guide-card reveal" href="guide-red-light.jpg" target="_blank" rel="noopener">
-          <div class="guide-thumb" style="background-image:url('guide-red-light.jpg')"></div>
-          <div class="guide-label">Red Light Therapy <span>View guide →</span></div>
-        </a>
-        <a class="guide-card reveal" href="guide-infrared-sauna.jpg" target="_blank" rel="noopener">
-          <div class="guide-thumb" style="background-image:url('guide-infrared-sauna.jpg')"></div>
-          <div class="guide-label">Infrared Sauna <span>View guide →</span></div>
-        </a>
-        <a class="guide-card reveal" href="guide-cold-plunge.jpg" target="_blank" rel="noopener">
-          <div class="guide-thumb" style="background-image:url('guide-cold-plunge.jpg')"></div>
-          <div class="guide-label">Cold Plunge <span>View guide →</span></div>
-        </a>
-        <a class="guide-card reveal" href="guide-compression.jpg" target="_blank" rel="noopener">
-          <div class="guide-thumb" style="background-image:url('guide-compression.jpg')"></div>
-          <div class="guide-label">Compression Therapy <span>View guide →</span></div>
-        </a>
-        <a class="guide-card reveal" href="guide-vibration.jpg" target="_blank" rel="noopener">
-          <div class="guide-thumb" style="background-image:url('guide-vibration.jpg')"></div>
-          <div class="guide-label">Whole Body Vibration <span>View guide →</span></div>
-        </a>
       </div>
     </div>
   </section>
