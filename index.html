@@ -27,8 +27,8 @@
       --sage-soft: #a9bfae;
       --cream: #f1eadb;
       --sand: #ddd0b6;
-      --gold: #c8a15a;
-      --gold-light: #e4c88c;
+      --gold: #b9863f;
+      --gold-light: #dab06a;
       --terracotta: #c17a5a;
       --white: #fbf7ef;
       --shadow: 0 20px 60px -20px rgba(34, 58, 46, 0.35);
@@ -284,6 +284,16 @@
     .founding .perks { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
     .founding .perk { font-size: 0.82rem; font-weight: 500; color: var(--forest-deep); background: var(--sand); border-radius: 100px; padding: 0.5rem 1.1rem; }
 
+    /* Meet the Founders */
+    .founders { background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%); }
+    .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 820px; margin: 0 auto; }
+    .founder-card { text-align: center; }
+    .founder-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 1.4rem; }
+    .founder-card h3 { font-size: 1.8rem; color: var(--forest-deep); margin-bottom: 0.1rem; }
+    .founder-card .frole { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; }
+    .founder-card p.fbio { font-size: 0.95rem; color: #5c6b60; font-weight: 300; max-width: 330px; margin: 0 auto; }
+    @media (max-width: 640px) { .founder-grid { grid-template-columns: 1fr; gap: 2.2rem; max-width: 360px; } }
+
     /* Reveal animation */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.in { opacity: 1; transform: none; }
@@ -366,11 +376,11 @@
         <p>A guided five-step journey through light, heat, cold, and restoration — sequenced to help your body reset from the inside out.</p>
       </div>
       <div class="method-track">
-        <div class="method-step reveal"><div class="n">01</div><h3>Illuminate</h3><p>Red light therapy to energize cells and prime the body.</p></div>
-        <div class="method-step reveal"><div class="n">02</div><h3>Restore</h3><p>Infrared sauna to warm deep, sweat clean, and release tension.</p></div>
-        <div class="method-step reveal"><div class="n">03</div><h3>Refresh</h3><p>Cold plunge to invigorate circulation and sharpen the mind.</p></div>
-        <div class="method-step reveal"><div class="n">04</div><h3>Recover</h3><p>Compression &amp; vibration to flush fatigue from tired muscles.</p></div>
-        <div class="method-step reveal"><div class="n">05</div><h3>Rehydrate</h3><p>Ground, rest, and replenish — leaving lighter than you arrived.</p></div>
+        <div class="method-step reveal"><div class="n">01</div><h3>Illuminate</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Red Light Therapy</div><p>Energize cells and prime the body with red light.</p></div>
+        <div class="method-step reveal"><div class="n">02</div><h3>Restore</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Infrared Sauna</div><p>Warm deep, sweat clean, and release tension.</p></div>
+        <div class="method-step reveal"><div class="n">03</div><h3>Refresh</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Cold Plunge</div><p>Invigorate circulation and sharpen the mind.</p></div>
+        <div class="method-step reveal"><div class="n">04</div><h3>Recover</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Compression + Vibration</div><p>Flush fatigue from tired muscles.</p></div>
+        <div class="method-step reveal"><div class="n">05</div><h3>Rehydrate</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Grounding + Hydration</div><p>Ground, rest, and replenish — leave lighter than you arrived.</p></div>
       </div>
     </div>
   </section>
@@ -498,18 +508,49 @@
       <div class="reveal">
         <span class="paw">🐾</span>
         <p class="eyebrow">Human + Pet Wellness</p>
-        <h2>Because they deserve to glow, too.</h2>
-        <p>Wellness isn't just for us — it's for the ones who greet us at the door. Revive &amp; Glow brings the same calm, restorative care to your pet, so the whole family can feel their best together.</p>
+        <h2>Wellness for the whole family — pets included.</h2>
+        <p>Your dog deserves to feel their best, too. Our <strong>Red Light Therapy for Dogs</strong> offers natural, drug-free support for pain relief, healing, and mobility — gentle, non-invasive, and calming.</p>
+        <p>May help support arthritis &amp; joint pain, hip dysplasia, ACL/CCL recovery, muscle strains, wound healing, and the comfort of senior dogs.</p>
         <p style="font-size:0.85rem;color:rgba(247,243,234,0.6);">Relaxation &amp; wellness services — not a substitute for veterinary care.</p>
       </div>
       <div class="pets-card reveal">
+        <div style="text-align:center;padding:1.4rem;margin-bottom:1.6rem;border:1px solid rgba(228,200,140,0.3);border-radius:14px;background:rgba(200,161,90,0.08);">
+          <div style="font-family:var(--serif);font-size:2.4rem;color:var(--gold-light);line-height:1;">$99 <span style="font-size:0.9rem;font-family:var(--sans);color:rgba(247,243,234,0.7);">for both</span></div>
+          <div style="font-family:var(--serif);font-size:1.3rem;color:var(--white);margin-top:0.3rem;">The &ldquo;Heal Together&rdquo; Package</div>
+          <p style="font-size:0.88rem;color:rgba(247,243,234,0.8);margin-top:0.4rem;">Your dog enjoys red light therapy while you relax in the infrared sauna or under red light — side by side.</p>
+        </div>
         <ul>
-          <li>Soothing, pet-friendly recovery sessions</li>
-          <li>A calm, welcoming space for you and your companion</li>
-          <li>Gentle relaxation and comfort-focused care</li>
-          <li>Wellness moments you can share side by side</li>
+          <li>First Pet Session — just $29</li>
+          <li>Single sessions from $35 (by dog size)</li>
+          <li>Pet packages &amp; $149/mo membership</li>
+          <li>A personalized plan for every dog</li>
         </ul>
         <a href="#waitlist" class="btn btn-gold" style="margin-top:1.8rem;">Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="founders" id="founders">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="eyebrow">The Women Behind It</p>
+        <h2>Meet the Founders</h2>
+        <p>Revive &amp; Glow was created by two women who believe recovery and longevity should feel personal, warm, and within reach — for you and your whole family.</p>
+      </div>
+      <div class="founder-grid">
+        <div class="founder-card reveal">
+          <img src="founder-juliana.jpg" alt="Juliana Shewmaker, co-founder of Revive &amp; Glow Wellness" loading="lazy" />
+          <h3>Juliana Shewmaker</h3>
+          <p class="frole">Co-Founder</p>
+          <p class="fbio">Driven to build a space where feeling your best is a way of life — proactive, natural, and personal.</p>
+        </div>
+        <div class="founder-card reveal">
+          <img src="founder-thaysa.jpg" alt="Thaysa M Gomes, co-founder of Revive &amp; Glow Wellness" loading="lazy" />
+          <h3>Thaysa M Gomes</h3>
+          <p class="frole">Co-Founder</p>
+          <p class="fbio">Passionate about longevity and whole-family wellness — making sure every guest, and every pet, leaves feeling their best.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -614,6 +655,10 @@
       <h2 class="reveal">Be the first to glow.</h2>
       <p class="reveal">Join the waitlist for early access, founding-member perks, and an invitation to book before we open our doors in Pinellas Park.</p>
       <form class="reveal" id="waitlistForm" onsubmit="return handleWaitlist(event)">
+        <input type="hidden" name="access_key" value="8f36e2b3-90b0-4305-b44b-d35c21717a3e" />
+        <input type="hidden" name="subject" value="New Revive & Glow waitlist signup 🌿" />
+        <input type="hidden" name="from_name" value="Revive & Glow Website" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="form-row">
           <input type="text" name="name" placeholder="First name" required />
           <input type="email" name="email" placeholder="Email address" required />
@@ -643,12 +688,13 @@
         </div>
         <div class="footer-col">
           <h4>Visit</h4>
-          <p>Pinellas Park, FL</p>
-          <p>Tampa Bay Area</p>
+          <p>9899 66th St N</p>
+          <p>Pinellas Park, FL 33782</p>
           <p>Opening 2026</p>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
+          <a href="tel:+17277764569">(727) 776-4569</a>
           <a href="#" aria-label="Instagram">Instagram</a>
           <a href="#" aria-label="Facebook">Facebook</a>
           <a href="#" aria-label="TikTok">TikTok</a>
@@ -674,13 +720,29 @@
       nav.style.padding = window.scrollY > 40 ? '0.75rem min(5vw,3rem)' : '1.2rem min(5vw,3rem)';
     });
 
-    // Waitlist (front-end only — real capture wired to Mindbody/email tool as next step)
-    function handleWaitlist(e) {
+    // Waitlist — submits to Web3Forms (emails each signup to the studio) with inline confirmation.
+    async function handleWaitlist(e) {
       e.preventDefault();
+      const form = e.target;
       const msg = document.getElementById('formMsg');
-      const name = e.target.name.value.trim();
-      msg.textContent = `Thank you${name ? ', ' + name : ''}! You're on the list — we'll be in touch before we open. ✨`;
-      e.target.reset();
+      const name = form.name.value.trim();
+      msg.textContent = 'Sending…';
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+        const data = await res.json();
+        if (data.success) {
+          msg.textContent = `Thank you${name ? ', ' + name : ''}! You're on the list — we'll be in touch before we open. ✨`;
+          form.reset();
+        } else {
+          msg.textContent = 'Something went wrong — please try again, or call us at (727) 776-4569.';
+        }
+      } catch (err) {
+        msg.textContent = 'Something went wrong — please try again, or call us at (727) 776-4569.';
+      }
       return false;
     }
   </script>
