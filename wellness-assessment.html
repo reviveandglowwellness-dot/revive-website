@@ -223,7 +223,7 @@ var SCREENS = [
 ];
 
 /* ============ ENGINE ============ */
-var state={i:0, answers:{}, order:SCREENS};
+var state={i:0, answers:{}, screens:SCREENS};
 var stageEl=document.getElementById("stage");
 
 function humanScreens(){return SCREENS;}
@@ -231,22 +231,23 @@ function progressCount(){return SCREENS.filter(function(s){return !s.noProgress 
 
 function setProgress(scr){
   var pw=document.getElementById("pwrap");
-  if(scr.noProgress||scr.type==="result"){pw.style.visibility="hidden";return;}
+  if(scr.noProgress||scr.type==="result"||scr.type==="result_pet"){pw.style.visibility="hidden";return;}
   pw.style.visibility="visible";
-  var list=SCREENS.filter(function(s){return !s.noProgress && s.type!=="result";});
+  var list=state.screens.filter(function(s){return !s.noProgress && s.type!=="result" && s.type!=="result_pet";});
   var pos=list.indexOf(scr)+1, total=list.length;
   document.getElementById("plbl").textContent="Step "+pos+" of "+total;
   document.getElementById("pbar").style.width=(pos/total*100)+"%";
 }
 
 function render(){
-  var scr=SCREENS[state.i];
+  var scr=state.screens[state.i];
   setProgress(scr);
   if(scr.type==="info") return renderInfo(scr);
   if(scr.type==="choice") return renderChoice(scr);
   if(scr.type==="multi") return renderMulti(scr);
   if(scr.type==="form") return renderForm(scr);
   if(scr.type==="result") return renderResult();
+  if(scr.type==="result_pet") return renderPetResult();
 }
 function head(scr){
   return (scr.eyebrow?'<div class="eyebrow">'+scr.eyebrow+'</div>':'')+
@@ -298,12 +299,12 @@ function renderForm(scr){
 function backBtn(){return state.i>0?'<button class="btn ghost" onclick="back()">← Back</button>':'';}
 
 function pick(sid,oid){
-  if(sid==="path" && oid==="path_pet") return renderPet();
+  if(sid==="path" && oid==="path_pet") return startPet();
   state.answers[sid]=oid; render();
   setTimeout(next,180);
 }
 function toggleMulti(sid,oid){
-  var scr=SCREENS[state.i], cur=state.answers[sid]||[];
+  var scr=state.screens[state.i], cur=state.answers[sid]||[];
   if(scr.noneId){
     if(oid===scr.noneId){cur=[scr.noneId];}
     else{cur=cur.filter(function(x){return x!==scr.noneId;});
@@ -320,27 +321,120 @@ function toggleConsent(sid,el){
   var cur=state.answers[sid]||{}; cur.consent=!cur.consent; state.answers[sid]=cur; el.classList.toggle("sel");
 }
 function formInput(sid){
-  var scr=SCREENS[state.i], cur=state.answers[sid]||{};
+  var scr=state.screens[state.i], cur=state.answers[sid]||{};
   scr.fields.forEach(function(f){var e=document.getElementById("f_"+f.k); if(e)cur[f.k]=e.value;});
   state.answers[sid]=cur;
   var ok=(scr.require||[]).every(function(k){return (cur[k]||"").trim();});
   var b=document.getElementById("fnext"); if(b)b.disabled=!ok;
 }
 function canAdvance(){
-  var scr=SCREENS[state.i];
+  var scr=state.screens[state.i];
   if(scr.type==="multi"&&!scr.optional) return (state.answers[scr.id]||[]).length>0;
   if(scr.type==="form") return (scr.require||[]).every(function(k){return ((state.answers[scr.id]||{})[k]||"").trim();});
   return true;
 }
-function next(){ if(!canAdvance())return; if(state.i<SCREENS.length-1){state.i++;render();} }
-function back(){ if(state.i>0){state.i--;render();} }
+function next(){ if(!canAdvance())return; if(state.i<state.screens.length-1){state.i++;render();} }
+function back(){
+  if(state.screens===PET_SCREENS && state.i===0){
+    state.screens=SCREENS;
+    for(var j=0;j<SCREENS.length;j++){if(SCREENS[j].id==="path"){state.i=j;break;}}
+    render(); return;
+  }
+  if(state.i>0){state.i--;render();}
+}
 
-function renderPet(){
-  document.getElementById("pwrap").style.visibility="hidden";
-  stageEl.innerHTML='<div class="pet"><div class="emoji">🐾</div>'+
-    '<h1>Let\'s care for them together.</h1>'+
-    '<p class="lede" style="margin:0 auto 26px">Our team will build a personalized Pet Wellness plan for your companion at the front desk. Please bring this to our front desk — we can\'t wait to meet them.</p>'+
-    '<button class="btn ghost" onclick="back()">← Back</button></div>';
+/* ============ PET TRACK ============ */
+var PET_GOALS={
+  pet_goal_mobility:{label:"Mobility, arthritis & joint comfort", focus:"Hips, joints, spine & affected limbs", dose:"8–12 min per area · 2–3x / week", follow:"Re-check in 3–4 weeks", benefit:"may help support joint comfort and mobility"},
+  pet_goal_recovery:{label:"Recovery from injury or surgery", focus:"Injury or surgical site (once cleared)", dose:"6–10 min per site · 2–3x / week", follow:"Coordinated with your vet's timeline", benefit:"designed to support the body's natural recovery"},
+  pet_goal_calm:{label:"Anxiety & calming", focus:"Full-body, low-stress sessions", dose:"6–8 min · calm setting · 1–2x / week", follow:"As needed", benefit:"many pets settle and relax during sessions"},
+  pet_goal_senior:{label:"Senior vitality & energy", focus:"Hips, spine & general wellness", dose:"8–10 min · gentle · 2x / week", follow:"Monthly check-in", benefit:"may help support senior comfort and vitality"},
+  pet_goal_skin:{label:"Skin & coat health", focus:"Affected skin & coat areas", dose:"5–8 min per area · 2–3x / week", follow:"Re-check in 3 weeks", benefit:"may help support skin and coat health"},
+  pet_goal_general:{label:"General wellness & prevention", focus:"General wellness pass", dose:"6–8 min · 1x / week", follow:"A membership rhythm", benefit:"gentle, drug-free support for feeling their best"}
+};
+var PET_FLAG_SERIOUS=["petflag_tumor","petflag_pregnant","petflag_wound","petflag_surgery","petflag_photo","petflag_seizure"];
+var PET_SCREENS=[
+  {id:"pet_intro", type:"info", noProgress:true, eyebrow:"Pet Wellness Consultation",
+   title:"Let's build your companion's wellness plan. 🐾",
+   body:"A few quick questions so we can tailor gentle, drug-free support — the way they deserve. About a minute.", cta:"Let's begin"},
+  {id:"pet_q1", type:"form", title:"First, how do we reach you?",
+   fields:[{k:"name",label:"Your name"},{k:"email",label:"Email"},{k:"phone",label:"Mobile phone"}],
+   consent:"I'd like to receive my companion's plan and updates from Revive &amp; Glow.", require:["name"]},
+  {id:"pet_q2", type:"form", title:"What's your companion's name?",
+   fields:[{k:"petname",label:"Companion's name"}], require:["petname"]},
+  {id:"pet_q3", type:"choice", title:"Tell us about them.",
+   options:[{id:"pet_dog_sm",label:"Dog · small (under 25 lb)"},{id:"pet_dog_md",label:"Dog · medium (25–60 lb)"},{id:"pet_dog_lg",label:"Dog · large (60 lb+)"},{id:"pet_cat",label:"Cat"},{id:"pet_other",label:"Another companion"}]},
+  {id:"pet_q4", type:"choice", title:"How old are they?",
+   options:[{id:"pet_puppy",label:"Puppy / young (under 2)"},{id:"pet_adult",label:"Adult (2–7)"},{id:"pet_senior",label:"Senior (8+)"}]},
+  {id:"pet_q5", type:"choice", eyebrow:"Their goal", title:"What would you love to help them with most?",
+   options:[{id:"pet_goal_mobility",label:"Mobility, arthritis &amp; joint comfort"},{id:"pet_goal_recovery",label:"Recovery from injury or surgery"},{id:"pet_goal_calm",label:"Anxiety &amp; calming"},{id:"pet_goal_senior",label:"Senior vitality &amp; energy"},{id:"pet_goal_skin",label:"Skin &amp; coat health"},{id:"pet_goal_general",label:"General wellness &amp; prevention"}]},
+  {id:"pet_q6", type:"choice", title:"Have they tried red light or recovery therapy before?",
+   options:[{id:"pet_exp_yes",label:"Yes, before"},{id:"pet_exp_no",label:"First time"}]},
+  {id:"pet_safety_intro", type:"info", eyebrow:"A few health checks", title:"Their safety comes first. 🐾",
+   body:"Check anything that applies. If you're unsure, leave it and our team will review with you.", cta:"Continue"},
+  {id:"pet_q7", type:"multi", title:"Do any of these apply to them?", sub:"Check all that apply.", noneId:"petflag_none",
+   options:[{id:"petflag_tumor",label:"Known tumors, cancer or growths"},{id:"petflag_pregnant",label:"Pregnant or nursing"},{id:"petflag_wound",label:"Open wound, infection or hot spot at the treatment area"},{id:"petflag_surgery",label:"Surgery in the last 2 weeks"},{id:"petflag_photo",label:"On a light-sensitizing medication"},{id:"petflag_seizure",label:"Epilepsy or seizure disorder"},{id:"petflag_meds",label:"On other medication or under vet treatment"},{id:"petflag_none",label:"None of these apply"}]},
+  {id:"pet_q8", type:"choice", title:"Are they currently under a vet's care for this concern?",
+   options:[{id:"pet_vet_yes",label:"Yes"},{id:"pet_vet_no",label:"No"}]},
+  {id:"pet_result", type:"result_pet"}
+];
+function startPet(){ state.screens=PET_SCREENS; state.i=0; render(); }
+function computePet(){
+  var a=state.answers;
+  var flags=(a.pet_q7||[]).filter(function(f){return f!=="petflag_none";});
+  var vetCare=(a.pet_q8==="pet_vet_yes");
+  var otherSpecies=(a.pet_q3==="pet_other");
+  var serious=flags.some(function(f){return PET_FLAG_SERIOUS.indexOf(f)>=0;});
+  var assisted=(flags.length>0)||vetCare||otherSpecies;
+  var goal=PET_GOALS[a.pet_q5]||PET_GOALS.pet_goal_general;
+  var pn=((a.pet_q2||{}).petname||"").trim()||"your companion";
+  return {flags:flags, assisted:assisted, serious:serious, vetCare:vetCare, otherSpecies:otherSpecies, goal:a.pet_q5, g:goal, petName:pn};
+}
+function renderPetResult(){
+  var a=state.answers, r=computePet(), g=r.g, pn=r.petName;
+  window.assessmentResult={timestamp:"__SET_AT_SAVE__", path:"pet", answers:a, recommendation:r};
+  console.log("assessmentResult",window.assessmentResult);
+  var html='<div class="res-head"><div class="eyebrow">Pet wellness plan</div>';
+  if(r.assisted){
+    html+='<div class="assist"><h2>Let\'s have our team meet '+pn+' first. 🐾</h2><p>A quick hello helps us tailor the gentlest, safest session for them. We\'ll take great care of you both.</p></div>';
+  }
+  html+='<h1>'+pn+'’s Wellness Plan</h1><p class="lede">Built around one goal: <strong>'+g.label+'</strong>. Gentle, drug-free, and made just for them.</p></div>';
+  if(!r.serious){
+    html+='<div class="method-cards"><div class="mcard first"><div class="num">⭐</div><div><span class="tag-first">Star therapy</span><div class="mod">Pet Red Light Therapy</div><h3>'+g.focus+'</h3><p>Natural, non-invasive light therapy — '+g.benefit+'.</p></div></div></div>';
+    html+='<p class="support"><strong>Suggested rhythm:</strong> '+g.dose+'.</p>';
+    html+='<div class="addon" style="background:var(--green-2)"><h3>We\'ll check in on '+pn+'’s progress</h3><p>'+g.follow+' — and adjust as they improve.</p></div>';
+    html+='<div class="member"><div class="eyebrow">The sweetest way to heal</div><h2>Heal Together 🐾❤️</h2><ul><li>'+pn+' enjoys their red light session</li><li>You unwind with your own Revive Method™</li><li>Recovery, side by side</li></ul><div class="tier"><strong>Heal Together — $99</strong> <span style="color:rgba(244,239,230,.7);font-size:.85rem">(you + your companion, together)</span></div></div>';
+  }
+  html+='<div class="nav"><button class="btn primary" onclick="alert(\'Prototype: the front desk will book your companion.\')">Book at the front desk →</button></div>';
+  html+='<p class="disc">Take this to the front desk. These recommendations support general wellness and are not veterinary advice.</p>';
+  html+='<div class="toggle"><button class="btn link" onclick="renderPetDesk()">▦ Front desk view</button><button class="btn link" onclick="startOver()">↺ Start over</button></div>';
+  stageEl.innerHTML=html;
+}
+function renderPetDesk(){
+  var a=state.answers, r=computePet(), g=r.g, pn=r.petName, nm=(a.pet_q1||{});
+  var spMap={pet_dog_sm:"Dog · Small",pet_dog_md:"Dog · Medium",pet_dog_lg:"Dog · Large",pet_cat:"Cat",pet_other:"Other companion"};
+  var ageMap={pet_puppy:"Puppy/young",pet_adult:"Adult (2–7)",pet_senior:"Senior (8+)"};
+  var html='<div class="res-head"><div class="eyebrow">Front desk summary 🐾</div><h1 style="font-size:1.6rem">Pet booking sheet</h1></div>';
+  html+='<div class="desk">'+
+    '<div class="row"><span><span class="k">Guardian</span> '+(nm.name||"—")+'</span><span>🐾 PET</span></div>'+
+    '<div class="row"><span class="k">Contact</span><span>'+((nm.email||"—")+"  "+(nm.phone||""))+'</span></div>'+
+    '<div class="row"><span><span class="k">Pet</span> '+pn+' · '+(spMap[a.pet_q3]||"—")+' · '+(ageMap[a.pet_q4]||"—")+'</span></div>'+
+    '<div class="row"><span><span class="k">Goal</span> '+g.label+'</span></div>'+
+    '<div class="row"><span class="k">Plan</span><span style="text-align:right">'+(r.serious?"Pet Red Light — ON HOLD":"Pet Red Light Therapy")+'</span></div>'+
+    '<div class="row"><span class="k">Focus</span><span style="text-align:right">'+g.focus+'</span></div>'+
+    '<div class="row"><span class="k">Dose</span><span style="text-align:right">'+g.dose+'</span></div>'+
+    '<div class="row"><span class="k">Follow-up</span><span>'+g.follow+'</span></div>'+
+    '<div class="row"><span class="k">Upsell</span><span>Heal Together $99 · Pet Membership $149/mo</span></div>';
+  if(r.serious){
+    html+='<div class="safe alert">🚩 REQUEST VET CLEARANCE before red light session.<br>Codes: '+r.flags.join(", ")+'</div>';
+  } else if(r.assisted){
+    html+='<div class="safe warn">🟡 TEAM REVIEW first. '+(r.otherSpecies?"Species: other — assess case by case. ":"")+(r.vetCare?"Under vet care — coordinate. ":"")+'Codes: '+(r.flags.join(", ")||"none")+'</div>';
+  } else {
+    html+='<div class="safe ok">✅ SAFETY: NONE — proceed</div>';
+  }
+  html+='</div>';
+  html+='<div class="toggle"><button class="btn link" onclick="renderPetResult()">← Client view</button><button class="btn link" onclick="startOver()">↺ Start over</button></div>';
+  stageEl.innerHTML=html;
 }
 
 /* ============ RECOMMENDATION ============ */
@@ -477,7 +571,7 @@ function joinMembership(mode){
     '<p class="lede">Your plan: <strong>'+tt.name+' — '+tt.price+'</strong>.<br>'+linkline+'</p></div>'+
     '<div class="toggle"><button class="btn link" onclick="renderResult()">← Back to my plan</button><button class="btn link" onclick="startOver()">↺ Start over</button></div>';
 }
-function startOver(){state.i=0;state.answers={};state.chosenTier=undefined;render();}
+function startOver(){state.i=0;state.answers={};state.chosenTier=undefined;state.screens=SCREENS;render();}
 
 /* ============ KIOSK ============ */
 document.addEventListener("dblclick",function(e){e.preventDefault();});
