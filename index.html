@@ -124,6 +124,10 @@
     .hero-new strong { color: var(--gold); font-weight: 700; }
     .hero-new span { color: var(--gold); font-weight: 600; white-space: nowrap; }
     .hero-new:hover { background: rgba(185,134,63,0.2); transform: translateY(-1px); }
+    .hero-container { display: grid; grid-template-columns: 1.05fr 0.9fr; gap: 3.5rem; align-items: center; }
+    .hero-visual { display: flex; gap: 1rem; align-items: flex-start; }
+    .hero-visual img { width: 50%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top center; border-radius: 18px; box-shadow: var(--shadow); }
+    .hero-visual img:nth-child(2) { margin-top: 2.6rem; }
 
     /* ---------- SECTIONS ---------- */
     section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
@@ -311,6 +315,26 @@
     .founder-card p.fbio { font-size: 0.95rem; color: #5c6b60; font-weight: 300; max-width: 330px; margin: 0 auto; }
     @media (max-width: 640px) { .founder-grid { grid-template-columns: 1fr; gap: 2.2rem; max-width: 360px; } }
 
+    /* FAQ */
+    .faq { background: var(--cream); }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(47,74,60,0.12); }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 1.3rem 0; font-family: var(--serif); font-size: 1.25rem; color: var(--forest-deep); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: var(--gold); font-size: 1.5rem; line-height: 1; flex: 0 0 auto; }
+    .faq-item[open] summary::after { content: '\2212'; }
+    .faq-item p { padding: 0 0 1.4rem; color: #56655a; font-weight: 300; font-size: 0.98rem; }
+
+    /* Location / Find Us */
+    .location { background: var(--white); }
+    .location .container { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: center; }
+    .loc-info h2 { font-size: clamp(2rem, 4vw, 2.9rem); color: var(--forest-deep); margin-bottom: 1.1rem; }
+    .loc-info p { color: #56655a; font-weight: 300; margin-bottom: 0.45rem; }
+    .loc-info .loc-line { font-weight: 500; color: var(--forest-deep); font-size: 1.05rem; }
+    .loc-map { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(47,74,60,0.1); }
+    .loc-map iframe { width: 100%; height: 340px; border: 0; display: block; }
+    @media (max-width: 820px) { .location .container { grid-template-columns: 1fr; gap: 2rem; } }
+
     /* Reveal animation */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.in { opacity: 1; transform: none; }
@@ -333,6 +357,8 @@
       .nav-links a { padding: 0.95rem 0.2rem; font-size: 1rem; border-bottom: 1px solid rgba(47,74,60,0.08); }
       .nav-links a.nav-pill { text-align: center; margin: 0.7rem 0; padding: 0.75rem; }
       .nav-links a.btn { text-align: center; margin-top: 0.7rem; }
+      .hero-container { grid-template-columns: 1fr; gap: 2.4rem; }
+      .hero-visual { max-width: 440px; }
       .promise .container { grid-template-columns: 1fr; gap: 2.5rem; }
       .assessment .container { grid-template-columns: 1fr; gap: 2.5rem; }
       .pets .container { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -367,7 +393,7 @@
   <!-- HERO -->
   <header class="hero" id="top">
     <div class="hero-glow"></div>
-    <div class="container">
+    <div class="container hero-container">
       <div class="hero-inner">
         <span class="badge"><span class="dot"></span> Opening soon · Pinellas Park, FL</span>
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
@@ -378,6 +404,10 @@
         </div>
         <p class="hero-note">✦ Every journey begins with a complimentary wellness assessment.</p>
         <a href="#longevity" class="hero-new"><strong>✦ New</strong> Physician-guided longevity medicine, delivered <span>Explore →</span></a>
+      </div>
+      <div class="hero-visual">
+        <img src="founder-juliana.jpg" alt="Juliana Shewmaker, co-founder of Revive &amp; Glow Wellness" />
+        <img src="founder-thaysa.jpg" alt="Thaysa M Gomes, co-founder of Revive &amp; Glow Wellness" />
       </div>
     </div>
   </header>
@@ -714,6 +744,42 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Good to Know</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary>What is Revive &amp; Glow Wellness?</summary><p>A boutique recovery and longevity studio in Pinellas Park, FL. We bring red light therapy, infrared sauna, cold plunge, compression, whole body vibration, and more under one roof — designed to help you recover, restore, and feel your best.</p></details>
+        <details class="faq-item"><summary>Do I need an appointment?</summary><p>Yes. Sessions are by appointment so we can give you a calm, personalized experience. You'll be able to book online as soon as we open.</p></details>
+        <details class="faq-item"><summary>Is this medical treatment?</summary><p>No. Our services are for general wellness and relaxation. They are not medical care and are not intended to diagnose, treat, or cure any condition. Please consult your doctor before starting any new wellness routine.</p></details>
+        <details class="faq-item"><summary>Do I have to be an athlete?</summary><p>Not at all. Our studio is for everyone — athletes and runners, the active 60+ community, busy professionals, and anyone who simply wants to feel their best.</p></details>
+        <details class="faq-item"><summary>Can I really bring my dog?</summary><p>Yes! We offer Red Light Therapy for Dogs and our "Heal Together" experience, so you and your best friend can recover side by side. Wellness services for pets are for comfort and relaxation and are not a substitute for veterinary care.</p></details>
+        <details class="faq-item"><summary>What is the complimentary wellness assessment?</summary><p>Every journey starts with a body composition scan on our Tanita analyzer, plus AI-guided recommendations — so your plan is built around your goals and you can track real progress over time.</p></details>
+        <details class="faq-item"><summary>When do you open?</summary><p>We're opening soon in Pinellas Park. Join the waitlist to be the first to know and to lock in Founding Member rates for life.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="find-us">
+    <div class="container">
+      <div class="loc-info reveal">
+        <p class="eyebrow">Find Us</p>
+        <h2>Visit us in Pinellas Park</h2>
+        <p class="loc-line">9899 66th St N, Pinellas Park, FL 33782</p>
+        <p class="loc-line"><a href="tel:+17277764569" style="color:var(--gold);">(727) 776-4569</a></p>
+        <p style="margin-top:1rem;">In the heart of Tampa Bay. Opening soon — online booking available the moment we open.</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=9899+66th+St+N,+Pinellas+Park,+FL+33782" target="_blank" rel="noopener" class="btn" style="margin-top:1.6rem;">Get Directions →</a>
+      </div>
+      <div class="loc-map reveal">
+        <iframe src="https://maps.google.com/maps?q=9899%2066th%20St%20N%2C%20Pinellas%20Park%2C%20FL%2033782&amp;output=embed" loading="lazy" title="Revive &amp; Glow Wellness location map"></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- WAITLIST -->
   <section class="waitlist" id="waitlist">
     <div class="container">
@@ -750,6 +816,8 @@
           <a href="#assessment">Your Plan</a>
           <a href="#pets">For Pets</a>
           <a href="#membership">Membership</a>
+          <a href="#faq">FAQ</a>
+          <a href="#find-us">Find Us</a>
           <a href="#waitlist">Join the Waitlist</a>
         </div>
         <div class="footer-col">
