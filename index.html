@@ -120,9 +120,9 @@
     .hero p.lede { font-size: clamp(1.05rem, 1.8vw, 1.3rem); color: #48584d; max-width: 560px; margin-bottom: 2.5rem; font-weight: 300; }
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
     .hero-note { font-size: 0.85rem; color: var(--sage); margin-top: 1.6rem; }
-    .hero-new { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; padding: 0.5rem 1.05rem; border-radius: 999px; background: rgba(185,134,63,0.12); border: 1px solid rgba(185,134,63,0.38); font-size: 0.82rem; font-weight: 500; color: var(--forest-deep); transition: background 0.2s, transform 0.2s; }
+    .hero-new { display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.6rem; padding: 0.85rem 1.6rem; border-radius: 999px; background: rgba(185,134,63,0.14); border: 1.5px solid rgba(185,134,63,0.5); font-size: 1rem; font-weight: 500; color: var(--forest-deep); transition: background 0.2s, transform 0.2s; box-shadow: 0 8px 22px -12px rgba(185,134,63,0.55); }
     .hero-new strong { color: var(--gold); font-weight: 700; }
-    .hero-new span { color: var(--gold); font-weight: 600; white-space: nowrap; }
+    .hero-new span { color: var(--gold); font-weight: 700; white-space: nowrap; }
     .hero-new:hover { background: rgba(185,134,63,0.2); transform: translateY(-1px); }
     .hero-container { display: grid; grid-template-columns: 1.05fr 0.9fr; gap: 3.5rem; align-items: center; }
     .hero-visual { display: flex; gap: 1rem; align-items: flex-start; }
@@ -299,11 +299,9 @@
     .founding .perks { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
     .founding .perk { font-size: 0.82rem; font-weight: 500; color: var(--forest-deep); background: var(--sand); border-radius: 100px; padding: 0.5rem 1.1rem; }
 
-    /* Therapy guide preview (inside each therapy card) */
-    .therapy-guide { margin-top: auto; padding-top: 1.3rem; display: block; }
-    .therapy-guide .tg-thumb { display: block; height: 120px; background-size: cover; background-position: top center; border: 1px solid rgba(47,74,60,0.12); border-bottom: none; border-radius: 12px 12px 0 0; }
-    .therapy-guide .tg-label { display: block; text-align: center; padding: 0.55rem 0.8rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); background: var(--sand); border-radius: 0 0 12px 12px; transition: color 0.2s ease, background 0.2s ease; }
-    .therapy-guide:hover .tg-label { color: var(--ink); background: var(--gold-light); }
+    /* Therapy guide button (inside each therapy card) */
+    .therapy-guide { margin-top: 1.4rem; align-self: flex-start; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.62rem 1.2rem; border: 1.5px solid var(--gold); border-radius: 100px; color: var(--gold); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s ease, color 0.2s ease; }
+    .therapy-guide:hover { background: var(--gold); color: var(--ink); }
 
     /* Meet the Founders */
     .founders { background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%); }
@@ -393,7 +391,7 @@
   <!-- HERO -->
   <header class="hero" id="top">
     <div class="hero-glow"></div>
-    <div class="container hero-container">
+    <div class="container">
       <div class="hero-inner">
         <span class="badge"><span class="dot"></span> Opening soon · Pinellas Park, FL</span>
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
@@ -404,10 +402,6 @@
         </div>
         <p class="hero-note">✦ Every journey begins with a complimentary wellness assessment.</p>
         <a href="#longevity" class="hero-new"><strong>✦ New</strong> Physician-guided longevity medicine, delivered <span>Explore →</span></a>
-      </div>
-      <div class="hero-visual">
-        <img src="founder-juliana.jpg" alt="Juliana Shewmaker, co-founder of Revive &amp; Glow Wellness" />
-        <img src="founder-thaysa.jpg" alt="Thaysa M Gomes, co-founder of Revive &amp; Glow Wellness" />
       </div>
     </div>
   </header>
@@ -462,50 +456,35 @@
           <h3>Red Light Therapy</h3>
           <p class="kit">PlatinumLED BioMax</p>
           <p>Full-spectrum light to support skin, energy, and cellular recovery.</p>
-          <a class="therapy-guide" href="guide-red-light.jpg" target="_blank" rel="noopener">
-            <span class="tg-thumb" style="background-image:url('guide-red-light.jpg')"></span>
-            <span class="tg-label">View full guide →</span>
-          </a>
+          <a class="therapy-guide" href="guide-red-light.jpg" target="_blank" rel="noopener">📖 View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 3s1.5 2-.5 4 .5 4 .5 4M12 3s1.5 2-.5 4 .5 4 .5 4M16 3s1.5 2-.5 4 .5 4 .5 4M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/></svg></div>
           <h3>Infrared Sauna</h3>
           <p class="kit">Clearlight Sanctuary 2</p>
           <p>Deep, gentle heat to relax muscles, unwind, and sweat it out.</p>
-          <a class="therapy-guide" href="guide-infrared-sauna.jpg" target="_blank" rel="noopener">
-            <span class="tg-thumb" style="background-image:url('guide-infrared-sauna.jpg')"></span>
-            <span class="tg-label">View full guide →</span>
-          </a>
+          <a class="therapy-guide" href="guide-infrared-sauna.jpg" target="_blank" rel="noopener">📖 View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 8l6-6 6 6M4 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div>
           <h3>Cold Plunge</h3>
           <p class="kit">Nordic Wave</p>
           <p>An invigorating cold reset for circulation, focus, and resilience.</p>
-          <a class="therapy-guide" href="guide-cold-plunge.jpg" target="_blank" rel="noopener">
-            <span class="tg-thumb" style="background-image:url('guide-cold-plunge.jpg')"></span>
-            <span class="tg-label">View full guide →</span>
-          </a>
+          <a class="therapy-guide" href="guide-cold-plunge.jpg" target="_blank" rel="noopener">📖 View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2h8v6a4 4 0 0 1-8 0zM8 22h8v-6a4 4 0 0 0-8 0zM6 11h12"/></svg></div>
           <h3>Compression Therapy</h3>
           <p class="kit">Normatec</p>
           <p>Dynamic compression boots to flush fatigue and speed recovery.</p>
-          <a class="therapy-guide" href="guide-compression.jpg" target="_blank" rel="noopener">
-            <span class="tg-thumb" style="background-image:url('guide-compression.jpg')"></span>
-            <span class="tg-label">View full guide →</span>
-          </a>
+          <a class="therapy-guide" href="guide-compression.jpg" target="_blank" rel="noopener">📖 View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-7 4 14 2-7h4M18 9l3 3-3 3"/></svg></div>
           <h3>Whole Body Vibration</h3>
           <p class="kit">Recovery &amp; Mobility</p>
           <p>Vibration training to stimulate muscles, balance, and circulation.</p>
-          <a class="therapy-guide" href="guide-vibration.jpg" target="_blank" rel="noopener">
-            <span class="tg-thumb" style="background-image:url('guide-vibration.jpg')"></span>
-            <span class="tg-label">View full guide →</span>
-          </a>
+          <a class="therapy-guide" href="guide-vibration.jpg" target="_blank" rel="noopener">📖 View guide →</a>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9zM12 21v-4"/></svg></div>
