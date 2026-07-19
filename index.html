@@ -299,9 +299,16 @@
     .founding .perks { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
     .founding .perk { font-size: 0.82rem; font-weight: 500; color: var(--forest-deep); background: var(--sand); border-radius: 100px; padding: 0.5rem 1.1rem; }
 
-    /* Therapy guide button (inside each therapy card) */
-    .therapy-guide { margin-top: 1.4rem; align-self: flex-start; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.62rem 1.2rem; border: 1.5px solid var(--gold); border-radius: 100px; color: var(--gold); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s ease, color 0.2s ease; }
-    .therapy-guide:hover { background: var(--gold); color: var(--ink); }
+    /* Therapy "Learn more" expandable (real content inside each card) */
+    .therapy-more { margin-top: 1.3rem; border-top: 1px solid rgba(47,74,60,0.1); }
+    .therapy-more summary { list-style: none; cursor: pointer; padding-top: 1rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+    .therapy-more summary::-webkit-details-marker { display: none; }
+    .therapy-more summary::after { content: '+'; font-size: 1.2rem; line-height: 1; }
+    .therapy-more[open] summary::after { content: '\2212'; }
+    .therapy-more .tm-body { padding-top: 0.9rem; }
+    .therapy-more .tm-body p { font-size: 0.86rem; color: #5c6b60; font-weight: 300; margin-bottom: 0.55rem; }
+    .therapy-more .tm-body p:last-child { margin-bottom: 0; }
+    .therapy-more .tm-body strong { color: var(--forest-deep); font-weight: 600; }
 
     /* Meet the Founders */
     .founders { background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%); }
@@ -456,53 +463,116 @@
           <h3>Red Light Therapy</h3>
           <p class="kit">PlatinumLED BioMax</p>
           <p>Full-spectrum light to support skin, energy, and cellular recovery.</p>
-          <a class="therapy-guide" href="guide-red-light.jpg" target="_blank" rel="noopener">📖 View guide →</a>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>How it works.</strong> Red and near-infrared light is absorbed by your cells, supporting their natural energy production.</p>
+              <p><strong>May help support.</strong> Skin health, cellular energy, recovery, and overall wellness.</p>
+              <p><strong>What to expect.</strong> Relax in front of our full-spectrum LED panels. No heat, no downtime — just a few calm minutes.</p>
+              <p><strong>Session.</strong> About 10–15 minutes.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 3s1.5 2-.5 4 .5 4 .5 4M12 3s1.5 2-.5 4 .5 4 .5 4M16 3s1.5 2-.5 4 .5 4 .5 4M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/></svg></div>
           <h3>Infrared Sauna</h3>
           <p class="kit">Clearlight Sanctuary 2</p>
           <p>Deep, gentle heat to relax muscles, unwind, and sweat it out.</p>
-          <a class="therapy-guide" href="guide-infrared-sauna.jpg" target="_blank" rel="noopener">📖 View guide →</a>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>How it works.</strong> Infrared light gently warms your body directly, so you sweat deeply at a comfortable temperature.</p>
+              <p><strong>May help support.</strong> Relaxation, circulation, and post-workout recovery.</p>
+              <p><strong>What to expect.</strong> Sit back in a private infrared sauna, breathe, and unwind.</p>
+              <p><strong>Session.</strong> About 20–40 minutes.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 8l6-6 6 6M4 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div>
           <h3>Cold Plunge</h3>
           <p class="kit">Nordic Wave</p>
           <p>An invigorating cold reset for circulation, focus, and resilience.</p>
-          <a class="therapy-guide" href="guide-cold-plunge.jpg" target="_blank" rel="noopener">📖 View guide →</a>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>How it works.</strong> A brief cold-water immersion invigorates circulation and gives your body a refreshing reset.</p>
+              <p><strong>May help support.</strong> Recovery, alertness, mood, and resilience.</p>
+              <p><strong>What to expect.</strong> Ease in, breathe slowly, and stay for a comfortable time. Pairs perfectly with the sauna for contrast therapy.</p>
+              <p><strong>Session.</strong> About 2–5 minutes, water kept around 50–59°F.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2h8v6a4 4 0 0 1-8 0zM8 22h8v-6a4 4 0 0 0-8 0zM6 11h12"/></svg></div>
           <h3>Compression Therapy</h3>
           <p class="kit">Normatec</p>
           <p>Dynamic compression boots to flush fatigue and speed recovery.</p>
-          <a class="therapy-guide" href="guide-compression.jpg" target="_blank" rel="noopener">📖 View guide →</a>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>How it works.</strong> Dynamic air compression gently squeezes and releases along your legs to help you feel refreshed.</p>
+              <p><strong>May help support.</strong> Circulation and post-activity recovery — a favorite for runners and athletes.</p>
+              <p><strong>What to expect.</strong> Relax with the boots on and let them do the work. Read, rest, or listen to music.</p>
+              <p><strong>Session.</strong> About 20–30 minutes.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-7 4 14 2-7h4M18 9l3 3-3 3"/></svg></div>
           <h3>Whole Body Vibration</h3>
           <p class="kit">Recovery &amp; Mobility</p>
           <p>Vibration training to stimulate muscles, balance, and circulation.</p>
-          <a class="therapy-guide" href="guide-vibration.jpg" target="_blank" rel="noopener">📖 View guide →</a>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>How it works.</strong> A vibrating platform sends gentle signals through your body, engaging your muscles as you stand or move.</p>
+              <p><strong>May help support.</strong> Mobility, balance, circulation, and overall wellness.</p>
+              <p><strong>What to expect.</strong> Stand, hold gentle poses, or relax on the platform. Low-impact and easy.</p>
+              <p><strong>Session.</strong> About 10–15 minutes.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9zM12 21v-4"/></svg></div>
           <h3>Grounding</h3>
           <p class="kit">Restore &amp; Reconnect</p>
           <p>A calming practice to settle the nervous system and reconnect.</p>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>What it is.</strong> A quiet, grounding practice designed to help you slow down and reconnect.</p>
+              <p><strong>May help support.</strong> Relaxation and stress relief.</p>
+              <p><strong>What to expect.</strong> A settling moment for your nervous system — the perfect close to a session.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/><path d="M11 12h2M12 11v2"/></svg></div>
           <h3>Hydrogen Water</h3>
           <p class="kit">Hydrate &amp; Replenish</p>
           <p>Antioxidant-rich hydrogen water to refresh and support recovery.</p>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>What it is.</strong> Antioxidant-rich, hydrogen-infused water to help you rehydrate and refresh.</p>
+              <p><strong>May help support.</strong> Hydration and recovery — a simple, feel-good complement to any session.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
           <h3>Body Composition</h3>
           <p class="kit">Tanita RD-545</p>
           <p>Track real progress — muscle, hydration, and healthy aging metrics.</p>
+          <details class="therapy-more">
+            <summary>Learn more</summary>
+            <div class="tm-body">
+              <p><strong>What it is.</strong> A quick, precise scan on our Tanita analyzer measuring muscle mass, body fat, visceral fat, hydration, and metabolic age.</p>
+              <p><strong>Why it matters.</strong> It turns your progress into real numbers you can track over time — no guesswork.</p>
+              <p><strong>Good to know.</strong> Complimentary on your first visit.</p>
+            </div>
+          </details>
         </div>
         <div class="therapy reveal" style="background:linear-gradient(135deg,var(--forest-deep),var(--forest));color:var(--cream);border-color:transparent;justify-content:center;">
           <h3 style="color:var(--gold-light);">More to explore</h3>
