@@ -345,6 +345,27 @@
     .loc-map iframe { width: 100%; height: 340px; border: 0; display: block; }
     @media (max-width: 820px) { .location .container { grid-template-columns: 1fr; gap: 2rem; } }
 
+    /* Chat helper */
+    .chat-fab { position: fixed; bottom: 1.3rem; right: 1.3rem; z-index: 200; width: 60px; height: 60px; border-radius: 50%; background: var(--forest-deep); color: var(--cream); border: none; cursor: pointer; box-shadow: 0 12px 30px -8px rgba(34,58,46,0.55); display: flex; align-items: center; justify-content: center; font-size: 1.55rem; transition: transform 0.2s ease, background 0.2s ease; }
+    .chat-fab:hover { transform: translateY(-2px); background: var(--forest); }
+    .chat-panel { position: fixed; bottom: 1.3rem; right: 1.3rem; z-index: 201; width: min(370px, calc(100vw - 2rem)); height: min(560px, calc(100vh - 2.6rem)); background: var(--cream); border-radius: 20px; box-shadow: 0 30px 70px -20px rgba(34,58,46,0.5); display: none; flex-direction: column; overflow: hidden; border: 1px solid rgba(47,74,60,0.12); }
+    .chat-panel.open { display: flex; }
+    .chat-head { background: var(--forest-deep); color: var(--cream); padding: 0.95rem 1.1rem; display: flex; align-items: center; gap: 0.65rem; }
+    .chat-head .ch-logo { width: 34px; height: 34px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; color: var(--ink); font-family: var(--serif); font-weight: 700; font-size: 1.1rem; flex: 0 0 auto; }
+    .chat-head .ch-t { font-family: var(--serif); font-size: 1.1rem; line-height: 1; }
+    .chat-head .ch-s { font-size: 0.68rem; color: var(--gold-light); }
+    .chat-head .ch-close { margin-left: auto; background: none; border: none; color: rgba(247,243,234,0.85); font-size: 1.3rem; cursor: pointer; line-height: 1; }
+    .chat-body { flex: 1; overflow-y: auto; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.65rem; }
+    .chat-msg { max-width: 88%; padding: 0.7rem 0.95rem; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; }
+    .chat-msg.bot { background: var(--white); color: var(--ink); align-self: flex-start; border: 1px solid rgba(47,74,60,0.08); border-bottom-left-radius: 4px; }
+    .chat-msg.user { background: var(--forest); color: var(--cream); align-self: flex-end; border-bottom-right-radius: 4px; }
+    .chat-msg.bot strong { color: var(--forest-deep); }
+    .chat-msg.bot a { color: var(--gold); font-weight: 600; }
+    .chat-replies { display: flex; flex-wrap: wrap; gap: 0.45rem; padding: 0.3rem 1.1rem 1.1rem; }
+    .chat-reply { background: var(--white); border: 1.5px solid var(--gold); color: var(--forest-deep); border-radius: 100px; padding: 0.48rem 0.85rem; font-size: 0.78rem; font-weight: 500; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
+    .chat-reply:hover { background: var(--gold); color: var(--ink); }
+    @media (max-width: 480px) { .chat-panel { bottom: 0; right: 0; width: 100vw; height: 100dvh; border-radius: 0; } }
+
     /* Reveal animation */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.in { opacity: 1; transform: none; }
@@ -902,6 +923,18 @@
     </div>
   </footer>
 
+  <!-- CHAT HELPER -->
+  <button class="chat-fab" id="chatFab" aria-label="Chat with us" onclick="toggleChat()">💬</button>
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Revive & Glow assistant">
+    <div class="chat-head">
+      <span class="ch-logo">R</span>
+      <div><div class="ch-t">Revive &amp; Glow</div><div class="ch-s">Ask about our services</div></div>
+      <button class="ch-close" aria-label="Close chat" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-replies" id="chatReplies"></div>
+  </div>
+
   <script>
     // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
@@ -956,6 +989,58 @@
       }
       return false;
     }
+
+    // ---- Chat helper (scripted, info-only — no health advice) ----
+    const CHAT_START = { msg: "Hi there! 🌿 I'm here to help you learn about Revive &amp; Glow. What would you like to know?", replies: ['therapies','memberships','pets','included','assessment','location','join'] };
+    const CHAT = {
+      therapies: { msg: "We offer red light therapy, infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, hydrogen water, and body composition analysis — all designed to help you recover and feel your best. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','assessment','join','back'] },
+      memberships: { msg: "We have three membership tiers:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no contract<br><strong>Revive Commit</strong> — $159/mo · 8 sessions · 6-month (best value)<br><strong>Revive Elite</strong> — $249/mo · 20 sessions · priority booking<br><br>Prefer no commitment? Single session $39, 5-pack $175, 10-pack $320. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','back'] },
+      pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> (first session $29), a <strong>$149/mo pet membership</strong>, and our <strong>“Heal Together” package — $99</strong>, where your dog relaxes with red light beside you. <a href=\"#pets\">Learn more →</a>", replies: ['memberships','join','back'] },
+      included: { msg: "Every membership includes: AI Wellness Concierge, monthly body composition analysis, monthly progress report, wellness score, muscle / body fat / visceral fat / metabolic age tracking, personalized recommendations, and online booking.", replies: ['memberships','assessment','join','back'] },
+      assessment: { msg: "Every journey starts with a <strong>complimentary wellness assessment</strong> — a body composition scan plus personalized recommendations, so your plan is built around your goals. <a href=\"#assessment\">See how it works →</a>", replies: ['memberships','join','back'] },
+      location: { msg: "We're at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay). Opening soon — join the waitlist to be first in. <a href=\"#find-us\">Get directions →</a>", replies: ['join','memberships','back'] },
+      join: { msg: "Join our <strong>waitlist</strong> to become one of our first 50 Founding Members — you lock in our best rates for life plus priority booking. <a href=\"#waitlist\">Join the waitlist →</a>", replies: ['memberships','pets','back'] }
+    };
+    const CHAT_LABELS = { therapies:'Our therapies', memberships:'Memberships & pricing', pets:'Pet wellness 🐾', included:"What's included", assessment:'Free assessment', location:'Where are you?', join:'How do I join?', back:'↩ More questions' };
+
+    function toggleChat() {
+      const p = document.getElementById('chatPanel');
+      const f = document.getElementById('chatFab');
+      const open = p.classList.toggle('open');
+      f.style.display = open ? 'none' : 'flex';
+      if (open && !p.dataset.started) { p.dataset.started = '1'; chatBot(CHAT_START); }
+    }
+    function chatBot(node) {
+      const body = document.getElementById('chatBody');
+      const m = document.createElement('div');
+      m.className = 'chat-msg bot';
+      m.innerHTML = node.msg;
+      body.appendChild(m);
+      body.scrollTop = body.scrollHeight;
+      const r = document.getElementById('chatReplies');
+      r.innerHTML = '';
+      node.replies.forEach((k) => {
+        const b = document.createElement('button');
+        b.className = 'chat-reply';
+        b.textContent = CHAT_LABELS[k] || k;
+        b.onclick = () => chatPick(k);
+        r.appendChild(b);
+      });
+    }
+    function chatPick(k) {
+      const body = document.getElementById('chatBody');
+      const u = document.createElement('div');
+      u.className = 'chat-msg user';
+      u.textContent = CHAT_LABELS[k] || k;
+      body.appendChild(u);
+      body.scrollTop = body.scrollHeight;
+      if (k === 'back') { setTimeout(() => chatBot(CHAT_START), 220); return; }
+      setTimeout(() => chatBot(CHAT[k]), 220);
+    }
+    // close chat when a link inside it is tapped (lets the page scroll to the section)
+    document.getElementById('chatBody').addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') { toggleChat(); }
+    });
   </script>
 </body>
 </html>
