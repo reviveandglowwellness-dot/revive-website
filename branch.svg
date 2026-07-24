@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <defs>
+    <!-- one leaf, pointing along +x, length 62 -->
+    <g id="leaf">
+      <path d="M0 0 C 15 -12, 45 -12, 62 0 C 45 12, 15 12, 0 0 Z"
+            fill="#7d9a86" fill-opacity=".18" stroke="#b9863f" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M4 0 C 20 -1.6, 44 -1.6, 59 0" stroke="#b9863f" stroke-width="1" stroke-opacity=".65" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <!-- stem -->
+  <path d="M24 372 C 76 316, 116 250, 148 186 C 180 122, 224 78, 282 44"
+        stroke="#b9863f" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- leaves alternating along the stem, tapering toward the tip -->
+  <use href="#leaf" transform="translate(61,328) rotate(-6)   scale(1)"/>
+  <use href="#leaf" transform="translate(94,282) rotate(-108) scale(1.05)"/>
+  <use href="#leaf" transform="translate(122,234) rotate(-14)  scale(1)"/>
+  <use href="#leaf" transform="translate(148,186) rotate(-106) scale(.95)"/>
+  <use href="#leaf" transform="translate(180,134) rotate(0)    scale(.85)"/>
+  <use href="#leaf" transform="translate(219,90)  rotate(-86)  scale(.75)"/>
+  <use href="#leaf" transform="translate(257,60)  rotate(-38)  scale(.6)"/>
+
+  <!-- gold specks, echoing the brand board -->
+  <circle cx="88" cy="352" r="2.6" fill="#dab06a"/>
+  <circle cx="140" cy="300" r="1.8" fill="#dab06a" fill-opacity=".8"/>
+  <circle cx="196" cy="196" r="2.2" fill="#dab06a" fill-opacity=".9"/>
+  <circle cx="236" cy="146" r="1.6" fill="#dab06a" fill-opacity=".75"/>
+  <circle cx="272" cy="96"  r="2.4" fill="#dab06a"/>
+</svg>
