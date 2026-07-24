@@ -6,12 +6,12 @@
   <!-- build: founders + waitlist live -->
   <meta name="build" content="2026-07-14-founders" />
   <title>Revive &amp; Glow Wellness — Recovery &amp; Longevity Studio · Pinellas Park, FL</title>
-  <meta name="description" content="A boutique recovery & longevity studio opening soon in Pinellas Park, FL. Infrared sauna, cold plunge, red light therapy, compression, hydrogen water, human + pet wellness, and AI-personalized plans — designed to help you recover, restore, and feel your best." />
+  <meta name="description" content="A boutique recovery & longevity studio opening August 22, 2026 in Pinellas Park, FL. Infrared sauna, cold plunge, red light therapy, compression, hydrogen water, human + pet wellness, and AI-personalized plans — designed to help you recover, restore, and feel your best." />
   <link rel="canonical" href="https://www.reviveandglowwellness.ai/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <meta property="og:title" content="Revive & Glow Wellness — Recovery & Longevity Studio" />
-  <meta property="og:description" content="Opening soon in Pinellas Park, FL. Recover. Restore. Glow. Join the waitlist." />
+  <meta property="og:description" content="Opening August 22, 2026 in Pinellas Park, FL. Recover. Restore. Glow. Join the waitlist." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.reviveandglowwellness.ai/" />
   <meta property="og:image" content="https://www.reviveandglowwellness.ai/founder-thaysa.jpg" />
@@ -56,15 +56,16 @@
     body::before {
       content: '';
       position: absolute;
-      inset: 0 auto 0 0;
+      inset: 0 auto auto 0;
       width: 50%;
+      height: min(100vh, 1000px);
       z-index: 0;
       pointer-events: none;
       background-color: #fcf7ed;
       background-image: url('bg-botanical.png');
       background-position: top left;
       background-size: 100vw auto;
-      background-repeat: repeat-y;
+      background-repeat: no-repeat;
     }
     body {
       font-family: var(--sans);
@@ -81,6 +82,7 @@
     }
     h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
     a { color: inherit; text-decoration: none; }
+    img, iframe { max-width: 100%; }
     .container { width: min(1180px, 90vw); margin: 0 auto; }
     .eyebrow {
       font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
@@ -216,7 +218,8 @@
     .hero-note { font-size: 0.85rem; color: var(--sage); margin-top: 0.8rem; }
     .hero-new { display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.6rem; padding: 0.85rem 1.6rem; border-radius: 999px; background: rgba(185,134,63,0.14); border: 1.5px solid rgba(185,134,63,0.5); font-size: 1rem; font-weight: 500; color: var(--forest-deep); transition: background 0.2s, transform 0.2s; box-shadow: 0 8px 22px -12px rgba(185,134,63,0.55); }
     .hero-new strong { color: var(--gold); font-weight: 700; }
-    .hero-new span { color: var(--gold); font-weight: 700; white-space: nowrap; }
+    .hero-new-copy { color: var(--forest-deep); font-weight: 500; }
+    .hero-new-link { color: var(--gold); font-weight: 700; white-space: nowrap; }
     .hero-new:hover { background: rgba(185,134,63,0.2); transform: translateY(-1px); }
     .hero-container { display: grid; grid-template-columns: 1.05fr 0.9fr; gap: 3.5rem; align-items: center; }
     .hero-visual { display: flex; gap: 1rem; align-items: flex-start; }
@@ -227,8 +230,8 @@
     /* overflow-x:clip contains the branch artwork that bleeds past the left/right
        edges. `clip` (not hidden) so vertical overflow and sticky children are
        untouched; relying on body{overflow-x:hidden} alone is unreliable on iOS. */
-    section { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; overflow-x: clip; }
-    .section-head { max-width: 640px; margin-bottom: 3.5rem; }
+    section { padding: clamp(3rem, 5vw, 4.75rem) 0; position: relative; overflow-x: clip; }
+    .section-head { max-width: 640px; margin-bottom: 2.5rem; }
     .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
     .section-head h2 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); color: var(--forest-deep); margin-bottom: 1.1rem; }
     .section-head p { font-size: 1.08rem; color: #56655a; font-weight: 300; }
@@ -249,7 +252,7 @@
     .stat .lbl { font-size: 0.82rem; color: rgba(247,243,234,0.7); letter-spacing: 0.03em; }
 
     /* Method */
-    .method { background: linear-gradient(180deg, rgba(241,234,219,0.72) 0%, rgba(221,208,182,0.80) 100%); }
+    .method { background: rgba(252, 247, 237, 0.78); }
     .method-track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; margin-top: 1rem; }
     .method-step {
       background: var(--white); border-radius: var(--radius); padding: 2rem 1.4rem;
@@ -286,7 +289,7 @@
     .who-card p { color: rgba(247,243,234,0.8); font-size: 0.92rem; font-weight: 300; }
 
     /* Membership */
-    .members { text-align: center; background: linear-gradient(180deg, rgba(221,208,182,0.80) 0%, rgba(241,234,219,0.72) 100%); }
+    .members { text-align: center; background: rgba(252, 247, 237, 0.78); }
     .members .pill-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
     .pill { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: 100px; padding: 0.9rem 1.8rem; font-weight: 500; color: var(--forest-deep); box-shadow: 0 6px 20px -12px rgba(34,58,46,0.3); }
     .pill.elite { background: var(--forest-deep); color: var(--gold-light); border-color: var(--forest-deep); }
@@ -297,7 +300,7 @@
     .waitlist .container { position: relative; z-index: 2; max-width: 620px; text-align: center; }
     .waitlist .eyebrow { color: var(--gold-light); }
     .waitlist h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--white); margin-bottom: 1.1rem; }
-    .waitlist p { color: rgba(247,243,234,0.8); font-weight: 300; margin-bottom: 2.4rem; }
+    .waitlist p { color: rgba(247,243,234,0.8); font-weight: 300; margin-bottom: 1.8rem; }
     .form-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
     .form-row input {
       flex: 1; min-width: 240px; padding: 1rem 1.4rem; border-radius: 100px;
@@ -309,8 +312,8 @@
     .form-msg { margin-top: 1.3rem; font-size: 0.9rem; min-height: 1.2rem; color: var(--gold-light); }
 
     /* Footer */
-    footer { background: var(--forest-deep); color: rgba(247,243,234,0.7); padding: 3.5rem 0 2.5rem; }
-    .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2.5rem; }
+    footer { position: relative; z-index: 1; background: var(--forest-deep); color: rgba(247,243,234,0.7); padding: 3rem 0 2.25rem; }
+    .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; }
     .footer-top .logo { color: var(--cream); }
     .footer-col h4 { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; font-weight: 600; }
     .footer-col p, .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,243,234,0.65); margin-bottom: 0.4rem; }
@@ -318,7 +321,7 @@
     .disclaimer { font-size: 0.74rem; color: rgba(247,243,234,0.45); border-top: 1px solid rgba(228,200,140,0.15); padding-top: 1.8rem; line-height: 1.6; }
 
     /* Assessment */
-    .assessment { background: linear-gradient(160deg, rgba(249,245,236,0.72) 0%, rgba(239,230,212,0.80) 100%); }
+    .assessment { background: rgba(252, 247, 237, 0.78); }
     .assessment .container { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 4rem; align-items: center; }
     .assess-steps { display: flex; flex-direction: column; gap: 1rem; }
     .assess-step {
@@ -372,15 +375,18 @@
     .tier.dark .price span { color: rgba(247,243,234,0.7); }
 
     /* Included-in-every-membership band */
-    .includes { max-width: 940px; margin: 0 auto 3rem; background: var(--forest-deep); color: var(--cream); border-radius: var(--radius); padding: clamp(2rem, 4vw, 2.8rem); }
+    .includes { max-width: 940px; margin: 0 auto 2.25rem; background: var(--forest-deep); color: var(--cream); border-radius: var(--radius); padding: clamp(1.75rem, 3vw, 2.35rem); }
     .includes-title { font-family: var(--serif); font-size: 1.6rem; color: var(--gold-light); text-align: center; margin-bottom: 1.6rem; }
     .includes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem 2.2rem; }
-    .includes-grid span { font-size: 0.92rem; color: rgba(247,243,234,0.9); display: flex; gap: 0.65rem; align-items: baseline; }
-    .includes-grid span::before { content: '✓'; color: var(--gold-light); font-weight: 700; }
-    @media (max-width: 560px) { .includes-grid { grid-template-columns: 1fr; } }
+    .includes-grid span { font-size: 0.92rem; color: rgba(247,243,234,0.9); display: flex; gap: 0.65rem; align-items: flex-start; text-align: left; }
+    .includes-grid span::before { content: '✓'; color: var(--gold-light); font-weight: 700; flex: 0 0 1rem; width: 1rem; text-align: center; }
+    @media (max-width: 560px) {
+      .includes-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+      .includes-grid span { line-height: 1.45; }
+    }
 
     /* À la carte */
-    .ala-head { text-align: center; margin-top: 3rem; font-family: var(--serif); font-size: 1.5rem; color: var(--forest-deep); }
+    .ala-head { text-align: center; margin-top: 2.2rem; font-family: var(--serif); font-size: 1.5rem; color: var(--forest-deep); }
     .alacarte { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; }
     .ala { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: 14px; padding: 1.1rem 1.7rem; display: flex; flex-direction: column; align-items: center; min-width: 155px; box-shadow: 0 6px 20px -14px rgba(34,58,46,0.3); transition: transform 0.25s ease; }
     .ala:hover { transform: translateY(-4px); }
@@ -393,8 +399,8 @@
     .lv-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(218,176,106,0.22); border-radius: 14px; padding: 1.4rem 1.3rem; text-align: left; }
     .lv-card h4 { font-family: var(--serif); font-size: 1.12rem; color: var(--gold-light); margin-bottom: 0.5rem; font-weight: 600; }
     .lv-card p { font-size: 0.85rem; line-height: 1.55; color: rgba(247,243,234,0.78); font-weight: 300; }
-    .founding { background: rgba(221,208,182,0.80); }
-    .founding .wrap { max-width: 820px; margin: 0 auto; background: var(--white); border: 1.5px dashed var(--gold); border-radius: var(--radius); padding: clamp(2.5rem, 5vw, 3.5rem); text-align: center; box-shadow: var(--shadow); }
+    .founding { background: rgba(252, 247, 237, 0.78); }
+    .founding .wrap { max-width: 820px; margin: 0 auto; background: var(--white); border: 1.5px dashed var(--gold); border-radius: var(--radius); padding: clamp(2rem, 3.5vw, 2.8rem); text-align: center; box-shadow: var(--shadow); }
     .founding .big { font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 4rem); color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
     .founding h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); color: var(--forest-deep); margin-bottom: 1rem; }
     .founding p { color: #56655a; font-weight: 300; max-width: 560px; margin: 0 auto 1.6rem; }
@@ -413,7 +419,7 @@
     .therapy-more .tm-body strong { color: var(--forest-deep); font-weight: 600; }
 
     /* Meet the Founders */
-    .founders { background: linear-gradient(180deg, rgba(241,234,219,0.72) 0%, rgba(221,208,182,0.80) 100%); }
+    .founders { background: rgba(252, 247, 237, 0.78); }
     .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 820px; margin: 0 auto; }
     .founder-card { text-align: center; }
     .founder-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 1.4rem; }
@@ -423,7 +429,7 @@
     @media (max-width: 640px) { .founder-grid { grid-template-columns: 1fr; gap: 2.2rem; max-width: 360px; } }
 
     /* FAQ */
-    .faq { background: rgba(241,234,219,0.62); }
+    .faq { background: rgba(252, 247, 237, 0.78); }
     .faq-list { max-width: 760px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid rgba(47,74,60,0.12); }
     .faq-item summary { list-style: none; cursor: pointer; padding: 1.3rem 0; font-family: var(--serif); font-size: 1.25rem; color: var(--forest-deep); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
@@ -433,7 +439,7 @@
     .faq-item p { padding: 0 0 1.4rem; color: #56655a; font-weight: 300; font-size: 0.98rem; }
 
     /* Location / Find Us */
-    .location { background: rgba(251,247,239,0.70); }
+    .location { background: rgba(252, 247, 237, 0.78); }
     .location .container { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: center; }
     .loc-info h2 { font-size: clamp(2rem, 4vw, 2.9rem); color: var(--forest-deep); margin-bottom: 1.1rem; }
     .loc-info p { color: #56655a; font-weight: 300; margin-bottom: 0.45rem; }
@@ -472,9 +478,25 @@
        scrolls into view. --t holds the resting transform (rotation / mirroring),
        --op the resting opacity, so each placement can differ. */
     .deco {
+      display: block;
       position: absolute; pointer-events: none; user-select: none; z-index: 0;
       opacity: 0; transform: var(--t, none) translateY(38px) scale(.92);
       transition: opacity 1.5s ease, transform 1.6s cubic-bezier(.22,.9,.3,1);
+    }
+    .promise .deco {
+      width: min(180px, 15vw) !important;
+      right: 1.25rem !important;
+      bottom: 1.25rem !important;
+    }
+    .waitlist .deco:first-of-type {
+      width: min(360px, 24vw) !important;
+      left: 1rem !important;
+      bottom: 0.5rem !important;
+    }
+    .waitlist .deco:nth-of-type(2) {
+      width: min(330px, 22vw) !important;
+      right: 1rem !important;
+      top: 0.5rem !important;
     }
     .deco.in { opacity: var(--op, .4); transform: var(--t, none); }
     .deco .b { display: block; width: 100%; height: auto; }
@@ -497,8 +519,21 @@
       body {
         background-position: top center;
         background-size: auto min(150vw, 1180px);
+        background-image:
+          linear-gradient(rgba(252, 247, 237, 0.72), rgba(252, 247, 237, 0.72)),
+          url('bg-botanical.png');
       }
       body::before { content: none; }
+      .deco.in { opacity: 0.16; }
+      .deco-light.in { opacity: 0.22; }
+      .promise .deco { width: min(105px, 27vw) !important; }
+      .waitlist .deco:first-of-type,
+      .waitlist .deco:nth-of-type(2) {
+        width: min(125px, 30vw) !important;
+      }
+      .promise .deco { right: 0.75rem !important; bottom: 0.75rem !important; }
+      .waitlist .deco:first-of-type { left: 0.75rem !important; bottom: 0.75rem !important; }
+      .waitlist .deco:nth-of-type(2) { right: 0.75rem !important; top: 0.75rem !important; }
       .nav-wordmark { width: clamp(132px, 35vw, 170px); }
       nav { padding: 1rem min(5vw, 3rem); }
       #nav.scrolled { padding: 0.7rem min(5vw, 3rem); }
@@ -528,6 +563,8 @@
       .method-track { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
+      section { padding: 2.75rem 0; }
+      .section-head { margin-bottom: 2rem; }
       .brand-sub { letter-spacing: 0.3em; text-indent: 0.3em; }
       .hero-brand-logo { width: min(82vw, 340px); }
       .hero { padding: calc(var(--nav-h, 72px) + 0.75rem) 0 3rem; }
@@ -537,10 +574,26 @@
       .promise-stats { grid-template-columns: 1fr; }
       .hero-cta { flex-direction: column; align-items: stretch; }
       .hero-cta .btn { text-align: center; }
+      .hero-new {
+        display: flex;
+        width: min(100%, 410px);
+        margin: 1.25rem auto 0;
+        padding: 1.15rem 1.25rem;
+        border-radius: 26px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.55rem;
+        text-align: center;
+      }
+      .hero-new strong,
+      .hero-new-copy,
+      .hero-new-link { display: block; width: 100%; }
+      .form-row input { min-width: 0; width: 100%; flex-basis: 100%; }
+      .chat-fab { width: 52px; height: 52px; right: 0.8rem; bottom: 0.8rem; }
     }
     /* ---------- COACHING (Patricia) ---------- */
-    .coaching { background: rgba(251,247,239,0.70); }
-    .coaching-meet { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: center; margin-bottom: 3.6rem; }
+    .coaching { background: rgba(252, 247, 237, 0.78); }
+    .coaching-meet { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: center; margin-bottom: 2.75rem; }
     .coach-photo { aspect-ratio: 4/5; border-radius: var(--radius); background: linear-gradient(160deg, var(--sand), var(--sage-soft)); border: 1px solid rgba(47,74,60,0.12); box-shadow: var(--shadow); display: grid; place-items: center; text-align: center; padding: 2rem; overflow: hidden; }
     .coach-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
     .coach-photo .ph { color: var(--forest-deep); font-family: var(--sans); font-size: 0.82rem; font-weight: 500; }
@@ -632,11 +685,10 @@
           <path d="M130 175 C 114 152, 114 136, 130 114 C 146 136, 146 152, 130 175 Z"/>
         </g>
       </svg>
-          </svg>
           <span class="brand-name">Revive <span>&amp;</span> Glow</span>
           <span class="brand-sub">Wellness</span>
         </span>
-        <span class="badge"><span class="dot"></span> Opening soon · Pinellas Park, FL</span>
+        <span class="badge"><span class="dot"></span> Opening August 22, 2026 · Pinellas Park, FL</span>
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
         <p class="lede">A boutique recovery &amp; longevity studio in the heart of Tampa Bay — where science-backed therapies help you move better, feel stronger, and age well, in a space designed to feel like a breath.</p>
         <div class="hero-cta">
@@ -645,14 +697,14 @@
         </div>
         <a href="#membership" class="hero-price">Memberships from $159/month &nbsp;·&nbsp; Single sessions from $39</a>
         <p class="hero-note">✦ Every journey begins with a complimentary wellness assessment.</p>
-        <a href="#longevity" class="hero-new"><strong>✦ New</strong> Physician-guided longevity medicine, delivered <span>Explore →</span></a>
+        <a href="#longevity" class="hero-new"><strong>✦ New</strong><span class="hero-new-copy">Physician-guided longevity medicine, delivered</span><span class="hero-new-link">Explore →</span></a>
       </div>
     </div>
   </header>
 
   <!-- PROMISE -->
   <section class="promise">
-    <div class="deco deco-light" aria-hidden="true" style="--t:rotate(188deg);width:min(240px,21vw);bottom:30px;right:-85px"><img class="b" src="branch.svg" alt="" /></div>
+    <div class="deco deco-light" aria-hidden="true" style="--t:rotate(188deg);width:min(240px,21vw);bottom:30px;right:-85px"><img class="b" src="gold-branch.png" alt="" /></div>
     <div class="container">
       <div class="reveal">
         <p class="eyebrow">Recovery &amp; Longevity</p>
@@ -902,7 +954,7 @@
       <div class="wrap reveal">
         <div class="big">50</div>
         <h2>Become a Founding Member</h2>
-        <p>We're welcoming our first 50 members before we open. Founders help shape the studio — and keep their perks for life.</p>
+        <p>We're welcoming our first 50 members before our August 22 opening. Founders help shape the studio — and keep their perks for life.</p>
         <div class="perks">
           <span class="perk">✦ Founding rates locked in</span>
           <span class="perk">✦ Priority booking at launch</span>
@@ -1175,7 +1227,7 @@
         <details class="faq-item"><summary>Do I have to be an athlete?</summary><p>Not at all. Our studio is for everyone — athletes and runners, the active 60+ community, busy professionals, and anyone who simply wants to feel their best.</p></details>
         <details class="faq-item"><summary>Can I really bring my dog?</summary><p>Yes! We offer Red Light Therapy for Dogs and our "Heal Together" experience, so you and your best friend can recover side by side. Wellness services for pets are for comfort and relaxation and are not a substitute for veterinary care.</p></details>
         <details class="faq-item"><summary>What is the complimentary wellness assessment?</summary><p>Every journey starts with a body composition scan on our Tanita analyzer, plus AI-guided recommendations — so your plan is built around your goals and you can track real progress over time.</p></details>
-        <details class="faq-item"><summary>When do you open?</summary><p>We're opening soon in Pinellas Park. Join the waitlist to be the first to know and to lock in Founding Member rates for life.</p></details>
+        <details class="faq-item"><summary>When do you open?</summary><p>We open August 22, 2026 in Pinellas Park. Join the waitlist for early access and to lock in Founding Member rates for life.</p></details>
       </div>
     </div>
   </section>
@@ -1188,7 +1240,7 @@
         <h2>Visit us in Pinellas Park</h2>
         <p class="loc-line">9899 66th St N, Pinellas Park, FL 33782</p>
         <p class="loc-line"><a href="tel:+17277764569" style="color:var(--gold);">(727) 776-4569</a></p>
-        <p style="margin-top:1rem;">In the heart of Tampa Bay. Opening soon — online booking available the moment we open.</p>
+        <p style="margin-top:1rem;">In the heart of Tampa Bay. Opening August 22, 2026 — online booking will be available as soon as we open.</p>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=9899+66th+St+N,+Pinellas+Park,+FL+33782" target="_blank" rel="noopener" class="btn" style="margin-top:1.6rem;">Get Directions →</a>
       </div>
       <div class="loc-map reveal">
@@ -1199,12 +1251,12 @@
 
   <!-- WAITLIST -->
   <section class="waitlist" id="waitlist">
-    <div class="deco deco-light" aria-hidden="true" style="--t:rotate(-4deg);width:min(250px,22vw);bottom:25px;left:-55px"><img class="b" src="branch.svg" alt="" /></div>
-    <div class="deco deco-light" aria-hidden="true" style="--t:rotate(184deg);width:min(230px,20vw);top:25px;right:-45px"><img class="b" src="branch.svg" alt="" /></div>
+    <div class="deco deco-light" aria-hidden="true" style="--t:rotate(-4deg);width:min(250px,22vw);bottom:25px;left:-55px"><img class="b" src="gold-branch.png" alt="" /></div>
+    <div class="deco deco-light" aria-hidden="true" style="--t:rotate(184deg);width:min(230px,20vw);top:25px;right:-45px"><img class="b" src="gold-branch.png" alt="" /></div>
     <div class="container">
-      <p class="eyebrow reveal">Opening Soon</p>
+      <p class="eyebrow reveal">Opening August 22, 2026</p>
       <h2 class="reveal">Be the first to glow.</h2>
-      <p class="reveal">Join the waitlist for early access, founding-member perks, and an invitation to book before we open our doors in Pinellas Park.</p>
+      <p class="reveal">Join the waitlist for early access, founding-member perks, and an invitation to book before we open our doors on August 22.</p>
       <form class="reveal" id="waitlistForm" onsubmit="return handleWaitlist(event)">
         <input type="hidden" name="access_key" value="8f36e2b3-90b0-4305-b44b-d35c21717a3e" />
         <input type="hidden" name="subject" value="New Revive & Glow waitlist signup 🌿" />
@@ -1226,7 +1278,7 @@
       <div class="footer-top">
         <div>
           <a href="#top" class="logo">Revive <span>&amp;</span> Glow</a>
-          <p style="margin-top:0.8rem;max-width:280px;">A recovery &amp; longevity studio — opening soon in Pinellas Park, Florida.</p>
+          <p style="margin-top:0.8rem;max-width:280px;">A recovery &amp; longevity studio — opening August 22, 2026 in Pinellas Park, Florida.</p>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
@@ -1243,7 +1295,7 @@
           <h4>Visit</h4>
           <p>9899 66th St N</p>
           <p>Pinellas Park, FL 33782</p>
-          <p>Opening 2026</p>
+          <p>Opening August 22, 2026</p>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
@@ -1347,7 +1399,7 @@
       pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> (first session $29), a <strong>$149/mo pet membership</strong>, and our <strong>“Heal Together” package — $99</strong>, where your dog relaxes with red light beside you. <a href=\"#pets\">Learn more →</a>", replies: ['memberships','join','contact','back'] },
       included: { msg: "Every membership includes: AI Wellness Concierge, monthly body composition analysis, monthly progress report, wellness score, muscle / body fat / visceral fat / metabolic age tracking, personalized recommendations, and online booking.", replies: ['memberships','assessment','join','contact','back'] },
       assessment: { msg: "Every journey starts with a <strong>complimentary wellness assessment</strong> — a body composition scan plus personalized recommendations, so your plan is built around your goals. <a href=\"#assessment\">See how it works →</a>", replies: ['memberships','join','contact','back'] },
-      location: { msg: "We're at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay). Opening soon — join the waitlist to be first in. <a href=\"#find-us\">Get directions →</a>", replies: ['join','memberships','contact','back'] },
+      location: { msg: "We're at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay). We open August 22, 2026 — join the waitlist for early access. <a href=\"#find-us\">Get directions →</a>", replies: ['join','memberships','contact','back'] },
       join: { msg: "Join our <strong>waitlist</strong> to become one of our first 50 Founding Members — you lock in our best rates for life plus priority booking. <a href=\"#waitlist\">Join the waitlist →</a>", replies: ['memberships','pets','contact','back'] },
       contact: { msg: "Of course — we're happy to help personally! 💬 Reach us directly:<br><br>📲 <a href=\"https://wa.me/17277764569?text=Hi!%20I%20have%20a%20question%20about%20Revive%20%26%20Glow.\" target=\"_blank\" rel=\"noopener\">WhatsApp us</a><br>💬 <a href=\"sms:+17277764569\">Text us</a><br>📞 <a href=\"tel:+17277764569\">Call (727) 776-4569</a><br>✉️ <a href=\"mailto:reviveandglowwellness@gmail.com\">Email us</a><br><br>We'll get right back to you!", replies: ['back'] }
     };
