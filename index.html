@@ -403,6 +403,30 @@
       .hero-cta { flex-direction: column; align-items: stretch; }
       .hero-cta .btn { text-align: center; }
     }
+    /* ---------- COACHING (Patricia) ---------- */
+    .coaching { background: var(--white); }
+    .coaching-meet { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: center; margin-bottom: 3.6rem; }
+    .coach-photo { aspect-ratio: 4/5; border-radius: var(--radius); background: linear-gradient(160deg, var(--sand), var(--sage-soft)); border: 1px solid rgba(47,74,60,0.12); box-shadow: var(--shadow); display: grid; place-items: center; text-align: center; padding: 2rem; overflow: hidden; }
+    .coach-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
+    .coach-photo .ph { color: var(--forest-deep); font-family: var(--sans); font-size: 0.82rem; font-weight: 500; }
+    .coach-photo .ph .ico { font-size: 2rem; display: block; margin-bottom: 0.5rem; opacity: 0.55; }
+    .coach-photo .ph small { display: block; font-size: 0.72rem; color: #5c6b60; margin-top: 0.4rem; font-weight: 400; }
+    .coach-bio h3 { font-size: 2.3rem; color: var(--forest-deep); margin-bottom: 0.3rem; }
+    .coach-bio .frole { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 1.2rem; }
+    .coach-bio p { font-size: 0.95rem; color: #5c6b60; font-weight: 300; margin-bottom: 1rem; }
+    .coach-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+    .coach-badges span { background: var(--cream); border: 1px solid rgba(47,74,60,0.12); border-radius: 999px; padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 500; color: var(--forest); display: flex; align-items: center; gap: 0.5rem; }
+    .coach-badges span::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--gold); }
+    .coach-sub { text-align:center; max-width: 640px; margin: 0 auto 2rem; }
+    .coach-sub h3 { font-size: 1.9rem; color: var(--forest-deep); margin-bottom: 0.5rem; }
+    .coach-sub p { color: #5c6b60; font-weight: 300; }
+    .coach-loop { grid-template-columns: repeat(4, 1fr) !important; }
+    .coach-price-lead { font-family: var(--serif); font-size: 1.35rem; color: var(--forest-deep); line-height: 1.1; margin-bottom: 0.2rem; }
+    .coach-price-note { font-size: 0.82rem; color: #5c6b60; font-weight: 300; margin-bottom: 1.4rem; }
+    .coach-disclaimer { text-align:center; font-size: 0.82rem; color: #8a9389; max-width: 64ch; margin: 3rem auto 0; }
+    @media (max-width: 860px){ .coach-loop { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (max-width: 820px){ .coaching-meet { grid-template-columns: 1fr; gap: 2rem; } .coach-photo { max-width: 330px; margin: 0 auto; } }
+    @media (max-width: 520px){ .coach-loop { grid-template-columns: 1fr !important; } }
   </style>
 </head>
 <body>
@@ -416,6 +440,7 @@
       <a href="#longevity" class="nav-pill">Longevity Rx</a>
       <a href="#assessment">Your Plan</a>
       <a href="#pets">For Pets</a>
+      <a href="#coaching">Coaching</a>
       <a href="#membership">Membership</a>
       <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
     </div>
@@ -734,6 +759,127 @@
           <p class="fbio">Passionate about longevity and whole-family wellness — making sure every guest, and every pet, leaves feeling their best.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- COACHING (Patricia) -->
+  <section class="coaching" id="coaching">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="eyebrow">New · Train With Us</p>
+        <h2>Coaching with Patricia Junqueira</h2>
+        <p>Train with intention. Recover with science. Personalized triathlon, running, and health coaching — then bounce back faster with the therapies you already love at Revive &amp; Glow.</p>
+      </div>
+
+      <!-- Meet Patricia -->
+      <div class="coaching-meet reveal">
+        <div class="coach-photo">
+          <img src="coach-patricia.jpg" alt="Patricia Junqueira, Ironman triathlete and coach at Revive &amp; Glow Wellness, running on the beach" loading="lazy" />
+        </div>
+        <div class="coach-bio">
+          <p class="eyebrow" style="margin-bottom:0.6rem;">Meet Your Coach</p>
+          <h3>Patricia Junqueira</h3>
+          <p class="frole">Triathlon · Running · Health Coach</p>
+          <p>Patricia is an <strong>Ironman triathlete</strong> and a triathlon, running, and health coach with a passion for helping <strong>women 40 and over</strong> train with purpose. She knows firsthand what it takes to balance big endurance goals with real life — coaching women to build strength and stamina while honoring how their bodies change and thrive with age.</p>
+          <p>Whether you're chasing a first 5K, a marathon PR, or your first triathlon finish line, she designs coaching around <em>your</em> life, your goals, and your body — pairing evidence-based training with a whole-person view of wellness.</p>
+          <div class="coach-badges">
+            <span>Ironman triathlete</span>
+            <span>Specializing in women 40+</span>
+            <span>NASM-trained</span>
+            <span>Dr. Sears Wellness Institute</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="coach-sub reveal">
+        <h3>Coaching built around your goals</h3>
+        <p>Three specialties, one philosophy — train the athlete <em>and</em> the whole person.</p>
+      </div>
+      <div class="therapy-grid reveal">
+        <div class="therapy">
+          <div class="icon" style="font-size:1.5rem;">🏊</div>
+          <h3>Triathlon</h3>
+          <div class="kit">Swim · Bike · Run</div>
+          <p>Periodized to bring you to the start line strong and the finish line smiling. Sprint to full-distance plans, brick workouts, transitions, and race-day pacing strategy.</p>
+        </div>
+        <div class="therapy">
+          <div class="icon" style="font-size:1.5rem;">👟</div>
+          <h3>Running</h3>
+          <div class="kit">5K to Marathon</div>
+          <p>Training that builds durability, not just mileage. Progressive, injury-aware plans with form, cadence, and pacing guidance — plus strength work to keep you running.</p>
+        </div>
+        <div class="therapy">
+          <div class="icon" style="font-size:1.5rem;">🌱</div>
+          <h3>Health Coaching</h3>
+          <div class="kit">Lifestyle · Energy · Recovery</div>
+          <p>The foundation that makes every workout count: everyday fueling habits, sleep, stress, and recovery for the 40+ body — sustainable lifestyle change, L.E.A.N.-based wellness support.</p>
+        </div>
+      </div>
+
+      <!-- Train + Recover loop (the differentiator) -->
+      <div class="coach-sub reveal" style="margin-top:3.6rem;">
+        <p class="eyebrow" style="text-align:center;">Why Coach + Recover Together</p>
+        <h3>The Revive &amp; Glow advantage</h3>
+        <p>Most athletes train hard and hope to recover. Our members do both — on purpose.</p>
+      </div>
+      <div class="method-track coach-loop reveal">
+        <div class="method-step"><div class="n">01</div><h3>Train</h3><p>A personalized plan from Patricia, built for your goal race and your life.</p></div>
+        <div class="method-step"><div class="n">02</div><h3>Recover</h3><p>Cold plunge, compression, infrared sauna, and red light to bounce back faster.</p></div>
+        <div class="method-step"><div class="n">03</div><h3>Track</h3><p>Body composition and progress markers so you can see it working.</p></div>
+        <div class="method-step"><div class="n">04</div><h3>Glow</h3><p>Show up to race day strong, healthy, and ready — then keep going.</p></div>
+      </div>
+
+      <!-- Packages -->
+      <div class="coach-sub reveal" style="margin-top:3.6rem;">
+        <p class="eyebrow" style="text-align:center;">Coaching Packages</p>
+        <h3>Choose your level of support</h3>
+        <p>Add coaching to your Revive &amp; Glow membership and pair every training block with the recovery it deserves.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier reveal">
+          <div class="tier-tag">🌿 Structure &amp; a plan</div>
+          <h3>Kickstart</h3>
+          <div class="coach-price-lead">Free consult to start</div>
+          <div class="coach-price-note">Personalized pricing per plan</div>
+          <ul>
+            <li>Personalized training plan</li>
+            <li>Goal &amp; schedule assessment</li>
+            <li>Plan walk-through call</li>
+            <li>Email support for questions</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-gold">Book a Free Consult</a>
+        </div>
+        <div class="tier featured reveal">
+          <div class="tier-tag">🌟 Best value</div>
+          <h3>Coached Monthly</h3>
+          <div class="coach-price-lead">Free consult to start</div>
+          <div class="coach-price-note">Ongoing, fully supported coaching</div>
+          <ul>
+            <li>Everything in Kickstart</li>
+            <li>Weekly plan adjustments</li>
+            <li>Biweekly check-in calls</li>
+            <li>Direct messaging access</li>
+            <li>Recovery guidance built in</li>
+          </ul>
+          <a href="#waitlist" class="btn">Book a Free Consult</a>
+        </div>
+        <div class="tier reveal">
+          <div class="tier-tag">🏆 Full-service</div>
+          <h3>Race Ready</h3>
+          <div class="coach-price-lead">Free consult to start</div>
+          <div class="coach-price-note">Full training block to your goal event</div>
+          <ul>
+            <li>Everything in Coached Monthly</li>
+            <li>Full periodized race build</li>
+            <li>Race-day &amp; fueling strategy</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-gold">Book a Free Consult</a>
+        </div>
+      </div>
+
+      <p class="coach-disclaimer">Coaching supports general fitness and wellness goals. It is not medical, physical-therapy, or nutrition-therapy care, and is not a substitute for advice from your physician. Always consult your doctor before beginning a new training program.</p>
     </div>
   </section>
 
