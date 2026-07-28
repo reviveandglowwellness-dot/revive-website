@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PNŌĒ Metabolic Testing — VO₂ Max, Metabolism &amp; Longevity | Revive &amp; Glow Wellness</title>
+  <meta name="description" content="Clinical-grade metabolic breath analysis in Pinellas Park, FL. Measure your VO₂ max, resting metabolic rate, fat-vs-carb burning, and metabolic fitness age — then turn the numbers into a personalized wellness, nutrition, and training plan." />
+  <link rel="canonical" href="https://www.reviveandglowwellness.ai/pnoe.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:title" content="PNŌĒ Metabolic Testing — Know your metabolism | Revive & Glow Wellness" />
+  <meta property="og:description" content="VO₂ max, resting metabolic rate, fat-burning efficiency, and metabolic fitness age — measured by breath, in Pinellas Park, FL. Recover. Restore. Glow." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.reviveandglowwellness.ai/pnoe.html" />
+  <meta property="og:image" content="https://www.reviveandglowwellness.ai/founder-thaysa.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #1b241e;
+      --forest: #2f4a3c;
+      --forest-deep: #223a2e;
+      --sage: #7d9a86;
+      --sage-soft: #a9bfae;
+      --cream: #f1eadb;
+      --sand: #ddd0b6;
+      --gold: #b9863f;
+      --gold-light: #dab06a;
+      --terracotta: #c17a5a;
+      --white: #fbf7ef;
+      --shadow: 0 20px 60px -20px rgba(34, 58, 46, 0.35);
+      --radius: 20px;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans); color: var(--ink); background: var(--cream);
+      line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90vw); margin: 0 auto; }
+    .eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: var(--gold); margin-bottom: 1.1rem; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem min(5vw, 3rem);
+      background: rgba(247, 243, 234, 0.72);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(47, 74, 60, 0.08);
+    }
+    .logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--forest-deep); letter-spacing: 0.01em; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--forest); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .btn {
+      display: inline-block; font-family: var(--sans); font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 0.02em; cursor: pointer; padding: 0.85rem 1.8rem; border-radius: 100px;
+      border: none; background: var(--forest-deep); color: var(--cream);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -10px rgba(34,58,46,0.5); background: var(--forest); }
+    .btn-gold { background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-light); }
+    @media (max-width: 780px) { .nav-links a.hide-sm { display: none; } }
+
+    /* HERO */
+    .hero {
+      position: relative; padding: 9rem 0 5rem; overflow: hidden;
+      background:
+        radial-gradient(120% 90% at 85% 10%, rgba(228, 200, 140, 0.35) 0%, transparent 55%),
+        radial-gradient(100% 100% at 10% 90%, rgba(125, 154, 134, 0.30) 0%, transparent 55%),
+        linear-gradient(160deg, #f9f5ec 0%, #eee5d3 100%);
+    }
+    .hero .container { display: grid; grid-template-columns: 1.05fr 0.9fr; gap: 3.5rem; align-items: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; background: rgba(255,253,248,0.7);
+      border: 1px solid rgba(200,161,90,0.4); color: var(--forest-deep); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.5rem 1.1rem; border-radius: 100px;
+      margin-bottom: 1.6rem; backdrop-filter: blur(6px);
+    }
+    .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta); box-shadow: 0 0 0 4px rgba(193,122,90,0.2); }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); color: var(--forest-deep); margin-bottom: 1.4rem; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p.lede { font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: #48584d; max-width: 540px; margin-bottom: 2.2rem; font-weight: 300; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .hero-note { font-size: 0.85rem; color: var(--sage); margin-top: 1.5rem; }
+
+    /* Hero metric card */
+    .metric-card {
+      background: var(--white); border: 1px solid rgba(47,74,60,0.08); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 2rem 1.9rem;
+    }
+    .metric-card .mc-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.3rem; }
+    .metric-card .mc-head .t { font-family: var(--serif); font-size: 1.4rem; color: var(--forest-deep); }
+    .metric-card .mc-head .b { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gold); border: 1px solid rgba(185,134,63,0.4); padding: 0.3rem 0.6rem; border-radius: 100px; }
+    .metric-row { display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 0; border-bottom: 1px solid rgba(47,74,60,0.08); }
+    .metric-row:last-child { border-bottom: none; }
+    .metric-row .k { font-size: 0.9rem; color: #56655a; }
+    .metric-row .v { font-family: var(--serif); font-size: 1.5rem; color: var(--forest-deep); font-weight: 600; }
+    .metric-row .v small { font-family: var(--sans); font-size: 0.7rem; color: var(--sage); font-weight: 500; }
+    .metric-card .mc-note { font-size: 0.68rem; color: var(--sage); margin-top: 1.1rem; font-weight: 300; }
+
+    /* SECTIONS */
+    section { padding: clamp(4rem, 9vw, 7rem) 0; }
+    .section-head { max-width: 660px; margin: 0 auto 3.2rem; text-align: center; }
+    .section-head h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); color: var(--forest-deep); margin-bottom: 1.1rem; }
+    .section-head p { font-size: 1.06rem; color: #56655a; font-weight: 300; }
+
+    /* Measures grid */
+    .measure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+    .measure {
+      background: var(--white); border-radius: var(--radius); padding: 2rem 1.9rem;
+      border: 1px solid rgba(47,74,60,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    }
+    .measure:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(200,161,90,0.4); }
+    .measure .ic { font-size: 1.8rem; display: block; margin-bottom: 1rem; }
+    .measure h3 { font-size: 1.45rem; color: var(--forest-deep); margin-bottom: 0.5rem; }
+    .measure p { font-size: 0.92rem; color: #5c6b60; font-weight: 300; }
+
+    /* Longevity band (dark) */
+    .band { background: linear-gradient(135deg, var(--forest-deep), var(--forest)); color: var(--cream); }
+    .band .eyebrow { color: var(--gold-light); }
+    .band h2 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.2rem; }
+    .band p { color: rgba(247,243,234,0.85); font-weight: 300; font-size: 1.05rem; margin-bottom: 1rem; }
+    .band .container { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: center; }
+    .band .quote { background: rgba(255,255,255,0.05); border: 1px solid rgba(228,200,140,0.18); border-left: 4px solid var(--gold-light); border-radius: 16px; padding: 1.8rem; }
+    .band .quote p { font-family: var(--serif); font-size: 1.5rem; color: var(--white); line-height: 1.3; margin-bottom: 0.6rem; }
+    .band .quote span { font-size: 0.8rem; color: rgba(247,243,234,0.65); }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3rem; }
+    .step { background: var(--white); border: 1px solid rgba(47,74,60,0.08); border-radius: var(--radius); padding: 2rem 1.6rem; box-shadow: 0 8px 30px -20px rgba(34,58,46,0.35); }
+    .step .n { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); background: linear-gradient(135deg, var(--gold-light), var(--gold)); margin-bottom: 1rem; }
+    .step h3 { font-size: 1.25rem; color: var(--forest-deep); margin-bottom: 0.4rem; }
+    .step p { font-size: 0.88rem; color: #5c6b60; font-weight: 300; }
+    @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+
+    /* Get band (cream) */
+    .get { background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%); }
+    .get-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.3rem; }
+    .get-card { background: var(--white); border: 1px solid rgba(47,74,60,0.08); border-radius: var(--radius); padding: 1.9rem; box-shadow: 0 8px 30px -22px rgba(34,58,46,0.3); }
+    .get-card .ic { font-size: 1.6rem; display: block; margin-bottom: 0.8rem; }
+    .get-card h3 { font-size: 1.3rem; color: var(--forest-deep); margin-bottom: 0.4rem; }
+    .get-card p { font-size: 0.9rem; color: #5c6b60; font-weight: 300; }
+
+    /* Who row */
+    .who-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+    .who-chip { background: rgba(255,255,255,0.05); border: 1px solid rgba(228,200,140,0.18); border-radius: 16px; padding: 1.5rem; }
+    .who-chip h4 { color: var(--gold-light); font-size: 1.3rem; margin-bottom: 0.4rem; }
+    .who-chip p { color: rgba(247,243,234,0.82); font-size: 0.88rem; font-weight: 300; margin: 0; }
+
+    /* CTA */
+    .cta { background: var(--ink); color: var(--cream); position: relative; overflow: hidden; text-align: center; }
+    .cta::before { content:''; position:absolute; inset:0; background: radial-gradient(70% 80% at 50% 0%, rgba(200,161,90,0.22) 0%, transparent 60%); }
+    .cta .container { position: relative; z-index: 2; max-width: 660px; }
+    .cta .eyebrow { color: var(--gold-light); }
+    .cta h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); color: var(--white); margin-bottom: 1.1rem; }
+    .cta p { color: rgba(247,243,234,0.82); font-weight: 300; margin-bottom: 2rem; }
+    .cta .pairs { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .cta .pair { background: rgba(255,255,255,0.06); border: 1px solid rgba(228,200,140,0.2); border-radius: 100px; padding: 0.7rem 1.3rem; font-size: 0.85rem; color: rgba(247,243,234,0.85); }
+
+    /* Pricing */
+    .pricing { background: linear-gradient(160deg, #f9f5ec 0%, #efe6d4 100%); }
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1rem; }
+    .price-card { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: var(--radius); padding: 2.4rem 2rem; box-shadow: 0 10px 40px -24px rgba(34,58,46,0.35); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .price-card.featured { border: 2px solid var(--gold); box-shadow: 0 18px 50px -22px rgba(200,161,90,0.45); }
+    .price-card .pc-tag { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--gold); margin-bottom: 0.8rem; }
+    .price-card h3 { font-size: 1.6rem; color: var(--forest-deep); margin-bottom: 0.3rem; }
+    .price-card .pc-amount { font-family: var(--serif); font-size: 2.6rem; color: var(--forest-deep); font-weight: 600; line-height: 1; margin: 0.5rem 0 0.7rem; }
+    .price-card .pc-amount small { font-family: var(--sans); font-size: 0.8rem; color: var(--sage); font-weight: 500; }
+    .price-card .pc-sub { font-size: 0.9rem; color: #5c6b60; font-weight: 300; margin-bottom: 1.1rem; }
+    .price-card .pc-member { font-size: 0.82rem; color: var(--gold); font-weight: 600; margin-top: auto; }
+    .price-note { text-align: center; max-width: 660px; margin: 2.2rem auto 0; font-size: 0.9rem; color: #56655a; font-weight: 300; }
+    @media (max-width: 860px) { .price-grid { grid-template-columns: 1fr; } }
+
+    /* Footer */
+    footer { background: var(--forest-deep); color: rgba(247,243,234,0.7); padding: 3.5rem 0 2.5rem; }
+    .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2.5rem; }
+    .footer-top .logo { color: var(--cream); }
+    .footer-col h4 { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; font-weight: 600; }
+    .footer-col p, .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,243,234,0.65); margin-bottom: 0.4rem; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .disclaimer { font-size: 0.74rem; color: rgba(247,243,234,0.45); border-top: 1px solid rgba(228,200,140,0.15); padding-top: 1.8rem; line-height: 1.6; }
+
+    @media (max-width: 820px) {
+      .hero .container, .band .container { grid-template-columns: 1fr; }
+      .hero { padding-top: 7.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Revive <span>&amp;</span> Glow</a>
+    <div class="nav-links">
+      <a href="index.html" class="hide-sm">← Main site</a>
+      <a href="#what" class="hide-sm">What it measures</a>
+      <a href="#how" class="hide-sm">How it works</a>
+      <a href="index.html#waitlist" class="btn btn-gold">Join the Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div>
+        <span class="badge"><span class="dot"></span> New · Metabolic Testing · Pinellas Park, FL</span>
+        <h1>Stop guessing.<br><em>Know your metabolism.</em></h1>
+        <p class="lede">Introducing <strong>PNŌĒ</strong> — clinical-grade breath analysis that reveals how your body actually burns fuel, how fit your heart and lungs are, and how well you're aging on the inside. Then we turn your numbers into a plan you can feel.</p>
+        <div class="hero-cta">
+          <a href="index.html#waitlist" class="btn btn-gold">Book Your Metabolic Assessment</a>
+          <a href="#what" class="btn" style="background:transparent;color:var(--forest-deep);border:1.5px solid var(--forest-deep);">See what it measures</a>
+        </div>
+        <p class="hero-note">✦ One breath test. A blueprint for how you train, eat, and recover.</p>
+      </div>
+      <div class="metric-card" aria-hidden="true">
+        <div class="mc-head">
+          <span class="t">Your Metabolic Report</span>
+          <span class="b">Sample</span>
+        </div>
+        <div class="metric-row"><span class="k">VO₂ Max · cardio fitness</span><span class="v">42 <small>ml/kg/min</small></span></div>
+        <div class="metric-row"><span class="k">Resting Metabolic Rate</span><span class="v">1,480 <small>cal/day</small></span></div>
+        <div class="metric-row"><span class="k">Primary fuel at rest</span><span class="v">Fat <small>68%</small></span></div>
+        <div class="metric-row"><span class="k">Metabolic fitness age</span><span class="v">34 <small>yrs</small></span></div>
+        <p class="mc-note">Illustrative example. Your report reflects your own measured results.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHAT IT MEASURES -->
+  <section id="what">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">One Test, A Full Picture</p>
+        <h2>What PNŌĒ reveals about you</h2>
+        <p>You breathe into a mask while we analyze the air you exhale. From that, PNŌĒ maps the metrics that drive energy, weight, performance, and healthy aging.</p>
+      </div>
+      <div class="measure-grid">
+        <div class="measure">
+          <span class="ic">🫁</span>
+          <h3>VO₂ Max</h3>
+          <p>Your cardiorespiratory fitness — how well your body delivers and uses oxygen. One of the most studied markers of overall fitness and healthy aging.</p>
+        </div>
+        <div class="measure">
+          <span class="ic">🔥</span>
+          <h3>Resting Metabolic Rate</h3>
+          <p>Exactly how many calories your body burns at rest — the real number to build nutrition around, instead of a generic online estimate.</p>
+        </div>
+        <div class="measure">
+          <span class="ic">⚖️</span>
+          <h3>Fat vs. Carb Burning</h3>
+          <p>Whether you burn mostly fat or carbs at rest and in motion — the key to smarter fat-burning, energy, and endurance.</p>
+        </div>
+        <div class="measure">
+          <span class="ic">❤️</span>
+          <h3>Heart &amp; Training Zones</h3>
+          <p>Your personalized heart-rate zones, so every workout — easy or hard — lands exactly where it should for the result you want.</p>
+        </div>
+        <div class="measure">
+          <span class="ic">🌬️</span>
+          <h3>Breathing Efficiency</h3>
+          <p>How efficiently you breathe under effort — an often-overlooked driver of energy, stamina, and recovery.</p>
+        </div>
+        <div class="measure">
+          <span class="ic">⏳</span>
+          <h3>Metabolic Fitness Age</h3>
+          <p>A single, motivating snapshot of how your metabolism and fitness compare to your calendar age — and a baseline to improve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / LONGEVITY BAND -->
+  <section class="band">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Why It Matters</p>
+        <h2>The number longevity experts watch most.</h2>
+        <p>Cardiorespiratory fitness — your VO₂ max — is one of the strongest, most-studied signals of long-term health and vitality. The encouraging part: it's trainable. You can't improve what you don't measure, and PNŌĒ gives you the real starting line.</p>
+        <p>Pair your results with our recovery therapies, coaching, and body-composition tracking, and you have a complete loop: measure, move, recover, and watch the numbers move with you.</p>
+      </div>
+      <div class="quote">
+        <p>"You can't manage what you don't measure."</p>
+        <span>Your metabolism, made visible — and improvable.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Simple &amp; Supported</p>
+        <h2>How your assessment works</h2>
+        <p>Comfortable, non-invasive, and about how you'll actually use the results.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Breathe</h3><p>Relax and breathe normally through a light mask for a short, comfortable test — at rest and, if you'd like, in motion.</p></div>
+        <div class="step"><div class="n">2</div><h3>Analyze</h3><p>PNŌĒ reads the oxygen and CO₂ in your breath to build your complete metabolic and fitness profile.</p></div>
+        <div class="step"><div class="n">3</div><h3>Your Blueprint</h3><p>We walk you through your report and turn it into clear next steps — how to fuel, how to train, and where to focus.</p></div>
+        <div class="step"><div class="n">4</div><h3>Re-Test &amp; Track</h3><p>Come back to measure your progress and see the numbers improve — proof your plan is working.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="get">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">You Walk Away With</p>
+        <h2>Numbers you can actually use</h2>
+        <p>Not a data dump — a personalized, plain-English plan built around your body.</p>
+      </div>
+      <div class="get-grid">
+        <div class="get-card"><span class="ic">🎯</span><h3>Your true calorie needs</h3><p>Nutrition targets built on your measured metabolic rate — the end of one-size-fits-all guesswork.</p></div>
+        <div class="get-card"><span class="ic">🏃‍♀️</span><h3>Personalized training zones</h3><p>Exact heart-rate zones for fat-burning, endurance, and performance — perfect to hand to your coach.</p></div>
+        <div class="get-card"><span class="ic">📈</span><h3>A longevity baseline</h3><p>Your VO₂ max and metabolic fitness age, tracked over time so you can see yourself getting younger on the inside.</p></div>
+        <div class="get-card"><span class="ic">💡</span><h3>Clear next steps</h3><p>A simple, prioritized plan connecting your results to the right recovery, coaching, and habits.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="band">
+    <div class="container" style="display:block;">
+      <div class="section-head" style="margin-bottom:1rem;">
+        <p class="eyebrow" style="color:var(--gold-light);">Made For You If</p>
+        <h2 style="color:var(--white);">Who it's for</h2>
+      </div>
+      <div class="who-row">
+        <div class="who-chip"><h4>Weight &amp; energy</h4><p>You want to lose fat or boost energy with real numbers, not another generic diet.</p></div>
+        <div class="who-chip"><h4>Athletes &amp; runners</h4><p>You're training for a race or PR and want precise zones to train smarter, not just harder.</p></div>
+        <div class="who-chip"><h4>Longevity-minded</h4><p>You care about aging well and want to measure — and improve — the markers that matter.</p></div>
+        <div class="who-chip"><h4>Plateau-breakers</h4><p>You've been doing "everything right" and want to know what your body is actually doing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Simple, Honest Pricing</p>
+        <h2>Your metabolic assessment</h2>
+        <p>Clinical-grade insight and a personalized plan — priced to be the smartest test you take all year.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="pc-tag">Start here</div>
+          <h3>Resting Metabolic Test</h3>
+          <div class="pc-amount">$129</div>
+          <p class="pc-sub">Your true calorie burn at rest, fat-vs-carb mix, and personalized macro targets. About 15 minutes.</p>
+          <p class="pc-member">The perfect first step</p>
+        </div>
+        <div class="price-card featured">
+          <div class="pc-tag">Most complete</div>
+          <h3>Full Metabolic Assessment</h3>
+          <div class="pc-amount">$349</div>
+          <p class="pc-sub">Resting + active testing, a one-on-one results consult, and your personalized training &amp; nutrition plan. About 60 minutes.</p>
+          <p class="pc-member">Complimentary for Revive Elite members</p>
+        </div>
+        <div class="price-card">
+          <div class="pc-tag">Performance</div>
+          <h3>VO₂ / Active Test</h3>
+          <div class="pc-amount">$199</div>
+          <p class="pc-sub">VO₂ max, personalized heart-rate training zones, and your metabolic fitness age, with a results consult. About 30 minutes.</p>
+          <p class="pc-member">Great for athletes &amp; runners</p>
+        </div>
+      </div>
+      <p class="price-note"><strong>Track your progress:</strong> a follow-up re-test every 8–12 weeks is $149, so you can watch your numbers improve. ✦ <strong>Revive Elite</strong> members ($249/mo) enjoy a complimentary Full Metabolic Assessment. ✦ <strong>Founding 50</strong> members get <strong>20% off</strong> every PNŌĒ service. ✦ Ask about our <strong>Longevity Baseline</strong> (metabolic + lab testing) and <strong>Train Smart</strong> (test + coaching with Patricia) bundles.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <p class="eyebrow">Ready When You Are</p>
+      <h2>Meet your metabolism.</h2>
+      <p>Be among the first to book a PNŌĒ metabolic assessment when we open in Pinellas Park. Join the waitlist and we'll reach out to reserve your first assessment.</p>
+      <a href="index.html#waitlist" class="btn btn-gold">Join the Waitlist</a>
+      <div class="pairs">
+        <span class="pair">Pairs beautifully with your <a href="index.html#membership" style="color:var(--gold-light);">membership</a></span>
+        <span class="pair">Hand your zones to <a href="index.html#coaching" style="color:var(--gold-light);">coaching with Patricia</a></span>
+        <span class="pair">Recover smarter after every session</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="index.html" class="logo">Revive <span>&amp;</span> Glow</a>
+          <p style="margin-top:0.8rem;max-width:260px;">A boutique recovery &amp; longevity studio in Pinellas Park, FL. Recover. Restore. Glow.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <p>9899 66th St N<br>Pinellas Park, FL 33782</p>
+          <a href="tel:+17277764569">(727) 776-4569</a>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="index.html#therapies">Therapies</a>
+          <a href="index.html#coaching">Coaching</a>
+          <a href="index.html#membership">Membership</a>
+          <a href="index.html#waitlist">Join the Waitlist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/reviveandglow.wellness/" target="_blank" rel="noopener">Instagram</a>
+          <a href="mailto:reviveandglowwellness@gmail.com">Email us</a>
+        </div>
+      </div>
+      <p class="disclaimer">
+        PNŌĒ metabolic assessments are provided for wellness, fitness, and educational purposes and are not a medical diagnosis or treatment. Results are informational and individual results vary. Always consult a qualified healthcare provider before beginning any new nutrition or exercise program, or regarding any medical condition. © 2026 Revive and Glow Wellness LLC. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
