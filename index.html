@@ -438,11 +438,17 @@
 
     /* À la carte */
     .ala-head { text-align: center; margin-top: 2.2rem; font-family: var(--serif); font-size: 1.5rem; color: var(--forest-deep); }
-    .alacarte { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; }
-    .ala { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: 14px; padding: 1.1rem 1.7rem; display: flex; flex-direction: column; align-items: center; min-width: 155px; box-shadow: 0 6px 20px -14px rgba(34,58,46,0.3); transition: transform 0.25s ease; }
+    .alacarte { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; max-width: 760px; margin: 1.5rem auto 0; }
+    .ala { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: 14px; padding: 1.1rem 0.8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; min-height: 104px; text-align: center; box-shadow: 0 6px 20px -14px rgba(34,58,46,0.3); transition: transform 0.25s ease; }
     .ala:hover { transform: translateY(-4px); }
     .ala-name { font-size: 0.8rem; color: #5c6b60; letter-spacing: 0.03em; margin-bottom: 0.2rem; }
     .ala-price { font-family: var(--serif); font-size: 1.6rem; color: var(--forest-deep); }
+    @media (max-width: 620px) {
+      .alacarte { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+      .ala { min-height: 108px; padding: 1rem 0.55rem; }
+      .ala-name { font-size: 0.72rem; }
+      .ala-price { font-size: 1.45rem; }
+    }
 
     /* Founding members */
     /* Longevity partnership pillars */
