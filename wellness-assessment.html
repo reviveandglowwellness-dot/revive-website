@@ -522,7 +522,6 @@ function renderPetResult(){
   }
   html+='<div class="nav"><button class="btn primary" onclick="finishAtDesk()">Review with our wellness guide →</button></div>';
   html+='<p class="disc">Take this to the front desk. These recommendations support general wellness and are not veterinary advice.</p>';
-  html+='<div class="toggle"><button class="btn link" onclick="startOver()">↺ Start over</button></div>';
   stageEl.innerHTML=html;
 }
 function renderPetDesk(){
@@ -628,10 +627,8 @@ function renderResult(){
   html+='</div>';
   html+='<div class="addon"><h3>Recommended first visit</h3><p><strong>'+r.intensity+' · '+r.duration+'</strong><br>Begin with the services above, then tell your wellness guide how your body responded.</p></div>';
   if(r.coldLater)html+='<div class="safety-note">'+r.coldLater+'</div>';
-  html+='<div class="nav"><button class="btn primary" onclick="finishAtDesk()">Review with my wellness guide →</button>'+
-        '<button class="btn ghost" onclick="startOver()">Start over</button></div>';
+  html+='<div class="nav"><button class="btn primary" onclick="finishAtDesk()">Review with my wellness guide →</button></div>';
   html+='<p class="disc">This general wellness suggestion is educational, not medical advice, diagnosis, treatment, or clearance. Services are confirmed only after an in-person safety review.</p>';
-  html+='<div class="toggle"><button class="btn link" onclick="startOver()">↺ Start over</button></div>';
   stageEl.innerHTML=html;
 }
 
