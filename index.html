@@ -324,14 +324,6 @@
     .waitlist .eyebrow { color: var(--gold-light); }
     .waitlist h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--white); margin-bottom: 1.1rem; }
     .waitlist p { color: rgba(247,243,234,0.8); font-weight: 300; margin-bottom: 1.8rem; }
-    .booking { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(252,247,237,0.96), rgba(232,226,210,0.9)); }
-    .booking .container { position: relative; z-index: 2; max-width: 760px; text-align: center; }
-    .booking h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); color: var(--forest-deep); margin-bottom: 1rem; }
-    .booking p { max-width: 610px; margin: 0 auto 1.6rem; color: #56655a; font-weight: 300; }
-    .booking-note { margin-top: 1rem !important; font-size: 0.78rem; letter-spacing: 0.03em; }
-    .booking .mindbody-widget { display: flex; justify-content: center; min-height: 52px; }
-    .booking .mindbody-widget a,
-    .booking .mindbody-widget button { border: 0 !important; border-radius: 100px !important; padding: 0.95rem 2rem !important; background: var(--forest-deep) !important; color: var(--white) !important; font: 600 0.78rem/1 var(--sans) !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; box-shadow: 0 10px 28px rgba(30,54,43,0.2) !important; }
     .form-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
     .form-row input {
       flex: 1; min-width: 240px; padding: 1rem 1.4rem; border-radius: 100px;
@@ -723,7 +715,7 @@
       <a href="#assessment">Your Plan</a>
       <a href="#explore">Explore</a>
       <a href="#membership">Membership</a>
-      <a href="#booking" class="btn btn-gold">Book a Session</a>
+      <a href="booking.html" class="btn btn-gold">Book a Session</a>
     </div>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
   </nav>
@@ -783,7 +775,7 @@
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
         <p class="lede">A boutique recovery &amp; longevity studio in the heart of Tampa Bay — where science-backed therapies help you move better, feel stronger, and age well, in a space designed to feel like a breath.</p>
         <div class="hero-cta">
-          <a href="#booking" class="btn">Book Your Visit</a>
+          <a href="booking.html" class="btn">Book Your Visit</a>
           <a href="#method" class="btn btn-gold">Discover The Revive Method™</a>
         </div>
         <a href="#membership" class="hero-price">Memberships from $159/month &nbsp;·&nbsp; Single sessions from $39</a>
@@ -1356,18 +1348,6 @@
     </div>
   </section>
 
-  <!-- BOOKING -->
-  <section class="booking" id="booking">
-    <div class="deco" aria-hidden="true" style="--t:rotate(7deg);width:min(260px,22vw);bottom:-45px;left:-45px"><img class="b" src="gold-branch.png" alt="" /></div>
-    <div class="container reveal">
-      <p class="eyebrow">Your Time to Restore</p>
-      <h2>Ready for your Revive &amp; Glow experience?</h2>
-      <p>Choose your service, select a time that works for you, and reserve your visit through our secure Mindbody booking page.</p>
-      <div class="mindbody-widget" data-widget-type="Appointments" data-widget-id="2f627564a6a"></div>
-      <p class="booking-note">Booking and payment are securely managed by Mindbody.</p>
-    </div>
-  </section>
-
   <!-- WAITLIST -->
   <section class="waitlist" id="waitlist">
     <div class="deco deco-light" aria-hidden="true" style="--t:rotate(-4deg);width:min(250px,22vw);bottom:25px;left:-55px"><img class="b" src="gold-branch.png" alt="" /></div>
@@ -1444,7 +1424,6 @@
     <div class="chat-replies" id="chatReplies"></div>
   </div>
 
-  <script async src="https://brandedweb.mindbodyonline.com/embed/widget.js"></script>
   <script>
     // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
