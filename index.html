@@ -489,6 +489,15 @@
     .light-band.blue { border-left: 3px solid #7395aa; }
     .light-band.red { border-left: 3px solid #b85d50; }
     .light-band.nir { border-left: 3px solid var(--gold); }
+    .therapy.light-feature { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(0, 2fr); column-gap: 2.2rem; align-items: center; }
+    .light-feature .light-intro .icon { margin-bottom: 1.1rem; }
+    .light-feature .light-spectrum { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; align-self: stretch; }
+    .light-feature .light-band { display: flex; flex-direction: column; justify-content: center; }
+    .light-feature .therapy-more { grid-column: 1 / -1; width: 100%; }
+    @media (max-width: 820px) {
+      .therapy.light-feature { grid-template-columns: 1fr; row-gap: 1rem; }
+      .light-feature .light-spectrum { grid-template-columns: 1fr; }
+    }
 
     /* Meet the Founders */
     .founders { background: rgba(252, 247, 237, 0.78); }
@@ -822,11 +831,13 @@
         <p>Every modality is chosen for one reason: it helps you recover, restore, and feel your best — powered by best-in-class equipment.</p>
       </div>
       <div class="therapy-grid">
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
-          <h3>Multi-Wavelength Light Therapy</h3>
-          <p class="kit">PlatinumLED BioMax</p>
-          <p>One advanced panel with blue, red, and near-infrared wavelengths — each reaching a different depth.</p>
+        <div class="therapy light-feature reveal">
+          <div class="light-intro">
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
+            <h3>Multi-Wavelength Light Therapy</h3>
+            <p class="kit">PlatinumLED BioMax</p>
+            <p>One advanced panel with blue, red, and near-infrared wavelengths — each reaching a different depth.</p>
+          </div>
           <div class="light-spectrum" aria-label="Available light therapy wavelengths">
             <div class="light-band blue"><strong>Blue Light · 480 nm</strong><span>Surface-level light that may support clearer-looking skin and overall skin wellness.</span></div>
             <div class="light-band red"><strong>Red Light · 630 + 660 nm</strong><span>Visible light that may support cellular energy, healthy-looking skin, and natural repair processes.</span></div>
