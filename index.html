@@ -324,6 +324,14 @@
     .waitlist .eyebrow { color: var(--gold-light); }
     .waitlist h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--white); margin-bottom: 1.1rem; }
     .waitlist p { color: rgba(247,243,234,0.8); font-weight: 300; margin-bottom: 1.8rem; }
+    .booking { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(252,247,237,0.96), rgba(232,226,210,0.9)); }
+    .booking .container { position: relative; z-index: 2; max-width: 760px; text-align: center; }
+    .booking h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); color: var(--forest-deep); margin-bottom: 1rem; }
+    .booking p { max-width: 610px; margin: 0 auto 1.6rem; color: #56655a; font-weight: 300; }
+    .booking-note { margin-top: 1rem !important; font-size: 0.78rem; letter-spacing: 0.03em; }
+    .booking .mindbody-widget { display: flex; justify-content: center; min-height: 52px; }
+    .booking .mindbody-widget a,
+    .booking .mindbody-widget button { border: 0 !important; border-radius: 100px !important; padding: 0.95rem 2rem !important; background: var(--forest-deep) !important; color: var(--white) !important; font: 600 0.78rem/1 var(--sans) !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; box-shadow: 0 10px 28px rgba(30,54,43,0.2) !important; }
     .form-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
     .form-row input {
       flex: 1; min-width: 240px; padding: 1rem 1.4rem; border-radius: 100px;
@@ -715,7 +723,7 @@
       <a href="#assessment">Your Plan</a>
       <a href="#explore">Explore</a>
       <a href="#membership">Membership</a>
-      <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+      <a href="#booking" class="btn btn-gold">Book a Session</a>
     </div>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
   </nav>
@@ -775,7 +783,7 @@
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
         <p class="lede">A boutique recovery &amp; longevity studio in the heart of Tampa Bay — where science-backed therapies help you move better, feel stronger, and age well, in a space designed to feel like a breath.</p>
         <div class="hero-cta">
-          <a href="#waitlist" class="btn">Join the Waitlist</a>
+          <a href="#booking" class="btn">Book Your Visit</a>
           <a href="#method" class="btn btn-gold">Discover The Revive Method™</a>
         </div>
         <a href="#membership" class="hero-price">Memberships from $159/month &nbsp;·&nbsp; Single sessions from $39</a>
@@ -1323,7 +1331,7 @@
       </div>
       <div class="faq-list reveal">
         <details class="faq-item"><summary>What is Revive &amp; Glow Wellness?</summary><p>A boutique recovery and longevity studio in Pinellas Park, FL. We bring multi-wavelength light therapy, infrared sauna, cold plunge, compression, whole body vibration, and more under one roof — designed to help you recover, restore, and feel your best.</p></details>
-        <details class="faq-item"><summary>Do I need an appointment?</summary><p>Yes. Sessions are by appointment so we can give you a calm, personalized experience. You'll be able to book online as soon as we open.</p></details>
+        <details class="faq-item"><summary>Do I need an appointment?</summary><p>Yes. Sessions are by appointment so we can give you a calm, personalized experience. You can reserve your visit online through our secure Mindbody booking page.</p></details>
         <details class="faq-item"><summary>Is this medical treatment?</summary><p>No. Our services are for general wellness and relaxation. They are not medical care and are not intended to diagnose, treat, or cure any condition. Please consult your doctor before starting any new wellness routine.</p></details>
         <details class="faq-item"><summary>What is the complimentary wellness assessment?</summary><p>Every journey starts with a body composition scan on our Tanita analyzer, plus AI-guided recommendations — so your plan is built around your goals and you can track real progress over time.</p></details>
         <details class="faq-item"><summary>When do you open?</summary><p>We open August 22, 2026 in Pinellas Park. Join the waitlist for early access and to lock in Founding Member rates for life.</p></details>
@@ -1339,12 +1347,24 @@
         <h2>Visit us in Pinellas Park</h2>
         <p class="loc-line">9899 66th St N, Pinellas Park, FL 33782</p>
         <p class="loc-line"><a href="tel:+17277764569" style="color:var(--gold);">(727) 776-4569</a></p>
-        <p style="margin-top:1rem;">In the heart of Tampa Bay. Opening August 22, 2026 — online booking will be available as soon as we open.</p>
+        <p style="margin-top:1rem;">In the heart of Tampa Bay. Opening August 22, 2026 — online booking is now available.</p>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=9899+66th+St+N,+Pinellas+Park,+FL+33782" target="_blank" rel="noopener" class="btn" style="margin-top:1.6rem;">Get Directions →</a>
       </div>
       <div class="loc-map reveal">
         <iframe src="https://maps.google.com/maps?q=9899%2066th%20St%20N%2C%20Pinellas%20Park%2C%20FL%2033782&amp;output=embed" loading="lazy" title="Revive &amp; Glow Wellness location map"></iframe>
       </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+    <div class="deco" aria-hidden="true" style="--t:rotate(7deg);width:min(260px,22vw);bottom:-45px;left:-45px"><img class="b" src="gold-branch.png" alt="" /></div>
+    <div class="container reveal">
+      <p class="eyebrow">Your Time to Restore</p>
+      <h2>Ready for your Revive &amp; Glow experience?</h2>
+      <p>Choose your service, select a time that works for you, and reserve your visit through our secure Mindbody booking page.</p>
+      <div class="mindbody-widget" data-widget-type="Appointments" data-widget-id="2f627564a6a"></div>
+      <p class="booking-note">Booking and payment are securely managed by Mindbody.</p>
     </div>
   </section>
 
@@ -1424,6 +1444,7 @@
     <div class="chat-replies" id="chatReplies"></div>
   </div>
 
+  <script async src="https://brandedweb.mindbodyonline.com/embed/widget.js"></script>
   <script>
     // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
