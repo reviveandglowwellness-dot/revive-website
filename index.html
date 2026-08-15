@@ -6,7 +6,7 @@
   <!-- build: founders + waitlist live -->
   <meta name="build" content="2026-07-14-founders" />
   <title>Revive &amp; Glow Wellness — Recovery &amp; Longevity Studio · Pinellas Park, FL</title>
-  <meta name="description" content="A boutique recovery & longevity studio opening August 22, 2026 in Pinellas Park, FL. Infrared sauna, cold plunge, red light therapy, compression, hydrogen water, human + pet wellness, and AI-personalized plans — designed to help you recover, restore, and feel your best." />
+  <meta name="description" content="A boutique recovery & longevity studio opening August 22, 2026 in Pinellas Park, FL. Multi-wavelength light therapy, infrared sauna, cold plunge, compression, hydrogen water, human + pet wellness, and personalized plans — designed to help you recover, restore, and feel your best." />
   <link rel="canonical" href="https://www.reviveandglowwellness.ai/" />
   <link rel="icon" href="/revive-glow-lotus-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/revive-glow-lotus-16.png" type="image/png" sizes="16x16" />
@@ -482,6 +482,13 @@
     .therapy-more .tm-body p { font-size: 0.86rem; color: #5c6b60; font-weight: 300; margin-bottom: 0.55rem; }
     .therapy-more .tm-body p:last-child { margin-bottom: 0; }
     .therapy-more .tm-body strong { color: var(--forest-deep); font-weight: 600; }
+    .light-spectrum { display: grid; gap: 0.65rem; margin: 1.1rem 0 0.15rem; }
+    .light-band { padding: 0.8rem 0.9rem; border: 1px solid rgba(47,74,60,0.1); border-radius: 12px; background: rgba(252,247,237,0.65); }
+    .light-band strong { display: block; margin-bottom: 0.18rem; font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--forest-deep); }
+    .light-band span { display: block; font-size: 0.82rem; line-height: 1.5; color: #5c6b60; font-weight: 300; }
+    .light-band.blue { border-left: 3px solid #7395aa; }
+    .light-band.red { border-left: 3px solid #b85d50; }
+    .light-band.nir { border-left: 3px solid var(--gold); }
 
     /* Meet the Founders */
     .founders { background: rgba(252, 247, 237, 0.78); }
@@ -797,7 +804,7 @@
         <p>A guided five-step journey through light, heat, cold, and restoration — sequenced to help your body reset from the inside out.</p>
       </div>
       <div class="method-track">
-        <div class="method-step reveal"><div class="n">01</div><h3>Illuminate</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Red Light Therapy</div><p>Energize cells and prime the body with red light.</p></div>
+        <div class="method-step reveal"><div class="n">01</div><h3>Illuminate</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Multi-Wavelength Light Therapy</div><p>Choose the light wavelengths that best complement your wellness goals.</p></div>
         <div class="method-step reveal"><div class="n">02</div><h3>Restore</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Infrared Sauna</div><p>Warm deep, sweat clean, and release tension.</p></div>
         <div class="method-step reveal"><div class="n">03</div><h3>Refresh</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Cold Plunge</div><p>Invigorate circulation and sharpen the mind.</p></div>
         <div class="method-step reveal"><div class="n">04</div><h3>Recover</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Compression + Vibration</div><p>Flush fatigue from tired muscles.</p></div>
@@ -817,16 +824,22 @@
       <div class="therapy-grid">
         <div class="therapy reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
-          <h3>Red Light Therapy</h3>
+          <h3>Multi-Wavelength Light Therapy</h3>
           <p class="kit">PlatinumLED BioMax</p>
-          <p>Full-spectrum light to support skin, energy, and cellular recovery.</p>
+          <p>One advanced panel with blue, red, and near-infrared wavelengths — each reaching a different depth.</p>
+          <div class="light-spectrum" aria-label="Available light therapy wavelengths">
+            <div class="light-band blue"><strong>Blue Light · 480 nm</strong><span>Surface-level light that may support clearer-looking skin and overall skin wellness.</span></div>
+            <div class="light-band red"><strong>Red Light · 630 + 660 nm</strong><span>Visible light that may support cellular energy, healthy-looking skin, and natural repair processes.</span></div>
+            <div class="light-band nir"><strong>Near-Infrared · 810 + 830 + 850 + 1060 nm</strong><span>Invisible, deeper-reaching light that may support muscle recovery, mobility, and performance routines.</span></div>
+          </div>
           <details class="therapy-more">
             <summary>Learn more</summary>
             <div class="tm-body">
-              <p><strong>How it works.</strong> Red and near-infrared light is absorbed by your cells, supporting their natural energy production.</p>
-              <p><strong>May help support.</strong> Skin health, cellular energy, recovery, and overall wellness.</p>
-              <p><strong>What to expect.</strong> Relax in front of our full-spectrum LED panels. No heat, no downtime — just a few calm minutes.</p>
+              <p><strong>How it works.</strong> Different wavelengths interact with the body at different depths, allowing us to tailor the experience to your goals.</p>
+              <p><strong>Your experience.</strong> Our wellness team considers your goals, comfort, experience, and safety before guiding your first visit.</p>
+              <p><strong>What to expect.</strong> Relax in front of our multi-wavelength LED panels. No downtime — just a few calm minutes.</p>
               <p><strong>Session.</strong> About 10–15 minutes.</p>
+              <p><strong>Good to know.</strong> This is a general wellness service and is not intended to diagnose, treat, cure, or prevent disease.</p>
             </div>
           </details>
         </div>
@@ -1298,7 +1311,7 @@
         <h2>Frequently Asked Questions</h2>
       </div>
       <div class="faq-list reveal">
-        <details class="faq-item"><summary>What is Revive &amp; Glow Wellness?</summary><p>A boutique recovery and longevity studio in Pinellas Park, FL. We bring red light therapy, infrared sauna, cold plunge, compression, whole body vibration, and more under one roof — designed to help you recover, restore, and feel your best.</p></details>
+        <details class="faq-item"><summary>What is Revive &amp; Glow Wellness?</summary><p>A boutique recovery and longevity studio in Pinellas Park, FL. We bring multi-wavelength light therapy, infrared sauna, cold plunge, compression, whole body vibration, and more under one roof — designed to help you recover, restore, and feel your best.</p></details>
         <details class="faq-item"><summary>Do I need an appointment?</summary><p>Yes. Sessions are by appointment so we can give you a calm, personalized experience. You'll be able to book online as soon as we open.</p></details>
         <details class="faq-item"><summary>Is this medical treatment?</summary><p>No. Our services are for general wellness and relaxation. They are not medical care and are not intended to diagnose, treat, or cure any condition. Please consult your doctor before starting any new wellness routine.</p></details>
         <details class="faq-item"><summary>What is the complimentary wellness assessment?</summary><p>Every journey starts with a body composition scan on our Tanita analyzer, plus AI-guided recommendations — so your plan is built around your goals and you can track real progress over time.</p></details>
@@ -1474,7 +1487,7 @@
     const CHAT = {
       medicine: { msg: "Looking for <strong>peptides or a GLP‑1 program</strong>? Through our telehealth partner Altro Health, eligible patients can explore physician-guided options alongside comprehensive lab testing and hormone care. Licensed Altro providers determine eligibility and handle clinical review and medical guidance. <a href=\"peptides.html\">See how it works →</a>", replies: ['therapies','contact','back'] },
       pnoe: { msg: "<strong>PNŌĒ metabolic breath analysis</strong> measures how your body uses oxygen and fuel, including VO₂ max, resting metabolic rate, training zones, and metabolic fitness age. We turn the results into clear next steps for nutrition, training, and recovery. <a href=\"pnoe.html\">Explore PNŌĒ testing →</a>", replies: ['assessment','therapies','contact','back'] },
-      therapies: { msg: "We offer red light therapy, infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, hydrogen water, and body composition analysis — all designed to help you recover and feel your best. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','assessment','join','contact','back'] },
+      therapies: { msg: "We offer <strong>multi-wavelength light therapy</strong> — blue, red, and near-infrared — plus infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, hydrogen water, and body composition analysis. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','assessment','join','contact','back'] },
       memberships: { msg: "We have three membership tiers:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no contract<br><strong>Revive Commit</strong> — $159/mo · 8 sessions · 6-month (best value)<br><strong>Revive Elite</strong> — $249/mo · 20 sessions · priority booking<br><br>Prefer no commitment? Single session $39, 5-pack $175, 10-pack $320. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
       pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> (first session $29), a <strong>$149/mo pet membership</strong>, and our <strong>“Heal Together” package — $99</strong>, where your dog relaxes with red light beside you. <a href=\"pet-red-light-therapy.html\">Learn more →</a>", replies: ['memberships','join','contact','back'] },
       included: { msg: "Every membership includes: AI Wellness Concierge, monthly body composition analysis, monthly progress report, wellness score, muscle / body fat / visceral fat / metabolic age tracking, personalized recommendations, and online booking.", replies: ['memberships','assessment','join','contact','back'] },
