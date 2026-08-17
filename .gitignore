@@ -1,0 +1,14 @@
+# Temporary browser profiles created during visual testing
+.tmp-edge-*/
+
+# Local screenshots and intermediate QA renders
+tmp/
+
+# Generated staging area used while assembling Word documents
+social-media/_docx_stage/
+
+# Unnamed duplicate of the official PNOE source image
+/2.png
+
+# Microsoft Office lock files
+~$*

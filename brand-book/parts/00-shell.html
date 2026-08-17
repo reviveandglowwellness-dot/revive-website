@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Revive &amp; Glow Wellness — Manual Oficial da Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   REVIVE & GLOW WELLNESS — MANUAL OFICIAL DA MARCA
+   Print-first stylesheet. Rendered to PDF with headless Chrome:
+     chrome --headless --print-to-pdf --no-pdf-header-footer
+   Running headers/footers use position:fixed, which Chrome
+   repeats on every printed page.
+   ============================================================ */
+
+:root {
+  --ink:        #1b241e;
+  --forest:     #2f4a3c;
+  --forest-deep:#223a2e;
+  --sage:       #7d9a86;
+  --sage-soft:  #a9bfae;
+  --cream:      #f1eadb;
+  --sand:       #ddd0b6;
+  --gold:       #b9863f;
+  --gold-light: #dab06a;
+  --lotus:      #5b4636;
+  --terracotta: #c17a5a;
+  --white:      #fbf7ef;
+  --paper:      #fcfaf5;
+  --muted:      #5c6b60;
+  --rule:       rgba(47,74,60,0.16);
+
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', 'Cascadia Mono', Consolas, monospace;
+}
+
+@page {
+  size: Letter;
+  margin: 0.85in 0.85in 0.95in;
+}
+/* Full-bleed pages (cover, part dividers) get their own zero-margin page box.
+   Side effect we rely on: the position:fixed runners are placed against each
+   page's content box, so on a zero-margin page their negative offsets fall
+   outside the page and get clipped — no running header over the cover. */
+@page bleed {
+  size: Letter;
+  margin: 0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: var(--sans);
+  font-size: 9.6pt;
+  line-height: 1.62;
+  color: var(--ink);
+  background: var(--paper);
+  counter-reset: partnum;
+}
+
+/* ---------- RUNNING HEADER / FOOTER ---------------------------------- */
+.runner-top,
+.runner-bot {
+  position: fixed;
+  left: 0; right: 0;
+  font-family: var(--sans);
+  font-size: 6.6pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--sage);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.runner-top { top: -0.46in; }
+.runner-bot { bottom: -0.58in; justify-content: center; color: var(--gold); }
+.runner-top .rt-brand { color: var(--gold); }
+.runner-top .rt-line { flex: 1; height: 1px; background: var(--rule); }
+.runner-bot .rb-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); opacity: .7; }
+
+/* ---------- COVER ----------------------------------------------------- */
+.cover {
+  page: bleed;
+  position: relative;
+  break-after: page;
+  width: 8.5in; height: 11in;
+  margin: 0; padding: 1.35in 1.1in 1.1in;
+  background: #fbf7ef url('../bg-botanical.png') center / cover no-repeat;
+  color: var(--forest-deep);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.cover .cv-branch { display: none; }
+.cover .cv-branch.tl { top: -0.5in; left: -0.7in; width: 3.6in; transform: rotate(190deg); }
+.cover .cv-branch.br { bottom: -0.4in; right: -0.6in; width: 3.2in; }
+.cover .cv-inner { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+.cover .cv-mark { width: 3.15in; height: 3.15in; object-fit: contain; margin: 0 auto 0.22in; }
+.cover .cv-rule { width: 1.1in; height: 1px; background: var(--gold); margin: 0 auto 0.34in; opacity: .8; }
+.cover .cv-eyebrow {
+  text-align: center; font-size: 7.6pt; letter-spacing: 0.42em; text-indent: 0.42em;
+  text-transform: uppercase; font-weight: 600; color: var(--gold);
+}
+.cover h1 {
+  font-family: var(--serif); font-weight: 400; font-size: 46pt; line-height: 1.02;
+  text-align: center; color: var(--lotus); margin: 0.3in 0 0.16in; letter-spacing: -0.01em;
+}
+.cover h1 em { font-style: italic; color: var(--gold); }
+.cover .cv-sub {
+  text-align: center; font-family: var(--serif); font-size: 15pt; font-style: italic;
+  color: var(--muted); font-weight: 300;
+}
+.cover .cv-spacer { flex: 1; }
+.cover .cv-foot { border-top: 1px solid rgba(185,134,63,0.34); padding-top: 0.22in; display: flex; justify-content: space-between; align-items: flex-end; }
+.cover .cv-foot div { font-size: 7.4pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); line-height: 1.9; }
+.cover .cv-foot .cv-ed { text-align: right; }
+.cover .cv-foot strong { display: block; color: var(--gold); font-weight: 600; }
+
+/* ---------- PART DIVIDER --------------------------------------------- */
+.part {
+  page: bleed;
+  break-before: page;
+  break-after: page;
+  position: relative;
+  width: 8.5in; height: 11in;
+  margin: 0;
+  padding: 3.1in 1.15in 1.15in;
+  background:
+    radial-gradient(110% 70% at 88% 12%, rgba(218,176,106,0.16) 0%, transparent 60%),
+    linear-gradient(160deg, #223a2e 0%, #2f4a3c 100%);
+  color: var(--cream);
+  overflow: hidden;
+  counter-increment: partnum;
+}
+.part .pt-branch {
+  position: absolute; bottom: -0.55in; right: -0.35in; width: 3.25in; height: 5.1in;
+  opacity: .36; object-fit: contain; filter: saturate(.82) brightness(1.15);
+}
+.part .pt-num {
+  font-family: var(--serif); font-size: 74pt; line-height: 1; color: rgba(218,176,106,0.34);
+  font-weight: 300; margin-bottom: 0.1in;
+}
+.part .pt-label { font-size: 7.4pt; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-light); font-weight: 600; margin-bottom: 0.18in; }
+.part h2 { font-family: var(--serif); font-weight: 400; font-size: 34pt; line-height: 1.08; color: var(--white); margin-bottom: 0.2in; }
+.part .pt-lede { font-family: var(--serif); font-size: 13pt; font-style: italic; font-weight: 300; color: rgba(241,234,219,0.8); max-width: 4.6in; line-height: 1.5; }
+.part .pt-toc { position: relative; margin-top: 0.5in; border-top: 1px solid rgba(218,176,106,0.3); padding-top: 0.2in; column-count: 2; column-gap: 0.5in; }
+.part .pt-toc li { list-style: none; font-size: 8.2pt; color: rgba(241,234,219,0.72); padding: 2.2pt 0; break-inside: avoid; }
+.part .pt-toc li b { color: var(--gold-light); font-weight: 600; font-variant-numeric: tabular-nums; margin-right: 0.5em; }
+
+/* ---------- CHAPTER / HEADINGS ---------------------------------------- */
+.chapter { break-before: page; }
+
+h2.ch {
+  font-family: var(--serif); font-weight: 400; font-size: 25pt; line-height: 1.1;
+  color: var(--forest-deep); margin: 0 0 0.1in;
+}
+.ch-num {
+  display: block; font-family: var(--sans); font-size: 7pt; letter-spacing: 0.34em;
+  text-transform: uppercase; font-weight: 700; color: var(--gold); margin-bottom: 0.08in;
+}
+.ch-lede {
+  font-family: var(--serif); font-size: 12.5pt; font-style: italic; font-weight: 300;
+  color: var(--muted); line-height: 1.48; margin-bottom: 0.22in;
+  padding-bottom: 0.18in; border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-family: var(--serif); font-weight: 600; font-size: 14pt; line-height: 1.2;
+  color: var(--forest-deep); margin: 0.24in 0 0.07in;
+  break-after: avoid;
+}
+h4 {
+  font-family: var(--sans); font-weight: 700; font-size: 8pt; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); margin: 0.18in 0 0.06in;
+  break-after: avoid;
+}
+h5 {
+  font-family: var(--sans); font-weight: 600; font-size: 9.3pt; color: var(--forest);
+  margin: 0.13in 0 0.04in; break-after: avoid;
+}
+
+p { margin: 0 0 0.09in; }
+p.lead { font-size: 10.6pt; color: var(--muted); font-weight: 300; }
+em { font-style: italic; }
+strong { font-weight: 600; color: var(--forest-deep); }
+a { color: var(--gold); text-decoration: none; }
+
+ul, ol { margin: 0 0 0.1in 0.17in; }
+li { margin-bottom: 0.035in; padding-left: 0.03in; }
+ul.tight li, ol.tight li { margin-bottom: 0.015in; }
+ul.plain { list-style: none; margin-left: 0; }
+ul.plain > li { padding-left: 0.16in; position: relative; }
+ul.plain > li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 7pt; top: 0.7pt; }
+
+hr.sep { border: none; height: 1px; background: var(--rule); margin: 0.2in 0; }
+.spacer { height: 0.14in; }
+
+/* ---------- LAYOUT HELPERS -------------------------------------------- */
+.cols-2 { column-count: 2; column-gap: 0.28in; }
+.cols-3 { column-count: 3; column-gap: 0.24in; }
+.cols-2 > *, .cols-3 > * { break-inside: avoid; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.16in; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.14in; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.12in; }
+.grid-2 > *, .grid-3 > *, .grid-4 > * { break-inside: avoid; }
+.nobreak { break-inside: avoid; }
+.newpage { break-before: page; }
+
+/* ---------- CARDS / CALLOUTS ------------------------------------------ */
+.card {
+  border: 1px solid var(--rule); border-radius: 9pt; padding: 0.14in 0.16in;
+  background: #fff; break-inside: avoid;
+}
+.card > h5:first-child, .card > h4:first-child { margin-top: 0; }
+.card.tinted { background: rgba(221,208,182,0.20); border-color: rgba(185,134,63,0.24); }
+.card.dark { background: linear-gradient(150deg, var(--forest-deep), var(--forest)); color: var(--cream); border-color: transparent; }
+.card.dark h3, .card.dark h5 { color: var(--gold-light); }
+.card.dark h4 { color: var(--gold-light); }
+.card.dark strong { color: var(--white); }
+.card .c-kicker { font-size: 6.8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--gold); margin-bottom: 0.04in; }
+
+.note {
+  border-left: 2.5pt solid var(--gold); background: rgba(185,134,63,0.07);
+  padding: 0.11in 0.15in; border-radius: 0 6pt 6pt 0; margin: 0.13in 0;
+  font-size: 9.1pt; break-inside: avoid;
+}
+.note .n-title { font-weight: 700; font-size: 7.2pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.03in; }
+.note.warn { border-left-color: var(--terracotta); background: rgba(193,122,90,0.09); }
+.note.warn .n-title { color: var(--terracotta); }
+.note.legal { border-left-color: var(--sage); background: rgba(125,154,134,0.10); font-size: 8.4pt; }
+.note.legal .n-title { color: var(--forest); }
+
+/* ---------- EN / PT BLOCKS -------------------------------------------- */
+/* Copy that ships to the public is written in English and flagged, so a
+   collaborator can lift it verbatim. Explanatory text stays in pt-BR. */
+.en {
+  position: relative;
+  border-left: 2.5pt solid var(--forest); background: #fff;
+  border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  border-radius: 0 6pt 6pt 0; padding: 0.13in 0.16in 0.11in; margin: 0.11in 0;
+  break-inside: avoid;
+}
+.en::before {
+  content: 'EN · pronto para publicar';
+  position: absolute; top: -0.055in; right: 0.1in;
+  background: var(--forest); color: var(--cream);
+  font-size: 5.6pt; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700;
+  padding: 1.2pt 5pt; border-radius: 20pt;
+}
+.en p { margin-bottom: 0.055in; }
+.en p:last-child { margin-bottom: 0; }
+.en .en-h { font-family: var(--serif); font-size: 12pt; color: var(--forest-deep); line-height: 1.2; margin-bottom: 0.05in; }
+.en .en-cap { font-size: 9pt; }
+.en .en-tags { font-size: 8pt; color: var(--sage); margin-top: 0.06in; word-spacing: 0.12em; }
+
+/* ---------- PROMPT BLOCK ---------------------------------------------- */
+.prompt {
+  font-family: var(--mono); font-size: 7.6pt; line-height: 1.5;
+  background: #f6f3ec; border: 1px solid rgba(185,134,63,0.28);
+  border-radius: 6pt; padding: 0.11in 0.13in; margin: 0.07in 0 0.11in;
+  color: #33403a; break-inside: avoid; white-space: pre-wrap;
+}
+.prompt .p-var { color: var(--terracotta); font-weight: 500; }
+.prompt-label { font-size: 6.8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--gold); margin-top: 0.12in; }
+
+/* ---------- TABLES ----------------------------------------------------- */
+table { width: 100%; border-collapse: collapse; font-size: 8.4pt; margin: 0.1in 0 0.14in; break-inside: auto; }
+thead { display: table-header-group; }
+th {
+  text-align: left; font-size: 6.8pt; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 700; color: var(--gold); padding: 0.05in 0.06in; border-bottom: 1.2pt solid var(--gold);
+  vertical-align: bottom;
+}
+td { padding: 0.05in 0.06in; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr { break-inside: avoid; }
+tbody tr:nth-child(even) { background: rgba(221,208,182,0.14); }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.compact td, table.compact th { padding: 0.035in 0.05in; font-size: 7.9pt; }
+
+/* ---------- COLOR SWATCHES -------------------------------------------- */
+.swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.12in; margin: 0.12in 0; }
+.sw { break-inside: avoid; border: 1px solid var(--rule); border-radius: 7pt; overflow: hidden; background: #fff; }
+.sw .chip { height: 0.72in; }
+.sw .meta { padding: 0.07in 0.08in 0.09in; }
+.sw .nm { font-weight: 600; font-size: 8.4pt; color: var(--forest-deep); line-height: 1.2; }
+.sw .hex { font-family: var(--mono); font-size: 7.2pt; color: var(--gold); margin-top: 1pt; }
+.sw .role { font-size: 6.9pt; color: var(--muted); line-height: 1.35; margin-top: 2pt; }
+
+/* ---------- DO / DON'T -------------------------------------------------- */
+.dd { display: grid; grid-template-columns: 1fr 1fr; gap: 0.16in; margin: 0.12in 0; }
+.dd > div { break-inside: avoid; border-radius: 8pt; padding: 0.12in 0.14in; }
+.dd .do   { background: rgba(125,154,134,0.13); border: 1px solid rgba(47,74,60,0.22); }
+.dd .dont { background: rgba(193,122,90,0.10); border: 1px solid rgba(193,122,90,0.30); }
+.dd h5 { margin-top: 0; font-size: 7.4pt; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+.dd .do h5 { color: var(--forest); }
+.dd .dont h5 { color: var(--terracotta); }
+.dd ul { margin: 0.04in 0 0 0.15in; font-size: 8.6pt; }
+.dd li { margin-bottom: 0.03in; }
+
+/* ---------- CHECKLIST --------------------------------------------------- */
+ul.check { list-style: none; margin-left: 0; }
+ul.check li {
+  position: relative; padding-left: 0.24in; margin-bottom: 0.05in;
+  font-size: 9pt; break-inside: avoid;
+}
+ul.check li::before {
+  content: ''; position: absolute; left: 0; top: 2.2pt;
+  width: 8pt; height: 8pt; border: 1px solid var(--gold); border-radius: 2pt;
+  background: #fff;
+}
+
+/* ---------- STAT / KPI ROW ---------------------------------------------- */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.12in; margin: 0.12in 0; }
+.kpi { break-inside: avoid; text-align: center; border: 1px solid var(--rule); border-radius: 8pt; padding: 0.11in 0.06in; background: #fff; }
+.kpi .k-n { font-family: var(--serif); font-size: 19pt; line-height: 1; color: var(--gold); }
+.kpi .k-l { font-size: 6.9pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 3pt; line-height: 1.3; }
+
+/* ---------- TOC ---------------------------------------------------------- */
+.toc-page { break-before: page; }
+.toc h2.ch { margin-bottom: 0.22in; }
+.toc-part { margin-bottom: 0.17in; break-inside: avoid; }
+.toc-part > .tp-head {
+  display: flex; align-items: baseline; gap: 0.09in;
+  border-bottom: 1px solid var(--gold); padding-bottom: 0.04in; margin-bottom: 0.06in;
+}
+.toc-part .tp-n { font-family: var(--serif); font-size: 13pt; color: var(--gold); line-height: 1; }
+.toc-part .tp-t { font-family: var(--serif); font-size: 13pt; color: var(--forest-deep); font-weight: 600; }
+.toc-part ol { list-style: none; margin: 0; column-count: 2; column-gap: 0.3in; }
+.toc-part li { font-size: 8.3pt; color: var(--muted); padding: 1.6pt 0; break-inside: avoid; }
+.toc-part li b { color: var(--forest); font-weight: 600; font-variant-numeric: tabular-nums; margin-right: 0.45em; }
+
+/* ---------- MISC --------------------------------------------------------- */
+.mark-inline { height: 0.42in; width: auto; vertical-align: middle; }
+figure { margin: 0.1in 0; break-inside: avoid; }
+figcaption { font-size: 7.4pt; color: var(--muted); margin-top: 0.05in; line-height: 1.4; }
+.imgbox { border: 1px solid var(--rule); border-radius: 8pt; overflow: hidden; background: #fff; }
+.imgbox img { display: block; width: 100%; }
+.q {
+  font-family: var(--serif); font-size: 15pt; font-style: italic; font-weight: 300;
+  color: var(--forest); line-height: 1.34; text-align: center;
+  padding: 0.2in 0.3in; margin: 0.16in 0; break-inside: avoid;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+.tag {
+  display: inline-block; font-size: 6.8pt; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 700; padding: 1.5pt 5pt; border-radius: 20pt; margin-right: 3pt;
+  background: rgba(185,134,63,0.15); color: var(--gold);
+}
+.tag.sage { background: rgba(125,154,134,0.2); color: var(--forest); }
+.tag.terra { background: rgba(193,122,90,0.16); color: var(--terracotta); }
+
+/* ---------- SCREEN PREVIEW ----------------------------------------------
+   The book is a print document; on screen we simulate the page column so the
+   layout can be reviewed in a browser (and screenshotted for QA) without
+   generating a PDF. Print output is unaffected. */
+@media screen {
+  body {
+    width: 8.5in;
+    margin: 0 auto;
+    padding: 0.85in 0.85in 0.95in;
+    background: #fff;
+    box-shadow: 0 0 60px rgba(34,58,46,0.18);
+  }
+  .runner-top, .runner-bot { display: none; }
+  .cover, .part { margin-left: -0.85in; margin-right: -0.85in; }
+  .cover { margin-top: -0.85in; margin-bottom: 0.5in; }
+  .part { margin-top: 0.5in; margin-bottom: 0.5in; }
+  .chapter { border-top: 1px dashed rgba(185,134,63,0.4); padding-top: 0.4in; margin-top: 0.4in; }
+  .chapter:first-of-type { border-top: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="runner-top" aria-hidden="true">
+  <span class="rt-brand">Revive &amp; Glow Wellness</span>
+  <span class="rt-line"></span>
+  <span>Manual Oficial da Marca · Ed. 1.0</span>
+</div>
+<div class="runner-bot" aria-hidden="true">
+  <span class="rb-dot"></span>
+  <span>Documento interno &amp; de parceiros — Pinellas Park, Florida</span>
+  <span class="rb-dot"></span>
+</div>

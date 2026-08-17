@@ -1,0 +1,424 @@
+<!-- ==================================================================
+     PART II — BRAND BOOK
+     ================================================================== -->
+<div class="part">
+  <img class="pt-branch" src="../gold-branch.png" alt="" aria-hidden="true" />
+  <div class="pt-num">II</div>
+  <div class="pt-label">Parte Dois</div>
+  <h2>Brand Book<br>Identidade Visual</h2>
+  <p class="pt-lede">O sistema completo: símbolo, logotipo, cor, tipografia, elementos gráficos, grid e aplicações. Esta é a parte que designers e agências vão abrir primeiro.</p>
+  <ul class="pt-toc">
+    <li><b>2.1</b> Visão geral do sistema</li>
+    <li><b>2.2</b> O símbolo</li>
+    <li><b>2.3</b> Versões do logotipo</li>
+    <li><b>2.4</b> Manual de uso</li>
+    <li><b>2.5</b> Usos incorretos</li>
+    <li><b>2.6</b> Paleta oficial</li>
+    <li><b>2.7</b> Proporção e acessibilidade</li>
+    <li><b>2.8</b> Tipografia</li>
+    <li><b>2.9</b> Elementos gráficos</li>
+    <li><b>2.10</b> Iconografia</li>
+    <li><b>2.11</b> Grid e layout</li>
+    <li><b>2.12</b> Aplicações</li>
+    <li><b>2.13</b> Co-branding</li>
+    <li><b>2.14</b> Arquivos e assets</li>
+  </ul>
+</div>
+
+<!-- Reusable symbol definitions for every logo demonstration in this part.
+     Colours come from CSS custom properties rather than class selectors:
+     selectors do NOT match inside a <use> element's shadow tree, but inherited
+     properties — including custom properties — do. Each colourway therefore
+     just sets --ray / --leaf / --lot on the host <svg>. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <line id="rL" x1="130" y1="79" x2="130" y2="51"/>
+    <line id="rM" x1="130" y1="79" x2="130" y2="56"/>
+    <line id="rS" x1="130" y1="79" x2="130" y2="63"/>
+    <g id="rgmark" fill="none">
+      <g class="m-rays" stroke="var(--ray)" stroke-width="2.4" stroke-linecap="round">
+        <use href="#rL"/>
+        <use href="#rL" transform="rotate(-10 130 175)"/><use href="#rL" transform="rotate(10 130 175)"/>
+        <use href="#rL" transform="rotate(-20 130 175)"/><use href="#rL" transform="rotate(20 130 175)"/>
+        <use href="#rL" transform="rotate(-30 130 175)"/><use href="#rL" transform="rotate(30 130 175)"/>
+        <use href="#rM" transform="rotate(-40 130 175)"/><use href="#rM" transform="rotate(40 130 175)"/>
+        <use href="#rM" transform="rotate(-50 130 175)"/><use href="#rM" transform="rotate(50 130 175)"/>
+        <use href="#rM" transform="rotate(-60 130 175)"/><use href="#rM" transform="rotate(60 130 175)"/>
+        <use href="#rS" transform="rotate(-70 130 175)"/><use href="#rS" transform="rotate(70 130 175)"/>
+        <use href="#rS" transform="rotate(-80 130 175)"/><use href="#rS" transform="rotate(80 130 175)"/>
+        <use href="#rS" transform="rotate(-90 130 175)"/><use href="#rS" transform="rotate(90 130 175)"/>
+      </g>
+      <path class="m-arc" d="M45.6 150 A 88 88 0 0 1 214.4 150" stroke="var(--ray)" stroke-width="2.8" stroke-linecap="round"/>
+      <g class="m-dot" fill="var(--ray)">
+        <circle cx="45.6" cy="150" r="4"/><circle cx="214.4" cy="150" r="4"/>
+        <circle cx="130" cy="91" r="1.6"/><circle cx="130" cy="96.5" r="2"/><circle cx="130" cy="102" r="2.4"/>
+        <path d="M130 107 C 133 114, 136 117, 136 120.5 A 6 6 0 1 1 124 120.5 C 124 117, 127 114, 130 107 Z"/>
+      </g>
+      <g class="m-leaf" stroke="var(--leaf)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M124 174 C 104 188, 64 188, 28 166 C 52 161, 96 164, 124 174 Z"/>
+        <path d="M119 174 C 92 177, 58 173, 30 166"/>
+        <path d="M136 174 C 156 188, 196 188, 232 166 C 208 161, 164 164, 136 174 Z"/>
+        <path d="M141 174 C 168 177, 202 173, 230 166"/>
+      </g>
+      <g class="m-lot" stroke="var(--lot)" stroke-width="2.8" stroke-linejoin="round">
+        <path d="M130 175 C 104 170, 74 158, 64 132 C 90 136, 116 154, 130 175 Z"/>
+        <path d="M130 175 C 156 170, 186 158, 196 132 C 170 136, 144 154, 130 175 Z"/>
+        <path d="M130 175 C 110 160, 96 140, 99 120 C 117 133, 128 156, 130 175 Z"/>
+        <path d="M130 175 C 150 160, 164 140, 161 120 C 143 133, 132 156, 130 175 Z"/>
+        <path d="M130 175 C 114 152, 114 136, 130 114 C 146 136, 146 152, 130 175 Z"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<style>
+/* Logo demonstration harness. Each colourway sets three inherited custom
+   properties, which is what reaches the <use> shadow tree. */
+.lg {
+  display: block; width: 100%; height: auto; overflow: hidden;
+  background: transparent url('../logo-transparent.png') center top / 100% auto no-repeat;
+}
+.lg use { visibility: hidden; }
+/* Full lockups use the approved raster master instead of rebuilding the
+   wordmark with live type. Symbol-only demonstrations crop the same master. */
+.logo-demo:has(.wm) .lg {
+  width: min(100%, 2.65in) !important;
+  height: 2.65in !important;
+  max-width: 2.65in !important;
+  margin: 0 auto !important;
+  background-size: contain;
+  background-position: center;
+}
+.logo-demo:has(.wm) .wm,
+.logo-demo:has(.wm) .wm-sub { display: none; }
+
+.cw-full   { --ray: #b9863f; --leaf: #7d9a86; --lot: #5b4636; }  /* primary */
+.cw-rev    { --ray: #dab06a; --leaf: #a9bfae; --lot: #f1eadb; }  /* on dark  */
+.cw-gold   { --ray: #b9863f; --leaf: #b9863f; --lot: #b9863f; }
+.cw-forest { --ray: #223a2e; --leaf: #223a2e; --lot: #223a2e; }
+.cw-cream  { --ray: #f1eadb; --leaf: #f1eadb; --lot: #f1eadb; }
+.cw-black  { --ray: #1b241e; --leaf: #1b241e; --lot: #1b241e; }
+/* Deliberately wrong colourway — only ever used in the misuse panel of §2.5 */
+.cw-bad    { --ray: #c17a5a; --leaf: #c17a5a; --lot: #7d9a86; }
+
+.logo-demo { border: 1px solid var(--rule); border-radius: 8pt; padding: 0.14in; background: #fff; break-inside: avoid; text-align: center; }
+.logo-demo.on-forest { background: #223a2e; border-color: transparent; }
+.logo-demo.on-cream { background: #f1eadb; }
+.logo-demo.on-sand { background: #ddd0b6; }
+.logo-demo.on-gold { background: #b9863f; }
+.logo-demo .ld-cap { font-size: 6.6pt; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-top: 0.07in; }
+.logo-demo.on-forest .ld-cap, .logo-demo.on-gold .ld-cap { color: rgba(241,234,219,0.72); }
+
+/* Wordmark rendered as live type, so it can be shown at any size */
+.wm { font-family: var(--serif); font-weight: 600; line-height: 1; color: #5b4636; letter-spacing: -0.005em; }
+.wm .amp { color: #b9863f; font-style: italic; }
+.wm-sub {
+  display: flex; align-items: center; justify-content: center; gap: 0.5em;
+  font-family: var(--sans); font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.42em; text-indent: 0.42em; color: #7d9a86; white-space: nowrap;
+}
+.wm-sub::before, .wm-sub::after { content: ''; flex: none; width: 2.4em; height: 1px; background: #b9863f; opacity: .75; }
+.on-forest .wm { color: #f1eadb; }
+.on-forest .wm .amp { color: #dab06a; }
+.on-forest .wm-sub { color: #a9bfae; }
+.on-forest .wm-sub::before, .on-forest .wm-sub::after { background: #dab06a; }
+
+/* Clear-space and misuse diagrams */
+.clearbox { position: relative; padding: 0.34in; border: 1px dashed rgba(185,134,63,0.6); background: rgba(185,134,63,0.05); }
+.clearbox .cb-inner { border: 1px solid rgba(47,74,60,0.28); padding: 0.04in; }
+.clearbox .cb-x { position: absolute; font-family: var(--mono); font-size: 6.5pt; color: var(--gold); font-weight: 500; }
+.misuse { position: relative; border: 1px solid rgba(193,122,90,0.4); border-radius: 8pt; padding: 0.13in; background: #fff; break-inside: avoid; text-align: center; overflow: hidden; }
+.misuse::after {
+  content: '✕'; position: absolute; top: 0.04in; right: 0.06in;
+  color: #c17a5a; font-size: 11pt; font-weight: 700; line-height: 1;
+}
+.misuse .mu-cap { font-size: 6.6pt; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--terracotta); margin-top: 0.06in; }
+.misuse .mu-why { font-size: 7pt; color: var(--muted); line-height: 1.35; margin-top: 2pt; }
+</style>
+
+<!-- ---------- 2.1 ---------- -->
+<div class="chapter">
+  <h2 class="ch"><span class="ch-num">2.1</span>Visão geral do sistema visual</h2>
+  <p class="ch-lede">Cinco elementos formam toda a identidade. Se uma peça usa esses cinco corretamente, ela é reconhecível como Revive &amp; Glow mesmo sem o logotipo.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="c-kicker">1 · O símbolo do lótus radiante</div>
+      <p>Lótus de cinco pétalas, arco com raios de sol nascente e duas folhas horizontais. Traço fino, nunca preenchido. É o elemento mais reconhecível da marca.</p>
+    </div>
+    <div class="card">
+      <div class="c-kicker">2 · A tríade cromática</div>
+      <p>Verde-floresta profundo, dourado envelhecido e creme quente. Nunca branco puro, nunca preto puro. Sálvia e terracota como apoio.</p>
+    </div>
+    <div class="card">
+      <div class="c-kicker">3 · A dupla tipográfica</div>
+      <p>Cormorant Garamond para tudo que é voz da marca; Inter para tudo que é informação. Serifa alta e clara + sans discreta.</p>
+    </div>
+    <div class="card">
+      <div class="c-kicker">4 · O ramo botânico</div>
+      <p>Ramo de folhas em linha dourada com pontos de luz, sempre entrando pelas bordas da peça, nunca centralizado. É a moldura da marca.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:0.14in;">
+    <div class="c-kicker">5 · O espaço vazio</div>
+    <p>O elemento mais importante e o mais fácil de perder. Nossas peças respiram: margens generosas, texto curto, uma ideia por composição. Densidade é a assinatura visual dos concorrentes — não a nossa. <strong>Se estiver em dúvida entre acrescentar e remover, remova.</strong></p>
+  </div>
+
+  <h3>A lógica do sistema</h3>
+  <p>A identidade opera em duas temperaturas, e alternar entre elas é o que dá ritmo ao feed, ao site e ao material impresso:</p>
+  <table class="compact">
+    <thead><tr><th style="width:16%">Modo</th><th style="width:26%">Fundo</th><th style="width:28%">Quando usar</th><th>Sensação</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Claro</strong></td><td>Creme <span style="font-family:var(--mono);font-size:7pt">#f1eadb</span> ou <span style="font-family:var(--mono);font-size:7pt">#fcf7ed</span></td><td>Padrão. Conteúdo informativo, terapias, preços, educação.</td><td>Ar, manhã, calma, leveza.</td></tr>
+      <tr><td><strong>Escuro</strong></td><td>Verde-floresta <span style="font-family:var(--mono);font-size:7pt">#223a2e</span></td><td>Momentos de peso: manifesto, membership premium, pets, longevidade, capas.</td><td>Intimidade, profundidade, luxo contido.</td></tr>
+    </tbody>
+  </table>
+  <p>Como regra de proporção, cerca de <strong>70% claro e 30% escuro</strong>. Muito escuro fica pesado; só claro fica sem hierarquia.</p>
+</div>
+
+<!-- ---------- 2.2 ---------- -->
+<div class="chapter">
+  <h2 class="ch"><span class="ch-num">2.2</span>O símbolo: anatomia e significado</h2>
+  <p class="ch-lede">Cada parte do símbolo carrega um pedaço da promessa. Saber o que significa é a melhor defesa contra alterá-lo por engano.</p>
+
+  <div class="grid-2" style="align-items:start;">
+    <div class="logo-demo" style="padding:0.24in;">
+      <svg class="lg cw-full" viewBox="4 44 252 148" style="max-width:2.6in;margin:0 auto;"><use href="#rgmark"/></svg>
+      <div class="ld-cap">O símbolo · versão policromática</div>
+    </div>
+    <div>
+      <h4>Os quatro componentes</h4>
+      <table class="compact">
+        <tbody>
+          <tr><td style="width:34%"><strong>Raios</strong><br><span style="font-size:7pt;color:var(--muted)">dourado · 21 linhas</span></td><td>O sol nascente. Renovação, energia celular, o “glow”. Também remetem à luz vermelha — nossa primeira modalidade.</td></tr>
+          <tr><td><strong>Arco</strong><br><span style="font-size:7pt;color:var(--muted)">dourado · com dois pontos</span></td><td>O horizonte e o abraço. Os dois pontos nas extremidades são as duas fundadoras.</td></tr>
+          <tr><td><strong>Lótus</strong><br><span style="font-size:7pt;color:var(--muted)">lótus · 5 pétalas</span></td><td>Renascimento a partir da água. As cinco pétalas são os cinco passos do Revive Method™.</td></tr>
+          <tr><td><strong>Folhas</strong><br><span style="font-size:7pt;color:var(--muted)">sálvia · duas, horizontais</span></td><td>Natureza, base, equilíbrio. Ancoram o símbolo e impedem que ele flutue.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note">
+    <span class="n-title">Fato útil em apresentações</span>
+    Cinco pétalas, cinco passos. Não foi acidente e vale contar — clientes adoram descobrir que o símbolo tem uma lógica interna.
+  </div>
+
+  <h3>Especificações de construção</h3>
+  <table class="compact">
+    <thead><tr><th style="width:30%">Atributo</th><th>Valor</th></tr></thead>
+    <tbody>
+      <tr><td>Grade de desenho</td><td>viewBox <span style="font-family:var(--mono);font-size:7.4pt">4 44 252 148</span> · centro óptico em <span style="font-family:var(--mono);font-size:7.4pt">130, 175</span></td></tr>
+      <tr><td>Espessura dos raios</td><td>2,4 unidades · ponta arredondada</td></tr>
+      <tr><td>Espessura do arco</td><td>2,8 unidades · ponta arredondada</td></tr>
+      <tr><td>Espessura das folhas</td><td>2,0 unidades · junção arredondada</td></tr>
+      <tr><td>Espessura do lótus</td><td>2,8 unidades · junção arredondada</td></tr>
+      <tr><td>Preenchimento</td><td>Nenhum, exceto os pontos do arco, os três grãos do centro e a gota. O símbolo é <strong>linear</strong>.</td></tr>
+      <tr><td>Escala de traço</td><td>A espessura escala junto com o símbolo. Nunca fixe a espessura em pixels ao ampliar.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Versões monocromáticas aprovadas</h3>
+  <p>Quando a impressão é de uma cor, quando o símbolo é gravado, bordado ou aparece muito pequeno, use uma destas.</p>
+  <div class="grid-4">
+    <div class="logo-demo"><svg class="lg cw-gold" viewBox="4 44 252 148"><use href="#rgmark"/></svg><div class="ld-cap">Dourado sólido</div></div>
+    <div class="logo-demo"><svg class="lg cw-forest" viewBox="4 44 252 148"><use href="#rgmark"/></svg><div class="ld-cap">Floresta sólido</div></div>
+    <div class="logo-demo on-forest"><svg class="lg cw-cream" viewBox="4 44 252 148"><use href="#rgmark"/></svg><div class="ld-cap">Creme sobre escuro</div></div>
+    <div class="logo-demo"><svg class="lg cw-black" viewBox="4 44 252 148"><use href="#rgmark"/></svg><div class="ld-cap">Tinta · uma cor</div></div>
+  </div>
+</div>
+
+<!-- ---------- 2.3 ---------- -->
+<div class="chapter">
+  <h2 class="ch"><span class="ch-num">2.3</span>O logotipo: versões oficiais</h2>
+  <p class="ch-lede">Quatro construções cobrem todos os usos. Nenhuma outra combinação é autorizada.</p>
+
+  <h3>Versão A · Lockup vertical — a principal</h3>
+  <p>Símbolo acima, nome ao centro, descritor abaixo com réguas douradas. É a versão de assinatura: use sempre que houver espaço vertical e a marca precisar se apresentar por completo.</p>
+  <div class="logo-demo" style="padding:0.28in 0.2in;">
+    <svg class="lg cw-full" viewBox="4 44 252 148" style="max-width:1.7in;margin:0 auto 0.09in;"><use href="#rgmark"/></svg>
+    <div class="wm" style="font-size:30pt;">Revive <span class="amp">&amp;</span> Glow</div>
+    <div class="wm-sub" style="font-size:7pt;margin-top:0.06in;">Wellness</div>
+    <div class="ld-cap" style="margin-top:0.14in;">Versão A · vertical · uso principal</div>
+  </div>
+
+  <div class="grid-2" style="margin-top:0.16in;">
+    <div>
+      <h3>Versão B · Horizontal</h3>
+      <p>Símbolo à esquerda, nome à direita. Para faixas estreitas: cabeçalho de site, rodapé de e-mail, topo de fatura, placa de porta.</p>
+      <div class="logo-demo" style="display:flex;align-items:center;gap:0.12in;text-align:left;">
+        <svg class="lg cw-full" viewBox="4 44 252 148" style="width:0.95in;flex:0 0 auto;"><use href="#rgmark"/></svg>
+        <div>
+          <div class="wm" style="font-size:16pt;">Revive <span class="amp">&amp;</span> Glow</div>
+          <div style="font-family:var(--sans);font-size:5.6pt;letter-spacing:0.34em;text-transform:uppercase;font-weight:600;color:#7d9a86;margin-top:2pt;">Wellness</div>
+        </div>
+      </div>
+      <div class="ld-cap" style="text-align:center;">Versão B · horizontal</div>
+    </div>
+    <div>
+      <h3>Versão C · Símbolo isolado</h3>
+      <p>Só o símbolo. Para avatar de rede social, favicon, selo, carimbo, bordado, marca d'água. Só use quando o nome da marca já estiver evidente pelo contexto.</p>
+      <div class="grid-2">
+        <div class="logo-demo on-forest" style="padding:0.1in;"><svg class="lg cw-rev" viewBox="4 44 252 148"><use href="#rgmark"/></svg></div>
+        <div class="logo-demo on-cream" style="padding:0.1in;"><svg class="lg cw-full" viewBox="4 44 252 148"><use href="#rgmark"/></svg></div>
+      </div>
+      <div class="ld-cap" style="text-align:center;">Versão C · símbolo</div>
+    </div>
+  </div>
+
+  <h3>Versão D · Wordmark isolado</h3>
+  <p>Só o nome, sem símbolo. Para quando o símbolo já aparece em outro ponto da mesma peça, ou em espaços muito baixos e largos — rodapé, faixa de e-mail, marca em vídeo.</p>
+  <div class="logo-demo">
+    <div class="wm" style="font-size:22pt;">Revive <span class="amp">&amp;</span> Glow</div>
+    <div class="ld-cap">Versão D · wordmark</div>
+  </div>
+
+  <h3>Qual versão usar</h3>
+  <table class="compact">
+    <thead><tr><th style="width:34%">Aplicação</th><th style="width:14%">Versão</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Fachada e sinalização externa</td><td><strong>A</strong></td><td>Símbolo com no mínimo 25 cm de largura.</td></tr>
+      <tr><td>Cabeçalho do site</td><td><strong>B</strong></td><td>Wordmark com 150–205 px de largura.</td></tr>
+      <tr><td>Hero do site / capas</td><td><strong>A</strong></td><td>Sempre sobre fundo limpo, nunca sobre foto movimentada.</td></tr>
+      <tr><td>Avatar de Instagram, Facebook, Google</td><td><strong>C</strong></td><td>Sobre floresta. O nome já aparece ao lado do avatar.</td></tr>
+      <tr><td>Favicon</td><td><strong>C simplificado</strong></td><td>Versão de silhueta com fundo floresta — ver §2.14.</td></tr>
+      <tr><td>Marca d'água em foto</td><td><strong>C</strong> ou <strong>D</strong></td><td>Creme a 45% de opacidade, canto inferior.</td></tr>
+      <tr><td>Uniforme bordado</td><td><strong>C</strong> mono</td><td>Dourado sobre floresta, ou creme sobre floresta.</td></tr>
+      <tr><td>Cartão de visita, frente</td><td><strong>A</strong></td><td>Centralizado, sobre floresta, dourado em hot stamp se possível.</td></tr>
+      <tr><td>Rodapé de e-mail</td><td><strong>B</strong> ou <strong>D</strong></td><td>Altura máxima de 40 px.</td></tr>
+      <tr><td>Copo, garrafa, toalha</td><td><strong>C</strong> mono</td><td>Uma cor só. Repetir em padrão é permitido — ver §2.9.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ---------- 2.4 ---------- -->
+<div class="chapter">
+  <h2 class="ch"><span class="ch-num">2.4</span>Manual de uso da logo</h2>
+  <p class="ch-lede">Três regras protegem 95% da consistência: área de respiro, tamanho mínimo e fundo adequado.</p>
+
+  <h3>Área de respiro (clear space)</h3>
+  <p>A unidade de medida é <strong>X = a altura das folhas do símbolo</strong> (a faixa horizontal na base). Nenhum outro elemento — texto, foto, borda, outro logo — pode invadir a área de <strong>1X em todos os lados</strong> do logotipo. Em fachada, sinalização e capas, use <strong>2X</strong>.</p>
+  <div class="clearbox">
+    <div class="cb-inner" style="text-align:center;padding:0.16in;">
+      <svg class="lg cw-full" viewBox="4 44 252 148" style="max-width:1.5in;margin:0 auto 0.07in;"><use href="#rgmark"/></svg>
+      <div class="wm" style="font-size:20pt;">Revive <span class="amp">&amp;</span> Glow</div>
+      <div class="wm-sub" style="font-size:5.6pt;margin-top:0.04in;">Wellness</div>
+    </div>
+    <span class="cb-x" style="top:0.14in;left:50%;transform:translateX(-50%)">1X</span>
+    <span class="cb-x" style="bottom:0.14in;left:50%;transform:translateX(-50%)">1X</span>
+    <span class="cb-x" style="left:0.11in;top:50%;transform:translateY(-50%)">1X</span>
+    <span class="cb-x" style="right:0.11in;top:50%;transform:translateY(-50%)">1X</span>
+  </div>
+  <p style="font-size:7.6pt;color:var(--muted);text-align:center;margin-top:0.05in;">A linha tracejada é a área de respiro mínima. Ela nunca é impressa — é uma zona de exclusão.</p>
+
+  <h3>Tamanhos mínimos</h3>
+  <p>Abaixo destes limites o traço fino do lótus fecha e o símbolo vira uma mancha. Se o espaço for menor, use o wordmark (versão D) ou o favicon simplificado.</p>
+  <table class="compact">
+    <thead><tr><th style="width:26%">Versão</th><th style="width:24%">Digital · mínimo</th><th style="width:24%">Impresso · mínimo</th><th>Abaixo disso</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A · vertical</strong></td><td>140 px de largura</td><td>35 mm de largura</td><td>Use a versão B.</td></tr>
+      <tr><td><strong>B · horizontal</strong></td><td>120 px de largura</td><td>30 mm de largura</td><td>Use a versão D.</td></tr>
+      <tr><td><strong>C · símbolo</strong></td><td>32 px de altura</td><td>10 mm de altura</td><td>Use o favicon simplificado.</td></tr>
+      <tr><td><strong>D · wordmark</strong></td><td>90 px de largura</td><td>22 mm de largura</td><td>Escreva o nome em Inter.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Fundos aprovados</h3>
+  <div class="grid-4">
+    <div class="logo-demo on-cream" style="padding:0.12in;"><svg class="lg cw-full" viewBox="4 44 252 148" style="max-width:0.95in;margin:0 auto;"><use href="#rgmark"/></svg><div class="ld-cap">Creme · policromático</div></div>
+    <div class="logo-demo on-forest" style="padding:0.12in;"><svg class="lg cw-rev" viewBox="4 44 252 148" style="max-width:0.95in;margin:0 auto;"><use href="#rgmark"/></svg><div class="ld-cap">Floresta · invertido</div></div>
+    <div class="logo-demo on-sand" style="padding:0.12in;"><svg class="lg cw-forest" viewBox="4 44 252 148" style="max-width:0.95in;margin:0 auto;"><use href="#rgmark"/></svg><div class="ld-cap">Areia · floresta mono</div></div>
+    <div class="logo-demo on-gold" style="padding:0.12in;"><svg class="lg cw-cream" viewBox="4 44 252 148" style="max-width:0.95in;margin:0 auto;"><use href="#rgmark"/></svg><div class="ld-cap">Dourado · creme mono</div></div>
+  </div>
+
+  <h4>Sobre fotografia</h4>
+  <p>O logotipo pode ir sobre foto, com duas condições: a região atrás dele deve ser <strong>lisa e de contraste uniforme</strong> (céu, parede, água, tecido), e o contraste com o fundo deve ser de <strong>ao menos 3:1</strong>. Se a foto for movimentada, aplique um véu — gradiente de floresta a 55% de opacidade — atrás do logotipo. Nunca coloque uma caixa branca sólida em volta.</p>
+
+  <div class="dd">
+    <div class="do">
+      <h5>Faça</h5>
+      <ul>
+        <li>Use os arquivos oficiais, sempre.</li>
+        <li>Escale proporcionalmente, segurando Shift.</li>
+        <li>Escolha a versão pelo espaço disponível, não pelo gosto.</li>
+        <li>Deixe o logotipo respirar mais do que o mínimo.</li>
+        <li>Use creme mono sobre fotos escuras.</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <h5>Não faça</h5>
+      <ul>
+        <li>Redesenhar, redigitar ou vetorizar de novo.</li>
+        <li>Trocar as cores por outras da paleta.</li>
+        <li>Acrescentar sombra, brilho, contorno ou 3D.</li>
+        <li>Girar, inclinar ou espelhar.</li>
+        <li>Colocar sobre padrão ou foto agitada.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 2.5 ---------- -->
+<div class="chapter">
+  <h2 class="ch"><span class="ch-num">2.5</span>Usos incorretos da logo</h2>
+  <p class="ch-lede">Todos os exemplos abaixo já aconteceram com alguma marca. Nenhum deve acontecer com a nossa.</p>
+
+  <div class="grid-4">
+    <div class="misuse">
+      <svg class="lg cw-full" viewBox="4 44 252 148" style="max-width:0.85in;margin:0 auto;transform:scaleX(1.6);"><use href="#rgmark"/></svg>
+      <div class="mu-cap">Distorcer</div>
+      <div class="mu-why">Escalar sem manter proporção.</div>
+    </div>
+    <div class="misuse">
+      <svg class="lg cw-full" viewBox="4 44 252 148" style="max-width:0.85in;margin:0 auto;transform:rotate(-14deg);"><use href="#rgmark"/></svg>
+      <div class="mu-cap">Girar</div>
+      <div class="mu-why">O símbolo é sempre reto. O sol não nasce inclinado.</div>
+    </div>
+    <div class="misuse" style="background:#f1eadb;">
+      <svg class="lg cw-cream" viewBox="4 44 252 148" style="max-width:0.85in;margin:0 auto;"><use href="#rgmark"/></svg>
+      <div class="mu-cap">Contraste insuficiente</div>
+      <div class="mu-why">Creme sobre creme. Ilegível.</div>
+    </div>
+    <div class="misuse">
+      <svg class="lg cw-full" viewBox="4 44 252 148" style="max-width:0.85in;margin:0 auto;filter:drop-shadow(2px 3px 2px rgba(0,0,0,.55));"><use href="#rgmark"/></svg>
+      <div class="mu-cap">Sombra e efeitos</div>
+      <div class="mu-why">Sem sombra, brilho, bisel ou 3D.</div>
+    </div>
+    <div class="misuse" style="background:linear-gradient(135deg,#c17a5a,#7d9a86);">
+      <svg class="lg cw-cream" viewBox="4 44 252 148" style="max-width:0.85in;margin:0 auto;"><use href="#rgmark"/></svg>
+      <div class="mu-cap">Fundo não autorizado</div>
+      <div class="mu-why">Terracota e sálvia não são fundos de logo.</div>
+    </div>
+    <div class="misuse">
+      <svg class="lg cw-bad" viewBox="4 44 252 148" style="max-width:0.85in;margin:0 auto;"><use href="#rgmark"/></svg>
+      <div class="mu-cap">Recolorir</div>
+      <div class="mu-why">Só as versões de §2.2 e §2.4 existem.</div>
+    </div>
+    <div class="misuse">
+      <div style="display:flex;align-items:center;justify-content:center;gap:2pt;">
+        <svg class="lg cw-full" viewBox="4 44 252 148" style="width:0.5in;"><use href="#rgmark"/></svg>
+        <div class="wm" style="font-size:8pt;">Revive <span class="amp">&amp;</span> Glow</div>
+      </div>
+      <div class="mu-cap">Respiro invadido</div>
+      <div class="mu-why">Menos de 1X entre símbolo e texto.</div>
+    </div>
+    <div class="misuse">
+      <div style="font-family:var(--sans);font-weight:700;font-size:13pt;color:#5b4636;">Revive and Glow</div>
+      <div class="mu-cap">Nome errado</div>
+      <div class="mu-why">Sempre “&amp;”, sempre em Cormorant.</div>
+    </div>
+  </div>
+
+  <h3>Erros verbais que também são erros de marca</h3>
+  <table class="compact">
+    <thead><tr><th style="width:32%">Errado</th><th style="width:32%">Certo</th><th>Por quê</th></tr></thead>
+    <tbody>
+      <tr><td>Revive and Glow</td><td>Revive &amp; Glow</td><td>O “&amp;” é parte do desenho da marca.</td></tr>
+      <tr><td>Revive&amp;Glow · ReviveGlow</td><td>Revive &amp; Glow</td><td>Espaços em volta do “&amp;” sempre.</td></tr>
+      <tr><td>R&amp;G Wellness</td><td>Revive &amp; Glow Wellness</td><td>Não temos sigla. Uma marca nova não pode se dar ao luxo.</td></tr>
+      <tr><td>REVIVE &amp; GLOW</td><td>Revive &amp; Glow</td><td>O wordmark nunca é caixa-alta.</td></tr>
+      <tr><td>Revive Method</td><td>The Revive Method™</td><td>Artigo e símbolo obrigatórios na primeira menção.</td></tr>
+      <tr><td>revive &amp; glow</td><td>Revive &amp; Glow</td><td>Nunca todo minúsculo. Não somos essa marca.</td></tr>
+    </tbody>
+  </table>
+</div>

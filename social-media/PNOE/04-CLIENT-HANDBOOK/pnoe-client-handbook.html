@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PNOĒ Metabolic Testing Client Handbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--cream:#fbf7ef;--paper:#fffdf8;--forest:#53684e;--deep:#3c4439;--brown:#675343;--gold:#bd8b2e;--line:#d9c9aa;--soft:#eef0e8}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#ddd;color:var(--deep);font-family:Montserrat,Arial,sans-serif}
+    .sheet{position:relative;width:1200px;height:2040px;margin:0 auto;overflow:hidden;background:var(--cream);box-shadow:0 10px 40px #777}
+    .sheet:before,.sheet:after{content:"";position:absolute;width:330px;height:330px;border:2px solid rgba(189,139,46,.17);border-radius:46% 54% 59% 41%;z-index:0}
+    .sheet:before{left:-230px;top:390px;transform:rotate(24deg)}.sheet:after{right:-230px;bottom:310px;transform:rotate(-28deg)}
+    .content{position:relative;z-index:1;height:100%;display:flex;flex-direction:column}
+    .hero{height:430px;display:grid;grid-template-columns:54% 46%;border-bottom:1px solid var(--line);overflow:hidden}
+    .hero-copy{padding:18px 44px 20px;text-align:center;background:linear-gradient(140deg,#fffdf8 0%,#f7f0e4 100%);overflow:hidden}
+    .logo{width:188px;height:auto;display:block;margin:0 auto 5px;mix-blend-mode:multiply}
+    .eyebrow{font-size:13px;letter-spacing:.27em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 10px}
+    h1{font:600 43px/.92 "Cormorant Garamond",Georgia,serif;color:var(--brown);margin:0;text-transform:uppercase;letter-spacing:.02em}
+    h1 em{display:block;font-style:normal;color:var(--forest)}
+    .subtitle{font:500 22px/1.08 "Cormorant Garamond",Georgia,serif;color:var(--forest);margin:11px 0 7px}
+    .tagline{font-size:12px;letter-spacing:.21em;color:var(--gold);text-transform:uppercase}
+    .hero-photo{position:relative;overflow:hidden;background:#c9c9c9;min-width:0;min-height:0}
+    .hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 34%}
+    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.22),transparent 24%)}
+    .intro{height:238px;display:grid;grid-template-columns:47% 53%;border-bottom:1px solid var(--line);overflow:hidden}
+    .intro-copy{padding:30px 38px;background:var(--paper)}
+    h2{font:600 28px/1.05 "Cormorant Garamond",Georgia,serif;color:var(--forest);text-transform:uppercase;margin:0 0 12px;letter-spacing:.025em}
+    p{margin:0;font-size:15px;line-height:1.55;color:#4d514b}
+    .intro-copy p+p{margin-top:9px}
+    .intro-art{overflow:hidden;border-left:1px solid var(--line);min-width:0;min-height:0}
+    .intro-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+    .section{padding:23px 34px;border-bottom:1px solid var(--line)}
+    .section-title{text-align:center;margin-bottom:16px}
+    .section-title h2{margin-bottom:4px}.section-title p{font-size:13px;color:#74766f}
+    .metrics{height:292px}
+    .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .metric{min-height:91px;display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center;padding:11px 12px;border:1px solid #ded3c0;border-radius:12px;background:rgba(255,253,248,.82)}
+    .metric-code{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:white;font-size:12px;font-weight:600;letter-spacing:.03em}
+    h3{font:600 18px/1.05 "Cormorant Garamond",Georgia,serif;color:var(--brown);margin:0 0 4px}
+    .metric p{font-size:11.7px;line-height:1.35}
+    .tests{height:226px;display:grid;grid-template-columns:38% 62%;padding:0;border-bottom:1px solid var(--line)}
+    .tests-photo{overflow:hidden}.tests-photo img{width:100%;height:100%;object-fit:cover;object-position:center 31%}
+    .tests-copy{padding:22px 28px;background:var(--paper)}
+    .test-row{display:grid;grid-template-columns:132px 1fr;gap:12px;padding:9px 0;border-top:1px solid #e4dac9}
+    .test-row:first-of-type{border-top:0}.test-row strong{font-size:13px;color:var(--forest)}.test-row span{font-size:12.2px;line-height:1.35;color:#555951}
+    .flow{height:190px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center}
+    .step{position:relative;padding:0 10px}.step:not(:last-child):after{content:"→";position:absolute;right:-12px;top:19px;color:var(--gold);font-size:22px}
+    .num{width:42px;height:42px;margin:0 auto 7px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#fff;font:600 19px "Cormorant Garamond",serif}
+    .step h3{font-size:17px}.step p{font-size:11.5px;line-height:1.35}
+    .practical{height:270px;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:22px 34px;border-bottom:1px solid var(--line);background:linear-gradient(145deg,#f7f1e7,#fffdf8)}
+    .panel{padding:16px 18px;border:1px solid #ded3c0;border-radius:14px;background:rgba(255,255,255,.62)}
+    .panel h2{font-size:22px;margin-bottom:10px}.panel ul{margin:0;padding-left:18px}.panel li{font-size:12.3px;line-height:1.45;margin:4px 0;color:#4d514b}
+    .panel .note{margin-top:8px;font-size:10.8px;color:#77786f;font-style:italic}
+    .outcomes{height:170px;padding:22px 34px;border-bottom:1px solid var(--line)}
+    .outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center}
+    .outcome{padding:11px 9px;border-top:2px solid var(--gold)}.outcome strong{display:block;color:var(--forest);font:600 16px "Cormorant Garamond",serif;margin-bottom:4px}.outcome span{font-size:11.5px;line-height:1.35;color:#555951}
+    .safety{height:108px;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:18px 34px;background:var(--soft);border-bottom:1px solid var(--line)}
+    .safety h3{font-size:17px;color:var(--forest)}.safety p{font-size:10.8px;line-height:1.38}
+    footer{height:116px;display:grid;grid-template-columns:260px 1fr;align-items:center;padding:15px 36px;background:var(--forest);color:white}
+    footer img{width:auto;height:86px;filter:brightness(0) invert(1);opacity:.92}footer .contact{text-align:right;font-size:13px;line-height:1.65;letter-spacing:.02em}footer .contact strong{color:#f0d59c}
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <div class="content">
+      <header class="hero">
+        <div class="hero-copy">
+          <img class="logo" src="assets/logo-official.jpeg" alt="Revive & Glow Wellness">
+          <p class="eyebrow">Advanced Metabolic Assessment</p>
+          <h1>PNOĒ Metabolic Testing <em>Client Handbook</em></h1>
+          <p class="subtitle">Your breath reveals how your body uses oxygen and produces energy.</p>
+          <p class="tagline">Measure · Understand · Personalize</p>
+        </div>
+        <div class="hero-photo"><img src="assets/pnoe-resting.jpg" alt="PNOĒ metabolic breath assessment"></div>
+      </header>
+
+      <section class="intro">
+        <div class="intro-copy">
+          <h2>What is PNOĒ?</h2>
+          <p>PNOĒ is a clinical-grade breath analysis that measures the oxygen you use and the carbon dioxide you produce—at rest and during exercise.</p>
+          <p>Instead of relying only on estimates, it creates a personalized picture of your metabolism, cardiorespiratory fitness, fuel use, and breathing response.</p>
+        </div>
+        <div class="intro-art"><img src="assets/metabolic-breath-illustration.png" alt="Conceptual breath-analysis illustration"></div>
+      </section>
+
+      <section class="section metrics">
+        <div class="section-title"><h2>One Test · A Clearer Picture</h2><p>Key measurements in your personalized PNOĒ report</p></div>
+        <div class="metric-grid">
+          <div class="metric"><span class="metric-code">VO₂</span><div><h3>VO₂ Max</h3><p>Your body’s ability to take in and use oxygen during exercise—a core measure of aerobic fitness.</p></div></div>
+          <div class="metric"><span class="metric-code">RMR</span><div><h3>Resting Metabolic Rate</h3><p>Your measured daily energy expenditure at rest, rather than a calculator-based estimate.</p></div></div>
+          <div class="metric"><span class="metric-code">FUEL</span><div><h3>Fat vs. Carb Use</h3><p>How your body uses fat and carbohydrates for energy at rest and across exercise intensities.</p></div></div>
+          <div class="metric"><span class="metric-code">HR</span><div><h3>Training Zones</h3><p>Personalized heart-rate ranges to guide recovery, endurance, and higher-intensity training.</p></div></div>
+          <div class="metric"><span class="metric-code">AIR</span><div><h3>Breathing Efficiency</h3><p>How your breathing responds as effort rises, helping explain stamina and exercise tolerance.</p></div></div>
+          <div class="metric"><span class="metric-code">AGE</span><div><h3>Metabolic Fitness Age</h3><p>A motivating comparison and baseline for tracking changes in metabolic and aerobic fitness.</p></div></div>
+        </div>
+      </section>
+
+      <section class="tests">
+        <div class="tests-photo"><img src="assets/pnoe-performance.jpg" alt="Active PNOĒ metabolic test"></div>
+        <div class="tests-copy">
+          <h2>Choose the Assessment That Fits Your Goal</h2>
+          <div class="test-row"><strong>Resting Test · ~15 min</strong><span>Resting metabolic rate, daily calorie needs, and your fat-versus-carbohydrate fuel mix at rest.</span></div>
+          <div class="test-row"><strong>Active / VO₂ Test · ~30 min</strong><span>VO₂ Max, cardiorespiratory fitness, personalized heart-rate zones, fuel use during exercise, and metabolic fitness age.</span></div>
+          <div class="test-row"><strong>Full Assessment · ~60 min</strong><span>Resting and active testing, results review, and personalized guidance for training, nutrition, and recovery.</span></div>
+        </div>
+      </section>
+
+      <section class="section flow">
+        <div class="section-title"><h2>Your PNOĒ Experience</h2></div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h3>Breathe</h3><p>Wear a light mask and breathe normally at rest or while completing a guided exercise test.</p></div>
+          <div class="step"><div class="num">2</div><h3>Analyze</h3><p>PNOĒ analyzes oxygen and carbon dioxide in every breath.</p></div>
+          <div class="step"><div class="num">3</div><h3>Understand</h3><p>Review your results in clear, practical language.</p></div>
+          <div class="step"><div class="num">4</div><h3>Personalize</h3><p>Use your data to guide training, nutrition, recovery, and future re-testing.</p></div>
+        </div>
+      </section>
+
+      <section class="practical">
+        <div class="panel">
+          <h2>Who Can Benefit?</h2>
+          <ul>
+            <li><strong>Weight & energy:</strong> understand measured calorie needs and fuel use.</li>
+            <li><strong>Athletes & runners:</strong> train with individualized zones and a clear aerobic baseline.</li>
+            <li><strong>Longevity-minded clients:</strong> track cardiorespiratory and metabolic fitness over time.</li>
+            <li><strong>Plateau-breakers:</strong> replace guesswork with objective data and new direction.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Before Your Test</h2>
+          <ul>
+            <li>Follow the preparation instructions provided with your appointment.</li>
+            <li>Wear comfortable clothing and athletic shoes for an active test.</li>
+            <li>Tell the team about health concerns, symptoms, medications, or exercise limitations.</li>
+            <li>Bring questions and be ready to discuss your goals.</li>
+          </ul>
+          <p class="note">Preparation may differ for resting and active assessments; your booking instructions are the source of truth.</p>
+        </div>
+      </section>
+
+      <section class="outcomes">
+        <div class="section-title"><h2>Turn Your Results Into Direction</h2></div>
+        <div class="outcome-grid">
+          <div class="outcome"><strong>Nutrition</strong><span>Build targets around your measured resting metabolism and goals.</span></div>
+          <div class="outcome"><strong>Training</strong><span>Use individualized zones instead of generic percentages.</span></div>
+          <div class="outcome"><strong>Recovery</strong><span>Balance effort and recovery with a clearer view of your physiology.</span></div>
+          <div class="outcome"><strong>Progress</strong><span>Re-test over time to compare results with your own baseline.</span></div>
+        </div>
+      </section>
+
+      <section class="safety">
+        <div><h3>Comfortable & Non-Invasive</h3><p>The assessment uses a fitted mask and breath sensor. The active test includes guided exercise appropriate to the selected protocol.</p></div>
+        <div><h3>Wellness & Fitness Information</h3><p>PNOĒ results are educational and are not a medical diagnosis or treatment. Consult a qualified healthcare provider before starting a new nutrition or exercise program or if you have medical concerns.</p></div>
+      </section>
+
+      <footer>
+        <img src="assets/logo-wordmark.png" alt="Revive & Glow Wellness">
+        <div class="contact"><strong>PNOĒ Metabolic Testing</strong><br>727-776-4569 &nbsp; · &nbsp; 9899 66th St N, Pinellas Park, FL 33782<br>reviveandglowwellness.ai/pnoe.html</div>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>
