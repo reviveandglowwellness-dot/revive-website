@@ -302,6 +302,18 @@
     .therapy .kit { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.9rem; }
     .therapy p { font-size: 0.92rem; color: #5c6b60; font-weight: 300; }
 
+    /* Men's Wellness entry point — preview only until launch */
+    .mens-entry { padding: 0; background: #0d1712; color: var(--cream); overflow: hidden; }
+    .mens-entry-grid { min-height: 500px; display: grid; grid-template-columns: 1fr 1fr; }
+    .mens-entry-copy { padding: clamp(3.5rem, 7vw, 6.5rem); display: flex; flex-direction: column; justify-content: center; }
+    .mens-entry .eyebrow { color: var(--gold-light); }
+    .mens-entry h2 { max-width: 650px; color: var(--cream); font-family: var(--sans); font-weight: 600; letter-spacing: -.035em; text-transform: uppercase; }
+    .mens-entry p:not(.eyebrow) { max-width: 620px; margin: 1.15rem 0 1.8rem; color: rgba(247,243,234,.7); font-weight: 300; }
+    .mens-entry-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+    .mens-entry .btn-outline { border-color: rgba(228,200,140,.35); color: var(--cream); }
+    .mens-entry-visual { position: relative; min-height: 500px; background: linear-gradient(90deg,#0d1712 0%,rgba(13,23,18,.18) 34%,rgba(13,23,18,.05)),url('pnoe-performance.jpg') 56% center/cover no-repeat; }
+    .mens-entry-visual::after { content:'RECOVERY · PERFORMANCE · LONGEVITY'; position:absolute; left:2rem; right:2rem; bottom:2rem; padding:1rem 1.2rem; border:1px solid rgba(228,200,140,.25); color:var(--gold-light); background:rgba(9,16,12,.75); font-size:.68rem; font-weight:600; letter-spacing:.13em; text-align:center; }
+
     /* Who */
     .who { background: var(--forest); color: var(--cream); }
     .who .eyebrow { color: var(--gold-light); }
@@ -636,6 +648,8 @@
       .nav-links a.nav-pill { text-align: center; margin: 0.7rem 0; padding: 0.75rem; }
       .nav-links a.btn { text-align: center; margin-top: 0.7rem; }
       .hero-container { grid-template-columns: 1fr; gap: 2.4rem; }
+      .mens-entry-grid { grid-template-columns: 1fr; }
+      .mens-entry-visual { min-height: 390px; order: -1; }
       .hero-visual { max-width: 440px; }
       .promise .container { grid-template-columns: 1fr; gap: 2.5rem; }
       .assessment .container { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -710,6 +724,7 @@
     <div class="nav-links">
       <a href="#method">The Method</a>
       <a href="#therapies">Therapies</a>
+      <a href="mens-wellness.html">Men's Wellness</a>
       <a href="peptides.html" class="nav-pill">Peptides &amp; GLP‑1</a>
       <a href="#assessment">Your Plan</a>
       <a href="#explore">Explore</a>
@@ -959,6 +974,22 @@
           <p style="color:rgba(247,243,234,0.8);">Memberships, packages, and seasonal experiences designed around your goals — revealed at opening.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- MEN'S WELLNESS -->
+  <section class="mens-entry" id="mens-wellness">
+    <div class="mens-entry-grid">
+      <div class="mens-entry-copy reveal">
+        <p class="eyebrow">Wellness for men</p>
+        <h2>Strength is built beyond the workout.</h2>
+        <p>Explore the same Revive &amp; Glow sessions and memberships through the goals that matter to you — recovery, performance, measurable progress and long-term wellness. When you want to go deeper, testing and physician-guided men's health options are also available.</p>
+        <div class="mens-entry-actions">
+          <a href="mens-wellness.html" class="btn btn-gold">Explore Men's Wellness</a>
+          <a href="booking.html" class="btn btn-outline">Book a Session</a>
+        </div>
+      </div>
+      <div class="mens-entry-visual" role="img" aria-label="Athlete focused on performance and recovery"></div>
     </div>
   </section>
 

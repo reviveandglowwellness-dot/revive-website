@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Men's Wellness | Revive &amp; Glow Wellness</title>
+  <meta name="description" content="Explore men's wellness at Revive & Glow: recovery sessions, memberships, performance testing, lab testing and physician-guided online health options.">
+  <link rel="canonical" href="https://www.reviveandglowwellness.ai/mens-wellness.html">
+  <meta property="og:title" content="Men's Wellness | Revive &amp; Glow Wellness">
+  <meta property="og:description" content="Recovery, performance, measurable progress and physician-guided men's health options — built around your goals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.reviveandglowwellness.ai/mens-wellness.html">
+  <meta property="og:image" content="https://www.reviveandglowwellness.ai/pnoe-performance.jpg">
+  <link rel="icon" href="favicon.ico?v=20260812-leaf-bold">
+  <link rel="stylesheet" href="detail-pages.css">
+  <style>
+    :root{--men-black:#101713;--men-charcoal:#17231d;--men-moss:#718271}
+    body{background:#f5f0e7}
+    nav{background:rgba(16,23,19,.96);box-shadow:0 8px 28px -20px #000}
+    .nav-links a,.nav-toggle{color:var(--cream)}
+    .nav-links a.active{color:var(--gold-light)}
+    .men-hero{min-height:760px;padding:calc(76px + 4rem) 0 4.5rem;background:var(--men-black);color:var(--cream);position:relative;overflow:hidden;display:flex;align-items:center}
+    .men-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,17,13,.98) 0%,rgba(10,17,13,.86) 38%,rgba(10,17,13,.18) 68%,rgba(10,17,13,.55) 100%),url('pnoe-performance.jpg') center right/cover no-repeat}
+    .men-hero::after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--men-black))}
+    .men-hero .container{position:relative;z-index:2}
+    .hero-copy{max-width:660px}.hero-kicker{display:flex;align-items:center;gap:.75rem;color:var(--gold-light);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}.hero-kicker::before{content:"";width:48px;height:1px;background:var(--gold)}
+    .men-hero h1{margin:1rem 0 1.3rem;font-family:var(--sans);font-size:clamp(3rem,7.2vw,6.3rem);font-weight:600;letter-spacing:-.055em;text-transform:uppercase;line-height:.94}.men-hero h1 span{display:block;color:var(--gold-light)}
+    .men-hero .lede{max-width:600px;font-size:1.08rem;color:rgba(247,243,234,.78)}
+    .hero-actions{margin-top:2rem}.hero-actions .btn{border-radius:4px;text-transform:uppercase;letter-spacing:.1em}.hero-actions .btn-outline{border-color:rgba(228,200,140,.38)}
+    .signal-bar{position:relative;z-index:3;margin-top:-1px;padding:1.25rem 0;background:var(--men-black);border-top:1px solid rgba(228,200,140,.17);border-bottom:1px solid rgba(228,200,140,.17)}
+    .signal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.signal{padding:.7rem 1rem;border-left:1px solid rgba(228,200,140,.22)}.signal strong{display:block;color:var(--cream);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.signal span{font-size:.75rem;color:rgba(247,243,234,.55)}
+    .men-section{padding:6rem 0}.men-heading{max-width:760px;margin-bottom:2.8rem}.men-heading h2{font-family:var(--sans);font-weight:600;letter-spacing:-.035em;text-transform:uppercase}.men-heading p:last-child{max-width:650px;margin-top:.9rem;color:#5c685f}
+    .path-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:stretch}.path-card{position:relative;min-height:330px;padding:1.75rem;border-radius:8px;background:#fff;border:1px solid rgba(47,74,60,.12);box-shadow:0 24px 60px -45px rgba(16,23,19,.6);overflow:hidden;display:flex;flex-direction:column}.path-card::before{content:attr(data-number);position:absolute;right:1.05rem;top:.7rem;font:600 4.5rem/1 var(--sans);color:rgba(200,161,90,.11)}.path-card .tag{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:#a87d35;font-weight:600;min-height:2.4em}.path-card h3{margin:1.25rem 0 .8rem;font-family:var(--sans);font-size:1.2rem;font-weight:600;text-transform:uppercase;letter-spacing:-.025em}.path-card p{font-size:.82rem;color:#657168}.path-card a{display:inline-flex;margin-top:auto;padding-top:1.3rem;color:#8d692f;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+    .recovery{background:var(--men-charcoal);color:var(--cream)}.recovery .men-heading h2{color:var(--cream)}.recovery .men-heading p:last-child{color:rgba(247,243,234,.62)}
+    .therapy-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;align-items:stretch}.therapy{min-height:210px;padding:1.45rem;border-radius:7px;background:rgba(255,255,255,.035);border:1px solid rgba(228,200,140,.16);display:flex;flex-direction:column}.therapy-number{font:600 .68rem/1 var(--sans);letter-spacing:.12em;color:var(--gold-light)}.therapy h3{margin:auto 0 .55rem;font-family:var(--sans);font-size:1rem;font-weight:600;text-transform:uppercase;color:var(--cream)}.therapy p{font-size:.73rem;color:rgba(247,243,234,.6)}
+    .testing-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:4rem;align-items:center}.testing-photo{position:relative}.testing-photo img{display:block;width:100%;min-height:560px;object-fit:cover;border-radius:8px}.testing-photo::after{content:"VO₂ · RMR · FUEL · ZONES";position:absolute;left:1rem;right:1rem;bottom:1rem;padding:1rem;background:rgba(16,23,19,.88);color:var(--gold-light);font-size:.67rem;font-weight:600;letter-spacing:.13em;text-align:center;border:1px solid rgba(228,200,140,.25)}
+    .metric-list{display:grid;gap:.75rem;margin-top:1.6rem}.metric{display:grid;grid-template-columns:56px 1fr;gap:1rem;padding:1rem 0;border-top:1px solid rgba(47,74,60,.15)}.metric b{color:#a77d36;font:600 .72rem/1.4 var(--sans);letter-spacing:.07em}.metric h3{font-family:var(--sans);font-weight:600;font-size:.95rem;text-transform:uppercase}.metric p{font-size:.82rem;color:#657168}
+    .altro{background:var(--men-black);color:var(--cream)}.altro-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:4rem;align-items:start}.altro h2{color:var(--cream);font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:-.035em}.altro .intro{color:rgba(247,243,234,.65);margin:1rem 0 1.5rem}.altro .notice-line{padding:1rem;border-left:2px solid var(--gold);background:rgba(255,255,255,.04);font-size:.76rem;color:rgba(247,243,234,.65)}
+    .online-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch}.online-step{min-height:230px;padding:1.5rem;border:1px solid rgba(228,200,140,.17);border-radius:7px;background:rgba(255,255,255,.035);display:flex;flex-direction:column}.online-step b{color:var(--gold-light);font-size:.64rem;letter-spacing:.12em}.online-step h3{margin:auto 0 .5rem;font-family:var(--sans);font-size:1rem;font-weight:600;text-transform:uppercase}.online-step p{font-size:.76rem;color:rgba(247,243,234,.6)}
+    .altro-disclaimer{grid-column:1/-1;margin-top:-2rem;padding-top:1.25rem;border-top:1px solid rgba(228,200,140,.14);font-size:.67rem;color:rgba(247,243,234,.48)}
+    .goals{background:#e9dfcf}.goal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:2rem}.goal{padding:1.2rem 1.3rem;border-radius:5px;background:rgba(255,255,255,.6);border:1px solid rgba(47,74,60,.12);font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}.goal::after{content:"→";color:#a77d36;font-size:1.1rem}
+    .men-cta{background:var(--forest-deep);color:var(--cream);text-align:left}.men-cta .container{display:flex;justify-content:space-between;align-items:center;gap:2rem}.men-cta h2{color:var(--cream);font-family:var(--sans);font-weight:600;text-transform:uppercase}.men-cta p{margin:.8rem 0 0;color:rgba(247,243,234,.68)}.cta-actions{display:flex;gap:.75rem;flex-wrap:wrap}.men-cta .btn{flex:0 0 auto;border-radius:4px;background:var(--gold);color:var(--men-black);text-transform:uppercase;letter-spacing:.08em}.men-cta .btn.alt{background:transparent;color:var(--cream);border:1px solid rgba(228,200,140,.4)}
+    @media(max-width:1100px){.path-grid{grid-template-columns:repeat(2,1fr)}.therapy-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:900px){.men-hero::before{background:linear-gradient(90deg,rgba(10,17,13,.97),rgba(10,17,13,.48)),url('pnoe-performance.jpg') 62% center/cover no-repeat}.testing-wrap,.altro-grid{grid-template-columns:1fr}.online-steps{grid-template-columns:repeat(3,1fr)}.testing-photo img{min-height:420px}.goal-grid{grid-template-columns:repeat(2,1fr)}.men-cta .container{align-items:flex-start;flex-direction:column}}
+    @media(max-width:600px){html,body{width:100%;max-width:100%;overflow-x:hidden}.container{width:calc(100% - 40px);max-width:none}.men-hero{min-height:700px}.men-hero::before{background:linear-gradient(180deg,rgba(10,17,13,.28),rgba(10,17,13,.94) 55%),url('pnoe-performance.jpg') 63% top/auto 53% no-repeat}.hero-copy{padding-top:250px;width:100%;min-width:0;max-width:100%}.hero-kicker{align-items:flex-start;font-size:.58rem;line-height:1.55;white-space:normal}.hero-kicker::before{flex:0 0 38px;margin-top:.45rem}.men-hero h1{font-size:clamp(2.35rem,12vw,2.75rem);overflow-wrap:anywhere}.men-hero .lede,.men-heading p,.path-card p{max-width:100%;overflow-wrap:anywhere}.hero-actions{display:grid;grid-template-columns:1fr;width:100%;gap:.75rem}.hero-actions .btn{width:100%;max-width:100%;white-space:normal;text-align:center}.signal-grid,.path-grid,.therapy-grid,.goal-grid,.online-steps{grid-template-columns:1fr}.signal{border-left:0;border-top:1px solid rgba(228,200,140,.16)}.path-card,.online-step,.goal{min-width:0;max-width:100%}.therapy{min-height:180px}.men-section{padding:4rem 0}.cta-actions{width:100%;display:grid;grid-template-columns:1fr}.men-cta .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a href="index.html#top"><img class="nav-wordmark" src="logo-wordmark.png" alt="Revive &amp; Glow Wellness"></a>
+    <div class="nav-links"><a href="index.html#therapies">Therapies</a><a class="active" href="#top">Men's Wellness</a><a href="#testing">Testing</a><a href="index.html#membership">Memberships</a><a href="index.html#find-us">Visit</a><a class="btn btn-gold" href="booking.html">Book an Appointment</a></div>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <header class="men-hero" id="top">
+    <div class="container"><div class="hero-copy">
+      <div class="hero-kicker">Men's wellness · Performance · Longevity</div>
+      <h1>Feel stronger.<span>Know your numbers.</span></h1>
+      <p class="lede">A more intentional approach to men's energy, recovery, performance and longevity — with Revive &amp; Glow wellness sessions, measurable insights and physician-guided online options.</p>
+      <div class="hero-actions"><a class="btn btn-gold" href="#paths">Explore Your Options</a><a class="btn btn-outline" href="#recovery">Explore Recovery Sessions</a></div>
+    </div></div>
+  </header>
+
+  <div class="signal-bar"><div class="container signal-grid">
+    <div class="signal"><strong>Low energy</strong><span>Notice the change. Start with context.</span></div>
+    <div class="signal"><strong>Slower recovery</strong><span>Build a more intentional routine.</span></div>
+    <div class="signal"><strong>Reduced performance</strong><span>Replace guesswork with useful data.</span></div>
+    <div class="signal"><strong>Long-term health</strong><span>Invest in how you want to age.</span></div>
+  </div></div>
+
+  <main>
+    <section class="men-section" id="paths"><div class="container">
+      <div class="men-heading"><p class="eyebrow">One destination · Your choice</p><h2>Start where it makes sense for you.</h2><p>These are options, not steps. Book a single session, choose a membership, measure your progress or explore online health options whenever they fit your goals.</p></div>
+      <div class="path-grid">
+        <article class="path-card" data-number="01"><span class="tag">Come as you are</span><h3>Book a session</h3><p>Choose light therapy, infrared sauna, cold plunge, compression or whole-body vibration based on what feels right today.</p><a href="#recovery">View sessions →</a></article>
+        <article class="path-card" data-number="02"><span class="tag">Make it a routine</span><h3>Choose a membership</h3><p>Create consistency with regular access to the same Revive &amp; Glow wellness services available to every client.</p><a href="index.html#membership">View memberships →</a></article>
+        <article class="path-card" data-number="03"><span class="tag">Measure &amp; understand</span><h3>Track your progress</h3><p>Use body-composition assessment and PNŌĒ metabolic testing to better understand fitness, metabolism and change over time.</p><a href="#testing">Explore testing →</a></article>
+        <article class="path-card" data-number="04"><span class="tag">Online through Altro Health</span><h3>Explore health options</h3><p>When you want to go deeper, explore labs, testosterone and hormone care, or physician-guided peptides with licensed Altro providers.</p><a href="#online-care">Explore online →</a></article>
+      </div>
+    </div></section>
+
+    <section class="men-section recovery" id="recovery"><div class="container">
+      <div class="men-heading"><p class="eyebrow">Recover with purpose</p><h2>Give recovery a place in the plan.</h2><p>Training is the stimulus. A sustainable routine also makes room for comfort, mobility, consistency and time to reset.</p></div>
+      <div class="therapy-grid">
+        <article class="therapy"><span class="therapy-number">01</span><h3>Light Therapy</h3><p>Multi-wavelength sessions that complement wellness and performance routines.</p></article>
+        <article class="therapy"><span class="therapy-number">02</span><h3>Infrared Sauna</h3><p>Therapeutic heat for relaxation and restorative well-being.</p></article>
+        <article class="therapy"><span class="therapy-number">03</span><h3>Cold Plunge</h3><p>A focused cold experience for an intentional recovery routine.</p></article>
+        <article class="therapy"><span class="therapy-number">04</span><h3>Compression</h3><p>Dynamic compression designed to complement post-training recovery.</p></article>
+        <article class="therapy"><span class="therapy-number">05</span><h3>Whole-Body Vibration</h3><p>A low-impact session that can support movement and an active routine.</p></article>
+      </div>
+    </div></section>
+
+    <section class="men-section" id="testing"><div class="container testing-wrap">
+      <div class="testing-photo"><img src="pnoe-longevity.jpg" alt="Man completing a PNŌĒ metabolic performance assessment"></div>
+      <div><div class="men-heading"><p class="eyebrow">Measure what matters</p><h2>Stop training by guesswork.</h2><p>Testing gives you a baseline and a clearer way to follow change over time. It does not replace medical care — it gives your wellness and performance decisions more context.</p></div>
+        <div class="metric-list">
+          <div class="metric"><b>01</b><div><h3>Body composition</h3><p>Look beyond scale weight and follow measurable changes over time.</p></div></div>
+          <div class="metric"><b>02</b><div><h3>PNŌĒ active assessment</h3><p>Understand VO₂ max, individualized training zones and how your body uses fuel during exercise.</p></div></div>
+          <div class="metric"><b>03</b><div><h3>PNŌĒ resting assessment</h3><p>Measure resting metabolic rate and your fat-versus-carbohydrate fuel mix at rest.</p></div></div>
+        </div>
+        <div class="hero-actions"><a class="btn" href="pnoe.html">Explore PNŌĒ Testing</a></div>
+      </div>
+    </div></section>
+
+    <section class="men-section altro" id="online-care"><div class="container altro-grid">
+      <div><p class="eyebrow">Available when you want to go deeper</p><h2>Explore health options online.</h2><p class="intro">This is not a required next step. Through our Altro Health partnership, you can independently explore testing and physician-guided options whenever they fit your goals.</p><div class="notice-line">If you choose an online clinical option, you may complete a secure intake, visit a participating lab when required and connect online with a licensed Altro provider.</div><div class="hero-actions"><a class="btn btn-gold" href="https://altroapp.com/glow" target="_blank" rel="noopener">Explore Online Options</a></div></div>
+      <div class="online-steps">
+        <article class="online-step"><b>OPTION 01</b><h3>Lab Testing</h3><p>Explore available panels for relevant health, wellness and hormone markers.</p></article>
+        <article class="online-step"><b>OPTION 02</b><h3>Testosterone &amp; Hormone Care</h3><p>Considered by a licensed provider only when clinically appropriate.</p></article>
+        <article class="online-step"><b>OPTION 03</b><h3>Peptide Options</h3><p>Individual, physician-guided options based on consultation and medical eligibility.</p></article>
+      </div>
+      <p class="altro-disclaimer">Medical evaluation and prescribing are provided by Altro Health's licensed medical providers. Prescription products require consultation and medical eligibility. Revive &amp; Glow Wellness does not provide medical care.</p>
+    </div></section>
+
+    <section class="men-section goals"><div class="container">
+      <div class="men-heading"><p class="eyebrow">What are you working toward?</p><h2>Choose the outcome, not the equipment.</h2><p>Use your goal as the starting point. We will help you understand which Revive &amp; Glow session, assessment or online resource may fit.</p></div>
+      <div class="goal-grid"><div class="goal">Recover from training</div><div class="goal">Improve daily energy</div><div class="goal">Understand my metabolism</div><div class="goal">Track body composition</div><div class="goal">Support longevity</div><div class="goal">Explore men's health options</div></div>
+    </div></section>
+
+    <section class="men-section men-cta"><div class="container"><div><p class="eyebrow">Start your way</p><h2>Choose what fits today.</h2><p>Book one session, build a routine with membership or explore testing when you are ready.</p></div><div class="cta-actions"><a class="btn" href="booking.html">Book a Session</a><a class="btn alt" href="index.html#membership">View Memberships</a></div></div></section>
+  </main>
+
+  <footer><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="index.html">Revive &amp; Glow</a><p>Recovery &amp; longevity in Pinellas Park, Florida.</p></div><div><h4>Explore</h4><a href="#recovery">Recovery Sessions</a><a href="#testing">Performance Testing</a><a href="#online-care">Online Health Options</a></div><div><h4>Contact</h4><a href="tel:+17277764569">(727) 776-4569</a><a href="index.html#find-us">Visit Us</a></div></div><p class="legal">© 2026 Revive &amp; Glow Wellness. Wellness services are not a substitute for medical care. Individual experiences may vary.</p></div></footer>
+  <script>function toggleMenu(){const n=document.getElementById('nav'),b=n.querySelector('.nav-toggle'),o=n.classList.toggle('nav-open');b.textContent=o?'✕':'☰';b.setAttribute('aria-expanded',o)}</script>
+</body>
+</html>
