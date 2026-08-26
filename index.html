@@ -514,6 +514,32 @@
       .light-feature .light-spectrum { grid-template-columns: 1fr; }
     }
 
+    /* Limited-time introductory offers */
+    .intro-offers { position: relative; background: linear-gradient(180deg, rgba(252,247,237,.8), rgba(255,253,248,.94)); overflow: hidden; }
+    .intro-offers::before { content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%; top: -240px; right: -140px; background: radial-gradient(circle, rgba(218,176,106,.16), transparent 68%); pointer-events: none; }
+    .intro-offers .section-head { position: relative; }
+    .offer-grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.35rem; align-items: stretch; }
+    .offer-card { display: flex; flex-direction: column; min-height: 100%; padding: clamp(1.65rem, 2.8vw, 2.25rem); border: 1px solid rgba(47,74,60,.12); border-radius: var(--radius); background: rgba(255,255,255,.88); box-shadow: 0 18px 48px -36px rgba(34,58,46,.55); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .offer-card:hover { transform: translateY(-5px); border-color: rgba(185,134,63,.42); box-shadow: 0 24px 54px -34px rgba(34,58,46,.55); }
+    .offer-label { margin-bottom: .85rem; color: var(--gold); font-size: .67rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .offer-card h3 { min-height: 2.5em; margin-bottom: .7rem; color: var(--forest-deep); font-family: var(--serif); font-size: clamp(1.45rem, 2.1vw, 1.85rem); line-height: 1.08; }
+    .offer-price { display: flex; align-items: baseline; gap: .45rem; margin-bottom: 1.05rem; padding-bottom: 1.05rem; border-bottom: 1px solid rgba(47,74,60,.1); color: var(--forest-deep); }
+    .offer-price strong { font-family: var(--serif); font-size: 1.65rem; font-weight: 600; }
+    .offer-price span { color: #66736a; font-size: .79rem; font-weight: 500; }
+    .offer-description { min-height: 7.2em; margin-bottom: 1.1rem; color: #56655a; font-size: .89rem; font-weight: 300; line-height: 1.65; }
+    .offer-terms { margin: 0 0 1.35rem; padding: 1rem 1rem .9rem; border-radius: 13px; background: rgba(239,234,219,.58); list-style: none; }
+    .offer-terms li { position: relative; margin: 0 0 .45rem; padding-left: .85rem; color: #68746c; font-size: .72rem; line-height: 1.45; }
+    .offer-terms li:last-child { margin-bottom: 0; }
+    .offer-terms li::before { content: '·'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .offer-card .btn { width: 100%; margin-top: auto; padding: .95rem 1rem; border: 1px solid rgba(218,176,106,.46); text-align: center; font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; }
+    .offer-disclaimer { max-width: 760px; margin: 1.65rem auto 0; color: #718077; font-size: .72rem; line-height: 1.6; text-align: center; }
+    .offer-contact { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .offer-contact p { color: var(--forest-deep); font-family: var(--serif); font-size: 1.15rem; }
+    .offer-contact .btn { padding: .72rem 1.35rem; border: 1px solid rgba(47,74,60,.22); background: transparent; color: var(--forest-deep); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+    .offer-contact .btn:hover { background: var(--forest-deep); color: var(--cream); }
+    @media (max-width: 900px) { .offer-grid { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; } .offer-card h3, .offer-description { min-height: 0; } }
+    @media (max-width: 560px) { .offer-card { padding: 1.5rem; } .offer-contact { flex-direction: column; gap: .75rem; text-align: center; } .offer-contact .btn { width: 100%; } }
+
     /* Meet the Founders */
     .founders { background: rgba(252, 247, 237, 0.78); }
     .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 680px; margin: 0 auto; }
@@ -990,6 +1016,63 @@
     </div>
   </section>
 
+  <!-- LIMITED-TIME INTRO OFFERS — disable via intro-offers-config.js after campaign review -->
+  <section class="intro-offers" id="intro-offers" aria-labelledby="intro-offers-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Limited-Time Intro Offers</p>
+        <h2 id="intro-offers-title">A thoughtful way to begin your wellness routine.</h2>
+        <p>Discover our introductory wellness experiences, thoughtfully created for new guests and available for a limited time.</p>
+      </div>
+      <div class="offer-grid">
+        <article class="offer-card">
+          <p class="offer-label">Experience together</p>
+          <h3>Couples Wellness Intro</h3>
+          <p class="offer-price"><strong>$149</strong><span>2 visits for two</span></p>
+          <p class="offer-description">A private wellness experience designed for two. Each guest may select Red Light Therapy + Infrared Sauna or Infrared Sauna + Compression Therapy during each visit.</p>
+          <ul class="offer-terms" aria-label="Couples Wellness Intro terms">
+            <li>Two visits for the couple</li>
+            <li>Valid for 14 days after the first visit</li>
+            <li>One introductory package per client</li>
+            <li>Package eligibility and scheduling terms apply</li>
+          </ul>
+          <a class="btn intro-offer-link" data-offer="couples" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100025" target="_blank" rel="noopener">Explore Couples Offer</a>
+        </article>
+        <article class="offer-card">
+          <p class="offer-label">Restore in warmth</p>
+          <h3>Infrared Sauna Intro</h3>
+          <p class="offer-price"><strong>$99</strong><span>4 sessions</span></p>
+          <p class="offer-description">Recharge with four private Infrared Sauna sessions, with time included for an optional quick cooling shower, hydration and changing.</p>
+          <ul class="offer-terms" aria-label="Infrared Sauna Intro terms">
+            <li>Four 40-minute appointments</li>
+            <li>Valid for 30 days after the first visit</li>
+            <li>One introductory package per client</li>
+            <li>Available to new and existing clients</li>
+          </ul>
+          <a class="btn intro-offer-link" data-offer="sauna" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100027" target="_blank" rel="noopener">Explore Sauna Offer</a>
+        </article>
+        <article class="offer-card">
+          <p class="offer-label">Begin with light</p>
+          <h3>New Client Red Light Intro</h3>
+          <p class="offer-price"><strong>$69</strong><span>4 sessions</span></p>
+          <p class="offer-description">Begin a consistent Red Light Therapy routine with four introductory sessions designed to support recovery, energy and overall wellness.</p>
+          <ul class="offer-terms" aria-label="New Client Red Light Intro terms">
+            <li>Four Red Light Therapy sessions</li>
+            <li>Valid for 30 days after the first visit</li>
+            <li>Available to new clients only</li>
+            <li>One introductory package per client</li>
+          </ul>
+          <a class="btn intro-offer-link" data-offer="redLight" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100028" target="_blank" rel="noopener">Explore Red Light Offer</a>
+        </article>
+      </div>
+      <p class="offer-disclaimer">Available for a limited time. Eligibility, scheduling and package terms apply. Packages are non-recurring and do not renew automatically.</p>
+      <div class="offer-contact">
+        <p>Not sure which experience is right for you?</p>
+        <a class="btn" href="https://wa.me/17277764569?text=Hi!%20I%20would%20like%20help%20choosing%20an%20introductory%20offer." target="_blank" rel="noopener">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
   <!-- MEN'S WELLNESS -->
   <section class="mens-entry" id="mens-wellness">
     <div class="mens-entry-grid">
@@ -1328,7 +1411,23 @@
     <div class="chat-replies" id="chatReplies"></div>
   </div>
 
+  <script src="intro-offers-config.js"></script>
   <script>
+    (function configureIntroOffers() {
+      var config = window.REVIVE_INTRO_OFFERS;
+      var section = document.getElementById('intro-offers');
+      if (!section || !config) return;
+      var campaignEnded = config.hideAfter && Date.now() > new Date(config.hideAfter).getTime();
+      if (!config.enabled || campaignEnded) {
+        section.hidden = true;
+        return;
+      }
+      section.querySelectorAll('[data-offer]').forEach(function (link) {
+        var url = config.links && config.links[link.dataset.offer];
+        if (url) link.href = url;
+      });
+    }());
+
     // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
