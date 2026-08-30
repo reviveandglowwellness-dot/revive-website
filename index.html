@@ -222,6 +222,23 @@
     .hero h1 { font-size: clamp(2.9rem, 6.5vw, 5.2rem); color: var(--forest-deep); margin-bottom: 1rem; }
     .hero h1 em { font-style: italic; color: var(--gold); }
     .hero p.lede { font-size: clamp(1.05rem, 1.8vw, 1.3rem); color: #48584d; max-width: 560px; margin-bottom: 1.6rem; font-weight: 300; }
+    .hero-private {
+      display: flex; align-items: center; gap: 0.9rem;
+      width: min(100%, 620px); margin: -0.25rem auto 1.6rem; padding: 0.95rem 1.2rem;
+      border: 1px solid rgba(185, 134, 63, 0.42); border-radius: 16px;
+      background: rgba(255, 253, 248, 0.66); box-shadow: 0 14px 32px -26px rgba(34, 58, 46, 0.72);
+      backdrop-filter: blur(8px); text-align: left;
+    }
+    .hero-private-mark {
+      flex: 0 0 auto; width: 2.25rem; height: 2.25rem; display: grid; place-items: center;
+      border-radius: 50%; background: var(--forest-deep); color: var(--gold-light);
+      font-family: var(--serif); font-size: 1.2rem;
+    }
+    .hero-private-copy { color: #48584d; font-size: 0.9rem; line-height: 1.5; }
+    .hero-private-copy strong {
+      display: block; margin-bottom: 0.12rem; color: var(--forest-deep);
+      font-family: var(--serif); font-size: 1.08rem; font-weight: 600;
+    }
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
     .hero-price {
       display: inline-block;
@@ -699,6 +716,10 @@
       .promise-stats { grid-template-columns: 1fr; }
       .hero-cta { flex-direction: column; align-items: stretch; }
       .hero-cta .btn { text-align: center; }
+      .hero-private { align-items: flex-start; padding: 0.9rem 1rem; }
+      .hero-private-mark { width: 2rem; height: 2rem; font-size: 1.05rem; }
+      .hero-private-copy { font-size: 0.84rem; }
+      .hero-private-copy strong { font-size: 1rem; }
       .hero-new {
         display: flex;
         width: min(100%, 410px);
@@ -790,9 +811,13 @@
           <span class="brand-name">Revive <span>&amp;</span> Glow</span>
           <span class="brand-sub">Wellness</span>
         </span>
-        <span class="badge"><span class="dot"></span> Now Open · Pinellas Park, FL</span>
+        <span class="badge"><span class="dot"></span> Private Wellness Studio · By Appointment</span>
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
-        <p class="lede">A boutique recovery &amp; longevity studio in the heart of Tampa Bay — where science-backed therapies help you move better, feel stronger, and age well, in a space designed to feel like a breath.</p>
+        <p class="lede">A boutique recovery &amp; longevity studio in the heart of Tampa Bay — where science-backed therapies help you move better, feel stronger, and age well.</p>
+        <div class="hero-private">
+          <span class="hero-private-mark" aria-hidden="true">✦</span>
+          <div class="hero-private-copy"><strong>Your time. Your space. Your wellness.</strong>Every visit is thoughtfully reserved, so you can enjoy your experience with calm, personal attention, and privacy.</div>
+        </div>
         <div class="hero-cta">
           <a href="booking.html" class="btn btn-gold">Book Your Visit</a>
           <a href="#method" class="btn">Discover The Revive Method™</a>
