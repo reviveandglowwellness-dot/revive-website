@@ -448,6 +448,19 @@
     .tier li::before { content: '✓'; color: var(--gold); font-weight: 700; }
     .tier.dark li::before { color: var(--gold-light); }
     .tier .btn { text-align: center; }
+    .membership-details { margin: 0 0 1.4rem; border: 1px solid rgba(47,74,60,0.13); border-radius: 12px; overflow: hidden; }
+    .tier.dark .membership-details { border-color: rgba(228,200,140,0.24); }
+    .membership-details summary { cursor: pointer; list-style: none; padding: 0.9rem 1rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--forest-deep); background: rgba(247,243,234,0.72); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .membership-details summary::-webkit-details-marker { display: none; }
+    .membership-details summary::after { content: '+'; color: var(--gold); font-size: 1.15rem; line-height: 1; }
+    .membership-details[open] summary::after { content: '−'; }
+    .tier.dark .membership-details summary { color: var(--cream); background: rgba(255,255,255,0.06); }
+    .membership-detail-body { padding: 1rem; background: rgba(255,255,255,0.62); }
+    .tier.dark .membership-detail-body { background: rgba(255,255,255,0.035); }
+    .membership-detail-body h4 { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0.85rem 0 0.35rem; }
+    .membership-detail-body h4:first-child { margin-top: 0; }
+    .membership-detail-body p { font-size: 0.78rem; line-height: 1.55; color: #4f5f54; margin: 0; }
+    .tier.dark .membership-detail-body p { color: rgba(247,243,234,0.82); }
     .tier-note { text-align: center; margin-top: 1.8rem; font-size: 0.9rem; color: #5c6b60; }
     .session-explainer { max-width: 940px; margin: 2.25rem auto 0; padding: clamp(1.5rem, 3vw, 2rem); background: rgba(255,255,255,0.78); border: 1px solid rgba(47,74,60,0.12); border-radius: var(--radius); text-align: center; }
     .session-explainer h3 { font-family: var(--serif); color: var(--forest-deep); font-size: 1.65rem; margin-bottom: 0.65rem; }
@@ -1158,8 +1171,18 @@
             <li>Use for Red Light, Sauna, Cold Plunge, or Compression</li>
             <li>All 8 sessions renew monthly and do not roll over</li>
             <li>Maximum flexibility, cancel anytime</li>
-            <li>All standard membership benefits</li>
+            <li>Progress tracking and personalized wellness support</li>
           </ul>
+          <details class="membership-details">
+            <summary>View full membership details</summary>
+            <div class="membership-detail-body">
+              <h4>Included sessions</h4><p>Eight Revive Sessions per billing month. Each session may be used for Red Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
+              <h4>Wellness benefits</h4><p>AI Wellness Concierge, monthly Revive Body Composition Analysis, monthly progress report, Wellness Score, muscle mass, body fat, visceral fat and metabolic age tracking, personalized AI wellness recommendations, and online booking.</p>
+              <h4>Monthly use</h4><p>Sessions must be used within the current billing cycle. Unused sessions expire and do not roll over or transfer.</p>
+              <h4>Cancellation</h4><p>No minimum commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio.</p>
+              <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29.</p>
+            </div>
+          </details>
           <a href="booking.html" class="btn btn-gold">Book an Appointment</a>
         </div>
         <div class="tier featured reveal">
@@ -1171,8 +1194,18 @@
             <li>Best value — save $20/mo vs. Flex</li>
             <li>Use for Red Light, Sauna, Cold Plunge, or Compression</li>
             <li>All 8 sessions renew monthly and do not roll over</li>
-            <li>All standard membership benefits</li>
+            <li>Progress tracking and personalized wellness support</li>
           </ul>
+          <details class="membership-details">
+            <summary>View full membership details</summary>
+            <div class="membership-detail-body">
+              <h4>Included sessions</h4><p>Eight Revive Sessions per billing month. Each session may be used for Red Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
+              <h4>Wellness benefits</h4><p>AI Wellness Concierge, monthly Revive Body Composition Analysis, monthly progress report, Wellness Score, muscle mass, body fat, visceral fat and metabolic age tracking, personalized AI wellness recommendations, and online booking.</p>
+              <h4>Monthly use</h4><p>Sessions must be used within the current billing cycle. Unused sessions expire and do not roll over or transfer.</p>
+              <h4>Commitment and cancellation</h4><p>This plan includes a six-month commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio and remain subject to the signed membership terms.</p>
+              <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29.</p>
+            </div>
+          </details>
           <a href="booking.html" class="btn">Book an Appointment</a>
         </div>
         <div class="tier dark reveal">
@@ -1189,6 +1222,17 @@
             <li>Exclusive member experiences</li>
             <li>One monthly Pet Red Light Therapy Session · expires monthly</li>
           </ul>
+          <details class="membership-details">
+            <summary>View full membership details</summary>
+            <div class="membership-detail-body">
+              <h4>Included sessions</h4><p>Fifteen Revive Sessions per billing month. Each session may be used for Red Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
+              <h4>Premium benefits</h4><p>Priority scheduling, one complimentary Full Metabolic Assessment upon enrollment redeemable within 90 days, one monthly guest pass for any included therapy, one monthly Pet Red Light Therapy Session, and exclusive member experiences.</p>
+              <h4>Wellness benefits</h4><p>AI Wellness Concierge, monthly Revive Body Composition Analysis, monthly progress report, Wellness Score, muscle mass, body fat, visceral fat and metabolic age tracking, personalized AI wellness recommendations, and online booking.</p>
+              <h4>Monthly use</h4><p>Sessions, the guest pass, and the pet session expire at the end of each billing cycle. Benefits do not roll over or transfer, except that the guest pass is intended to be shared.</p>
+              <h4>Cancellation</h4><p>No minimum commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio.</p>
+              <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29. Pet Red Light Therapy supports general wellness and does not replace veterinary care.</p>
+            </div>
+          </details>
           <a href="booking.html" class="btn btn-gold">Book an Appointment</a>
         </div>
       </div>
