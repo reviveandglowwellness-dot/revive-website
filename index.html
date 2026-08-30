@@ -431,7 +431,7 @@
     @media (max-width: 1050px) { .specialty-grid { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; } .specialty-card { min-height: 0; } }
 
     /* Membership tiers */
-    .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.8rem; text-align: left; }
+    .tiers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 2.8rem auto 0; max-width: 1000px; text-align: left; }
     .tier { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: var(--radius); padding: 2.4rem 2rem; display: flex; flex-direction: column; box-shadow: 0 10px 40px -24px rgba(34,58,46,0.35); transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .tier:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
     .tier.featured { border-color: var(--gold); box-shadow: 0 18px 50px -22px rgba(200,161,90,0.45); }
@@ -769,7 +769,6 @@
       <a href="#therapies">Therapies</a>
       <a href="mens-wellness.html" class="nav-pill nav-men-pill">Men's Wellness</a>
       <a href="peptides.html">Peptides &amp; GLP‑1</a>
-      <a href="#assessment">Your Plan</a>
       <a href="#explore">Explore</a>
       <a href="#membership">Membership</a>
       <a href="booking.html" class="btn btn-gold">Book a Session</a>
@@ -839,8 +838,7 @@
           <a href="booking.html" class="btn btn-gold">Book Your Visit</a>
           <a href="#method" class="btn">Discover The Revive Method™</a>
         </div>
-        <a href="#membership" class="hero-price">Memberships from $159/month &nbsp;·&nbsp; Therapy sessions $39 &nbsp;·&nbsp; Vibration &amp; Grounding $29</a>
-        <p class="hero-note">✦ Every journey begins with a complimentary wellness assessment.</p>
+        <a href="#membership" class="hero-price">Memberships from $179/month &nbsp;·&nbsp; Therapy sessions $39 &nbsp;·&nbsp; Vibration &amp; Grounding $29</a>
         <a href="peptides.html" class="hero-new"><strong>New</strong><span class="hero-new-copy">Peptides, GLP‑1 &amp; lab testing<small>Explore physician-guided options through our Altro Health partnership.</small></span><span class="hero-new-link">Explore options →</span></a>
       </div>
     </div>
@@ -1031,25 +1029,6 @@
             </div>
           </details>
         </div>
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-          <h3>Body Composition</h3>
-          <p class="kit">Tanita RD-545</p>
-          <p>Establish a baseline and follow body-composition trends over time.</p>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> A quick, noninvasive bioelectrical impedance analysis (BIA) using our Tanita RD-545. It estimates body-composition measures such as body fat, muscle mass, visceral-fat rating, total body water, and metabolic age.</p>
-              <p><strong>How it works.</strong> The analyzer sends a very small electrical current through the body and uses the measured resistance, together with profile information, to estimate body composition.</p>
-              <p><strong>Why repeat measurements matter.</strong> A consistent series can be more useful than a single number. We use it to establish a baseline and observe trends alongside your goals.</p>
-              <p><strong>What affects a reading.</strong> Hydration, food, recent exercise, time of day, skin temperature, and measurement conditions can change BIA estimates. Similar preparation each time makes comparisons more meaningful.</p>
-              <p><strong>What to expect.</strong> You stand barefoot on the analyzer and hold its hand grips for a few minutes. Results are reviewed privately and never compared with another guest's.</p>
-              <p><strong>Good to know.</strong> The assessment is complimentary on your first visit. Your results are estimates, not a grade or a guarantee of future change.</p>
-              <p><strong>Important.</strong> BIA is not a diagnosis and does not replace laboratory testing, medical imaging, or advice from a licensed healthcare professional. Tell our team if you have an implanted electronic medical device or are pregnant before using the analyzer.</p>
-              <div class="research-sources"><strong>Research sources:</strong><br><a href="https://pubmed.ncbi.nlm.nih.gov/31275083/" target="_blank" rel="noopener">Marra et al., Critical Overview of BIA and DXA, 2019</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/41864542/" target="_blank" rel="noopener">Prado et al., Methodological Standards, 2026</a></div>
-            </div>
-          </details>
-        </div>
         <div class="therapy reveal" style="background:linear-gradient(135deg,var(--forest-deep),var(--forest));color:var(--cream);border-color:transparent;justify-content:center;">
           <h3 style="color:var(--gold-light);">More to explore</h3>
           <p style="color:rgba(247,243,234,0.8);">Memberships, packages, and seasonal experiences designed around your goals — explore what is available now.</p>
@@ -1137,21 +1116,16 @@
       <div class="section-head center reveal">
         <p class="eyebrow">Belong Here</p>
         <h2>Memberships Designed for Real Results</h2>
-        <p>Every membership is built around measurable progress — not guesswork. Track what matters, get AI-guided recommendations, and watch your results build month over month.</p>
+        <p>Every membership is designed to make private recovery and restorative wellness easier to enjoy consistently, with flexible therapy choices and personalized support.</p>
       </div>
 
       <div class="includes reveal">
         <h3 class="includes-title">Every membership includes</h3>
         <div class="includes-grid">
           <span>AI Wellness Concierge</span>
-          <span>Monthly Revive Body Composition Analysis</span>
-          <span>Monthly Progress Report</span>
-          <span>Wellness Score</span>
-          <span>Muscle Mass Tracking</span>
-          <span>Body Fat Tracking</span>
-          <span>Visceral Fat Tracking</span>
-          <span>Metabolic Age Tracking</span>
           <span>Personalized AI Wellness Recommendations</span>
+          <span>Flexible Therapy Selection</span>
+          <span>Private, By-Appointment Experience</span>
           <span>Online Booking</span>
         </div>
       </div>
@@ -1171,42 +1145,19 @@
             <li>Use for Red Light, Sauna, Cold Plunge, or Compression</li>
             <li>All 8 sessions renew monthly and do not roll over</li>
             <li>Maximum flexibility, cancel anytime</li>
-            <li>Progress tracking and personalized wellness support</li>
+            <li>Personalized wellness support</li>
           </ul>
           <details class="membership-details">
             <summary>View full membership details</summary>
             <div class="membership-detail-body">
               <h4>Included sessions</h4><p>Eight Revive Sessions per billing month. Each session may be used for Red Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
-              <h4>Wellness benefits</h4><p>AI Wellness Concierge, monthly Revive Body Composition Analysis, monthly progress report, Wellness Score, muscle mass, body fat, visceral fat and metabolic age tracking, personalized AI wellness recommendations, and online booking.</p>
+              <h4>Wellness benefits</h4><p>AI Wellness Concierge, personalized AI wellness recommendations, flexible therapy selection, a private by-appointment experience, and online booking.</p>
               <h4>Monthly use</h4><p>Sessions must be used within the current billing cycle. Unused sessions expire and do not roll over or transfer.</p>
               <h4>Cancellation</h4><p>No minimum commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio.</p>
               <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29.</p>
             </div>
           </details>
           <a href="booking.html" class="btn btn-gold">Book an Appointment</a>
-        </div>
-        <div class="tier featured reveal">
-          <div class="tier-tag">🌟 Most popular · Best value</div>
-          <h3>Revive Commit</h3>
-          <div class="price">$159<span>/month</span></div>
-          <p class="tier-sub">8 Revive Sessions per billing month · 6-month commitment</p>
-          <ul>
-            <li>Best value — save $20/mo vs. Flex</li>
-            <li>Use for Red Light, Sauna, Cold Plunge, or Compression</li>
-            <li>All 8 sessions renew monthly and do not roll over</li>
-            <li>Progress tracking and personalized wellness support</li>
-          </ul>
-          <details class="membership-details">
-            <summary>View full membership details</summary>
-            <div class="membership-detail-body">
-              <h4>Included sessions</h4><p>Eight Revive Sessions per billing month. Each session may be used for Red Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
-              <h4>Wellness benefits</h4><p>AI Wellness Concierge, monthly Revive Body Composition Analysis, monthly progress report, Wellness Score, muscle mass, body fat, visceral fat and metabolic age tracking, personalized AI wellness recommendations, and online booking.</p>
-              <h4>Monthly use</h4><p>Sessions must be used within the current billing cycle. Unused sessions expire and do not roll over or transfer.</p>
-              <h4>Commitment and cancellation</h4><p>This plan includes a six-month commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio and remain subject to the signed membership terms.</p>
-              <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29.</p>
-            </div>
-          </details>
-          <a href="booking.html" class="btn">Book an Appointment</a>
         </div>
         <div class="tier dark reveal">
           <div class="tier-tag">🏆 Premium</div>
@@ -1227,7 +1178,7 @@
             <div class="membership-detail-body">
               <h4>Included sessions</h4><p>Fifteen Revive Sessions per billing month. Each session may be used for Red Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
               <h4>Premium benefits</h4><p>Priority scheduling, one complimentary Full Metabolic Assessment upon enrollment redeemable within 90 days, one monthly guest pass for any included therapy, one monthly Pet Red Light Therapy Session, and exclusive member experiences.</p>
-              <h4>Wellness benefits</h4><p>AI Wellness Concierge, monthly Revive Body Composition Analysis, monthly progress report, Wellness Score, muscle mass, body fat, visceral fat and metabolic age tracking, personalized AI wellness recommendations, and online booking.</p>
+              <h4>Wellness benefits</h4><p>AI Wellness Concierge, personalized AI wellness recommendations, flexible therapy selection, a private by-appointment experience, and online booking.</p>
               <h4>Monthly use</h4><p>Sessions, the guest pass, and the pet session expire at the end of each billing cycle. Benefits do not roll over or transfer, except that the guest pass is intended to be shared.</p>
               <h4>Cancellation</h4><p>No minimum commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio.</p>
               <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29. Pet Red Light Therapy supports general wellness and does not replace veterinary care.</p>
@@ -1241,7 +1192,6 @@
       <div class="alacarte reveal">
         <div class="ala"><span class="ala-name">Single Therapy Session</span><span class="ala-price">$39</span></div>
         <div class="ala"><span class="ala-name">5-Session Pack</span><span class="ala-price">$175</span></div>
-        <div class="ala"><span class="ala-name">10-Session Pack</span><span class="ala-price">$320</span></div>
         <div class="ala"><span class="ala-name">Gift Cards</span><span class="ala-price">Any amount</span></div>
       </div>
       <p class="tier-note reveal">Whole Body Vibration &amp; Grounding is available separately for $29.<br>Founding members lock in these rates for life.</p>
@@ -1261,42 +1211,6 @@
           <span class="perk">✦ Limited to our first 50 members</span>
         </div>
         <a href="booking.html" class="btn">Book an Appointment</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ASSESSMENT -->
-  <section class="assessment" id="assessment">
-    <div class="container">
-      <div class="reveal">
-        <p class="eyebrow">Personalized &amp; Measured</p>
-        <h2 style="font-size:clamp(2.1rem,4.5vw,3.4rem);color:var(--forest-deep);margin-bottom:1.1rem;">A wellness plan built around you.</h2>
-        <p style="font-size:1.08rem;color:#56655a;font-weight:300;">We don't guess. Your journey starts with a real assessment, so every session moves you toward how you want to feel — and you can see the progress along the way.</p>
-        <a href="booking.html" class="btn" style="margin-top:1.8rem;">Book Your Complimentary Assessment</a>
-      </div>
-      <div class="assess-steps reveal">
-        <div class="assess-step">
-          <div class="an">1</div>
-          <div>
-            <h3>Body Composition Assessment</h3>
-            <p>Start with a complimentary Tanita scan — muscle, hydration, and healthy-aging metrics, captured as your baseline.</p>
-            <span class="assess-badge">Complimentary</span>
-          </div>
-        </div>
-        <div class="assess-step">
-          <div class="an">2</div>
-          <div>
-            <h3>AI Personalized Recommendations</h3>
-            <p>Our smart wellness guide turns your goals into a tailored plan — which therapies to prioritize, and how often.</p>
-          </div>
-        </div>
-        <div class="assess-step">
-          <div class="an">3</div>
-          <div>
-            <h3>Monthly Progress Tracking</h3>
-            <p>Come back, re-measure, and watch your results build over time. Wellness you can actually see.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1418,7 +1332,6 @@
         <details class="faq-item"><summary>What is Revive &amp; Glow Wellness?</summary><p>A boutique recovery and longevity studio in Pinellas Park, FL. We bring multi-wavelength light therapy, infrared sauna, cold plunge, compression, whole body vibration, and more under one roof — designed to help you recover, restore, and feel your best.</p></details>
         <details class="faq-item"><summary>Do I need an appointment?</summary><p>Yes. Sessions are by appointment so we can give you a calm, personalized experience. You can reserve your visit online through our secure Mindbody booking page.</p></details>
         <details class="faq-item"><summary>Is this medical treatment?</summary><p>No. Our services are for general wellness and relaxation. They are not medical care and are not intended to diagnose, treat, or cure any condition. Please consult your doctor before starting any new wellness routine.</p></details>
-        <details class="faq-item"><summary>What is the complimentary wellness assessment?</summary><p>Every journey starts with a body composition scan on our Tanita analyzer, plus AI-guided recommendations — so your plan is built around your goals and you can track real progress over time.</p></details>
         <details class="faq-item"><summary>What can I use a Revive Session for?</summary><p>Each Revive Session may be used for one Red Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy visit. Whole Body Vibration &amp; Grounding is available separately for $29.</p></details>
         <details class="faq-item"><summary>Do unused membership sessions roll over?</summary><p>No. Membership sessions renew each billing month and must be used within that billing cycle. Unused sessions expire and do not carry into the next month.</p></details>
         <details class="faq-item"><summary>How does the Revive Elite guest pass work?</summary><p>Elite members receive one guest pass each billing month. It may be used for any therapy included as a Revive Session and expires at the end of that billing cycle.</p></details>
@@ -1459,7 +1372,6 @@
           <a href="#therapies">Therapies</a>
           <a href="peptides.html">Peptides, GLP‑1 &amp; Labs</a>
           <a href="pnoe.html">PNŌĒ Metabolic Testing</a>
-          <a href="#assessment">Your Plan</a>
           <a href="pet-red-light-therapy.html">For Pets</a>
           <a href="#membership">Membership</a>
           <a href="#faq">FAQ</a>
@@ -1557,20 +1469,19 @@
     }));
 
     // ---- Chat helper (scripted, info-only — no health advice) ----
-    const CHAT_START = { msg: "Hi there! 🌿 I'm here to help you learn about Revive &amp; Glow. What would you like to know?", replies: ['pnoe','medicine','therapies','memberships','pets','included','assessment','location','join','contact'] };
+    const CHAT_START = { msg: "Hi there! 🌿 I'm here to help you learn about Revive &amp; Glow. What would you like to know?", replies: ['pnoe','medicine','therapies','memberships','pets','included','location','join','contact'] };
     const CHAT = {
       medicine: { msg: "Looking for <strong>peptides or a GLP‑1 program</strong>? Through our telehealth partner Altro Health, eligible patients can explore physician-guided options alongside comprehensive lab testing and hormone care. Licensed Altro providers determine eligibility and handle clinical review and medical guidance. <a href=\"peptides.html\">See how it works →</a>", replies: ['therapies','contact','back'] },
-      pnoe: { msg: "<strong>PNŌĒ metabolic breath analysis</strong> measures how your body uses oxygen and fuel, including VO₂ max, resting metabolic rate, training zones, and metabolic fitness age. We turn the results into clear next steps for nutrition, training, and recovery. <a href=\"pnoe.html\">Explore PNŌĒ testing →</a>", replies: ['assessment','therapies','contact','back'] },
-      therapies: { msg: "We offer <strong>multi-wavelength light therapy</strong> — blue, red, and near-infrared — plus infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, hydrogen water, and body composition analysis. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','assessment','join','contact','back'] },
-      memberships: { msg: "We have three membership tiers:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no contract<br><strong>Revive Commit</strong> — $159/mo · 8 sessions · 6-month (best value)<br><strong>Revive Elite</strong> — $249/mo · 15 sessions · priority booking · one complimentary Full Metabolic Assessment upon enrollment, redeemable within 90 days<br><br>Prefer no commitment? Therapy sessions are $39, Whole Body Vibration &amp; Grounding is $29, the 5-pack is $175, and the 10-pack is $320. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
+      pnoe: { msg: "<strong>PNŌĒ metabolic breath analysis</strong> measures how your body uses oxygen and fuel, including VO₂ max, resting metabolic rate, training zones, and metabolic fitness age. We turn the results into clear next steps for nutrition, training, and recovery. <a href=\"pnoe.html\">Explore PNŌĒ testing →</a>", replies: ['therapies','contact','back'] },
+      therapies: { msg: "We offer <strong>multi-wavelength light therapy</strong> — blue, red, and near-infrared — plus infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, and hydrogen water. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','join','contact','back'] },
+      memberships: { msg: "We offer two simple membership options:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no contract<br><strong>Revive Elite</strong> — $249/mo · 15 sessions · no contract · priority booking · one complimentary Full Metabolic Assessment upon enrollment, redeemable within 90 days<br><br>Prefer to start without a membership? Therapy sessions are $39, Whole Body Vibration &amp; Grounding is $29, and the 5-session pack is $175. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
       pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> (first session $29), a <strong>$149/mo pet membership</strong>, and our <strong>“Heal Together” package — $99</strong>, where your dog relaxes with red light beside you. <a href=\"pet-red-light-therapy.html\">Learn more →</a>", replies: ['memberships','join','contact','back'] },
-      included: { msg: "Every membership includes: AI Wellness Concierge, monthly body composition analysis, monthly progress report, wellness score, muscle / body fat / visceral fat / metabolic age tracking, personalized recommendations, and online booking.", replies: ['memberships','assessment','join','contact','back'] },
-      assessment: { msg: "Every journey starts with a <strong>complimentary wellness assessment</strong> — a body composition scan plus personalized recommendations, so your plan is built around your goals. <a href=\"#assessment\">See how it works →</a>", replies: ['memberships','join','contact','back'] },
+      included: { msg: "Every membership includes an AI Wellness Concierge, personalized wellness recommendations, flexible therapy selection, a private by-appointment experience, and online booking.", replies: ['memberships','join','contact','back'] },
       location: { msg: "We're open at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay), and online booking is available. <a href=\"#find-us\">Get directions →</a>", replies: ['join','memberships','contact','back'] },
       join: { msg: "Ready to visit? Reserve your preferred service and time through our secure online booking page. <a href=\"booking.html\">Book an appointment →</a>", replies: ['memberships','pets','contact','back'] },
       contact: { msg: "Of course — we're happy to help personally! 💬 Reach us directly:<br><br>📲 <a href=\"https://wa.me/17277764569?text=Hi!%20I%20have%20a%20question%20about%20Revive%20%26%20Glow.\" target=\"_blank\" rel=\"noopener\">WhatsApp us</a><br>💬 <a href=\"sms:+17277764569\">Text us</a><br>📞 <a href=\"tel:+17277764569\">Call (727) 776-4569</a><br>✉️ <a href=\"mailto:reviveandglowwellness@gmail.com\">Email us</a><br><br>We'll get right back to you!", replies: ['back'] }
     };
-    const CHAT_LABELS = { pnoe:'PNŌĒ metabolic testing', medicine:'Peptides, GLP‑1 & labs', therapies:'Our therapies', memberships:'Memberships & pricing', pets:'Pet wellness 🐾', included:"What's included", assessment:'Free assessment', location:'Where are you?', join:'Book an appointment', contact:'💬 Still have questions?', back:'↩ More topics' };
+    const CHAT_LABELS = { pnoe:'PNŌĒ metabolic testing', medicine:'Peptides, GLP‑1 & labs', therapies:'Our therapies', memberships:'Memberships & pricing', pets:'Pet wellness 🐾', included:"What's included", location:'Where are you?', join:'Book an appointment', contact:'💬 Still have questions?', back:'↩ More topics' };
 
     function toggleChat() {
       const p = document.getElementById('chatPanel');

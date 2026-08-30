@@ -192,7 +192,7 @@ var GOALS = {
   goal_inflammation:{label:"Ease aches, stiffness & inflammation",     steps:[3,2,1], support:5, pace:[2,2]},
   goal_energy:      {label:"More energy, less fatigue",                steps:[1,3,2], support:5, pace:[2,3]},
   goal_sleep_stress:{label:"Better sleep & less stress",               steps:[2,5,1], support:null, pace:[1,2]},
-  goal_longevity:   {label:"Age well & stay ahead of it",              steps:[1,2,3,4,5], support:null, pace:[1,1], forceTier:"commit"},
+  goal_longevity:   {label:"Age well & stay ahead of it",              steps:[1,2,3,4,5], support:null, pace:[1,1], forceTier:"flex"},
   goal_skin:        {label:"Glowing skin & natural beauty",            steps:[1,2,5], support:null, pace:[2,3]}
 };
 // flag -> modality: "block" or "review"
@@ -210,11 +210,10 @@ var CONTRA = {
 };
 var TIERS = {
   flex:{name:"Flex",price:"$179 / 8 sessions",note:"Flexible, no long commitment"},
-  commit:{name:"Commit",price:"$159 / 8 sessions (6-mo)",note:"Best value for building a habit"},
   elite:{name:"Elite",price:"$249 / 15 sessions",note:"Higher volume, lowest per-session"}
 };
 // ⚠️ Cole aqui os links de compra online do Mindbody por tier (quando disponíveis). Vazio = confirmação no front desk.
-var MEMBERSHIP_URLS = {flex:"", commit:"", elite:""};
+var MEMBERSHIP_URLS = {flex:"", elite:""};
 
 /* ============ SCREENS ============ */
 var SCREENS = [
@@ -672,7 +671,7 @@ function renderDesk(){
 
 function selectTier(k){state.chosenTier=k;var sc=stageEl.scrollTop;renderResult();stageEl.scrollTop=sc;}
 function joinMembership(mode){
-  var tier=state.chosenTier||"commit", tt=TIERS[tier];
+  var tier=state.chosenTier||"flex", tt=TIERS[tier];
   if(window.assessmentResult)window.assessmentResult.chosenTier=tier;
   if(mode!=="desk" && MEMBERSHIP_URLS[tier]){window.open(MEMBERSHIP_URLS[tier],"_blank");return;}
   var linkline=(mode==="desk")
