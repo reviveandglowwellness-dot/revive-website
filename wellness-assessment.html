@@ -517,7 +517,7 @@ function renderPetResult(){
     html+='<div class="method-cards"><div class="mcard first"><div class="num">⭐</div><div><span class="tag-first">Star therapy</span><div class="mod">Pet Red Light Therapy</div><h3>'+g.focus+'</h3><p>Natural, non-invasive light therapy — '+g.benefit+'.</p></div></div></div>';
     html+='<p class="support"><strong>Suggested rhythm:</strong> '+g.dose+'.</p>';
     html+='<div class="addon" style="background:var(--green-2)"><h3>We\'ll check in on '+pn+'’s progress</h3><p>'+g.follow+' — and adjust as they improve.</p></div>';
-    html+='<div class="member"><div class="eyebrow">The sweetest way to heal</div><h2>Heal Together 🐾❤️</h2><ul><li>'+pn+' enjoys their red light session</li><li>You unwind with your own Revive Method™</li><li>Recovery, side by side</li></ul><div class="tier"><strong>Heal Together — $99</strong> <span style="color:rgba(244,239,230,.7);font-size:.85rem">(you + your companion, together)</span></div></div>';
+    html+='<div class="member"><div class="eyebrow">The sweetest way to heal</div><h2>Heal Together 🐾❤️</h2><ul><li>'+pn+' enjoys their red light session</li><li>You unwind with your own Revive Method™</li><li>Recovery, side by side</li></ul><div class="tier"><strong>Heal Together — $59</strong> <span style="color:rgba(244,239,230,.7);font-size:.85rem">(you + your companion, together)</span></div></div>';
   }
   html+='<div class="nav"><button class="btn primary" onclick="finishAtDesk()">Review with our wellness guide →</button></div>';
   html+='<p class="disc">Take this to the front desk. These recommendations support general wellness and are not veterinary advice.</p>';
@@ -537,7 +537,7 @@ function renderPetDesk(){
     '<div class="row"><span class="k">Focus</span><span style="text-align:right">'+g.focus+'</span></div>'+
     '<div class="row"><span class="k">Dose</span><span style="text-align:right">'+g.dose+'</span></div>'+
     '<div class="row"><span class="k">Follow-up</span><span>'+g.follow+'</span></div>'+
-    '<div class="row"><span class="k">Upsell</span><span>Heal Together $99 · Pet Membership $149/mo</span></div>';
+    '<div class="row"><span class="k">Upsell</span><span>Heal Together $59 · Pet Membership $149/mo · 6 sessions</span></div>';
   if(r.serious){
     html+='<div class="safe alert">🚩 REQUEST VET CLEARANCE before red light session.<br>Codes: '+r.flags.join(", ")+'</div>';
   } else if(r.assisted){

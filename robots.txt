@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /dashboard.html
+Disallow: /site-preview.html
+Disallow: /pet-preview.html
+Disallow: /wellness-assessment.html
 
-Sitemap: https://reviveandglowwellness.com/sitemap.xml
+Sitemap: https://www.reviveandglowwellness.ai/sitemap.xml

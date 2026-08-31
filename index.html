@@ -131,7 +131,7 @@
     }
     #nav.no-anim, #nav.no-anim * { transition: none !important; }
 
-    .logo { display: inline-flex; align-items: center; flex: 0 0 auto; }
+    .logo { display: inline-flex; align-items: center; flex: 0 0 auto; gap: 0.28em; }
     .nav-wordmark {
       display: block;
       width: clamp(150px, 12.5vw, 205px);
@@ -186,7 +186,7 @@
     .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -10px rgba(34,58,46,0.5); background: var(--forest); }
     .btn-gold { background: var(--gold); color: var(--ink); }
     .btn-gold:hover { background: var(--gold-light); }
-    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--forest-deep); cursor: pointer; }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--forest-deep); cursor: pointer; width: 44px; height: 44px; line-height: 1; }
 
     /* ---------- HERO ---------- */
     .hero {
@@ -302,7 +302,7 @@
       position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .method-step:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-    .method-step .n { font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; }
+    .method-step .n { font-family: var(--serif); font-variant-numeric: lining-nums; font-size: 1.1rem; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; }
     .method-step h3 { font-size: 1.5rem; color: var(--forest-deep); margin-bottom: 0.5rem; }
     .method-step p { font-size: 0.9rem; color: #5c6b60; font-weight: 300; }
     .method-tm { display: inline-block; font-size: 0.7rem; vertical-align: super; color: var(--sage); }
@@ -370,9 +370,10 @@
     .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; }
     .footer-top .logo { color: var(--cream); }
     .footer-col h4 { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; font-weight: 600; }
-    .footer-col p, .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,243,234,0.65); margin-bottom: 0.4rem; }
+    .footer-col p, .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,243,234,0.72); margin-bottom: 0.15rem; }
+    .footer-col a { padding: 0.5rem 0; }
     .footer-col a:hover { color: var(--gold-light); }
-    .disclaimer { font-size: 0.74rem; color: rgba(247,243,234,0.45); border-top: 1px solid rgba(228,200,140,0.15); padding-top: 1.8rem; line-height: 1.6; }
+    .disclaimer { font-size: 0.76rem; color: rgba(247,243,234,0.78); border-top: 1px solid rgba(228,200,140,0.15); padding-top: 1.8rem; line-height: 1.6; }
 
     /* Assessment */
     .assessment { background: rgba(252, 247, 237, 0.78); }
@@ -408,11 +409,8 @@
     .pet-consult-notice a { color: var(--gold-light); }
     .pet-rlt-photo { margin: 1.25rem 0 0; }
     .pet-rlt-photo img { display: block; width: 100%; max-height: 520px; object-fit: cover; object-position: center 58%; border-radius: 14px; }
-    .pet-rlt-photo figcaption { margin-top: 0.55rem; color: rgba(247,243,234,0.62); font-size: 0.8rem; font-style: italic; text-align: center; }
-
-    /* Focused homepage: detailed specialty content lives on dedicated pages. */
-    .promise, .founding, .who, .pets { display: none; }
-    .specialties { background: var(--forest-deep); color: var(--cream); }
+    .pet-rlt-photo figcaption { margin-top: 0.55rem; color: rgba(247,243,234,0.62); font-size: 0.8rem; font-style: italic; text-align: center; }    .specialties { background: var(--forest-deep); color: var(--cream); }
+    .specialties .section-head .eyebrow { color: var(--gold-light); }
     .specialties .section-head h2 { color: var(--white); }
     .specialties .section-head > p:last-child { color: rgba(247,243,234,0.76); }
     .specialty-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; max-width: 1180px; margin: 0 auto; }
@@ -467,7 +465,7 @@
     .session-explainer p { color: #56655a; font-size: 0.92rem; line-height: 1.65; max-width: 760px; margin: 0 auto; }
     .membership-terms { max-width: 940px; margin: 1.25rem auto 0; padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold); background: rgba(247,243,234,0.72); color: #4d5d52; font-size: 0.84rem; line-height: 1.6; }
 
-    .tier .price { font-family: var(--serif); font-size: 2.5rem; color: var(--forest-deep); line-height: 1; margin-bottom: 1.2rem; }
+    .tier .price { font-family: var(--serif); font-variant-numeric: lining-nums; font-size: 2.5rem; color: var(--forest-deep); line-height: 1; margin-bottom: 1.2rem; }
     .tier .price span { font-size: 0.85rem; font-family: var(--sans); color: #5c6b60; font-weight: 400; }
     .tier.dark .price { color: var(--gold-light); }
     .tier.dark .price span { color: rgba(247,243,234,0.7); }
@@ -485,11 +483,13 @@
 
     /* À la carte */
     .ala-head { text-align: center; margin-top: 2.2rem; font-family: var(--serif); font-size: 1.5rem; color: var(--forest-deep); }
-    .alacarte { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; max-width: 760px; margin: 1.5rem auto 0; }
+    .ala-sub { max-width: 620px; margin: 0.55rem auto 0; text-align: center; font-size: 0.88rem; line-height: 1.6; color: #5c6b60; }
+    .alacarte { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; max-width: 980px; margin: 1.5rem auto 0; }
     .ala { background: var(--white); border: 1px solid rgba(47,74,60,0.1); border-radius: 14px; padding: 1.1rem 0.8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; min-height: 104px; text-align: center; box-shadow: 0 6px 20px -14px rgba(34,58,46,0.3); transition: transform 0.25s ease; }
     .ala:hover { transform: translateY(-4px); }
-    .ala-name { font-size: 0.8rem; color: #5c6b60; letter-spacing: 0.03em; margin-bottom: 0.2rem; }
-    .ala-price { font-family: var(--serif); font-size: 1.6rem; color: var(--forest-deep); }
+    .ala-name { font-size: 0.8rem; color: #5c6b60; letter-spacing: 0.03em; margin-bottom: 0.2rem; line-height: 1.35; }
+    .ala-price { font-family: var(--serif); font-size: 1.6rem; color: var(--forest-deep); font-variant-numeric: lining-nums; }
+    @media (max-width: 900px) { .alacarte { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 520px; } }
     @media (max-width: 620px) {
       .alacarte { grid-template-columns: 1fr; gap: 0.8rem; max-width: 340px; }
       .ala { min-height: 108px; padding: 1rem 0.55rem; }
@@ -551,14 +551,14 @@
     /* Limited-time introductory offers */
     .intro-offers { position: relative; background: linear-gradient(180deg, rgba(252,247,237,.8), rgba(255,253,248,.94)); overflow: hidden; }
     .intro-offers::before { content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%; top: -240px; right: -140px; background: radial-gradient(circle, rgba(218,176,106,.16), transparent 68%); pointer-events: none; }
-    .intro-offers .section-head { position: relative; }
-    .offer-grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.35rem; align-items: stretch; }
+    .intro-offers .section-head { position: relative; max-width: 820px; margin-left: auto; margin-right: auto; text-align: center; }
+    .offer-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.35rem; align-items: stretch; max-width: 820px; margin-inline: auto; }
     .offer-card { display: flex; flex-direction: column; min-height: 100%; padding: clamp(1.65rem, 2.8vw, 2.25rem); border: 1px solid rgba(47,74,60,.12); border-radius: var(--radius); background: rgba(255,255,255,.88); box-shadow: 0 18px 48px -36px rgba(34,58,46,.55); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
     .offer-card:hover { transform: translateY(-5px); border-color: rgba(185,134,63,.42); box-shadow: 0 24px 54px -34px rgba(34,58,46,.55); }
     .offer-label { margin-bottom: .85rem; color: var(--gold); font-size: .67rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
     .offer-card h3 { min-height: 2.5em; margin-bottom: .7rem; color: var(--forest-deep); font-family: var(--serif); font-size: clamp(1.45rem, 2.1vw, 1.85rem); line-height: 1.08; }
     .offer-price { display: flex; align-items: baseline; gap: .45rem; margin-bottom: 1.05rem; padding-bottom: 1.05rem; border-bottom: 1px solid rgba(47,74,60,.1); color: var(--forest-deep); }
-    .offer-price strong { font-family: var(--serif); font-size: 1.65rem; font-weight: 600; }
+    .offer-price strong { font-family: var(--serif); font-variant-numeric: lining-nums; font-size: 1.65rem; font-weight: 600; }
     .offer-price span { color: #66736a; font-size: .79rem; font-weight: 500; }
     .offer-description { min-height: 7.2em; margin-bottom: 1.1rem; color: #56655a; font-size: .89rem; font-weight: 300; line-height: 1.65; }
     .offer-terms { margin: 0 0 1.35rem; padding: 1rem 1rem .9rem; border-radius: 13px; background: rgba(239,234,219,.58); list-style: none; }
@@ -578,7 +578,7 @@
     .founders { background: rgba(252, 247, 237, 0.78); }
     .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 680px; margin: 0 auto; }
     .founder-card { text-align: center; }
-    .founder-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: top center; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 1.2rem; }
+    .founder-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 28%; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 1.2rem; }
     .founder-card h3 { font-size: 1.8rem; color: var(--forest-deep); margin-bottom: 0.1rem; }
     .founder-card .frole { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; }
     .founder-card p.fbio { font-size: 0.95rem; color: #5c6b60; font-weight: 300; max-width: 330px; margin: 0 auto; }
@@ -838,30 +838,11 @@
           <a href="booking.html" class="btn btn-gold">Book Your Visit</a>
           <a href="#method" class="btn">Discover The Revive Method™</a>
         </div>
-        <a href="#membership" class="hero-price">Memberships from $179/month &nbsp;·&nbsp; Therapy sessions $39 &nbsp;·&nbsp; Vibration &amp; Grounding $29</a>
+        <a href="#membership" class="hero-price">Memberships from $179/month &nbsp;·&nbsp; 5-Session Pack $169 &nbsp;·&nbsp; Single session $39</a>
         <a href="peptides.html" class="hero-new"><strong>New</strong><span class="hero-new-copy">Peptides, GLP‑1 &amp; lab testing<small>Explore physician-guided options through our Altro Health partnership.</small></span><span class="hero-new-link">Explore options →</span></a>
       </div>
     </div>
   </header>
-
-  <!-- PROMISE -->
-  <section class="promise">
-    <div class="deco deco-light" aria-hidden="true" style="--t:rotate(188deg);width:min(240px,21vw);bottom:30px;right:-85px"><img class="b" src="gold-branch.png" alt="" /></div>
-    <div class="container">
-      <div class="reveal">
-        <p class="eyebrow">Recovery &amp; Longevity</p>
-        <h2>Wellness that you can feel — and measure.</h2>
-        <p>Modern life is hard on the body. Long days, harder workouts, and the everyday wear of getting older leave us tired, sore, and running on empty. Revive &amp; Glow is a calm, boutique space built around one idea: giving your body real time to recover, so you can show up as your best self.</p>
-        <p>No cold clinic feel. No guesswork. Just intentional, personalized sessions and progress you can actually track over time.</p>
-      </div>
-      <div class="promise-stats reveal">
-        <div class="stat"><div class="num">8</div><div class="lbl">Recovery &amp; longevity modalities under one roof</div></div>
-        <div class="stat"><div class="num">1:1</div><div class="lbl">Personalized wellness guidance every visit</div></div>
-        <div class="stat"><div class="num">5</div><div class="lbl">Steps in The Revive Method™</div></div>
-        <div class="stat"><div class="num">∞</div><div class="lbl">A space designed for how you want to feel</div></div>
-      </div>
-    </div>
-  </section>
 
   <!-- METHOD -->
   <section class="method" id="method">
@@ -996,7 +977,7 @@
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9zM12 21v-4"/></svg></div>
           <h3>Grounding</h3>
           <p class="kit">Restore &amp; Reconnect</p>
-          <p>A calming practice to settle the nervous system and reconnect.</p>
+          <p>A few unhurried minutes to close your visit — no timer, no goal, just the pause itself.</p>
           <details class="therapy-more">
             <summary>Learn more</summary>
             <div class="tm-body">
@@ -1060,19 +1041,6 @@
           <a class="btn intro-offer-link" data-offer="couples" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100025" target="_blank" rel="noopener">Explore Couples Offer</a>
         </article>
         <article class="offer-card">
-          <p class="offer-label">Restore in warmth</p>
-          <h3>Infrared Sauna Intro</h3>
-          <p class="offer-price"><strong>$99</strong><span>4 sessions</span></p>
-          <p class="offer-description">Recharge with four private Infrared Sauna sessions, with time included for an optional quick cooling shower, hydration and changing.</p>
-          <ul class="offer-terms" aria-label="Infrared Sauna Intro terms">
-            <li>Four 40-minute appointments</li>
-            <li>Valid for 30 days after the first visit</li>
-            <li>One introductory package per client</li>
-            <li>Available to new and existing clients</li>
-          </ul>
-          <a class="btn intro-offer-link" data-offer="sauna" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100027" target="_blank" rel="noopener">Explore Sauna Offer</a>
-        </article>
-        <article class="offer-card">
           <p class="offer-label">Begin with light</p>
           <h3>New Client Red Light Intro</h3>
           <p class="offer-price"><strong>$69</strong><span>4 sessions</span></p>
@@ -1120,13 +1088,12 @@
       </div>
 
       <div class="includes reveal">
-        <h3 class="includes-title">Every membership includes</h3>
+        <h3 class="includes-title">What only members get</h3>
         <div class="includes-grid">
-          <span>AI Wellness Concierge</span>
-          <span>Personalized AI Wellness Recommendations</span>
-          <span>Flexible Therapy Selection</span>
-          <span>Private, By-Appointment Experience</span>
-          <span>Online Booking</span>
+          <span>Your lowest price per session — from $22, against $39 for a single visit</span>
+          <span>An AI Wellness Concierge that learns your goals and suggests what to book next</span>
+          <span>A different therapy every visit, chosen when you arrive — never locked to one</span>
+          <span>Sessions held for you month after month, so your routine survives a busy week</span>
         </div>
       </div>
 
@@ -1145,7 +1112,7 @@
             <li>Use for Red Light, Sauna, Cold Plunge, or Compression</li>
             <li>All 8 sessions renew monthly and do not roll over</li>
             <li>Maximum flexibility, cancel anytime</li>
-            <li>Personalized wellness support</li>
+            <li>AI Wellness Concierge &amp; personalized guidance</li>
           </ul>
           <details class="membership-details">
             <summary>View full membership details</summary>
@@ -1171,7 +1138,7 @@
             <li>One complimentary Full Metabolic Assessment upon enrollment · redeem within 90 days</li>
             <li>One monthly guest pass for any included therapy · expires monthly</li>
             <li>Exclusive member experiences</li>
-            <li>One monthly Pet Red Light Therapy Session · expires monthly</li>
+            <li>One monthly Pet Red Light Therapy Session · after the required veterinary consultation · expires monthly</li>
           </ul>
           <details class="membership-details">
             <summary>View full membership details</summary>
@@ -1188,30 +1155,15 @@
         </div>
       </div>
       <div class="membership-terms reveal"><strong>Monthly use:</strong> Membership sessions, the Elite guest pass, and the Elite pet session must be used within the current billing cycle and do not roll over. Sessions are subject to availability and advance booking. Pet Red Light Therapy is a general wellness service and is not a substitute for veterinary care.</div>
-      <h3 class="ala-head reveal">Prefer to start at your own pace? Explore à la carte.</h3>
+      <h3 class="ala-head reveal">Not ready for a membership? Start here.</h3>
+      <p class="ala-sub reveal">Come in for a single session to see the space and meet our team. When you know what you love, the 5-Session Pack and our memberships bring the cost per session down.</p>
       <div class="alacarte reveal">
-        <div class="ala"><span class="ala-name">Single Therapy Session</span><span class="ala-price">$39</span></div>
-        <div class="ala"><span class="ala-name">5-Session Pack</span><span class="ala-price">$175</span></div>
+        <div class="ala"><span class="ala-name">Single Session</span><span class="ala-price">$39</span></div>
+        <div class="ala"><span class="ala-name">Add a Second Therapy<br>Same Visit</span><span class="ala-price">+$30</span></div>
+        <div class="ala"><span class="ala-name">5-Session Pack<br>Valid 60 days</span><span class="ala-price">$169</span></div>
         <div class="ala"><span class="ala-name">Gift Cards</span><span class="ala-price">Any amount</span></div>
       </div>
       <p class="tier-note reveal">Whole Body Vibration &amp; Grounding is available separately for $29.</p>
-    </div>
-  </section>
-
-  <!-- FOUNDING -->
-  <section class="founding">
-    <div class="container">
-      <div class="wrap reveal">
-        <div class="big">50</div>
-        <h2>Become a Founding Member</h2>
-        <p>Founding membership is limited to our first 50 members. Join this early community, help shape the studio, and keep your founding rate for life.</p>
-        <div class="perks">
-          <span class="perk">✦ Founding rates locked in</span>
-          <span class="perk">✦ Priority booking</span>
-          <span class="perk">✦ Limited to our first 50 members</span>
-        </div>
-        <a href="booking.html" class="btn">Book an Appointment</a>
-      </div>
     </div>
   </section>
 
@@ -1236,61 +1188,6 @@
           <img src="milo-red-light.jpeg" alt="Milo relaxing during red light therapy" loading="lazy">
           <div class="specialty-copy"><p class="eyebrow">Human + Pet Wellness</p><h3>Red Light Therapy for Dogs</h3><p>Veterinarian-guided support for your dog’s comfort, mobility, and recovery — including our Heal Together experience.</p><a href="pet-red-light-therapy.html" class="btn btn-gold">Explore Pet Wellness →</a></div>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO -->
-  <section class="who" id="who">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Made For You</p>
-        <h2>Whoever you are, recovery is for you.</h2>
-      </div>
-      <div class="who-grid">
-        <div class="who-card reveal"><h3>Athletes &amp; Runners</h3><p>Bounce back faster, train harder, and keep soreness and inflammation from slowing you down.</p></div>
-        <div class="who-card reveal"><h3>Active 60+</h3><p>Move with more ease and energy, and invest in longevity with results you can measure.</p></div>
-        <div class="who-card reveal"><h3>Busy &amp; Burned Out</h3><p>Trade stress for calm — better sleep, more energy, and a moment that's just for you.</p></div>
-        <div class="who-card reveal"><h3>Longevity Seekers</h3><p>Age well on purpose with a proactive, natural approach to feeling your best for years to come.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PETS -->
-  <section class="pets" id="pets">
-    <div class="container">
-      <div class="reveal">
-        <span class="paw">🐾</span>
-        <p class="eyebrow">Human + Pet Wellness</p>
-        <h2>Wellness for the whole family — pets included.</h2>
-        <p>Your dog deserves to feel their best, too. Our <strong>Red Light Therapy for Dogs</strong> offers natural, drug-free support for pain relief, healing, and mobility — gentle, non-invasive, and calming.</p>
-        <p>May help support arthritis &amp; joint pain, hip dysplasia, ACL/CCL recovery, muscle strains, wound healing, and the comfort of senior dogs.</p>
-        <div class="pet-consult-notice">
-          <h4>Consultation Required Before Treatment</h4>
-          <p>To protect the health and safety of your pet — and in accordance with Florida law — all dogs must first complete an initial consultation and evaluation with <strong>Dr. Aimee Burke</strong> of <strong>Fur Ever Friends Veterinary Clinic</strong> before beginning any therapy. Dr. Burke will then work with our team to draft a customized treatment plan tailored to your dog's needs.</p>
-          <p><strong>Fur Ever Friends Veterinary Clinic</strong><br>
-          2525 Pasadena Ave South, Suite S, South Pasadena, FL 33707<br>
-          <a href="tel:+17272884900">(727) 288-4900</a></p>
-          <figure class="pet-rlt-photo">
-            <img src="milo-red-light.jpeg" alt="Milo, a golden doodle, relaxing under a red light therapy panel wearing protective goggles">
-            <figcaption>Milo relaxing during a red light therapy session.</figcaption>
-          </figure>
-        </div>
-        <p style="font-size:0.85rem;color:rgba(247,243,234,0.6);">Provided under the guidance of a licensed veterinarian. Red light therapy supports your dog's comfort and recovery alongside — not in place of — regular veterinary care.</p>
-      </div>
-      <div class="pets-card reveal">
-        <div style="text-align:center;padding:1.4rem;margin-bottom:1.6rem;border:1px solid rgba(228,200,140,0.3);border-radius:14px;background:rgba(200,161,90,0.08);">
-          <div style="font-family:var(--serif);font-size:2.4rem;color:var(--gold-light);line-height:1;">$99 <span style="font-size:0.9rem;font-family:var(--sans);color:rgba(247,243,234,0.7);">for both</span></div>
-          <div style="font-family:var(--serif);font-size:1.3rem;color:var(--white);margin-top:0.3rem;">The &ldquo;Heal Together&rdquo; Package</div>
-          <p style="font-size:0.88rem;color:rgba(247,243,234,0.8);margin-top:0.4rem;">Your dog enjoys red light therapy while you relax in the infrared sauna or under red light — side by side.</p>
-        </div>
-        <ul>
-          <li>First Pet Session — just $29</li>
-          <li>Single sessions from $35 (by dog size)</li>
-          <li>Pet packages &amp; $149/mo membership</li>
-          <li>A personalized plan for every dog</li>
-        </ul>
-        <a href="booking.html" class="btn btn-gold" style="margin-top:1.8rem;">Book an Appointment</a>
       </div>
     </div>
   </section>
@@ -1474,9 +1371,9 @@
       medicine: { msg: "Looking for <strong>peptides or a GLP‑1 program</strong>? Through our telehealth partner Altro Health, eligible patients can explore physician-guided options alongside comprehensive lab testing and hormone care. Licensed Altro providers determine eligibility and handle clinical review and medical guidance. <a href=\"peptides.html\">See how it works →</a>", replies: ['therapies','contact','back'] },
       pnoe: { msg: "<strong>PNŌĒ metabolic breath analysis</strong> measures how your body uses oxygen and fuel, including VO₂ max, resting metabolic rate, training zones, and metabolic fitness age. We turn the results into clear next steps for nutrition, training, and recovery. <a href=\"pnoe.html\">Explore PNŌĒ testing →</a>", replies: ['therapies','contact','back'] },
       therapies: { msg: "We offer <strong>multi-wavelength light therapy</strong> — blue, red, and near-infrared — plus infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, and hydrogen water. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','join','contact','back'] },
-      memberships: { msg: "We offer two simple membership options:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no contract<br><strong>Revive Elite</strong> — $249/mo · 15 sessions · no contract · priority booking · one complimentary Full Metabolic Assessment upon enrollment, redeemable within 90 days<br><br>Prefer to start without a membership? Therapy sessions are $39, Whole Body Vibration &amp; Grounding is $29, and the 5-session pack is $175. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
-      pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> (first session $29), a <strong>$149/mo pet membership</strong>, and our <strong>“Heal Together” package — $99</strong>, where your dog relaxes with red light beside you. <a href=\"pet-red-light-therapy.html\">Learn more →</a>", replies: ['memberships','join','contact','back'] },
-      included: { msg: "Every membership includes an AI Wellness Concierge, personalized wellness recommendations, flexible therapy selection, a private by-appointment experience, and online booking.", replies: ['memberships','join','contact','back'] },
+      memberships: { msg: "We offer two simple membership options:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no contract<br><strong>Revive Elite</strong> — $249/mo · 15 sessions · no contract · priority booking · one complimentary Full Metabolic Assessment upon enrollment, redeemable within 90 days<br><br>Not ready for a membership? A single session is $39 (add a second therapy on the same visit for $30), the 5-Session Pack is $169, and Whole Body Vibration &amp; Grounding is $29. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
+      pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> (first session $29, then $39), a <strong>$149/mo pet membership with 6 sessions</strong>, and our <strong>“Heal Together” package — $69</strong>, where your dog relaxes with red light beside you. Every dog starts with a veterinary consultation. <a href=\"pet-red-light-therapy.html\">Learn more →</a>", replies: ['memberships','join','contact','back'] },
+      included: { msg: "Members get the lowest price per session (from $22, against $39 for a single visit), an AI Wellness Concierge that suggests what to book next, a different therapy every visit chosen when you arrive, and sessions reserved for you month after month.", replies: ['memberships','join','contact','back'] },
       location: { msg: "We're open at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay), and online booking is available. <a href=\"#find-us\">Get directions →</a>", replies: ['join','memberships','contact','back'] },
       join: { msg: "Ready to visit? Reserve your preferred service and time through our secure online booking page. <a href=\"booking.html\">Book an appointment →</a>", replies: ['memberships','pets','contact','back'] },
       contact: { msg: "Of course — we're happy to help personally! 💬 Reach us directly:<br><br>📲 <a href=\"https://wa.me/17277764569?text=Hi!%20I%20have%20a%20question%20about%20Revive%20%26%20Glow.\" target=\"_blank\" rel=\"noopener\">WhatsApp us</a><br>💬 <a href=\"sms:+17277764569\">Text us</a><br>📞 <a href=\"tel:+17277764569\">Call (727) 776-4569</a><br>✉️ <a href=\"mailto:reviveandglowwellness@gmail.com\">Email us</a><br><br>We'll get right back to you!", replies: ['back'] }
