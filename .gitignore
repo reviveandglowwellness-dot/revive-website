@@ -1,3 +1,49 @@
+# ---------------------------------------------------------------------------
+# ATENCAO: tudo que entra neste repositorio e publicado pela Vercel como
+# arquivo estatico. Um .md commitado fica acessivel em
+# reviveandglowwellness.ai/<nome-do-arquivo>.md, mesmo com o repositorio
+# privado no GitHub. So versione o que pode ser lido por qualquer pessoa.
+# ---------------------------------------------------------------------------
+
+# Documentos internos de operacao e estrategia
+CLAUDE.md
+AGENTS.md
+TASKS.md
+catalog.json
+mindbody-setup-notes.md
+mindbody-catalog-checklist.md
+GUIA-DEPLOY.md
+
+# Dados pessoais de clientes e convidados
+grand-opening-guest-list.md
+
+# Juridico
+legal-drafts/
+output/pdf/resumo-juridico-para-advogada.pdf
+output/pdf/revive-glow-summary-for-legal-review.pdf
+output/resumo-para-socia-*.md
+
+# Planejamento de conteudo e fontes de social media
+social-media/**/*.md
+social-media/**/*.zip
+social-media/*.ps1
+
+# Scripts de build (nao servem para nada no site publicado)
+tools/*.ps1
+tools/*.mjs
+tools/*.py
+scripts/
+brand-book/*.ps1
+brand-book/*.sh
+
+# Painel pessoal, nao faz parte do site
+dashboard.html
+
+# Previews de desenvolvimento
+site-preview.html
+pet-preview.html
+_*.html
+
 # Temporary browser profiles created during visual testing
 .tmp-edge-*/
 
