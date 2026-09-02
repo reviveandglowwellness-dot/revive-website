@@ -10,4 +10,8 @@ footer{padding:3rem 0;background:#18281f;color:rgba(247,243,234,.7)}.footer-grid
 @media(max-width:600px){section{padding:3.5rem 0}.detail-hero{padding:calc(76px + 3rem) 0 3.5rem}.grid-2,.grid-4{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}.nav-wordmark{width:160px}}
 body{overflow-x:hidden}
 @media(max-width:600px){#consultation .notice{width:100%}.card{padding:1.55rem}.section-head h2{overflow-wrap:anywhere}}
-#consultation .photo-caption{font-family:var(--serif);font-size:1.22rem;line-height:1.35;font-style:normal;color:var(--forest-deep);max-width:520px;margin:.95rem auto 0}
+#consultation .split{align-items:stretch}
+#consultation .consultation-photo{position:relative;min-height:100%;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow)}
+#consultation .consultation-photo img{width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
+#consultation .photo-caption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:2.6rem 1.5rem 1.25rem;background:linear-gradient(transparent,rgba(20,50,40,.82));font-family:var(--serif);font-size:1.15rem;line-height:1.35;font-style:normal;color:var(--cream);text-shadow:0 1px 10px rgba(0,0,0,.25)}
+@media(max-width:900px){#consultation .consultation-photo{min-height:460px}}

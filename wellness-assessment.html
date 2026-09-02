@@ -181,7 +181,7 @@ h1{font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.1;font-weight:400;letter-spa
 <script>
 /* ============ CONFIG (data-driven; edite aqui — valores pendentes de assinatura de segurança) ============ */
 var METHOD = {
-  1:{name:"Illuminate", mod:"Red Light Therapy", benefit:"Energize cells and prime the body with red light.", modalities:["red_light"]},
+  1:{name:"Illuminate", mod:"Multi-Wavelength Light Therapy", benefit:"Blue, red, and near-infrared light in one personalized experience.", modalities:["red_light"]},
   2:{name:"Restore",    mod:"Infrared Sauna",    benefit:"Warm deep, sweat clean, and release tension.",     modalities:["sauna"]},
   3:{name:"Refresh",    mod:"Cold Plunge",       benefit:"Invigorate circulation and sharpen the mind.",     modalities:["cold_plunge"]},
   4:{name:"Recover",    mod:"Compression + Vibration", benefit:"Flush fatigue from tired muscles.",           modalities:["compression","vibration"]},
@@ -219,7 +219,7 @@ var MEMBERSHIP_URLS = {flex:"", elite:""};
 var SCREENS = [
   {id:"intro", type:"info", noProgress:true,
    eyebrow:"Your Wellness Concierge", title:"Welcome. Let's personalize your visit.",
-   body:"Tell us what brings you in today and we'll prepare a thoughtful starting point for your Revive &amp; Glow experience. It takes about 90 seconds.",
+   body:"Tell us what brings you in today and we'll prepare a personalized starting point for your Revive &amp; Glow experience. It takes about 90 seconds.",
    cta:"Start my visit"},
   {id:"path", type:"choice", noProgress:true, branch:true,
    title:"Who are we caring for today?",
@@ -611,13 +611,13 @@ function renderResult(){
   if(r.assisted){
     html+='<div class="assist"><h2>Let\'s review this together first.</h2><p>Your answers include something our wellness team should review before confirming any service. This screen does not provide medical clearance or replace advice from your healthcare professional.</p></div>';
   }
-  html+='<h1>'+name+', here is a thoughtful place to begin.</h1>'+
+  html+='<h1>'+name+', here is a personalized place to begin.</h1>'+
         '<p class="lede">'+r.reason+' Your wellness guide will confirm the final experience with you before you begin.</p></div>';
 
   html+='<div class="method-cards">';
   r.steps.forEach(function(s,idx){
     var m=METHOD[s.n], first=idx===0;
-    var displayMod=s.avail.map(function(x){return x==="red_light"?"Red Light Therapy":x==="sauna"?"Infrared Sauna":x==="cold_plunge"?"Cold Plunge":x==="compression"?"Compression Therapy":x==="vibration"?"Vibration Therapy":"Grounding & Hydration";}).join(" + ");
+    var displayMod=s.avail.map(function(x){return x==="red_light"?"Multi-Wavelength Light Therapy":x==="sauna"?"Infrared Sauna":x==="cold_plunge"?"Cold Plunge":x==="compression"?"Compression Therapy":x==="vibration"?"Vibration Therapy":"Grounding & Hydration";}).join(" + ");
     html+='<div class="mcard'+(first?' first':'')+'">'+
       '<div class="num">'+(idx+1)+'</div><div>'+
       (first?'<span class="tag-first">Start here</span>':'')+
