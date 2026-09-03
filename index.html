@@ -268,6 +268,37 @@
     .hero-visual img { width: 50%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top center; border-radius: 18px; box-shadow: var(--shadow); }
     .hero-visual img:nth-child(2) { margin-top: 2.6rem; }
 
+    /* Quick pricing path */
+    .start-here { background: linear-gradient(180deg, #fffdf8 0%, rgba(247,243,234,.88) 100%); padding-top: clamp(3rem, 5vw, 4.25rem); }
+    .start-here .section-head { max-width: 780px; margin-left: auto; margin-right: auto; text-align: center; }
+    .start-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
+    .start-option { display: flex; flex-direction: column; min-height: 100%; padding: 1.65rem 1.35rem; border: 1px solid rgba(47,74,60,.12); border-radius: var(--radius); background: rgba(255,255,255,.9); box-shadow: 0 14px 38px -30px rgba(34,58,46,.5); text-align: left; }
+    .start-option.featured { background: var(--forest-deep); border-color: var(--forest-deep); color: var(--cream); }
+    .start-option .option-label { margin-bottom: .65rem; color: var(--gold); font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .start-option.featured .option-label { color: var(--gold-light); }
+    .start-option h3 { margin-bottom: .3rem; color: var(--forest-deep); font-size: 1.5rem; }
+    .start-option.featured h3 { color: var(--white); }
+    .start-option .option-price { margin-bottom: .9rem; color: var(--forest-deep); font-family: var(--serif); font-size: 2rem; font-variant-numeric: lining-nums; line-height: 1; }
+    .start-option.featured .option-price { color: var(--gold-light); }
+    .start-option .option-price span { font-family: var(--sans); font-size: .74rem; color: #69766d; }
+    .start-option.featured .option-price span { color: rgba(247,243,234,.7); }
+    .start-option > p:not(.option-label):not(.option-price):not(.option-note) { flex: 1; color: #5c6b60; font-size: .86rem; font-weight: 300; line-height: 1.55; }
+    .start-option.featured > p:not(.option-label):not(.option-price):not(.option-note) { color: rgba(247,243,234,.8); }
+    .start-option .option-note { margin-top: 1rem; padding-top: .8rem; border-top: 1px solid rgba(47,74,60,.1); color: var(--forest-deep); font-size: .76rem; font-weight: 600; }
+    .start-option.featured .option-note { border-color: rgba(228,200,140,.18); color: var(--gold-light); }
+    .new-client-callout { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem; max-width: 1000px; margin: 1.35rem auto 0; padding: 1.35rem 1.5rem; border: 1px solid rgba(200,161,90,.38); border-radius: var(--radius); background: linear-gradient(135deg, rgba(47,74,60,.97), rgba(34,58,46,.97)); box-shadow: 0 18px 44px -30px rgba(34,58,46,.75); text-align: left; }
+    .new-client-callout .eyebrow { margin-bottom: .25rem; color: var(--gold-light); }
+    .new-client-callout h3 { color: var(--white); font-size: clamp(1.35rem, 2.4vw, 1.8rem); }
+    .new-client-callout p:last-child { margin-top: .25rem; color: rgba(247,243,234,.76); font-size: .86rem; font-weight: 300; }
+    .new-client-callout .btn { min-width: 210px; border-color: var(--gold); background: var(--gold); color: var(--ink); text-align: center; }
+    .new-client-callout .btn:hover { background: var(--gold-light); }
+    .start-next { max-width: 760px; margin: 2.25rem auto 0; text-align: center; }
+    .start-next h3 { color: var(--forest-deep); font-size: clamp(1.55rem, 3vw, 2.1rem); }
+    .start-next p { margin: .55rem auto 1.15rem; color: #5c6b60; font-weight: 300; }
+    .start-next .btn { border: 1px solid rgba(47,74,60,.2); }
+    @media (max-width: 980px) { .start-options { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 580px) { .start-options { grid-template-columns: 1fr; } .start-option { padding: 1.5rem; } .new-client-callout { grid-template-columns: 1fr; text-align: center; } .new-client-callout .btn { width: 100%; } }
+
     /* ---------- SECTIONS ---------- */
     /* overflow-x:clip contains the branch artwork that bleeds past the left/right
        edges. `clip` (not hidden) so vertical overflow and sticky children are
@@ -460,7 +491,12 @@
     .membership-detail-body p { font-size: 0.78rem; line-height: 1.55; color: #4f5f54; margin: 0; }
     .tier.dark .membership-detail-body p { color: rgba(247,243,234,0.82); }
     .tier-note { text-align: center; margin-top: 1.8rem; font-size: 0.9rem; color: #5c6b60; }
-    .membership-terms { max-width: 940px; margin: 1.25rem auto 0; padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold); background: rgba(247,243,234,0.72); color: #4d5d52; font-size: 0.84rem; line-height: 1.6; }
+    .membership-terms { max-width: 940px; margin: 1.25rem auto 0; border: 1px solid rgba(47,74,60,.12); border-radius: 12px; background: rgba(247,243,234,.72); color: #4d5d52; font-size: .84rem; line-height: 1.6; overflow: hidden; text-align: left; }
+    .membership-terms summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; color: var(--forest-deep); cursor: pointer; font-weight: 700; list-style: none; }
+    .membership-terms summary::-webkit-details-marker { display: none; }
+    .membership-terms summary::after { content: '+'; color: var(--gold); font-size: 1.15rem; }
+    .membership-terms[open] summary::after { content: '−'; }
+    .membership-terms p { padding: 0 1.25rem 1.15rem; }
 
     .tier .price { font-family: var(--serif); font-variant-numeric: lining-nums; font-size: 2.5rem; color: var(--forest-deep); line-height: 1; margin-bottom: 1.2rem; }
     .tier .price span { font-size: 0.85rem; font-family: var(--sans); color: #5c6b60; font-weight: 400; }
@@ -826,7 +862,7 @@
         </span>
         <span class="badge"><span class="dot"></span> Individual Wellness Sessions · By Appointment</span>
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
-        <p class="lede">A boutique recovery &amp; longevity studio in the heart of Tampa Bay — where science-backed therapies help you move better, feel stronger, and age well.</p>
+        <p class="lede">Step away from the rush and give your body time to reset. Our restorative wellness experiences are designed to help you leave feeling lighter, recharged, and ready for what comes next.</p>
         <div class="hero-private">
           <span class="hero-private-mark" aria-hidden="true">✦</span>
           <div class="hero-private-copy"><strong>Your session. Your choice of company.</strong>Therapies are never shared with strangers. Come on your own, or bring someone you choose for sauna or light therapy.</div>
@@ -841,13 +877,67 @@
     </div>
   </header>
 
+  <!-- START HERE: pricing and memberships near the top of the customer journey -->
+  <section class="start-here" id="start-here">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Choose Your Experience</p>
+        <h2>A simple way to begin. A better way to keep going.</h2>
+        <p>Visit once, start with a package, or make recovery part of your routine. Choose the option that feels right for you today.</p>
+      </div>
+      <div class="start-options">
+        <article class="start-option reveal">
+          <p class="option-label">Come meet us</p>
+          <h3>Single Session</h3>
+          <p class="option-price">$39 <span>/ visit</span></p>
+          <p>Walk in, explore the studio, and choose one available Revive Session with guidance from our team.</p>
+          <p class="option-note">In person only · subject to availability</p>
+        </article>
+        <article class="start-option reveal">
+          <p class="option-label">Build your rhythm</p>
+          <h3>5-Session Starter</h3>
+          <p class="option-price">$169</p>
+          <p>Five flexible sessions to explore what helps you feel your best and begin a consistent wellness routine.</p>
+          <p class="option-note">Valid for 60 days</p>
+        </article>
+        <article class="start-option reveal">
+          <p class="option-label">About twice a week</p>
+          <h3>Revive Flex</h3>
+          <p class="option-price">$179 <span>/ month</span></p>
+          <p>Eight sessions each billing month with the freedom to choose a different included therapy each visit.</p>
+          <p class="option-note">No minimum commitment</p>
+        </article>
+        <article class="start-option featured reveal">
+          <p class="option-label">Our most complete membership</p>
+          <h3>Revive Elite</h3>
+          <p class="option-price">$299 <span>/ month</span></p>
+          <p>Fifteen sessions, priority booking support, a monthly guest pass, and valuable one-time welcome benefits.</p>
+          <p class="option-note">Our lowest member rate · $19.93 per session</p>
+        </article>
+      </div>
+      <div class="new-client-callout reveal">
+        <div>
+          <p class="eyebrow">New to Revive &amp; Glow?</p>
+          <h3>Don’t wait to start feeling your best.</h3>
+          <p>Discover limited-time introductory offers created especially for new guests.</p>
+        </div>
+        <a href="#intro-offers" class="btn">View New Client Offers</a>
+      </div>
+      <div class="start-next reveal">
+        <h3>Not sure which experience is right for you?</h3>
+        <p>Explore the benefits, see what each session feels like, and know what to expect before your first visit.</p>
+        <a href="#therapies" class="btn">Explore Therapies &amp; Benefits</a>
+      </div>
+    </div>
+  </section>
+
   <!-- METHOD -->
   <section class="method" id="method">
     <div class="container">
       <div class="section-head center reveal">
         <p class="eyebrow">Our Signature Ritual</p>
-        <h2>The Revive Method™</h2>
-        <p>A guided five-step journey through light, heat, cold, and restoration — sequenced to help your body reset from the inside out.</p>
+        <h2>Come as you are. Leave feeling renewed.</h2>
+        <p>Whether you need a quiet reset, post-workout recovery, or a moment to recharge, we help you shape a visit around how you want to feel.</p>
       </div>
       <div class="method-track">
         <div class="method-step reveal"><div class="n">01</div><h3>Illuminate</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Multi-Wavelength Light Therapy</div><p>Choose the light wavelengths that best complement your wellness goals.</p></div>
@@ -864,8 +954,8 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">The Studio</p>
-        <h2>Premium therapies, carefully selected.</h2>
-        <p>Every modality is chosen for one reason: it helps you recover, restore, and feel your best — powered by best-in-class equipment.</p>
+        <h2>Explore the benefits. Know what to expect.</h2>
+        <p>Discover how each experience fits into your wellness routine, what a session feels like, and the reasons guests choose it — all with guidance from our team.</p>
       </div>
       <div class="therapy-grid">
         <div class="therapy light-feature reveal">
@@ -1106,12 +1196,13 @@
         <div class="tier dark reveal">
           <div class="tier-tag">🏆 Premium</div>
           <h3>Revive Elite</h3>
-          <div class="price">$249<span>/month</span></div>
+          <div class="price">$299<span>/month</span></div>
           <p class="tier-sub">15 Revive Sessions per billing month · our lowest member rate per session</p>
           <ul>
-            <li>Our best membership value · $16.60 per included session</li>
+            <li>Our best membership value · $19.93 per included session</li>
             <li>Use for Multi-Wavelength Light Therapy, Sauna, Cold Plunge, or Compression</li>
             <li>All 15 sessions renew monthly and do not roll over</li>
+            <li>Priority booking support</li>
             <li>One complimentary PNŌĒ Resting Metabolic Test after 3 consecutive membership payments · membership must be active</li>
             <li>One monthly guest pass for any included therapy · expires monthly</li>
             <li>One-time complimentary Pet Red Light Therapy Session · once per membership · after referral from Dr. Burke at Fur Ever Friends</li>
@@ -1120,7 +1211,7 @@
             <summary>View full membership details</summary>
             <div class="membership-detail-body">
               <h4>Included sessions</h4><p>Fifteen Revive Sessions per billing month. Each session may be used for Multi-Wavelength Light Therapy (blue, red &amp; near-infrared light), Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
-              <h4>Premium benefits</h4><p>Our lowest member rate per included session, one complimentary PNŌĒ Resting Metabolic Test unlocked after three consecutive membership payments while the membership remains active, one monthly guest pass for any included therapy, and one complimentary Pet Red Light Therapy Session provided once per membership after the required veterinary consultation.</p>
+              <h4>Premium benefits</h4><p>Our lowest member rate per included session, priority booking support, one complimentary PNŌĒ Resting Metabolic Test unlocked after three consecutive membership payments while the membership remains active, one monthly guest pass for any included therapy, and one complimentary Pet Red Light Therapy Session provided once per membership after Dr. Burke’s written referral and completion of the required owner forms.</p>
               <h4>Wellness benefits</h4><p>AI Wellness Concierge, personalized AI wellness recommendations, flexible therapy selection, individual sessions that are never shared with strangers, and online booking.</p>
               <h4>Monthly use</h4><p>Sessions and the guest pass expire at the end of each billing cycle and do not roll over. The PNŌĒ Resting Metabolic Test unlocks after the third consecutive membership payment and must be redeemed while the membership is active. The Pet Red Light Therapy benefit is provided only once per membership and is not a monthly benefit. The guest pass is intended to be shared.</p>
               <h4>Cancellation</h4><p>No minimum commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio.</p>
@@ -1130,14 +1221,15 @@
           <a href="booking.html" class="btn btn-gold">Book an Appointment</a>
         </div>
       </div>
-      <div class="membership-terms reveal"><strong>Membership use:</strong> Membership sessions and the Elite guest pass must be used within the current billing cycle and do not roll over. The Elite PNŌĒ Resting Metabolic Test unlocks after three consecutive membership payments and requires an active membership. The Elite pet session is a one-time benefit, not a monthly benefit. Sessions are subject to availability and advance booking. Pet Red Light Therapy is a general wellness service and is not a substitute for veterinary care.</div>
-      <h3 class="ala-head reveal">Not ready for a membership? Start here.</h3>
-      <p class="ala-sub reveal"><strong>Walk-ins are warmly welcome for a $39 single session, subject to availability.</strong> Stop by to see the space, meet our team, and discover which experience feels right for you. We will be happy to welcome you and introduce you to our studio. Single sessions are available in person only and are not sold online.</p>
+      <details class="membership-terms reveal">
+        <summary>Important membership terms</summary>
+        <p>Membership sessions and the Elite guest pass must be used within the current billing cycle and do not roll over. The Elite PNŌĒ Resting Metabolic Test unlocks after three consecutive membership payments and requires an active membership. The Elite pet session is a one-time benefit, not a monthly benefit. Sessions are subject to availability and advance booking. Pet Red Light Therapy is a general wellness service and is not a substitute for veterinary care.</p>
+      </details>
+      <h3 class="ala-head reveal">More ways to restore — or share the experience.</h3>
       <div class="alacarte reveal">
-        <div class="ala"><span class="ala-name">5-Session Starter<br>Valid 60 days</span><span class="ala-price">$169</span></div>
+        <div class="ala"><span class="ala-name">Whole Body Vibration<br>&amp; Grounding</span><span class="ala-price">$29</span></div>
         <div class="ala"><span class="ala-name">Gift Cards</span><span class="ala-price">Any amount</span></div>
       </div>
-      <p class="tier-note reveal">Whole Body Vibration &amp; Grounding is available separately for $29.</p>
     </div>
   </section>
 
@@ -1346,7 +1438,7 @@
       medicine: { msg: "Looking for <strong>peptides or a GLP‑1 program</strong>? Through our telehealth partner Altro Health, eligible patients can explore physician-guided options alongside comprehensive lab testing and hormone care. Licensed Altro providers determine eligibility and handle clinical review and medical guidance. <a href=\"peptides.html\">See how it works →</a>", replies: ['therapies','contact','back'] },
       pnoe: { msg: "<strong>PNŌĒ metabolic breath analysis</strong> measures how your body uses oxygen and fuel, including VO₂ max, resting metabolic rate, training zones, and metabolic fitness age. We turn the results into clear next steps for nutrition, training, and recovery. <a href=\"pnoe.html\">Explore PNŌĒ testing →</a>", replies: ['therapies','contact','back'] },
       therapies: { msg: "We offer <strong>multi-wavelength light therapy</strong> — blue, red, and near-infrared — plus infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, and hydrogen water. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','join','contact','back'] },
-      memberships: { msg: "We offer two simple membership options:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no minimum commitment<br><strong>Revive Elite</strong> — $249/mo · 15 sessions · no minimum commitment · our lowest member rate per included session · one complimentary PNŌĒ Resting Metabolic Test after three consecutive membership payments while active<br><br>Not ready for a membership? The 5-Session Starter is $169 and is valid for 60 days. Walk-ins are warmly welcome for a $39 single session, subject to availability; single sessions are offered in person only. Whole Body Vibration &amp; Grounding is $29. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
+      memberships: { msg: "We offer two simple membership options:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no minimum commitment<br><strong>Revive Elite</strong> — $299/mo · 15 sessions · no minimum commitment · our lowest member rate per included session · priority booking support · one complimentary PNŌĒ Resting Metabolic Test after three consecutive membership payments while active<br><br>Not ready for a membership? The 5-Session Starter is $169 and is valid for 60 days. Walk-ins are warmly welcome for a $39 single session, subject to availability; single sessions are offered in person only. Whole Body Vibration &amp; Grounding is $29. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
       pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> for $39 per session, a <strong>$149/mo pet membership with 6 sessions</strong>, and our <strong>“Heal Together” package — $59</strong>. Every dog must first be evaluated by Dr. Aimee Burke at <strong>Fur Ever Friends Veterinary Clinic</strong>. Call <a href=\"tel:+17272884900\">(727) 288-4900</a>. After we receive the written referral and signed owner forms, Revive &amp; Glow arranges the first session. <a href=\"pet-red-light-therapy.html\">See the full process →</a>", replies: ['memberships','join','contact','back'] },
       included: { msg: "Members get the lowest price per session (from $22, against $39 for a single visit), an AI Wellness Concierge that suggests what to book next, a different therapy every visit chosen when you arrive, and sessions reserved for you month after month.", replies: ['memberships','join','contact','back'] },
       location: { msg: "We're open at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay), and online booking is available. <a href=\"#find-us\">Get directions →</a>", replies: ['join','memberships','contact','back'] },
