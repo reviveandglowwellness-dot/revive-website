@@ -375,17 +375,20 @@
     .therapy .kit { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.9rem; }
     .therapy p { font-size: 0.92rem; color: #5c6b60; font-weight: 300; }
 
-    /* Men's Wellness entry point — preview only until launch */
+    /* Dedicated Men's Wellness spotlight */
     .mens-entry { padding: 0; background: #0d1712; color: var(--cream); overflow: hidden; }
-    .mens-entry-grid { min-height: 500px; display: grid; grid-template-columns: 1fr 1fr; }
-    .mens-entry-copy { padding: clamp(3.5rem, 7vw, 6.5rem); display: flex; flex-direction: column; justify-content: center; }
+    .mens-entry-grid { min-height: 440px; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); }
+    .mens-entry-copy { padding: clamp(3.25rem, 6vw, 5.5rem); display: flex; flex-direction: column; justify-content: center; }
     .mens-entry .eyebrow { color: var(--gold-light); }
-    .mens-entry h2 { max-width: 650px; color: var(--cream); font-family: var(--sans); font-weight: 600; letter-spacing: -.035em; text-transform: uppercase; }
-    .mens-entry p:not(.eyebrow) { max-width: 620px; margin: 1.15rem 0 1.8rem; color: rgba(247,243,234,.7); font-weight: 300; }
+    .mens-entry h2 { max-width: 650px; color: var(--cream); font-family: var(--sans); font-size: clamp(2.8rem, 5vw, 4.8rem); font-weight: 600; line-height: .96; letter-spacing: -.045em; text-transform: uppercase; }
+    .mens-entry h2 span { display: block; color: var(--gold-light); }
+    .mens-entry p:not(.eyebrow) { max-width: 620px; margin: 1.2rem 0 1.35rem; color: rgba(247,243,234,.76); font-size: 1rem; font-weight: 300; }
+    .mens-entry-highlights { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0 0 1.75rem; padding: 0; list-style: none; }
+    .mens-entry-highlights li { padding: .48rem .68rem; border: 1px solid rgba(228,200,140,.28); border-radius: 999px; color: var(--cream); font-size: .78rem; letter-spacing: .03em; }
     .mens-entry-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
     .mens-entry .btn-outline { border-color: rgba(228,200,140,.35); color: var(--cream); }
-    .mens-entry-visual { position: relative; min-height: 500px; background: linear-gradient(90deg,#0d1712 0%,rgba(13,23,18,.18) 34%,rgba(13,23,18,.05)),url('pnoe-performance.jpg') 56% center/cover no-repeat; }
-    .mens-entry-visual::after { content:'RECOVERY · PERFORMANCE · LONGEVITY'; position:absolute; left:2rem; right:2rem; bottom:2rem; padding:1rem 1.2rem; border:1px solid rgba(228,200,140,.25); color:var(--gold-light); background:rgba(9,16,12,.75); font-size:.68rem; font-weight:600; letter-spacing:.13em; text-align:center; }
+    .mens-entry-visual { position: relative; min-height: 440px; background: linear-gradient(90deg,#0d1712 0%,rgba(13,23,18,.16) 26%,rgba(13,23,18,.02)),url('men-muscle-recovery.jpg') center/cover no-repeat; }
+    .mens-entry-visual::after { content:'RECOVERY · PERFORMANCE · TESTING · LONGEVITY'; position:absolute; left:2rem; right:2rem; bottom:2rem; padding:1rem 1.2rem; border:1px solid rgba(228,200,140,.25); color:var(--gold-light); background:rgba(9,16,12,.78); font-size:.75rem; font-weight:600; letter-spacing:.13em; text-align:center; }
 
     /* Who */
     .who { background: var(--forest); color: var(--cream); }
@@ -473,6 +476,7 @@
     .specialty-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
     .specialty-card.pet img { object-position: center 55%; }
     .specialty-card.pnoe img { object-position: center 24%; }
+    .specialty-card.peptides img { object-position: 44% 52%; }
     .specialty-art { height: 220px; display: grid; place-items: center; padding: 2rem; background: radial-gradient(circle at 50% 30%,rgba(228,200,140,0.26),transparent 60%),linear-gradient(145deg,#2f4a3c,#18281f); }
     .specialty-art img { width: min(175px,70%); height: auto; object-fit: contain; filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(743%) hue-rotate(359deg) brightness(99%) contrast(86%) drop-shadow(0 12px 20px rgba(0,0,0,0.22)); opacity: 0.96; }
     .specialty-copy { padding: 1.55rem; display: flex; flex-direction: column; flex: 1; }
@@ -720,7 +724,8 @@
     section > .container, .hero > .container { position: relative; z-index: 1; }
 
     @media (prefers-reduced-motion: reduce) {
-      .deco { transition: opacity .4s ease; transform: var(--t, none); }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .deco { opacity: var(--op, .4); transition: none; transform: var(--t, none); }
       .deco.in .b { animation: none; }
     }
 
@@ -768,7 +773,7 @@
       .nav-links a.btn { text-align: center; margin-top: 0.7rem; }
       .hero-container { grid-template-columns: 1fr; gap: 2.4rem; }
       .mens-entry-grid { grid-template-columns: 1fr; }
-      .mens-entry-visual { min-height: 390px; order: -1; }
+      .mens-entry-visual { min-height: 250px; order: 0; }
       .hero-visual { max-width: 440px; }
       .promise .container { grid-template-columns: 1fr; gap: 2.5rem; }
       .assessment .container { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -811,6 +816,236 @@
       .form-row input { min-width: 0; width: 100%; flex-basis: 100%; }
       .chat-fab { width: 52px; height: 52px; right: 0.8rem; bottom: 0.8rem; }
     }
+
+    /* ---------- COMPACT HOMEPAGE ARCHITECTURE ----------
+       The homepage is an overview: clear choices first, detail on demand. */
+    :root { --gold-text: #825a27; }
+    .eyebrow { font-size: 0.78rem; }
+    #start-here, #membership, #intro-offers, #method, #therapies,
+    #explore, #mens-wellness, #founders, #faq, #find-us {
+      scroll-margin-top: calc(var(--nav-h, 84px) + 1rem);
+    }
+    .pathway-card[hidden] { display: none !important; }
+    .hero {
+      min-height: auto;
+      padding: calc(var(--nav-h, 84px) + 2.25rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+    }
+    .hero-inner { max-width: 760px; }
+    .hero-brand { margin-bottom: 0.4rem; }
+    .hero-brand-logo { width: clamp(205px, 24vw, 290px); }
+    .hero .badge { margin-bottom: 0.9rem; }
+    .hero p.lede { max-width: 610px; margin-bottom: 1.25rem; }
+    .hero-trust {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.35rem 0.7rem;
+      margin: 0 auto 1.45rem; color: var(--forest-deep); font-size: 0.82rem;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .hero-trust span { color: var(--gold); }
+    .hero-cta .btn-secondary {
+      border: 1px solid rgba(47,74,60,0.28); background: rgba(255,253,248,0.66);
+      color: var(--forest-deep); backdrop-filter: blur(6px);
+    }
+    .hero-cta .btn-secondary:hover { background: var(--white); }
+    .hero-location {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      margin-top: 1rem; color: #55645a; font-size: 0.82rem;
+    }
+    .hero-location strong { color: var(--gold-text); font-weight: 700; }
+
+    /* One commercial decision block replaces three repeated pricing sections. */
+    .start-here { padding: clamp(3.5rem, 6vw, 5rem) 0; }
+    .start-here .section-head { margin-bottom: 2.25rem; }
+    .pathway-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem; align-items: stretch;
+    }
+    .pathway-grid.intro-offers-hidden { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; margin-inline: auto; }
+    .pathway-card {
+      display: flex; flex-direction: column; min-width: 0; padding: 1.75rem;
+      border: 1px solid rgba(47,74,60,0.12); border-radius: var(--radius);
+      background: rgba(255,255,255,0.9); box-shadow: 0 16px 42px -32px rgba(34,58,46,0.56);
+    }
+    .pathway-card.featured { background: var(--forest-deep); border-color: var(--forest-deep); color: var(--cream); }
+    .pathway-label {
+      margin-bottom: 0.7rem; color: var(--gold-text); font-size: 0.78rem;
+      font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .pathway-card.featured .pathway-label { color: var(--gold-light); }
+    .pathway-card h3 { margin-bottom: 0.55rem; color: var(--forest-deep); font-size: 1.75rem; }
+    .pathway-card.featured h3 { color: var(--white); }
+    .pathway-card > p:not(.pathway-label):not(.pathway-price) { color: #5c6b60; font-size: 0.94rem; font-weight: 300; }
+    .pathway-card.featured > p:not(.pathway-label):not(.pathway-price) { color: rgba(247,243,234,0.8); }
+    .pathway-price {
+      margin: 0.25rem 0 0.9rem; color: var(--forest-deep);
+      font-family: var(--serif); font-size: 2rem; line-height: 1;
+    }
+    .pathway-card.featured .pathway-price { color: var(--gold-light); }
+    .pathway-price span { font-family: var(--sans); font-size: 0.8rem; color: #68766d; }
+    .pathway-card.featured .pathway-price span { color: rgba(247,243,234,0.68); }
+    .pathway-options { display: grid; gap: 0.55rem; margin: 1.05rem 0 1.35rem; }
+    .pathway-option {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem;
+      padding-bottom: 0.55rem; border-bottom: 1px solid rgba(47,74,60,0.1);
+      color: var(--forest-deep); font-size: 0.86rem;
+    }
+    .pathway-card.featured .pathway-option { border-color: rgba(228,200,140,0.16); color: var(--cream); }
+    .pathway-option strong { color: var(--gold-text); font-family: var(--serif); font-size: 1.15rem; white-space: nowrap; }
+    .pathway-card.featured .pathway-option strong { color: var(--gold-light); }
+    .pathway-actions { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: auto; padding-top: 1.25rem; }
+    .pathway-actions .btn { padding: 0.72rem 1.05rem; font-size: 0.85rem; text-align: center; }
+    .pathway-card.featured .pathway-actions .btn:not(.btn-gold) {
+      border: 1px solid rgba(228,200,140,0.38); background: transparent; color: var(--cream);
+    }
+    .pathway-details { margin-top: 1rem; border-top: 1px solid rgba(47,74,60,0.1); }
+    .pathway-card.featured .pathway-details { border-color: rgba(228,200,140,0.16); }
+    .pathway-details summary {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding-top: 0.9rem; color: var(--gold-text); cursor: pointer; list-style: none;
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .pathway-details summary::-webkit-details-marker { display: none; }
+    .pathway-details summary::after { content: '+'; font-size: 1.1rem; }
+    .pathway-details[open] summary::after { content: '\2212'; }
+    .pathway-detail-body { padding-top: 0.85rem; }
+    .pathway-detail-body p { margin-bottom: 0.65rem; color: #59685e; font-size: 0.82rem; line-height: 1.55; }
+    .pathway-card.featured .pathway-detail-body p { color: rgba(247,243,234,0.76); }
+    .pathway-card.featured .pathway-details summary { color: var(--gold-light); }
+    .pathway-foot { margin-top: 1.35rem; text-align: center; color: #617067; font-size: 0.88rem; }
+    .pathway-foot a { color: var(--forest-deep); font-weight: 700; text-decoration: underline; text-decoration-color: rgba(185,134,63,0.5); text-underline-offset: 4px; }
+
+    /* Therapy choices are compact accordions; details appear only when requested. */
+    .experience { background: rgba(252,247,237,0.78); }
+    .session-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .session-card {
+      border: 1px solid rgba(47,74,60,0.1); border-radius: 16px;
+      background: rgba(255,255,255,0.9); overflow: hidden;
+      box-shadow: 0 12px 34px -30px rgba(34,58,46,0.55);
+    }
+    .session-card summary {
+      position: relative; display: grid; grid-template-columns: 46px 1fr auto;
+      gap: 0.9rem; align-items: center; padding: 1.25rem; cursor: pointer; list-style: none;
+    }
+    .session-card summary::-webkit-details-marker { display: none; }
+    .session-card summary::after { content: '+'; color: var(--gold-text); font-size: 1.35rem; line-height: 1; }
+    .session-card[open] summary::after { content: '\2212'; }
+    .session-icon {
+      width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px;
+      background: linear-gradient(135deg, var(--sand), var(--sage-soft));
+    }
+    .session-icon svg { width: 24px; height: 24px; fill: none; stroke: var(--forest-deep); stroke-width: 1.6; }
+    .session-kicker {
+      display: block; margin-bottom: 0.2rem; color: var(--gold-text); font-size: 0.78rem;
+      font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+    }
+    .session-title { display: block; color: var(--forest-deep); font-family: var(--serif); font-size: 1.35rem; font-weight: 500; line-height: 1.1; }
+    .session-copy { display: block; margin-top: 0.3rem; color: #5c6b60; font-size: 0.88rem; font-weight: 300; line-height: 1.45; }
+    .session-details { padding: 0 1.25rem 1.25rem 5.95rem; }
+    .session-details p { margin-bottom: 0.55rem; color: #56655a; font-size: 0.86rem; font-weight: 300; }
+    .session-details p:last-child { margin-bottom: 0; }
+    .session-details strong { color: var(--forest-deep); }
+    .studio-extras {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;
+    }
+    .studio-extra {
+      display: flex; justify-content: space-between; gap: 1rem; padding: 1.05rem 1.2rem;
+      border: 1px solid rgba(47,74,60,0.1); border-radius: 14px; background: rgba(239,234,219,0.58);
+    }
+    .studio-extra strong { color: var(--forest-deep); font-family: var(--serif); font-size: 1.05rem; }
+    .studio-extra span { color: #5f6b63; font-size: 0.82rem; text-align: right; }
+    .method-compact {
+      display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2rem; align-items: center;
+      margin-top: 2rem; padding: clamp(1.6rem, 3vw, 2.3rem); border-radius: var(--radius);
+      background: var(--forest-deep); color: var(--cream);
+    }
+    .method-compact .eyebrow { color: var(--gold-light); margin-bottom: 0.5rem; }
+    .method-compact h3 { color: var(--white); font-size: clamp(1.65rem, 3vw, 2.2rem); }
+    .method-compact > div:first-child > p:last-child { margin-top: 0.65rem; color: rgba(247,243,234,0.72); font-size: 0.88rem; }
+    .method-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+    .method-point { padding-left: 0.9rem; border-left: 1px solid rgba(228,200,140,0.28); }
+    .method-point span { display: block; color: var(--gold-light); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; }
+    .method-point strong { display: block; margin: 0.2rem 0; color: var(--cream); font-family: var(--serif); font-size: 1.05rem; }
+    .method-point p { color: rgba(247,243,234,0.74); font-size: 0.82rem; line-height: 1.45; }
+    .section-cta { display: flex; justify-content: center; margin-top: 1.4rem; }
+
+    /* Secondary specialty routes stay compact beneath the dedicated Men's Wellness spotlight. */
+    .specialties .section-head { max-width: 760px; margin-bottom: 2.15rem; }
+    .specialties .section-head .eyebrow { margin-bottom: 0.8rem; }
+    .specialties .section-head h2 { margin-bottom: 0.75rem; line-height: 1.03; }
+    .specialties .section-head > p:last-child { max-width: 720px; margin-inline: auto; line-height: 1.5; }
+    .specialty-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .specialty-card { min-height: 0; }
+    .specialty-card > img, .specialty-art { width: 100%; height: 240px; min-height: 240px; }
+    .specialty-card > img { object-fit: cover; }
+    .specialty-copy { padding: 1.35rem; }
+    .specialty-copy .eyebrow { margin-bottom: 0.55rem; font-size: 0.76rem; }
+    .specialty-copy h3 { font-size: 1.45rem; }
+    .specialty-copy p { margin-bottom: 1rem; line-height: 1.55; }
+    .specialty-copy .btn { padding: 0.68rem 1rem; font-size: 0.85rem; }
+
+    /* Story and practical questions share one compact trust section. */
+    .trust-section { background: rgba(252,247,237,0.78); }
+    .trust-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+    .founder-story h2, .faq-compact h2 { margin-bottom: 0.9rem; color: var(--forest-deep); font-size: clamp(2rem, 4vw, 2.8rem); }
+    .founder-story > p:not(.eyebrow) { color: #56655a; font-weight: 300; }
+    .founder-minis { display: flex; gap: 1rem; margin-top: 1.4rem; }
+    .founder-mini { display: flex; align-items: center; gap: 0.7rem; min-width: 0; }
+    .founder-mini img { width: 64px; height: 64px; flex: 0 0 auto; object-fit: cover; object-position: center 28%; border-radius: 50%; box-shadow: 0 10px 24px -16px rgba(34,58,46,0.5); }
+    .founder-mini strong { display: block; color: var(--forest-deep); font-family: var(--serif); font-size: 1rem; }
+    .founder-mini span { display: block; color: var(--gold-text); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .faq-compact .faq-list { max-width: none; }
+    .faq-compact .faq-item summary { padding: 1rem 0; font-size: 1.08rem; }
+    .faq-compact .faq-item p { padding-bottom: 1rem; font-size: 0.9rem; }
+    .start-here .section-head .eyebrow, .experience .section-head .eyebrow,
+    .founder-story .eyebrow, .faq-compact .eyebrow, .location .eyebrow { color: var(--gold-text); }
+    .faq-compact .faq-item summary::after { color: var(--gold-text); }
+    .loc-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.35rem; }
+    .loc-actions .btn { margin: 0 !important; }
+    .loc-actions .btn-secondary { border: 1px solid rgba(47,74,60,0.24); background: transparent; color: var(--forest-deep); }
+    .loc-map iframe { height: 300px; }
+
+    @media (max-width: 1050px) {
+      .specialty-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; }
+      .specialty-card { min-height: 0; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { max-height: calc(100vh - var(--nav-h, 76px)); overflow-y: auto; }
+      .pathway-grid { grid-template-columns: 1fr; max-width: 650px; margin-inline: auto; }
+      .pathway-grid.intro-offers-hidden { grid-template-columns: 1fr; max-width: 650px; }
+      .method-compact, .trust-layout { grid-template-columns: 1fr; }
+      .method-points { grid-template-columns: repeat(3, 1fr); }
+      .specialty-grid { grid-template-columns: 1fr; max-width: 680px; }
+      .specialty-card { display: grid; grid-template-columns: 165px 1fr; }
+      .specialty-card > img, .specialty-art { height: 100%; min-height: 230px; }
+    }
+    @media (max-width: 650px) {
+      .hero { padding: calc(var(--nav-h, 72px) + 1.3rem) 0 3.25rem; }
+      .hero-brand-logo { width: min(54vw, 220px); }
+      .hero .badge { font-size: 0.75rem; }
+      .hero-trust { max-width: 330px; font-size: 0.77rem; }
+      .hero-location { flex-direction: column; gap: 0.15rem; }
+      .session-grid, .studio-extras { grid-template-columns: 1fr; }
+      .session-card summary { grid-template-columns: 42px 1fr auto; padding: 1.05rem; }
+      .session-icon { width: 42px; height: 42px; }
+      .session-details { padding: 0 1.05rem 1.1rem; }
+      .studio-extra { align-items: flex-start; }
+      .method-points { grid-template-columns: 1fr; }
+      .method-point { padding: 0.75rem 0 0.75rem 0.9rem; }
+      .specialty-card { grid-template-columns: 115px 1fr; }
+      .specialty-card > img, .specialty-art { min-height: 220px; }
+      .specialty-copy { padding: 1.15rem; }
+      .specialty-copy p { font-size: 0.86rem; }
+      .mens-entry-copy { padding: 3rem min(7vw, 2rem); }
+      .mens-entry h2 { font-size: clamp(2.4rem, 13vw, 3.3rem); }
+      .mens-entry-visual::after { left: 1rem; right: 1rem; bottom: 1rem; padding: .8rem; font-size: .7rem; }
+      .founder-minis { flex-direction: column; }
+    }
+    @media (max-width: 430px) {
+      .pathway-card { padding: 1.45rem; }
+      .pathway-actions .btn { width: 100%; }
+      .specialty-card { grid-template-columns: 1fr; }
+      .specialty-card > img, .specialty-art { height: 185px; min-height: 185px; }
+      .loc-actions .btn { width: 100%; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -820,18 +1055,17 @@
     <a href="#top" class="logo" aria-label="Revive &amp; Glow Wellness">
       <img class="nav-wordmark" src="logo-wordmark.png" alt="Revive &amp; Glow" width="1115" height="155" />
     </a>
-    <div class="nav-links">
-      <a href="#method">The Method</a>
+    <div class="nav-links" id="primary-navigation">
+      <a href="#start-here">Pricing &amp; Offers</a>
       <a href="#therapies">Therapies</a>
       <a href="mens-wellness.html" class="nav-pill nav-men-pill">Men's Wellness</a>
-      <a href="peptides.html">Peptides &amp; GLP‑1</a>
-      <a href="#explore">Explore</a>
-      <a href="#membership">Membership</a>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener">Directions</a>
       <a href="booking.html" class="btn btn-gold">Book Your Visit</a>
     </div>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    <button class="nav-toggle" aria-label="Menu" aria-controls="primary-navigation" aria-expanded="false" onclick="toggleMenu()">&#9776;</button>
   </nav>
 
+  <main>
   <!-- HERO -->
   <header class="hero" id="top">
     <div class="hero-glow"></div>
@@ -883,447 +1117,243 @@
           <span class="brand-name">Revive <span>&amp;</span> Glow</span>
           <span class="brand-sub">Wellness</span>
         </span>
-        <span class="badge"><span class="dot"></span> Individual Wellness Sessions · By Appointment</span>
+        <span class="badge"><span class="dot"></span> Boutique Recovery &amp; Longevity &middot; Pinellas Park</span>
         <h1>Recover. Restore.<br><em>Glow.</em></h1>
-        <p class="lede">Step away from the rush and give your body time to reset. Our restorative wellness experiences are designed to help you leave feeling lighter, recharged, and ready for what comes next.</p>
-        <div class="hero-private">
-          <span class="hero-private-mark" aria-hidden="true">✦</span>
-          <div class="hero-private-copy"><strong>Your session. Your choice of company.</strong>Therapies are never shared with strangers. Come on your own, or bring someone you choose for sauna or light therapy.</div>
-        </div>
+        <p class="lede">Personalized wellness sessions designed to help you reset, recharge, and feel your best.</p>
+        <p class="hero-trust">Individual sessions <span>&middot;</span> Never shared with strangers <span>&middot;</span> Appointments recommended</p>
         <div class="hero-cta">
           <a href="booking.html" class="btn btn-gold">Book Your Visit</a>
-          <a href="#method" class="btn">Discover The Revive Method™</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener" class="btn btn-secondary">Get Directions</a>
         </div>
-        <a href="#membership" class="hero-price">Memberships from $179/month &nbsp;·&nbsp; 5-Session Wellness Pack $169 &nbsp;·&nbsp; No minimum commitment, cancel anytime</a>
-        <a href="peptides.html" class="hero-new"><strong>New</strong><span class="hero-new-copy">Peptides, GLP‑1 &amp; lab testing<small>Explore physician-guided options through our Altro Health partnership.</small></span><span class="hero-new-link">Explore options →</span></a>
+        <a class="hero-location" href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener"><span>9899 66th St N, Pinellas Park</span><strong>Open in Maps &rarr;</strong></a>
       </div>
     </div>
   </header>
 
-  <!-- START HERE: pricing and memberships near the top of the customer journey -->
-  <section class="start-here" id="start-here">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Choose Your Experience</p>
-        <h2>A simple way to begin. A better way to keep going.</h2>
-        <p>Visit once, start with a package, or make recovery part of your routine. Choose the option that feels right for you today.</p>
-      </div>
-      <div class="start-options">
-        <article class="start-option reveal">
-          <p class="option-label">Come meet us</p>
-          <h3>Single Session</h3>
-          <p class="option-price">$39 <span>/ visit</span></p>
-          <p>Walk in, explore the studio, and choose one available Revive Session with guidance from our team.</p>
-          <p class="option-note">In person only · subject to availability</p>
-        </article>
-        <article class="start-option reveal">
-          <p class="option-label">Build your rhythm</p>
-          <h3>5-Session Wellness Pack</h3>
-          <p class="option-price">$169</p>
-          <p>Five flexible sessions to explore what helps you feel your best and begin a consistent wellness routine.</p>
-          <p class="option-note">Valid for 60 days</p>
-        </article>
-        <article class="start-option reveal">
-          <p class="option-label">About twice a week</p>
-          <h3>Revive Flex</h3>
-          <p class="option-price">$179 <span>/ month</span></p>
-          <p>Eight sessions each billing month with the freedom to choose a different included therapy each visit.</p>
-          <p class="option-note">No minimum commitment</p>
-        </article>
-        <article class="start-option featured reveal">
-          <p class="option-label">Our most complete membership</p>
-          <h3>Revive Elite</h3>
-          <p class="option-price">$299 <span>/ month</span></p>
-          <p>Fifteen sessions, priority booking support, a monthly guest pass, and valuable one-time welcome benefits.</p>
-          <p class="option-note">Our lowest member rate · $19.93 per session</p>
-        </article>
-      </div>
-      <div class="new-client-callout reveal">
-        <div>
-          <p class="eyebrow">New to Revive &amp; Glow?</p>
-          <h3>Don’t wait to start feeling your best.</h3>
-          <p>Discover limited-time introductory offers created especially for new guests.</p>
-        </div>
-        <a href="#intro-offers" class="btn">View New Client Offers</a>
-      </div>
-      <div class="start-next reveal">
-        <h3>Not sure which experience is right for you?</h3>
-        <p>Explore the benefits, see what each session feels like, and know what to expect before your first visit.</p>
-        <a href="#therapies" class="btn">Explore Therapies &amp; Benefits</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- METHOD -->
-  <section class="method" id="method">
+  <!-- START HERE: one decision block for visits, offers, packages and memberships -->
+  <section class="start-here" id="start-here" aria-labelledby="start-title">
     <div class="container">
       <div class="section-head center reveal">
-        <p class="eyebrow">Our Signature Ritual</p>
-        <h2>Come as you are. Leave feeling renewed.</h2>
-        <p>Whether you need a quiet reset, post-workout recovery, or a moment to recharge, we help you shape a visit around how you want to feel.</p>
+        <p class="eyebrow">Start Here</p>
+        <h2 id="start-title">Choose how you want to begin.</h2>
+        <p>Choose the starting point that feels right for you today.</p>
       </div>
-      <div class="method-track">
-        <div class="method-step reveal"><div class="n">01</div><h3>Illuminate</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Multi-Wavelength Light Therapy</div><p>Choose the light wavelengths that best complement your wellness goals.</p></div>
-        <div class="method-step reveal"><div class="n">02</div><h3>Restore</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Infrared Sauna</div><p>Warm deep, sweat clean, and release tension.</p></div>
-        <div class="method-step reveal"><div class="n">03</div><h3>Refresh</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Cold Plunge</div><p>Invigorate circulation and sharpen the mind.</p></div>
-        <div class="method-step reveal"><div class="n">04</div><h3>Recover</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Compression + Vibration</div><p>Complement movement and post-training routines.</p></div>
-        <div class="method-step reveal"><div class="n">05</div><h3>Rehydrate</h3><div style="font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.5rem;">Grounding + Hydration</div><p>Ground, rest, and replenish — leave lighter than you arrived.</p></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- THERAPIES -->
-  <section id="therapies">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">The Studio</p>
-        <h2>Explore the benefits. Know what to expect.</h2>
-        <p>Discover how each experience fits into your wellness routine, what a session feels like, and the reasons guests choose it — all with guidance from our team.</p>
-      </div>
-      <div class="therapy-grid">
-        <div class="therapy light-feature reveal">
-          <div class="light-intro">
-            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
-            <h3>Multi-Wavelength Light Therapy</h3>
-            <p class="kit">PlatinumLED BioMax</p>
-            <p>One advanced panel with blue, red, and near-infrared wavelengths — each reaching a different depth.</p>
+      <div class="pathway-grid">
+        <article class="pathway-card reveal">
+          <p class="pathway-label">Visit Once</p>
+          <h3>Single Session</h3>
+          <p class="pathway-price">$39 <span>/ visit</span></p>
+          <p>Choose one available Revive Session with guidance from our team.</p>
+          <div class="pathway-options" role="group" aria-label="Single Session details">
+            <div class="pathway-option"><span>Purchase</span><strong>In studio</strong></div>
+            <div class="pathway-option"><span>Walk-ins</span><strong>Subject to availability</strong></div>
           </div>
-          <div class="light-spectrum" aria-label="Available light therapy wavelengths">
-            <div class="light-band blue"><strong>Blue Light · 480 nm</strong><span>Surface-level light that may support clearer-looking skin and overall skin wellness.</span></div>
-            <div class="light-band red"><strong>Red Light · 630 + 660 nm</strong><span>Visible light that may support cellular energy, healthy-looking skin, and natural repair processes.</span></div>
-            <div class="light-band nir"><strong>Near-Infrared · 810 + 830 + 850 + 1060 nm</strong><span>Invisible, deeper-reaching light that may support muscle recovery, mobility, and performance routines.</span></div>
+          <div class="pathway-actions">
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener" class="btn">Get Directions</a>
           </div>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> Photobiomodulation uses non-UV blue, red, and near-infrared LED light. Each wavelength reaches a different depth, allowing the experience to be selected around your goals and comfort.</p>
-              <p><strong>How it works.</strong> Red and near-infrared light interact with light-sensitive structures in cells. Blue light acts closer to the skin's surface. The response depends on wavelength, dose, treatment area, and the person.</p>
-              <p><strong>Who may be interested.</strong> Adults seeking a brief, noninvasive addition to a skin-wellness, relaxation, or active-lifestyle routine.</p>
-              <p><strong>What to expect.</strong> Relax in front of our multi-wavelength LED panels for a 20-minute session. Protective eyewear is provided when appropriate, and there is no downtime.</p>
-              <p><strong>Important.</strong> This is a general wellness service, not medical treatment. Results vary. Tell our team about light sensitivity, eye conditions, pregnancy, or medicines and skincare products that increase sensitivity to light before your session.</p>
-            </div>
-          </details>
-        </div>
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 3s1.5 2-.5 4 .5 4 .5 4M12 3s1.5 2-.5 4 .5 4 .5 4M16 3s1.5 2-.5 4 .5 4 .5 4M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/></svg></div>
-          <h3>Infrared Sauna</h3>
-          <p class="kit">Clearlight Sanctuary 2</p>
-          <p>Deep, gentle heat to relax muscles, unwind, and sweat it out.</p>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> An infrared sauna uses radiant heat to warm the body in an enclosed cabin inside our reserved sauna and cold plunge room, generally with a different heat experience from a traditional hot-air sauna.</p>
-              <p><strong>How it works.</strong> Infrared energy is absorbed at the body surface and converted to heat. Your temperature and heart rate may rise as you warm and sweat.</p>
-              <p><strong>Who may be interested.</strong> Adults looking for warmth, quiet relaxation, and a comfortable complement to an active recovery routine.</p>
-              <p><strong>What to expect.</strong> Your enclosed sauna and cold plunge room is reserved for you — or for someone you choose to bring. A typical sauna session is about 20–40 minutes and can be shortened for first-time guests.</p>
-              <p><strong>Good to know.</strong> Sweating helps the body regulate temperature; we do not describe sauna sessions as a detox or promise a specific calorie burn.</p>
-              <p><strong>Important.</strong> Sauna is a general wellness experience. Ask your healthcare provider first if you are pregnant, have cardiovascular or blood-pressure concerns, take medicines that affect heat tolerance, or are unsure whether heat exposure is appropriate. Do not use it while ill, dehydrated, or impaired by alcohol or drugs.</p>
-            </div>
-          </details>
-        </div>
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 8l6-6 6 6M4 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div>
-          <h3>Cold Plunge</h3>
-          <p class="kit">Nordic Wave</p>
-          <p>An invigorating cold reset for circulation, focus, and resilience.</p>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> Cold-water immersion is a short, supervised exposure to cool water that creates an immediate cold sensation and a strong, temporary physiological response.</p>
-              <p><strong>How it works.</strong> Cold causes blood vessels near the skin to narrow and can quickly change breathing, heart rate, and blood pressure. That is why a gradual entry and calm breathing matter.</p>
-              <p><strong>Who may be interested.</strong> Healthy adults who enjoy an invigorating challenge or want to explore cold exposure as part of a broader recovery routine.</p>
-              <p><strong>What to expect.</strong> Enter slowly, focus on a steady exhale, and leave whenever you want. First sessions are supervised. Typical exposure is about 2–5 minutes at approximately 50–59°F; shorter is always acceptable.</p>
-              <p><strong>Contrast option.</strong> Cold plunge can follow the infrared sauna, but contrast is optional and is not appropriate for everyone.</p>
-              <p><strong>Important.</strong> Cold immersion places acute stress on the cardiovascular system. Do not participate without medical clearance if you have heart or circulation concerns, uncontrolled high blood pressure, Raynaud's disease, are pregnant, or are unsure whether cold exposure is appropriate.</p>
-            </div>
-          </details>
-        </div>
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2h8v6a4 4 0 0 1-8 0zM8 22h8v-6a4 4 0 0 0-8 0zM6 11h12"/></svg></div>
-          <h3>Compression Therapy</h3>
-          <p class="kit">Normatec</p>
-          <p>Dynamic compression boots for a comfortable, massage-like recovery ritual.</p>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> Normatec boots use intermittent pneumatic compression: overlapping chambers fill and release in sequence along the legs.</p>
-              <p><strong>How it works.</strong> The changing pressure creates a massage-like squeezing pattern. Pressure is adjustable and should feel snug, never painful or numb.</p>
-              <p><strong>Who may be interested.</strong> Runners, athletes, travelers, and anyone who wants a passive, comfortable recovery ritual after time on their feet.</p>
-              <p><strong>What to expect.</strong> We fit the boots and choose a comfortable pressure. Then you can read, rest, or listen to music for about 20–30 minutes.</p>
-              <p><strong>Good to know.</strong> Compression is not a treatment for varicose veins, lymphedema, blood clots, or an injury, and we do not claim that it removes lactic acid.</p>
-              <p><strong>Important.</strong> Ask a healthcare provider before use if you have or may have a blood clot, circulation disorder, significant swelling, an open wound, fracture, infection, or recent surgery affecting the legs.</p>
-            </div>
-          </details>
-        </div>
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-7 4 14 2-7h4M18 9l3 3-3 3"/></svg></div>
-          <h3>Whole Body Vibration</h3>
-          <p class="kit">Movement &amp; Active Aging</p>
-          <p>A brief, low-impact platform experience designed to complement movement, stability, and an active lifestyle.</p>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> Whole-body vibration uses a platform that creates rapid, controlled movement beneath your feet.</p>
-              <p><strong>How it works.</strong> As the platform moves, your body makes small, continuous muscular adjustments to help maintain posture and stability.</p>
-              <p><strong>Who may be interested.</strong> Adults looking for a brief, low-impact complement to regular movement, strength, mobility, or active-aging routines. It is not a replacement for conventional exercise.</p>
-              <p><strong>What to expect.</strong> Our team helps you choose a comfortable stance or simple supported position on the platform. Sessions are brief and personalized to your comfort.</p>
-              <p><strong>Important.</strong> Whole-body vibration is a general wellness experience, not medical treatment or physical therapy. Results vary. Ask your healthcare provider before beginning if you have a health condition, current injury, recent procedure, are pregnant, or are unsure whether vibration is appropriate for you.</p>
-            </div>
-          </details>
-        </div>
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9zM12 21v-4"/></svg></div>
-          <h3>Grounding</h3>
-          <p class="kit">Restore &amp; Reconnect</p>
-          <p>A few unhurried minutes to close your visit — no timer, no goal, just the pause itself.</p>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> A quiet, grounding practice designed to help you slow down and reconnect.</p>
-              <p><strong>What we can honestly say.</strong> The value of this part of the visit is the pause itself: a comfortable setting, fewer distractions, and a few unhurried minutes after your session.</p>
-              <p><strong>Who may be interested.</strong> Anyone who wants a quiet transition before returning to the rest of the day.</p>
-              <p><strong>What to expect.</strong> Sit or rest comfortably, breathe naturally, and take a few minutes without a timer or performance goal.</p>
-              <p><strong>Pairs well with.</strong> Grounding can close any Revive Method™ visit, especially after vibration, sauna, or compression.</p>
-              <p><strong>Important.</strong> We offer grounding as a relaxation ritual, not as a treatment and not as a way to “balance” electrical charge, hormones, inflammation, or the nervous system.</p>
-            </div>
-          </details>
-        </div>
-        <div class="therapy reveal">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/><path d="M11 12h2M12 11v2"/></svg></div>
-          <h3>Hydrogen Water</h3>
-          <p class="kit">Hydrate &amp; Replenish</p>
-          <p>Fresh hydrogen-infused water to rehydrate and refresh after your session.</p>
-          <details class="therapy-more">
-            <summary>Learn more</summary>
-            <div class="tm-body">
-              <p><strong>What it is.</strong> Drinking water with dissolved molecular hydrogen, offered as a refreshing hydration option after your session.</p>
-              <p><strong>How it is different.</strong> It is ordinary water infused with hydrogen gas. The dissolved hydrogen gradually escapes after preparation, so it is best enjoyed fresh.</p>
-              <p><strong>Who may be interested.</strong> Guests who want to rehydrate after sauna, cold exposure, exercise, or any Revive Method™ visit.</p>
-              <p><strong>What to expect.</strong> Simply drink it as you would regular water. There is no special protocol and no promised sensation or result.</p>
-              <p><strong>Good to know.</strong> Hydrogen water does not replace regular hydration, balanced nutrition, medical care, or prescribed treatment.</p>
-              <p><strong>Important.</strong> We serve it as a hydration amenity. We do not claim that it detoxifies, alkalizes the body, slows aging, or treats a health condition.</p>
-            </div>
-          </details>
-        </div>
-        <div class="therapy reveal" style="background:linear-gradient(135deg,var(--forest-deep),var(--forest));color:var(--cream);border-color:transparent;justify-content:center;">
-          <h3 style="color:var(--gold-light);">More to explore</h3>
-          <p style="color:rgba(247,243,234,0.8);">Memberships, packages, and seasonal experiences designed around your goals — explore what is available now.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIMITED-TIME INTRO OFFERS — disable via intro-offers-config.js after campaign review -->
-  <section class="intro-offers" id="intro-offers" aria-labelledby="intro-offers-title">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Limited-Time Intro Offers</p>
-        <h2 id="intro-offers-title">A welcoming way to begin your wellness routine.</h2>
-        <p>Discover introductory wellness experiences created for new guests and available for a limited time.</p>
-      </div>
-      <div class="offer-grid">
-        <article class="offer-card">
-          <p class="offer-label">Experience together</p>
-          <h3>Couples Wellness Intro</h3>
-          <p class="offer-price"><strong>$149</strong><span>2 visits for two</span></p>
-          <p class="offer-description">A wellness experience designed for two people who choose to come together. Each guest may select Multi-Wavelength Light Therapy + Infrared Sauna or Infrared Sauna + Compression Therapy during each visit.</p>
-          <ul class="offer-terms" aria-label="Couples Wellness Intro terms">
-            <li>Two visits for the couple</li>
-            <li>Valid for 14 days after the first visit</li>
-            <li>One introductory package per client</li>
-            <li>Package eligibility and scheduling terms apply</li>
-          </ul>
-          <a class="btn intro-offer-link" data-offer="couples" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100025" target="_blank" rel="noopener">Explore Couples Offer</a>
         </article>
-        <article class="offer-card">
-          <p class="offer-label">Begin with light</p>
-          <h3>New Client Multi-Wavelength Light Therapy Intro</h3>
-          <p class="offer-price"><strong>$69</strong><span>4 sessions</span></p>
-          <p class="offer-description">Four introductory sessions of our Multi-Wavelength Light Therapy — the same experience that combines blue, red, and near-infrared light in one advanced panel.</p>
-          <ul class="offer-terms" aria-label="New Client Multi-Wavelength Light Therapy Intro terms">
-            <li>Four Multi-Wavelength Light Therapy sessions</li>
-            <li>Valid for 30 days after the first visit</li>
-            <li>Available to new clients only</li>
-            <li>One introductory package per client</li>
-          </ul>
-          <a class="btn intro-offer-link" data-offer="redLight" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100028" target="_blank" rel="noopener">Explore Light Therapy Offer</a>
+
+        <article class="pathway-card featured reveal" id="intro-offers" aria-labelledby="intro-offers-title">
+          <p class="pathway-label">New to Revive &amp; Glow?</p>
+          <h3 id="intro-offers-title">Introductory Offers</h3>
+          <p>A welcoming way to experience the studio before choosing your longer-term rhythm.</p>
+          <div class="pathway-options">
+            <div class="pathway-option"><span>4 Multi-Wavelength Light Therapy sessions</span><strong>$69</strong></div>
+            <div class="pathway-option"><span>Couples Wellness &middot; 2 visits for two</span><strong>$149</strong></div>
+          </div>
+          <details class="pathway-details">
+            <summary>Offer details</summary>
+            <div class="pathway-detail-body">
+              <p><strong>Light Therapy Intro:</strong> four Multi-Wavelength Light Therapy sessions for new clients, valid for 30 days after the first visit.</p>
+              <p><strong>Couples Wellness Intro:</strong> two visits for two people who choose to experience wellness together. Eligibility, scheduling, and package terms apply.</p>
+            </div>
+          </details>
+          <div class="pathway-actions">
+            <a class="btn btn-gold intro-offer-link" data-offer="redLight" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100028" target="_blank" rel="noopener">Light Therapy Offer</a>
+            <a class="btn intro-offer-link" data-offer="couples" href="https://clients.mindbodyonline.com/classic/ws?studioid=5755152&amp;stype=43&amp;prodid=100025" target="_blank" rel="noopener">Couples Offer</a>
+          </div>
+        </article>
+
+        <article class="pathway-card reveal" id="membership">
+          <p class="pathway-label">Build Your Routine</p>
+          <h3>Packages &amp; Memberships</h3>
+          <p>Choose a flexible package or make restorative wellness part of your monthly routine.</p>
+          <div class="pathway-options">
+            <div class="pathway-option"><span>5-Session Wellness Pack &middot; 60 days</span><strong>$169</strong></div>
+            <div class="pathway-option"><span>Revive Flex &middot; 8 sessions/month</span><strong>$179/mo</strong></div>
+            <div class="pathway-option"><span>Revive Elite &middot; 15 sessions/month</span><strong>$299/mo</strong></div>
+          </div>
+          <details class="pathway-details">
+            <summary>Membership details</summary>
+            <div class="pathway-detail-body">
+              <p><strong>Flex:</strong> eight Revive Sessions each billing month, with the freedom to choose a different included therapy each visit.</p>
+              <p><strong>Elite:</strong> fifteen sessions, priority booking support, one guest pass per billing month, one complimentary PN&#332;&#274; Resting Metabolic Test after three consecutive payments while active, and one complimentary Pet Red Light Therapy Session per membership after the required veterinary referral and owner forms.</p>
+              <p>Membership sessions and the Elite guest pass expire at the end of each billing cycle and do not roll over. There is no minimum commitment; cancellation requests are completed in person.</p>
+            </div>
+          </details>
+          <div class="pathway-actions">
+            <a href="booking.html" class="btn">Compare Options</a>
+          </div>
         </article>
       </div>
-      <p class="offer-disclaimer">Available for a limited time. Eligibility, scheduling and package terms apply. Packages are non-recurring and do not renew automatically.</p>
-      <div class="offer-contact">
-        <p>Not sure which experience is right for you?</p>
-        <a class="btn" href="https://wa.me/17277764569?text=Hi!%20I%20would%20like%20help%20choosing%20an%20introductory%20offer." target="_blank" rel="noopener">Contact Us</a>
-      </div>
+
+      <p class="pathway-foot">Already have a package or membership? <a href="booking.html#schedule">Schedule your included session &rarr;</a></p>
     </div>
   </section>
 
-  <!-- MEN'S WELLNESS -->
-  <section class="mens-entry" id="mens-wellness">
+  <!-- MEN'S WELLNESS SPOTLIGHT -->
+  <section class="mens-entry" id="mens-wellness" aria-labelledby="mens-wellness-title">
     <div class="mens-entry-grid">
       <div class="mens-entry-copy reveal">
-        <p class="eyebrow">Wellness for men</p>
-        <h2>Strength is built beyond the workout.</h2>
-        <p>Explore the same Revive &amp; Glow sessions and memberships through the goals that matter to you — recovery, performance, measurable progress and long-term wellness. When you want to go deeper, testing and physician-guided men's health options are also available.</p>
+        <p class="eyebrow">A Focused Path for Men</p>
+        <h2 id="mens-wellness-title">Feel stronger.<span>Know your numbers.</span></h2>
+        <p>An intentional approach to men's energy, recovery, performance, and longevity through wellness sessions, measurable insights, and provider-guided online options through Altro Health.</p>
+        <ul class="mens-entry-highlights" aria-label="Men's Wellness focus areas">
+          <li>Recovery Sessions</li>
+          <li>Metabolic Testing</li>
+          <li>Online Health Options</li>
+        </ul>
         <div class="mens-entry-actions">
           <a href="mens-wellness.html" class="btn btn-gold">Explore Men's Wellness</a>
-          <a href="booking.html" class="btn btn-outline">Book Your Visit</a>
         </div>
       </div>
-      <div class="mens-entry-visual" role="img" aria-label="Athlete focused on performance and recovery"></div>
+      <div class="mens-entry-visual" role="img" aria-label="Man training with a focus on recovery and performance"></div>
     </div>
   </section>
 
-  <!-- MEMBERSHIP -->
-  <section class="members" id="membership">
+  <!-- THERAPIES + METHOD: overview first, detail on demand -->
+  <section class="experience" id="therapies" aria-labelledby="therapies-title">
     <div class="container">
       <div class="section-head center reveal">
-        <p class="eyebrow">Belong Here</p>
-        <h2>Memberships Designed for Real Results</h2>
-        <p>Every membership is designed to make individual recovery and restorative wellness easier to enjoy consistently, with flexible therapy choices and personalized support.</p>
+        <p class="eyebrow">Signature Therapies</p>
+        <h2 id="therapies-title">One Revive Session. One therapy. Chosen around you.</h2>
+        <p>Each Revive Session may be used for Multi-Wavelength Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
       </div>
 
-      <div class="includes reveal">
-        <h3 class="includes-title">What only members get</h3>
-        <div class="includes-grid">
-          <span>Your lowest price per session — from $22, against $39 for a single visit</span>
-          <span>An AI Wellness Concierge that learns your goals and suggests what to book next</span>
-          <span>A different therapy every visit, chosen when you arrive — never locked to one</span>
-          <span>Sessions held for you month after month, so your routine survives a busy week</span>
-        </div>
+      <div class="session-grid">
+        <details class="session-card reveal">
+          <summary>
+            <span class="session-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
+            <span><span class="session-kicker">20 minutes</span><span class="session-title">Multi-Wavelength Light Therapy</span><span class="session-copy">Blue, red, and near-infrared light in one calm, noninvasive session.</span></span>
+          </summary>
+          <div class="session-details">
+            <p><strong>What to expect:</strong> Relax in front of our PlatinumLED BioMax panels. We help select the wavelengths around your goals and comfort, and provide protective eyewear when appropriate.</p>
+            <p>This is a general wellness service, not medical treatment. Tell our team about light sensitivity, eye conditions, pregnancy, or products and medicines that increase light sensitivity.</p>
+          </div>
+        </details>
+
+        <details class="session-card reveal">
+          <summary>
+            <span class="session-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3s1.5 2-.5 4 .5 4 .5 4M12 3s1.5 2-.5 4 .5 4 .5 4M16 3s1.5 2-.5 4 .5 4 .5 4M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/></svg></span>
+            <span><span class="session-kicker">20&ndash;40 minutes</span><span class="session-title">Infrared Sauna</span><span class="session-copy">Gentle, enveloping heat for quiet restoration and an unhurried reset.</span></span>
+          </summary>
+          <div class="session-details">
+            <p><strong>What to expect:</strong> Your enclosed sauna and cold plunge room is reserved for you, or for someone you choose to bring. First visits can be shortened for comfort.</p>
+            <p>Ask your healthcare provider first if you are pregnant, have cardiovascular or blood-pressure concerns, take medicines that affect heat tolerance, or are unsure whether heat exposure is appropriate.</p>
+          </div>
+        </details>
+
+        <details class="session-card reveal">
+          <summary>
+            <span class="session-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 8l6-6 6 6M4 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/></svg></span>
+            <span><span class="session-kicker">2&ndash;5 minutes exposure</span><span class="session-title">Cold Plunge</span><span class="session-copy">A brief, guided cold-water experience for an invigorating reset.</span></span>
+          </summary>
+          <div class="session-details">
+            <p><strong>What to expect:</strong> Enter gradually, focus on a steady exhale, and leave whenever you want. First sessions are supervised and shorter is always acceptable.</p>
+            <p>Cold immersion places acute stress on the cardiovascular system. Medical clearance is important for heart or circulation concerns, uncontrolled high blood pressure, Raynaud's disease, pregnancy, or uncertainty about cold exposure.</p>
+          </div>
+        </details>
+
+        <details class="session-card reveal">
+          <summary>
+            <span class="session-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8v6a4 4 0 0 1-8 0zM8 22h8v-6a4 4 0 0 0-8 0zM6 11h12"/></svg></span>
+            <span><span class="session-kicker">15&ndash;30 minutes</span><span class="session-title">Compression Therapy</span><span class="session-copy">Comfortable, massage-like compression for passive recovery.</span></span>
+          </summary>
+          <div class="session-details">
+            <p><strong>What to expect:</strong> We fit the Normatec boots and select a comfortable pressure. Compression is offered in an open area near reception.</p>
+            <p>Ask a healthcare provider before use if you have or may have a blood clot, circulation disorder, significant swelling, an open wound, fracture, infection, or recent surgery affecting the legs.</p>
+          </div>
+        </details>
       </div>
 
-      <div class="tiers">
-        <div class="tier reveal">
-          <div class="tier-tag">🌿 No minimum commitment</div>
-          <h3>Revive Flex</h3>
-          <div class="price">$179<span>/month</span></div>
-          <p class="tier-sub">8 Revive Sessions per billing month · about 2 visits a week</p>
-          <ul>
-            <li>Use for Multi-Wavelength Light Therapy, Sauna, Cold Plunge, or Compression</li>
-            <li>All 8 sessions renew monthly and do not roll over</li>
-            <li>Maximum flexibility, cancel anytime</li>
-            <li>AI Wellness Concierge &amp; personalized guidance</li>
-          </ul>
-          <details class="membership-details">
-            <summary>View full membership details</summary>
-            <div class="membership-detail-body">
-              <h4>Included sessions</h4><p>Eight Revive Sessions per billing month. Each session may be used for Multi-Wavelength Light Therapy (blue, red &amp; near-infrared light), Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
-              <h4>Wellness benefits</h4><p>AI Wellness Concierge, personalized AI wellness recommendations, flexible therapy selection, individual sessions that are never shared with strangers, and online booking.</p>
-              <h4>Monthly use</h4><p>Sessions must be used within the current billing cycle. Unused sessions expire and do not roll over or transfer.</p>
-              <h4>Cancellation</h4><p>No minimum commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio.</p>
-              <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29.</p>
-            </div>
-          </details>
-          <a href="booking.html#flex" class="btn btn-gold">Join Revive Flex</a>
+      <div class="studio-extras reveal" role="group" aria-label="Additional studio experiences">
+        <div class="studio-extra"><strong>Whole Body Vibration &amp; Grounding</strong><span>30 minutes &middot; available separately for $29</span></div>
+        <div class="studio-extra"><strong>Hydrogen Water</strong><span>A refreshing hydration option after your session</span></div>
+      </div>
+
+      <div class="method-compact reveal" id="method">
+        <div>
+          <p class="eyebrow">The Revive Method&trade;</p>
+          <h3>Your session, shaped around you.</h3>
+          <p>Tell us how you want to feel. We will help you choose an experience, guide you through it, and give you space to reset.</p>
         </div>
-        <div class="tier dark reveal">
-          <div class="tier-tag">🏆 Premium</div>
-          <h3>Revive Elite</h3>
-          <div class="price">$299<span>/month</span></div>
-          <p class="tier-sub">15 Revive Sessions per billing month · our lowest member rate per session</p>
-          <ul>
-            <li>Our best membership value · $19.93 per included session</li>
-            <li>Use for Multi-Wavelength Light Therapy, Sauna, Cold Plunge, or Compression</li>
-            <li>All 15 sessions renew monthly and do not roll over</li>
-            <li>Priority booking support</li>
-            <li>One complimentary PNŌĒ Resting Metabolic Test after 3 consecutive membership payments · membership must be active</li>
-            <li>One monthly guest pass for any included therapy · expires monthly</li>
-            <li>One-time complimentary Pet Red Light Therapy Session · once per membership · after referral from Dr. Burke at Fur Ever Friends</li>
-          </ul>
-          <details class="membership-details">
-            <summary>View full membership details</summary>
-            <div class="membership-detail-body">
-              <h4>Included sessions</h4><p>Fifteen Revive Sessions per billing month. Each session may be used for Multi-Wavelength Light Therapy (blue, red &amp; near-infrared light), Infrared Sauna, Cold Plunge, or Compression Therapy.</p>
-              <h4>Premium benefits</h4><p>Our lowest member rate per included session, priority booking support, one complimentary PNŌĒ Resting Metabolic Test unlocked after three consecutive membership payments while the membership remains active, one monthly guest pass for any included therapy, and one complimentary Pet Red Light Therapy Session provided once per membership after Dr. Burke’s written referral and completion of the required owner forms.</p>
-              <h4>Wellness benefits</h4><p>AI Wellness Concierge, personalized AI wellness recommendations, flexible therapy selection, individual sessions that are never shared with strangers, and online booking.</p>
-              <h4>Monthly use</h4><p>Sessions and the guest pass expire at the end of each billing cycle and do not roll over. The PNŌĒ Resting Metabolic Test unlocks after the third consecutive membership payment and must be redeemed while the membership is active. The Pet Red Light Therapy benefit is provided only once per membership and is not a monthly benefit. The guest pass is intended to be shared.</p>
-              <h4>Cancellation</h4><p>No minimum commitment. Cancellation requests must be completed in person at the Revive &amp; Glow studio.</p>
-              <h4>Not included</h4><p>Whole Body Vibration &amp; Grounding is separate and available for $29. Pet Red Light Therapy supports general wellness and does not replace veterinary care.</p>
-            </div>
-          </details>
-          <a href="booking.html#elite" class="btn btn-gold">Join Revive Elite</a>
+        <div class="method-points">
+          <div class="method-point"><span>01</span><strong>Choose</strong><p>Select one therapy around your goals and comfort.</p></div>
+          <div class="method-point"><span>02</span><strong>Be Guided</strong><p>Our team helps you settle in and use the equipment comfortably.</p></div>
+          <div class="method-point"><span>03</span><strong>Reset</strong><p>Your therapy is never shared with strangers.</p></div>
         </div>
       </div>
-      <details class="membership-terms reveal">
-        <summary>Important membership terms</summary>
-        <p>Membership sessions and the Elite guest pass must be used within the current billing cycle and do not roll over. The Elite PNŌĒ Resting Metabolic Test unlocks after three consecutive membership payments and requires an active membership. The Elite pet session is a one-time benefit, not a monthly benefit. Sessions are subject to availability and advance booking. Pet Red Light Therapy is a general wellness service and is not a substitute for veterinary care.</p>
-      </details>
-      <h3 class="ala-head reveal">More ways to restore — or share the experience.</h3>
-      <div class="alacarte reveal">
-        <div class="ala"><span class="ala-name">Whole Body Vibration<br>&amp; Grounding</span><span class="ala-price">$29</span></div>
-        <div class="ala"><span class="ala-name">Gift Cards</span><span class="ala-price">Any amount</span></div>
-      </div>
+      <div class="section-cta reveal"><a href="booking.html" class="btn btn-gold">Book Your Visit</a></div>
     </div>
   </section>
 
-  <!-- EXPLORE SPECIALTIES -->
-  <section class="specialties" id="explore">
+  <!-- SPECIALTY ROUTES -->
+  <section class="specialties" id="explore" aria-labelledby="explore-title">
     <div class="container">
       <div class="section-head center reveal">
-        <p class="eyebrow">More Ways to Feel Your Best</p>
-        <h2>Wellness, made more personal.</h2>
-        <p>Explore focused programs for your metabolism, personalized health goals, and even the four-legged member of your family.</p>
+        <p class="eyebrow">Explore More</p>
+        <h2 id="explore-title">More ways to support your wellness.</h2>
+        <p>Explore metabolic testing, provider-guided health options through Altro Health, and veterinarian-guided pet wellness.</p>
       </div>
+
       <div class="specialty-grid">
         <article class="specialty-card pnoe reveal">
-          <img src="pnoe-resting.jpg" alt="Woman completing a PNŌĒ metabolic breath assessment" loading="lazy">
-          <div class="specialty-copy"><p class="eyebrow">Advanced Metabolic Testing</p><h3>PNŌĒ Breath Analysis</h3><p>Discover how your body burns fuel, uses oxygen, and responds to exercise with clinical-grade metabolic testing.</p><a href="pnoe.html" class="btn btn-gold">Explore PNŌĒ Testing →</a></div>
+          <img src="pnoe-resting.jpg" alt="Woman completing a PN&#332;&#274; metabolic breath assessment" loading="lazy">
+          <div class="specialty-copy"><p class="eyebrow">Metabolic Testing</p><h3>PN&#332;&#274; Breath Analysis</h3><p>Understand how your body uses oxygen and fuel with personalized metabolic insights.</p><a href="pnoe.html" class="btn btn-gold">Explore PN&#332;&#274;</a></div>
         </article>
-        <article class="specialty-card reveal">
-          <div class="specialty-art"><img src="logo-transparent-v2.png" alt="Revive & Glow Wellness emblem"></div>
-          <div class="specialty-copy"><p class="eyebrow">Physician-Guided Options</p><h3>Peptides, GLP-1 &amp; Labs</h3><p>Explore eligible programs, comprehensive testing, and hormone care through our secure Altro Health partnership.</p><a href="peptides.html" class="btn btn-gold">Explore Options →</a></div>
+
+        <article class="specialty-card peptides reveal">
+          <img src="peptides-injection-wellness-v1.jpg" alt="Woman holding an injection pen near her abdomen" loading="lazy">
+          <div class="specialty-copy"><p class="eyebrow">Provider-Guided Options</p><h3>Peptides, GLP-1 &amp; Labs</h3><p>Explore current options through Altro Health. Licensed providers determine eligibility and any recommended treatment plan.</p><a href="peptides.html" class="btn btn-gold">Explore Options</a></div>
         </article>
+
         <article class="specialty-card pet reveal">
           <img src="milo-red-light.jpeg" alt="Milo relaxing during red light therapy" loading="lazy">
-          <div class="specialty-copy"><p class="eyebrow">Human + Pet Wellness</p><h3>Red Light Therapy for Dogs</h3><p>Veterinarian-guided support for your dog’s comfort, mobility, and recovery — including our Heal Together experience.</p><a href="pet-red-light-therapy.html" class="btn btn-gold">Explore Pet Wellness →</a></div>
+          <div class="specialty-copy"><p class="eyebrow">Veterinarian-Guided</p><h3>Pet Red Light Therapy</h3><p>Support for your dog's comfort, mobility, and recovery, including Heal Together.</p><a href="pet-red-light-therapy.html" class="btn btn-gold">Explore Pet Wellness</a></div>
         </article>
       </div>
     </div>
   </section>
 
-
-  <!-- FOUNDERS -->
-  <section class="founders" id="founders">
-    <div class="container">
-      <div class="section-head center reveal">
-        <p class="eyebrow">The Women Behind It</p>
-        <h2>Meet the Founders</h2>
-        <p>Revive &amp; Glow was created by two women who believe recovery and longevity should feel personal, warm, and within reach — for you and your whole family.</p>
-      </div>
-      <div class="founder-grid">
-        <div class="founder-card reveal">
-          <img src="founder-juliana.jpg" alt="Juliana Shewmaker, co-founder of Revive &amp; Glow Wellness" loading="lazy" />
-          <h3>Juliana Shewmaker</h3>
-          <p class="frole">Co-Founder</p>
-          <p class="fbio">Driven to build a space where feeling your best is a way of life — proactive, natural, and personal.</p>
-        </div>
-        <div class="founder-card reveal">
-          <img src="founder-thaysa.jpg" alt="Thaysa M Gomes, co-founder of Revive &amp; Glow Wellness" loading="lazy" />
-          <h3>Thaysa M Gomes</h3>
-          <p class="frole">Co-Founder</p>
-          <p class="fbio">Passionate about longevity and whole-family wellness — making sure every guest, and every pet, leaves feeling their best.</p>
+  <!-- STORY + FAQ -->
+  <section class="trust-section">
+    <div class="container trust-layout">
+      <div class="founder-story reveal" id="founders">
+        <p class="eyebrow">Our Story</p>
+        <h2>Created with care, for real life.</h2>
+        <p>Founded by Juliana Shewmaker and Thaysa M Gomes, Revive &amp; Glow is a warm, modern space for recovery, longevity, and everyday well-being.</p>
+        <div class="founder-minis">
+          <div class="founder-mini">
+            <img src="founder-juliana.jpg" alt="Juliana Shewmaker, co-founder" loading="lazy">
+            <div><strong>Juliana Shewmaker</strong><span>Co-Founder</span></div>
+          </div>
+          <div class="founder-mini">
+            <img src="founder-thaysa.jpg" alt="Thaysa M Gomes, co-founder" loading="lazy">
+            <div><strong>Thaysa M Gomes</strong><span>Co-Founder</span></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-head center reveal">
+      <div class="faq-compact reveal" id="faq">
         <p class="eyebrow">Good to Know</p>
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="faq-list reveal">
-        <details class="faq-item"><summary>What is Revive &amp; Glow Wellness?</summary><p>A boutique recovery and longevity studio in Pinellas Park, FL. We bring multi-wavelength light therapy, infrared sauna, cold plunge, compression, whole body vibration, and more under one roof — designed to help you recover, restore, and feel your best.</p></details>
-        <details class="faq-item"><summary>Are the therapies private or shared?</summary><p>Your therapy is never shared with strangers. The enclosed sauna and cold plunge room and the Multi-Wavelength Light Therapy room are reserved for you; you may enjoy them alone or bring someone you choose. Whole Body Vibration is in an open room without a door, and Compression Therapy is offered in an open area near reception, so guests passing through may see those sessions. Other guests may be enjoying different therapies elsewhere in the studio at the same time.</p></details>
-        <details class="faq-item"><summary>Do I need an appointment?</summary><p>Yes. Sessions are by appointment so we can give you a calm, personalized experience. The 5-Session Wellness Pack and memberships are purchased online, and clients with a package or membership schedule each included session through our secure Mindbody scheduler. Single sessions are offered in person only &mdash; walk-ins are warmly welcome, subject to availability.</p></details>
-        <details class="faq-item"><summary>Is this medical treatment?</summary><p>No. Our services are for general wellness and relaxation. They are not medical care and are not intended to diagnose, treat, or cure any condition. Please consult your doctor before starting any new wellness routine.</p></details>
-        <details class="faq-item"><summary>What can I use a Revive Session for?</summary><p>Each Revive Session may be used for one Multi-Wavelength Light Therapy visit (blue, red &amp; near-infrared light), Infrared Sauna, Cold Plunge, or Compression Therapy. Whole Body Vibration &amp; Grounding is available separately for $29.</p></details>
-        <details class="faq-item"><summary>Do unused membership sessions roll over?</summary><p>No. Membership sessions renew each billing month and must be used within that billing cycle. Unused sessions expire and do not carry into the next month.</p></details>
-        <details class="faq-item"><summary>How does the Revive Elite guest pass work?</summary><p>Elite members receive one guest pass each billing month. It may be used for any therapy included as a Revive Session and expires at the end of that billing cycle.</p></details>
-        <details class="faq-item"><summary>What is the Revive Elite pet wellness perk?</summary><p>Elite members receive one complimentary Pet Red Light Therapy Session per membership. First, the pet must be evaluated by Dr. Aimee Burke at Fur Ever Friends Veterinary Clinic. After Revive &amp; Glow receives the written referral and signed owner forms, our team arranges the session. This is a one-time welcome benefit, not a monthly session.</p></details>
-        <details class="faq-item"><summary>Are you open?</summary><p>Yes. We are open Monday through Saturday from 8 AM to 8 PM and Sunday from 10 AM to 5 PM. Because we operate primarily by appointment, booking ahead is recommended. Walk-ins are warmly welcome for a $39 single session, subject to availability.</p></details>
+        <h2>Before your first visit.</h2>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Do I need an appointment?</summary><p>Appointments are recommended so we can prepare a calm, personalized experience. Walk-ins are welcome for a $39 Single Session, subject to availability.</p></details>
+          <details class="faq-item"><summary>What can I use a Revive Session for?</summary><p>One Revive Session may be used for Multi-Wavelength Light Therapy, Infrared Sauna, Cold Plunge, or Compression Therapy. Whole Body Vibration &amp; Grounding is available separately for $29.</p></details>
+          <details class="faq-item"><summary>Are sessions private or shared?</summary><p>Your therapy is never shared with strangers. Sauna, cold plunge, and light therapy take place in rooms reserved for you. Compression and vibration are offered in open areas, and other guests may be enjoying different therapies elsewhere in the studio.</p></details>
+          <details class="faq-item"><summary>Is this medical treatment?</summary><p>No. Our services support general wellness and relaxation. They are not medical care and are not intended to diagnose, treat, or cure any condition.</p></details>
+        </div>
       </div>
     </div>
   </section>
@@ -1332,19 +1362,23 @@
   <section class="location" id="find-us">
     <div class="container">
       <div class="loc-info reveal">
-        <p class="eyebrow">Find Us</p>
-        <h2>Visit us in Pinellas Park</h2>
+        <p class="eyebrow">Visit Us</p>
+        <h2>Find your reset in Pinellas Park.</h2>
         <p class="loc-line">9899 66th St N, Pinellas Park, FL 33782</p>
-        <p class="loc-line"><a href="tel:+17277764569" style="color:var(--gold);">(727) 776-4569</a></p>
+        <p class="loc-line"><a href="tel:+17277764569" style="color:var(--gold-text);">(727) 776-4569</a></p>
         <p style="margin-top:1rem;"><strong>Monday–Saturday:</strong> 8 AM–8 PM<br><strong>Sunday:</strong> 10 AM–5 PM</p>
         <p>Appointments are recommended. Walk-ins are welcome, subject to availability.</p>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=9899+66th+St+N,+Pinellas+Park,+FL+33782" target="_blank" rel="noopener" class="btn" style="margin-top:1.6rem;">Get Directions →</a>
+        <div class="loc-actions">
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener" class="btn">Get Directions &rarr;</a>
+          <a href="tel:+17277764569" class="btn btn-secondary">Call Us</a>
+        </div>
       </div>
       <div class="loc-map reveal">
         <iframe src="https://maps.google.com/maps?q=9899%2066th%20St%20N%2C%20Pinellas%20Park%2C%20FL%2033782&amp;output=embed" loading="lazy" title="Revive &amp; Glow Wellness location map"></iframe>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
@@ -1356,6 +1390,7 @@
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
+          <a href="mens-wellness.html">Men's Wellness</a>
           <a href="#method">The Revive Method™</a>
           <a href="#therapies">Therapies</a>
           <a href="peptides.html">Peptides, GLP‑1 &amp; Labs</a>
@@ -1363,13 +1398,12 @@
           <a href="pet-red-light-therapy.html">For Pets</a>
           <a href="#membership">Membership</a>
           <a href="#faq">FAQ</a>
-          <a href="#find-us">Find Us</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener">Directions</a>
           <a href="booking.html">Book Your Visit</a>
         </div>
         <div class="footer-col">
           <h4>Visit</h4>
-          <p>9899 66th St N</p>
-          <p>Pinellas Park, FL 33782</p>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener">9899 66th St N<br>Pinellas Park, FL 33782</a>
           <p>Mon–Sat · 8 AM–8 PM</p>
           <p>Sunday · 10 AM–5 PM</p>
           <p>Appointments recommended</p>
@@ -1382,7 +1416,7 @@
       </div>
       <p class="disclaimer">
         &copy; 2026 Revive &amp; Glow Wellness. All rights reserved.
-        The services and information provided are for general wellness and relaxation purposes only. They are not medical care and are not intended to diagnose, treat, cure, or prevent any disease or condition. Revive &amp; Glow Wellness does not provide medical advice. Please consult a qualified healthcare provider before beginning any new wellness practice, especially if you are pregnant or have a medical condition.
+        Revive &amp; Glow's in-studio services and general website information are for wellness and relaxation purposes only and are not medical care. Medical evaluations, treatment decisions, and prescriptions described on this site are provided solely by licensed medical providers through Altro Health. Revive &amp; Glow Wellness does not diagnose, prescribe, determine eligibility, or provide medical advice. Please consult a qualified healthcare provider before beginning any new wellness practice, especially if you are pregnant or have a medical condition.
       </p>
     </div>
   </footer>
@@ -1408,6 +1442,7 @@
       var campaignEnded = config.hideAfter && Date.now() > new Date(config.hideAfter).getTime();
       if (!config.enabled || campaignEnded) {
         section.hidden = true;
+        section.parentElement.classList.add('intro-offers-hidden');
         return;
       }
       section.querySelectorAll('[data-offer]').forEach(function (link) {
@@ -1417,10 +1452,15 @@
     }());
 
     // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .deco').forEach(el => io.observe(el));
+    const revealItems = document.querySelectorAll('.reveal, .deco');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      revealItems.forEach(el => io.observe(el));
+    } else {
+      revealItems.forEach(el => el.classList.add('in'));
+    }
 
     // Nav: transparent over the hero, condensed bar once scrolled
     const nav = document.getElementById('nav');
@@ -1449,6 +1489,7 @@
       const open = n.classList.toggle('nav-open');
       b.textContent = open ? '✕' : '☰';
       b.setAttribute('aria-expanded', open);
+      b.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
     }
     document.querySelectorAll('#nav .nav-links a').forEach((a) => a.addEventListener('click', () => {
       const n = document.getElementById('nav');
@@ -1456,18 +1497,24 @@
       const b = n.querySelector('.nav-toggle');
       b.textContent = '☰';
       b.setAttribute('aria-expanded', 'false');
+      b.setAttribute('aria-label', 'Menu');
     }));
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape' || !nav.classList.contains('nav-open')) return;
+      toggleMenu();
+      nav.querySelector('.nav-toggle').focus();
+    });
 
     // ---- Chat helper (scripted, info-only — no health advice) ----
     const CHAT_START = { msg: "Hi there! 🌿 I'm here to help you learn about Revive &amp; Glow. What would you like to know?", replies: ['pnoe','medicine','therapies','memberships','pets','included','location','join','contact'] };
     const CHAT = {
-      medicine: { msg: "Looking for <strong>peptides or a GLP‑1 program</strong>? Through our telehealth partner Altro Health, eligible patients can explore physician-guided options alongside comprehensive lab testing and hormone care. Licensed Altro providers determine eligibility and handle clinical review and medical guidance. <a href=\"peptides.html\">See how it works →</a>", replies: ['therapies','contact','back'] },
+      medicine: { msg: "Looking for <strong>peptides or a GLP‑1 program</strong>? Through our telehealth partner Altro Health, you can explore provider-guided options alongside lab testing and hormone care. Licensed Altro providers determine eligibility and handle clinical review and medical guidance. <a href=\"peptides.html\">See how it works →</a>", replies: ['therapies','contact','back'] },
       pnoe: { msg: "<strong>PNŌĒ metabolic breath analysis</strong> measures how your body uses oxygen and fuel, including VO₂ max, resting metabolic rate, training zones, and metabolic fitness age. We turn the results into clear next steps for nutrition, training, and recovery. <a href=\"pnoe.html\">Explore PNŌĒ testing →</a>", replies: ['therapies','contact','back'] },
       therapies: { msg: "We offer <strong>multi-wavelength light therapy</strong> — blue, red, and near-infrared — plus infrared sauna, cold plunge, Normatec compression, whole body vibration, grounding, and hydrogen water. <a href=\"#therapies\">See all therapies →</a>", replies: ['memberships','join','contact','back'] },
       memberships: { msg: "We offer two simple membership options:<br><strong>Revive Flex</strong> — $179/mo · 8 sessions · no minimum commitment<br><strong>Revive Elite</strong> — $299/mo · 15 sessions · no minimum commitment · our lowest member rate per included session · priority booking support · one complimentary PNŌĒ Resting Metabolic Test after three consecutive membership payments while active<br><br>Not ready for a membership? The 5-Session Wellness Pack is $169 and is valid for 60 days. Walk-ins are warmly welcome for a $39 single session, subject to availability; single sessions are offered in person only. Whole Body Vibration &amp; Grounding is $29. <a href=\"#membership\">See memberships →</a>", replies: ['included','pets','join','contact','back'] },
       pets: { msg: "Wellness for the whole family! 🐾 We offer <strong>Red Light Therapy for Dogs</strong> for $39 per session, a <strong>$149/mo pet membership with 6 sessions</strong>, and our <strong>“Heal Together” package — $59</strong>. Every dog must first be evaluated by Dr. Aimee Burke at <strong>Fur Ever Friends Veterinary Clinic</strong>. Call <a href=\"tel:+17272884900\">(727) 288-4900</a>. After we receive the written referral and signed owner forms, Revive &amp; Glow arranges the first session. <a href=\"pet-red-light-therapy.html\">See the full process →</a>", replies: ['memberships','join','contact','back'] },
       included: { msg: "Members get the lowest price per session (from $22, against $39 for a single visit), an AI Wellness Concierge that suggests what to book next, a different therapy every visit chosen when you arrive, and sessions reserved for you month after month.", replies: ['memberships','join','contact','back'] },
-      location: { msg: "We're open at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay), and online booking is available. <a href=\"#find-us\">Get directions →</a>", replies: ['join','memberships','contact','back'] },
+      location: { msg: "We're open at <strong>9899 66th St N, Pinellas Park, FL 33782</strong> (Tampa Bay). <a href=\"https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782\" target=\"_blank\" rel=\"noopener\">Get directions →</a>", replies: ['join','memberships','contact','back'] },
       join: { msg: "Ready to visit? Start online with the 5-Session Wellness Pack ($169, 5 sessions, valid 60 days) or a Revive membership. Prefer to see the space first? Walk-ins are warmly welcome for a $39 single session, offered in person only. Already have a package or membership? Schedule your included session online. <a href=\"booking.html\">See your options →</a>", replies: ['memberships','pets','contact','back'] },
       contact: { msg: "Of course — we're happy to help personally! 💬 Reach us directly:<br><br>📲 <a href=\"https://wa.me/17277764569?text=Hi!%20I%20have%20a%20question%20about%20Revive%20%26%20Glow.\" target=\"_blank\" rel=\"noopener\">WhatsApp us</a><br>💬 <a href=\"sms:+17277764569\">Text us</a><br>📞 <a href=\"tel:+17277764569\">Call (727) 776-4569</a><br>✉️ <a href=\"mailto:reviveandglowwellness@gmail.com\">Email us</a><br><br>We'll get right back to you!", replies: ['back'] }
     };
