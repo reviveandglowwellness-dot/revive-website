@@ -1051,6 +1051,14 @@
       .specialty-card > img, .specialty-art { height: 185px; min-height: 185px; }
       .loc-actions .btn { width: 100%; text-align: center; }
     }
+    /* ===== Our Space gallery ===== */
+    .gallery { background: linear-gradient(180deg, var(--cream) 0%, #ece3d0 100%); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.1rem; }
+    .g-item { position: relative; margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: 0 16px 40px -26px rgba(34,58,46,0.55); aspect-ratio: 4 / 5; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .g-item:hover img { transform: scale(1.06); }
+    .g-item figcaption { position: absolute; inset: auto 0 0 0; padding: 1.6rem 1.1rem 0.95rem; font-family: var(--serif); font-size: 1.2rem; color: #fff; background: linear-gradient(to top, rgba(34,58,46,0.85), rgba(34,58,46,0)); }
+    @media (max-width: 520px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; } .g-item figcaption { font-size: 1rem; padding: 1rem 0.8rem 0.7rem; } }
   </style>
 </head>
 <body>
@@ -1063,6 +1071,7 @@
     <div class="nav-links" id="primary-navigation">
       <a href="#start-here">Pricing &amp; Offers</a>
       <a href="#therapies">Therapies</a>
+      <a href="#our-space">Our Space</a>
       <a href="mens-wellness.html" class="nav-pill nav-men-pill">Men's Wellness</a>
       <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9899+66th+St+N%2C+Pinellas+Park%2C+FL+33782" target="_blank" rel="noopener">Directions</a>
       <a href="booking.html" class="btn btn-gold">Book Your Visit</a>
@@ -1359,6 +1368,28 @@
           <details class="faq-item"><summary>Are sessions private or shared?</summary><p>Your therapy is never shared with strangers. Sauna, cold plunge, and light therapy take place in rooms reserved for you. Compression and vibration are offered in open areas, and other guests may be enjoying different therapies elsewhere in the studio.</p></details>
           <details class="faq-item"><summary>Is this medical treatment?</summary><p>No. Our services support general wellness and relaxation. They are not medical care and are not intended to diagnose, treat, or cure any condition.</p></details>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SPACE -->
+  <section class="gallery" id="our-space">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Step Inside</p>
+        <h2>Take a look around.</h2>
+        <p>A calm, modern space designed for how you want to feel &mdash; from a warm welcome at the front desk to a private suite for every therapy.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g-item"><img src="space-reception.jpg" alt="Revive and Glow Wellness reception desk with illuminated logo" loading="lazy"><figcaption>Welcome</figcaption></figure>
+        <figure class="g-item"><img src="space-sauna.jpg" alt="Infrared sauna suite" loading="lazy"><figcaption>Infrared Sauna</figcaption></figure>
+        <figure class="g-item"><img src="space-cold-plunge.jpg" alt="Cold plunge" loading="lazy"><figcaption>Cold Plunge</figcaption></figure>
+        <figure class="g-item"><img src="space-red-light.jpg" alt="Red light therapy room" loading="lazy"><figcaption>Red Light Therapy</figcaption></figure>
+        <figure class="g-item"><img src="space-compression.jpg" alt="Compression therapy lounge" loading="lazy"><figcaption>Compression Therapy</figcaption></figure>
+        <figure class="g-item"><img src="space-hydrogen-water.jpg" alt="Hydrogen water station with branded bottle" loading="lazy"><figcaption>Hydrogen Water</figcaption></figure>
+        <figure class="g-item"><img src="space-hydration-station.jpg" alt="Hydration station with hydrogen water, infused water, tea and snacks" loading="lazy"><figcaption>Hydration Station</figcaption></figure>
+        <figure class="g-item"><img src="space-amenities.jpg" alt="Robes, towels and slippers station" loading="lazy"><figcaption>Robes, Towels &amp; Flip-Flops</figcaption></figure>
+        <figure class="g-item"><img src="space-storefront.jpg" alt="Revive and Glow Wellness entrance" loading="lazy"><figcaption>Come Visit Us</figcaption></figure>
       </div>
     </div>
   </section>
