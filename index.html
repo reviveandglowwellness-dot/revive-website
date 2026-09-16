@@ -948,6 +948,16 @@
     .session-details p { margin-bottom: 0.55rem; color: #56655a; font-size: 0.86rem; font-weight: 300; }
     .session-details p:last-child { margin-bottom: 0; }
     .session-details strong { color: var(--forest-deep); }
+    .contrast-feature {
+      margin-top: 1.5rem; padding: clamp(1.4rem, 3vw, 2rem);
+      border: 1px solid rgba(47,74,60,0.14); border-radius: var(--radius);
+      background: linear-gradient(120deg, var(--sand), var(--sage-soft));
+    }
+    .contrast-feature h3 { color: var(--forest-deep); font-size: clamp(1.6rem, 3vw, 2.15rem); }
+    .contrast-feature p { max-width: 760px; margin-top: 0.75rem; color: #56655a; }
+    .contrast-feature .eyebrow { margin-top: 0; }
+    .contrast-feature .contrast-note { font-size: 0.85rem; }
+    .contrast-feature .btn { margin-top: 1.2rem; white-space: normal; text-align: center; }
     .studio-extras {
       display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;
     }
@@ -1290,6 +1300,14 @@
           </div>
         </details>
       </div>
+
+      <section class="contrast-feature reveal" id="contrast-therapy" aria-labelledby="contrast-therapy-title">
+        <p class="eyebrow">Infrared Sauna + Cold Plunge</p>
+        <h3 id="contrast-therapy-title">Contrast Therapy. Warmth meets a refreshing reset.</h3>
+        <p>Contrast therapy brings together the warmth of infrared sauna and the invigorating sensation of cold plunge in one visit. Explore both experiences in our enclosed sauna and cold plunge room, at a pace that feels right for you.</p>
+        <p class="contrast-note">Sauna and cold plunge are separate therapies. Ask our team about pairing them, availability, and pricing before your visit.</p>
+        <a href="https://wa.me/17277764569?text=Hi!%20I%27d%20like%20to%20learn%20more%20about%20Contrast%20Therapy%20at%20Revive%20%26%20Glow.%20Could%20you%20share%20pricing%20and%20availability%3F" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">WhatsApp Us About Contrast Therapy</a>
+      </section>
 
       <div class="studio-extras reveal" role="group" aria-label="Additional studio experiences">
         <div class="studio-extra"><strong>Whole Body Vibration &amp; Grounding</strong><span>30 minutes &middot; available separately for $29</span></div>
