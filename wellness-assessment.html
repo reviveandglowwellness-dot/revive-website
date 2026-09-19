@@ -162,6 +162,7 @@ h1{font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.1;font-weight:400;letter-spa
 <div id="app">
   <div class="top">
     <div class="brand">Revive &amp; Glow</div>
+    <a id="clientFormsLink" class="btn ghost" href="client-forms/index.html" style="flex:none;text-decoration:none;padding:12px 16px;font-size:.82rem;min-height:44px">Forms &amp; waivers</a>
     <div class="progress-wrap" id="pwrap" style="visibility:hidden">
       <div class="progress-lbl" id="plbl">Step 1</div>
       <div class="progress"><i id="pbar"></i></div>
@@ -684,6 +685,9 @@ function joinMembership(mode){
 }
 function startOver(){clearSensitiveSession();}
 
+document.getElementById('clientFormsLink').addEventListener('click', function(event){
+  if (Object.keys(state.answers || {}).length && !window.confirm('Open client forms? This will end the current assessment. Review the guest summary first if needed.')) event.preventDefault();
+});
 /* ============ KIOSK ============ */
 document.addEventListener("dblclick",function(e){e.preventDefault();});
 render();
